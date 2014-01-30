@@ -6,7 +6,7 @@ import os
 from optparse import OptionParser
 
 try:
-    import gtk
+    from gi.repository import Gtk
     import crwGTKScannerEntry
     import crwGTKLibrary
     HAVE_GTK = True
@@ -73,7 +73,7 @@ def main(argv=None):
         scanPage = crwGTKScannerEntry.GTKScannerEntry()
         scanPage.add_library_page(library)
         scanPage.add_web_searcher(isbnSearchOrg)
-        gtk.main()
+        Gtk.main()
     else:
         library.read_from_file()
         isbn = raw_input("Enter ISBN:")

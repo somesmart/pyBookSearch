@@ -2,8 +2,7 @@
 
 import crwBook
 import crwLibrary
-import gtk
-import gobject
+from gi.repository import Gtk, GObject
 
 (
     COLUMN_ISBN,
@@ -11,10 +10,10 @@ import gobject
     COLUMN_AUTHOR
 ) = range(3)
 
-class GTKLibrary(gtk.Window, crwLibrary.Library):
+class GTKLibrary(Gtk.Window, crwLibrary.Library):
     def __init__(self, filename, parent=None):
         # create window
-        gtk.Window.__init__(self)
+        Gtk.Window.__init__(self)
 
         # create library
         crwLibrary.Library.__init__(self, filename)
@@ -28,25 +27,25 @@ class GTKLibrary(gtk.Window, crwLibrary.Library):
         self.set_border_width(5)
         self.set_default_size(300, 250)
 
-        vbox1 = gtk.VBox(False, 4)
+        vbox1 = Gtk.VBox(False, 4)
         self.add(vbox1)
 
-        sw = gtk.ScrolledWindow()
-        sw.set_shadow_type(gtk.SHADOW_ETCHED_IN)
-        sw.set_policy(gtk.POLICY_NEVER, gtk.POLICY_AUTOMATIC)
+        sw = Gtk.ScrolledWindow()
+        sw.set_shadow_type(Gtk.ShadowType.ETCHED_IN)
+        sw.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
         vbox1.pack_start(sw, expand=True, fill=True, padding=0)
 
         # create book model
-        self.book_model = gtk.ListStore(
-            gobject.TYPE_STRING,
-            gobject.TYPE_STRING,
-            gobject.TYPE_STRING)
+        self.book_model = Gtk.ListStore(
+            GObject.TYPE_STRING,
+            GObject.TYPE_STRING,
+            GObject.TYPE_STRING)
 
         # fill the model from file
         self.read_from_file()
 
         # create tree view
-        self.tree_view = gtk.TreeView(self.book_model)
+        self.tree_view = Gtk.TreeView(self.book_model)
         self.tree_view.set_rules_hint(True)
         self.tree_view.set_search_column(COLUMN_ISBN)
 
@@ -56,19 +55,19 @@ class GTKLibrary(gtk.Window, crwLibrary.Library):
         self.__add_columns()
 
         # add a horizontal box
-        hbox1 = gtk.HBox(False, 0)
+        hbox1 = Gtk.HBox(False, 0)
         vbox1.pack_start(hbox1,
             expand=False, fill=False, padding=0)
         
         # add a save button
-        self.save_button = gtk.Button("Save")
+        self.save_button = Gtk.Button("Save")
         self.save_button.connect("clicked",
             self.save_callback, None)
         hbox1.pack_start(self.save_button,
             expand=True, fill=True, padding=0)
 
         # add a delete button
-        self.delete_button = gtk.Button("Delete")
+        self.delete_button = Gtk.Button("Delete")
         self.delete_button.connect("clicked",
             self.delete_callback, None)
         hbox1.pack_start(self.delete_button,
@@ -79,27 +78,27 @@ class GTKLibrary(gtk.Window, crwLibrary.Library):
 
     def __add_columns(self):
         # column for ISBN
-        column = gtk.TreeViewColumn(crwBook.STR_ISBN,
-            gtk.CellRendererText(), text=COLUMN_ISBN)
+        column = Gtk.TreeViewColumn(crwBook.STR_ISBN,
+            Gtk.CellRendererText(), text=COLUMN_ISBN)
         column.set_sort_column_id(COLUMN_ISBN)
         self.tree_view.append_column(column)
 
         # column for title
-        column = gtk.TreeViewColumn(crwBook.STR_TITLE,
-            gtk.CellRendererText(), text=COLUMN_TITLE)
+        column = Gtk.TreeViewColumn(crwBook.STR_TITLE,
+            Gtk.CellRendererText(), text=COLUMN_TITLE)
         column.set_sort_column_id(COLUMN_TITLE)
         self.tree_view.append_column(column)
 
         # column for author
-        column = gtk.TreeViewColumn(crwBook.STR_AUTHOR,
-            gtk.CellRendererText(), text=COLUMN_AUTHOR)
+        column = Gtk.TreeViewColumn(crwBook.STR_AUTHOR,
+            Gtk.CellRendererText(), text=COLUMN_AUTHOR)
         column.set_sort_column_id(COLUMN_AUTHOR)
         self.tree_view.append_column(column)
 
     def destroy(self, widget, data=None):
         print "Saving...",
         self.save_to_file()
-        gtk.main_quit()
+        Gtk.main_quit()
 
     def save_callback(self, widget, data=None):
         self.save_to_file()

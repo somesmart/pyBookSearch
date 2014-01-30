@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 
-import gtk
+from gi.repository import Gtk
 import crwBook
 import crwGTKLibrary
 
-class GTKScannerEntry(gtk.Window):
+class GTKScannerEntry(Gtk.Window):
 
     def __init__(self, parent=None):
         # create window
-        gtk.Window.__init__(self)
+        Gtk.Window.__init__(self)
 
         try:
             self.set_screen(parent.get_screen())
@@ -22,25 +22,25 @@ class GTKScannerEntry(gtk.Window):
         self.library_page = None
 
         # add a vertical box
-        vbox1 = gtk.VBox(False, 4)
+        vbox1 = Gtk.VBox(False, 4)
         self.add(vbox1)
 
         # add a label
-        label1 = gtk.Label("Enter ISBN:")
+        label1 = Gtk.Label("Enter ISBN:")
         vbox1.pack_start(label1,
             expand=False, fill=False, padding=0)
 
         # add a text entry field
-        self.isbn_entry = gtk.Entry(max=0)
+        self.isbn_entry = Gtk.Entry(max_length=0)
         self.isbn_entry.connect("activate",
             self.isbn_enter_callback, self.isbn_entry)
         vbox1.pack_start(self.isbn_entry,
             expand=False, fill=False, padding=0)
 
         # add a quit button
-        self.quit_button = gtk.Button("Quit")
+        self.quit_button = Gtk.Button("Quit")
         self.quit_button.connect_object("clicked",
-            gtk.Widget.destroy, self)
+            Gtk.Widget.destroy, self)
         vbox1.pack_start(self.quit_button,
             expand=False, fill=False, padding=0)
 
@@ -51,7 +51,7 @@ class GTKScannerEntry(gtk.Window):
         print "Saving...",
         if self.library_page != None:
             self.library_page.save_to_file()
-        gtk.main_quit()
+        Gtk.main_quit()
 
     def isbn_enter_callback(self, widget, entry):
         isbn_text = entry.get_text()
@@ -79,4 +79,4 @@ if __name__ == "__main__":
     scanPage = GTKScannerEntry()
     scanPage.add_library_page(libraryPage)
     #scanPage.add_web_searcher(isbnSearchOrg)
-    gtk.main()
+    Gtk.main()
