@@ -32,7 +32,7 @@ def main(argv=None):
     '''Command line options.'''
     
     program_name = os.path.basename(sys.argv[0])
-    program_version = "v%d" % __version__
+    program_version = "v%1.2f" % __version__
     program_build_date = "%s" % __updated__
  
     program_version_string = '%%prog %s (%s)' % (program_version, program_build_date)
