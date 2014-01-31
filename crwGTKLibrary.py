@@ -80,25 +80,39 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
 
     def __add_columns(self):
         # column for ISBN
-        column = Gtk.TreeViewColumn(crwBook.STR_ISBN,
-            Gtk.CellRendererText(), text=COLUMN_ISBN)
+        renderer = Gtk.CellRendererText()
+        column = Gtk.TreeViewColumn(crwBook.STR_ISBN, renderer, text=COLUMN_ISBN)
         column.set_sort_column_id(COLUMN_ISBN)
         column.set_resizable(True)
         self.tree_view.append_column(column)
 
         # column for title
-        column = Gtk.TreeViewColumn(crwBook.STR_TITLE,
-            Gtk.CellRendererText(), text=COLUMN_TITLE)
+        renderer = Gtk.CellRendererText()
+        renderer.set_property("editable", True)
+        column = Gtk.TreeViewColumn(crwBook.STR_TITLE, renderer, text=COLUMN_TITLE)
         column.set_sort_column_id(COLUMN_TITLE)
         column.set_resizable(True)
         self.tree_view.append_column(column)
+        renderer.connect("edited", self.title_edited)
 
         # column for author
-        column = Gtk.TreeViewColumn(crwBook.STR_AUTHOR,
-            Gtk.CellRendererText(), text=COLUMN_AUTHOR)
+        renderer = Gtk.CellRendererText()
+        renderer.set_property("editable", True)
+        column = Gtk.TreeViewColumn(crwBook.STR_AUTHOR, renderer, text=COLUMN_AUTHOR)
         column.set_sort_column_id(COLUMN_AUTHOR)
         column.set_resizable(True)
         self.tree_view.append_column(column)
+        renderer.connect("edited", self.author_edited)
+
+    def title_edited(self, widget, path, text):
+        if self.book_model[path][1] != text:
+            print "title edited"
+            self.book_model[path][1] = text
+
+    def author_edited(self, widget, path, text):
+        if self.book_model[path][2] != text:
+            print "author edited"
+            self.book_model[path][2] = text
 
     def destroy(self, widget, data=None):
         print "Saving...",
