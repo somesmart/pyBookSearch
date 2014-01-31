@@ -25,14 +25,14 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
 
         self.set_title("Books in Library")
         self.set_border_width(5)
-        self.set_default_size(300, 250)
+        self.set_default_size(500, 250)
 
         vbox1 = Gtk.VBox(False, 4)
         self.add(vbox1)
 
         sw = Gtk.ScrolledWindow()
         sw.set_shadow_type(Gtk.ShadowType.ETCHED_IN)
-        sw.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+        sw.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         vbox1.pack_start(sw, expand=True, fill=True, padding=0)
 
         # create book model
@@ -46,7 +46,9 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
 
         # create tree view
         self.tree_view = Gtk.TreeView(self.book_model)
+        # hint across rows
         self.tree_view.set_rules_hint(True)
+        #
         self.tree_view.set_search_column(COLUMN_ISBN)
 
         sw.add(self.tree_view)
@@ -81,18 +83,21 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         column = Gtk.TreeViewColumn(crwBook.STR_ISBN,
             Gtk.CellRendererText(), text=COLUMN_ISBN)
         column.set_sort_column_id(COLUMN_ISBN)
+        column.set_resizable(True)
         self.tree_view.append_column(column)
 
         # column for title
         column = Gtk.TreeViewColumn(crwBook.STR_TITLE,
             Gtk.CellRendererText(), text=COLUMN_TITLE)
         column.set_sort_column_id(COLUMN_TITLE)
+        column.set_resizable(True)
         self.tree_view.append_column(column)
 
         # column for author
         column = Gtk.TreeViewColumn(crwBook.STR_AUTHOR,
             Gtk.CellRendererText(), text=COLUMN_AUTHOR)
         column.set_sort_column_id(COLUMN_AUTHOR)
+        column.set_resizable(True)
         self.tree_view.append_column(column)
 
     def destroy(self, widget, data=None):
