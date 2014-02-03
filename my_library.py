@@ -62,19 +62,16 @@ def main(argv=None):
         sys.stderr.write(indent + "  for help use --help")
         return 2
             
+    isbnSearchOrg = crwISBNSearch.ISBNSearchOrg()
+        
     if HAVE_GTK:
         library = crwGTKLibrary.GTKLibrary(opts.libfile)
-    else:
-        library = crwLibrary.Library(opts.libfile)
-    
-    isbnSearchOrg = crwISBNSearch.ISBNSearchOrg()
-    
-    if HAVE_GTK:
         scanPage = crwGTKScannerEntry.GTKScannerEntry()
         scanPage.add_library_page(library)
         scanPage.add_web_searcher(isbnSearchOrg)
         Gtk.main()
     else:
+        library = crwLibrary.Library(opts.libfile)
         library.read_from_file()
         isbn = raw_input("Enter ISBN:")
         while isbn != "0":
