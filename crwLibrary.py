@@ -1,13 +1,21 @@
 #!/usr/bin/env python
+"""Define a Library class to store a list of books."""
+
 import crwBook
 import csv
 
 class Library(object):
+    """The Library class is responsible for..."""
+
     def __init__(self, filename):
+        """Initialise the book list to an empty list and store the filename."""
+
         self.book_list = []
         self.filename = filename
 
     def isbn_exists(self, isbn):
+        """Check for the existence of the given ISBN within the list of books."""
+
         exists = False
         book = None
         if type(isbn) == str:
@@ -19,26 +27,36 @@ class Library(object):
         return exists, book
 
     def add_book(self, book):
+        """Add a book to the list managed by this Library."""
+
         self.book_list.append(book)
 
     def remove_book(self, book):
-        print "remove_book"
+        """Remove a book from the list managed by this Library."""
+
         try:
             self.book_list.remove(book)
         except ValueError:
             print "### Could not remove book."
 
     def remove_isbn(self, isbn):
+        """Remove all books with the given ISBN from the list managed by this Library."""
+
         if type(isbn) == str:
             isbn = unicode(isbn)
+
         # Use a list comprehension to modify the book list
         # http://stackoverflow.com/questions/1207406/remove-items-from-a-list-while-iterating-in-python
         self.book_list[:] = [book for book in self.book_list if book.get_isbn() != isbn]
+
 ##        for book in self.book_list:
 ##            if book.get_isbn() == isbn:
 ##                self.remove_book(book)
 
     def read_from_file(self):
+        """Open the CSV file associated with this Library, and create a Book for
+           each book described within."""
+
         try:
             library_file = open(self.filename, "rb")
 

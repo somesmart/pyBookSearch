@@ -12,6 +12,8 @@ from gi.repository import Gtk, GObject
 
 class GTKLibrary(Gtk.Window, crwLibrary.Library):
     def __init__(self, filename, parent=None):
+        """Create a window with a list and a couple of buttons."""
+
         # create window
         Gtk.Window.__init__(self)
 
@@ -44,23 +46,23 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         # fill the model from file
         self.read_from_file()
 
-        # create tree view
-        self.tree_view = Gtk.TreeView(self.book_model)
-        # hint across rows
-        self.tree_view.set_rules_hint(True)
-        #
-        self.tree_view.set_search_column(COLUMN_ISBN)
+        # add columns to the tree view
+        self.__add_tree()
 
         sw.add(self.tree_view)
-
-        # add columns to the tree view
-        self.__add_columns()
 
         # add a horizontal box
         hbox1 = Gtk.HBox(False, 0)
         vbox1.pack_start(hbox1,
             expand=False, fill=False, padding=0)
         
+        # add a query button
+        self.query_button = Gtk.Button("Query")
+        self.query_button.connect("clicked",
+            self.query_callback, None)
+        hbox1.pack_start(self.query_button,
+            expand=True, fill=True, padding=0)
+
         # add a save button
         self.save_button = Gtk.Button("Save")
         self.save_button.connect("clicked",
@@ -78,7 +80,14 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         # show stuff
         self.show_all()
 
-    def __add_columns(self):
+    def __add_tree(self):
+        # create tree view
+        self.tree_view = Gtk.TreeView(self.book_model)
+        # hint across rows
+        self.tree_view.set_rules_hint(True)
+        #
+        self.tree_view.set_search_column(COLUMN_ISBN)
+
         # column for ISBN
         renderer = Gtk.CellRendererText()
         column = Gtk.TreeViewColumn(crwBook.STR_ISBN, renderer, text=COLUMN_ISBN)
@@ -103,6 +112,9 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         column.set_resizable(True)
         self.tree_view.append_column(column)
         renderer.connect("edited", self.author_edited)
+        
+        select = self.tree_view.get_selection()
+        select.connect("changed", self.selection_changed)
 
     def title_edited(self, widget, path, text):
         if self.book_model[path][1] != text:
@@ -113,11 +125,22 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         if self.book_model[path][2] != text:
             print "author edited"
             self.book_model[path][2] = text
+            
+    def selection_changed(self, selection):
+        model, treeiter = selection.get_selected()
+        if treeiter != None:
+            print "Selected", model[treeiter][0]
 
     def destroy(self, widget, data=None):
         print "Saving...",
         self.save_to_file()
         Gtk.main_quit()
+
+    def query_callback(self, widget, data=None):
+        selection = self.tree_view.get_selection()
+        (model, iter) = selection.get_selected()
+        isbn = model.get(iter, 0)[0]
+        print "querying %s" % (isbn)
 
     def save_callback(self, widget, data=None):
         self.save_to_file()
@@ -168,4 +191,4 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
 if __name__ == "__main__":
     gtkLibrary = GTKLibrary("library.csv")
     gtkLibrary.add_book(crwBook.Book("9876", "9876", "9876"))
-    gtk.main()
+    Gtk.main()

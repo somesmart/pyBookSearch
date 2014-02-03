@@ -54,6 +54,8 @@ class GTKScannerEntry(Gtk.Window):
         Gtk.main_quit()
 
     def isbn_enter_callback(self, widget, entry):
+        """Query the web searchers for the ISBN, add the book to the library, clear the text field."""
+        
         isbn_text = entry.get_text()
 
         if self.library_page != None:
@@ -68,6 +70,8 @@ class GTKScannerEntry(Gtk.Window):
         entry.set_text("")
 
     def add_library_page(self, library_page):
+        """Store reference to the library page."""
+        
         self.library_page = library_page
 
     def add_web_searcher(self, web_searcher):
