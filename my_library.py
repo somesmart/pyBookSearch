@@ -65,10 +65,8 @@ def main(argv=None):
     isbnSearchOrg = crwISBNSearch.ISBNSearchOrg()
         
     if HAVE_GTK:
-        library = crwGTKLibrary.GTKLibrary(opts.libfile)
-        scanPage = crwGTKScannerEntry.GTKScannerEntry()
-        scanPage.add_library_page(library)
-        scanPage.add_web_searcher(isbnSearchOrg)
+        library = crwGTKLibrary.GTKLibrary(filename=opts.libfile, searcher=isbnSearchOrg)
+        scanPage = crwGTKScannerEntry.GTKScannerEntry(library=library)
         Gtk.main()
     else:
         library = crwLibrary.Library(opts.libfile)

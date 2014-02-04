@@ -2,11 +2,14 @@
 
 from gi.repository import Gtk
 import crwBook
-import crwGTKLibrary
 
 class GTKScannerEntry(Gtk.Window):
 
-    def __init__(self, parent=None):
+    def __init__(self, library=None, parent=None):
+        """"""
+
+        self.library_page = library
+
         # create window
         Gtk.Window.__init__(self)
 
@@ -17,9 +20,6 @@ class GTKScannerEntry(Gtk.Window):
 
         self.set_title("Enter ISBN")
         self.set_border_width(5)
-
-        self.web_searcher_list = []
-        self.library_page = None
 
         # add a vertical box
         vbox1 = Gtk.VBox(False, 4)
@@ -48,8 +48,8 @@ class GTKScannerEntry(Gtk.Window):
         self.show_all()
 
     def destroy(self, widget, data=None):
-        print "Saving...",
         if self.library_page != None:
+            print "Saving...",
             self.library_page.save_to_file()
         Gtk.main_quit()
 
@@ -60,27 +60,11 @@ class GTKScannerEntry(Gtk.Window):
 
         if self.library_page != None:
             print "ISBN exists:", self.library_page.isbn_exists(isbn_text)
-            if len(self.web_searcher_list) > 0:
-                for web_searcher in self.web_searcher_list:
-                    book_description = web_searcher.search(isbn_text)
-                self.library_page.add_book(book_description)
-            else:
-                self.library_page.add_book(crwBook.Book(isbn_text, "Unknown", "Unknown"))
+            self.library_page.search_isbn(isbn_text)
 
         entry.set_text("")
 
-    def add_library_page(self, library_page):
-        """Store reference to the library page."""
-        
-        self.library_page = library_page
-
-    def add_web_searcher(self, web_searcher):
-        self.web_searcher_list.append(web_searcher)
 
 if __name__ == "__main__":
-    libraryPage = crwGTKLibrary.GTKLibrary("library.csv")
-    #isbnSearchOrg = ISBNSearchOrg()
-    scanPage = GTKScannerEntry()
-    scanPage.add_library_page(libraryPage)
-    #scanPage.add_web_searcher(isbnSearchOrg)
+    scanner_entry = GTKScannerEntry()
     Gtk.main()

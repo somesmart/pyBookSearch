@@ -11,8 +11,12 @@ from gi.repository import Gtk, GObject
 ) = range(3)
 
 class GTKLibrary(Gtk.Window, crwLibrary.Library):
-    def __init__(self, filename, parent=None):
+    def __init__(self, filename, searcher=None, parent=None):
         """Create a window with a list and a couple of buttons."""
+
+        self.web_searcher_list = []
+        if searcher != None:
+            self.web_searcher_list.append(searcher)
 
         # create window
         Gtk.Window.__init__(self)
@@ -141,8 +145,10 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         (model, iter) = selection.get_selected()
         isbn = model.get(iter, 0)[0]
         print "querying %s" % (isbn)
+        self.search_isbn(isbn, add=False)
 
     def save_callback(self, widget, data=None):
+        print "Saving...",
         self.save_to_file()
 
     def delete_callback(self, widget, data=None):
@@ -156,6 +162,20 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         isbn = model.get(iter, 0)[0]
         self.remove_isbn(isbn)
         model.remove(iter)
+
+    def add_web_searcher(self, web_searcher):
+        self.web_searcher_list.append(web_searcher)
+
+    def search_isbn(self, isbn, add=True):
+        if len(self.web_searcher_list) > 0:
+            for web_searcher in self.web_searcher_list:
+                book_description = web_searcher.search(isbn)
+            if add:
+                self.add_book(book_description)
+        else:
+            if add:
+                self.add_book(crwBook.Book(isbn, "Unknown", "Unknown"))
+
 
     def add_book(self, book):
         # Call the super class function
