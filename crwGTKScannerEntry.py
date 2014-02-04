@@ -59,7 +59,7 @@ class GTKScannerEntry(Gtk.Window):
         isbn_text = entry.get_text()
 
         if self.library_page != None:
-            print "ISBN exists:", self.library_page.isbn_exists(isbn_text)
+            print "ISBN exists:", self.library_page.isbn_exists(isbn_text)[0]
             if len(self.web_searcher_list) > 0:
                 for web_searcher in self.web_searcher_list:
                     book_description = web_searcher.search(isbn_text)
