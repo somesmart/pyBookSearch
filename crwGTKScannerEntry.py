@@ -59,7 +59,7 @@ class GTKScannerEntry(Gtk.Window):
         isbn_text = entry.get_text()
 
         if self.library_page != None:
-            print "ISBN exists:", self.library_page.isbn_exists(isbn_text)
+            print "ISBN exists:", self.library_page.isbn_exists(isbn_text)[0]
             self.library_page.search_isbn(isbn_text)
 
         entry.set_text("")
