@@ -30,6 +30,8 @@ PROFILE = 0
 def main(argv=None):
     '''Command line options.'''
     
+    global HAVE_GTK
+
     program_name = os.path.basename(sys.argv[0])
     program_version = "v%1.2f" % __version__
     program_build_date = "%s" % __updated__
