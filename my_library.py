@@ -7,14 +7,13 @@ from optparse import OptionParser
 
 try:
     from gi.repository import Gtk
-    import crwGTKScannerEntry
     import crwGTKLibrary
     HAVE_GTK = True
 except ImportError:
     print "### No GTK - reverting to text mode"
-    import crwLibrary
     HAVE_GTK = False
 
+import crwLibrary
 import crwISBNSearch
 
 # ==========================
@@ -46,6 +45,7 @@ def main(argv=None):
         # setup option parser
         parser = OptionParser(version=program_version_string, epilog=program_longdesc, description=program_license)
         parser.add_option("-l", "--library", dest="libfile", help="set library file path [default: %default]", metavar="FILE")
+        parser.add_option("-t", "--text", action="store_true", dest="textmode", default=False, help="use text mode [default: %default]")
         
         # set defaults
         parser.set_defaults(libfile="./auto_library.csv")
@@ -55,6 +55,10 @@ def main(argv=None):
         
         if opts.libfile:
             print("libfile = %s" % opts.libfile)
+
+        print "Text mode", opts.textmode
+        if opts.textmode:
+            HAVE_GTK = False
 
     except Exception, e:
         indent = len(program_name) * " "
@@ -66,7 +70,6 @@ def main(argv=None):
         
     if HAVE_GTK:
         library = crwGTKLibrary.GTKLibrary(filename=opts.libfile, searcher=isbnSearchOrg)
-        scanPage = crwGTKScannerEntry.GTKScannerEntry(library=library)
         Gtk.main()
     else:
         library = crwLibrary.Library(opts.libfile)

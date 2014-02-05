@@ -15,6 +15,7 @@ class GTKScannerEntry(Gtk.Window):
 
         try:
             self.set_screen(parent.get_screen())
+            self.connect("destroy", parent.destroy)
         except AttributeError:
             self.connect("destroy", self.destroy)
 

@@ -28,12 +28,10 @@ class Library(object):
 
     def add_book(self, book):
         """Add a book to the list managed by this Library."""
-
         self.book_list.append(book)
 
     def remove_book(self, book):
         """Remove a book from the list managed by this Library."""
-
         try:
             self.book_list.remove(book)
         except ValueError:
@@ -41,7 +39,6 @@ class Library(object):
 
     def remove_isbn(self, isbn):
         """Remove all books with the given ISBN from the list managed by this Library."""
-
         if type(isbn) == str:
             isbn = unicode(isbn)
 
