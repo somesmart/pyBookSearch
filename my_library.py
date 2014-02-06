@@ -10,7 +10,7 @@ try:
     import crwGTKLibrary
     HAVE_GTK = True
 except ImportError:
-    print "### No GTK - reverting to text mode"
+    print("### No GTK - reverting to text mode")
     HAVE_GTK = False
 
 import crwLibrary
@@ -56,13 +56,13 @@ def main(argv=None):
         (opts, args) = parser.parse_args(argv)
         
         if opts.libfile:
-            print("libfile = %s" % opts.libfile)
+            print("libfile = {}".format(opts.libfile))
 
-        print "Text mode", opts.textmode
+        print("Text mode", opts.textmode)
         if opts.textmode:
             HAVE_GTK = False
 
-    except Exception, e:
+    except Exception as e:
         indent = len(program_name) * " "
         sys.stderr.write(program_name + ": " + repr(e) + "\n")
         sys.stderr.write(indent + "  for help use --help")
@@ -76,24 +76,24 @@ def main(argv=None):
     else:
         library = crwLibrary.Library(opts.libfile)
         library.read_from_file()
-        isbn = raw_input("Enter ISBN:")
-        while isbn != "0":
+        isbn = input("Enter ISBN:")
+        while isbn != 0:
             if isbn == "save":
                 library.save_to_file()
             else:
                 exists, book = library.isbn_exists(isbn)
                 if exists:
-                    print book
-                    add_again = raw_input("### Book exists, do you want to search again?")
+                    print(book)
+                    add_again = input("### Book exists, do you want to search again?")
                     if add_again == "y":
                         book = isbnSearchOrg.search(isbn)
                         library.add_book(book)
-                        print book
+                        print(book)
                 else:
                     book = isbnSearchOrg.search(isbn)
                     library.add_book(book)
-                    print book
-            isbn = raw_input("Enter ISBN:")
+                    print(book)
+            isbn = input("Enter ISBN:")
     
         # Save before exiting
         library.save_to_file()

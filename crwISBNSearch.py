@@ -3,16 +3,16 @@
 import crwBook
 
 try:
-    import urllib2
+    import urllib.request, urllib.error, urllib.parse
     from BeautifulSoup import BeautifulSoup, SoupStrainer
     HAVE_SOUP = True
 except ImportError:
-    print "### Sorry, I can't search for book info"
+    print("### Sorry, I can't search for book info")
     HAVE_SOUP = False
 
 class BaseSearcher(object):
     def search(self, isbn):
-        book = crwBook.Book(unicode(isbn), u"Title Unknown", u"Author Unknown")
+        book = crwBook.Book(str(isbn), "Title Unknown", "Author Unknown")
         return book
     
 class UPCDatabaseCom(BaseSearcher):
@@ -45,7 +45,7 @@ class ISBNSearchOrg(BaseSearcher):
         if HAVE_SOUP == True:
             full_url = self.search_url + isbn
             try:
-                page = urllib2.urlopen(full_url)
+                page = urllib.request.urlopen(full_url)
                 soup = BeautifulSoup(page.read(),
                     parseOnlyThese= self.bookinfo_filter)
 
@@ -57,27 +57,27 @@ class ISBNSearchOrg(BaseSearcher):
                     # This will be in unicode
                     book.set_title(soup.h2.string)
                 except AttributeError:
-                    print "### Error retrieving Title."
-                    book.set_title(u"AttributeError")
+                    print("### Error retrieving Title.")
+                    book.set_title("AttributeError")
 
                 # Get the author
                 for label in soup.findAll("strong"):
-                    if label.string == u"Author:":
+                    if label.string == "Author:":
                         try:
                             # This will be in unicode
                             book.set_author(label.nextSibling)
                         except AttributeError:
-                            print "### Error retrieving Author."
-                            book.set_author(u"AttributeError")
-                    if label.string == u"Authors:":
+                            print("### Error retrieving Author.")
+                            book.set_author("AttributeError")
+                    if label.string == "Authors:":
                         try:
                             # This will be in unicode
                             book.set_author(label.nextSibling)
                         except AttributeError:
-                            print "### Error retrieving Author."
-                            book.set_author(u"AttributeError")
+                            print("### Error retrieving Author.")
+                            book.set_author("AttributeError")
                             
-            except urllib2.URLError:
-                print "### Could not contact server."
+            except urllib.error.URLError:
+                print("### Could not contact server.")
         return book
 
