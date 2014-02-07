@@ -89,11 +89,11 @@ class ISBNSearchOrg(BaseSearcher):
                             print("### Error retrieving Author.")
                             book.set_author("Unknown Author")
                     if label.string == "Binding:":
-                        print("Binding: {}".format(label.nextSibling))
+                        book.set_binding(label.nextSibling)
                     if label.string == "Publisher:":
-                        print("Publisher: {}".format(label.nextSibling))
+                        book.set_publisher(label.nextSibling)
                     if label.string == "Published:":
-                        print("Published: {}".format(label.nextSibling))
+                        book.set_published(label.nextSibling)
 
             except urlexception:
                 print("### Could not contact server.")

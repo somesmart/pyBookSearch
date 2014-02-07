@@ -56,13 +56,20 @@ class Library(object):
             book_reader = csv.DictReader(library_file)
 
             for book in book_reader:
-                isbn = book[crwBook.STR_ISBN]
-                title = book[crwBook.STR_TITLE]
-                author = book[crwBook.STR_AUTHOR]
+                isbn = book[crwBook.bkFields[crwBook.bkISBN]]
+                title = book[crwBook.bkFields[crwBook.bkTitle]]
+                author = book[crwBook.bkFields[crwBook.bkAuthor]]
 
-                self.book_list.append(crwBook.Book(isbn,
-                                           title,
-                                           author))
+                new_book = crwBook.Book(isbn, title, author)
+
+                try:
+                    new_book.set_binding(book[crwBook.bkFields[crwBook.bkBinding]])
+                    new_book.set_publisher(book[crwBook.bkFields[crwBook.bkPublisher]])
+                    new_book.set_published(book[crwBook.bkFields[crwBook.bkPublished]])
+                except KeyError:
+                    print("No optional info")
+
+                self.book_list.append(new_book)
 
             library_file.close()
         except IOError:
@@ -72,15 +79,21 @@ class Library(object):
         library_file = open(self.filename, "wt")
         book_writer = csv.writer(library_file)
 
-        book_writer.writerow([crwBook.STR_ISBN,
-                              crwBook.STR_TITLE,
-                              crwBook.STR_AUTHOR])
+        book_writer.writerow([crwBook.bkFields[crwBook.bkISBN],
+                              crwBook.bkFields[crwBook.bkTitle],
+                              crwBook.bkFields[crwBook.bkAuthor],
+                              crwBook.bkFields[crwBook.bkBinding],
+                              crwBook.bkFields[crwBook.bkPublisher],
+                              crwBook.bkFields[crwBook.bkPublished]])
 
         for book in self.book_list:
             isbn = book.get_isbn()
             title = book.get_title()
             author = book.get_author()
-            book_writer.writerow([isbn, title, author])
+            binding = book.get_binding()
+            publisher = book.get_publisher()
+            published = book.get_published()
+            book_writer.writerow([isbn, title, author, binding, publisher, published])
 
         # Close the library file
         library_file.close()

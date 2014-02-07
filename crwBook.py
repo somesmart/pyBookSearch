@@ -1,13 +1,20 @@
 #!/usr/bin/env python3
 
-STR_ISBN = "ISBN"
-STR_TITLE = "Title"
-STR_AUTHOR = "Author"
+(bkISBN, bkTitle, bkAuthor, bkBinding, bkPublisher, bkPublished) = list(range(6))
+bkFields = {
+    bkISBN : "ISBN",
+    bkTitle : "Title",
+    bkAuthor : "Author",
+    bkBinding : "Binding",
+    bkPublisher : "Publisher",
+    bkPublished : "Published"
+}
 
 class Book(object):
     def __init__(self, isbn, title=None, author=None):
-        ''' Converts all inputs to unicode, and stores them.
-        '''
+        self.binding = None
+        self.publisher = None
+        self.published = None
         try:
             # The ISBN
             self.u_isbn = isbn.strip()

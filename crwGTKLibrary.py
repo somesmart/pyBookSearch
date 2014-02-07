@@ -141,7 +141,7 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
 
         # column for ISBN
         renderer = Gtk.CellRendererText()
-        column = Gtk.TreeViewColumn(crwBook.STR_ISBN, renderer, text=COLUMN_ISBN)
+        column = Gtk.TreeViewColumn(crwBook.bkFields[crwBook.bkISBN], renderer, text=COLUMN_ISBN)
         column.set_sort_column_id(COLUMN_ISBN)
         column.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
         column.set_resizable(True)
@@ -151,7 +151,7 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         # column for author
         renderer = Gtk.CellRendererText()
         renderer.set_property("editable", True)
-        column = Gtk.TreeViewColumn(crwBook.STR_AUTHOR, renderer, text=COLUMN_AUTHOR)
+        column = Gtk.TreeViewColumn(crwBook.bkFields[crwBook.bkAuthor], renderer, text=COLUMN_AUTHOR)
         column.set_sort_column_id(COLUMN_AUTHOR)
         column.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
         column.set_resizable(True)
@@ -162,7 +162,7 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         # column for title
         renderer = Gtk.CellRendererText()
         renderer.set_property("editable", True)
-        column = Gtk.TreeViewColumn(crwBook.STR_TITLE, renderer, text=COLUMN_TITLE)
+        column = Gtk.TreeViewColumn(crwBook.bkFields[crwBook.bkTitle], renderer, text=COLUMN_TITLE)
         column.set_sort_column_id(COLUMN_TITLE)
         column.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
         column.set_resizable(True)
