@@ -45,7 +45,7 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
 
         self.set_title("Books in Library")
         self.set_border_width(5)
-        self.set_default_size(500, 250)
+        self.set_default_size(700, 300)
 
         vbox1 = Gtk.VBox(False, 4)
         self.add(vbox1)
@@ -143,7 +143,9 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         renderer = Gtk.CellRendererText()
         column = Gtk.TreeViewColumn(crwBook.STR_ISBN, renderer, text=COLUMN_ISBN)
         column.set_sort_column_id(COLUMN_ISBN)
+        column.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
         column.set_resizable(True)
+        column.set_min_width(120)
         self.tree_view.append_column(column)
 
         # column for author
@@ -151,7 +153,9 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         renderer.set_property("editable", True)
         column = Gtk.TreeViewColumn(crwBook.STR_AUTHOR, renderer, text=COLUMN_AUTHOR)
         column.set_sort_column_id(COLUMN_AUTHOR)
+        column.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
         column.set_resizable(True)
+        column.set_min_width(150)
         self.tree_view.append_column(column)
         renderer.connect("edited", self.on_author_edited, None)
         
@@ -160,7 +164,9 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         renderer.set_property("editable", True)
         column = Gtk.TreeViewColumn(crwBook.STR_TITLE, renderer, text=COLUMN_TITLE)
         column.set_sort_column_id(COLUMN_TITLE)
+        column.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
         column.set_resizable(True)
+        column.set_min_width(150)
         self.tree_view.append_column(column)
         renderer.connect("edited", self.on_title_edited, None)
 
@@ -230,13 +236,14 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
 
     def search_isbn(self, isbn, add=True):
         if len(self.web_searcher_list) > 0:
+            # TODO: Process list properly
             for web_searcher in self.web_searcher_list:
                 book_description = web_searcher.search(isbn)
             if add:
                 self.add_book(book_description)
         else:
             if add:
-                self.add_book(crwBook.Book(isbn, "Unknown", "Unknown"))
+                self.add_book(crwBook.Book(isbn, "Unknown Title", "Unknown Author"))
 
 
     def add_book(self, book):

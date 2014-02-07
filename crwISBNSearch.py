@@ -18,7 +18,7 @@ except ImportError:
 
 class BaseSearcher(object):
     def search(self, isbn):
-        book = crwBook.Book(str(isbn), "Title Unknown", "Author Unknown")
+        book = crwBook.Book(str(isbn), "Unknown Title", "Unknown Author")
         return book
     
 class UPCDatabaseCom(BaseSearcher):
@@ -57,6 +57,7 @@ class ISBNSearchOrg(BaseSearcher):
                 else:
                     urlexception = urllib2.URLError
                     page = urllib2.urlopen(full_url)
+
                 soup = BeautifulSoup(page.read(),
                     parse_only = self.bookinfo_filter)
 
@@ -69,7 +70,7 @@ class ISBNSearchOrg(BaseSearcher):
                     book.set_title(soup.h2.string)
                 except AttributeError:
                     print("### Error retrieving Title.")
-                    book.set_title("AttributeError")
+                    book.set_title("Unknown Title")
 
                 # Get the author
                 for label in soup.findAll("strong"):
@@ -79,15 +80,21 @@ class ISBNSearchOrg(BaseSearcher):
                             book.set_author(label.nextSibling)
                         except AttributeError:
                             print("### Error retrieving Author.")
-                            book.set_author("AttributeError")
+                            book.set_author("Unknown Author")
                     if label.string == "Authors:":
                         try:
                             # This will be in unicode
                             book.set_author(label.nextSibling)
                         except AttributeError:
                             print("### Error retrieving Author.")
-                            book.set_author("AttributeError")
-                            
+                            book.set_author("Unknown Author")
+                    if label.string == "Binding:":
+                        print("Binding: {}".format(label.nextSibling))
+                    if label.string == "Publisher:":
+                        print("Publisher: {}".format(label.nextSibling))
+                    if label.string == "Published:":
+                        print("Published: {}".format(label.nextSibling))
+
             except urlexception:
                 print("### Could not contact server.")
         return book

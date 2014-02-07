@@ -28,7 +28,7 @@ class Book(object):
             self.u_isbn = isbn.strip()
         except AttributeError:
             print("### Could not set ISBN")
-            self.u_isbn = "AttributeError"
+            self.u_isbn = "Unknown ISBN"
 
     def get_isbn(self):
         return self.u_isbn
@@ -38,7 +38,7 @@ class Book(object):
             self.u_title = title.strip()
         except AttributeError:
             print("### Could not set title")
-            self.u_title = "AttributeError"
+            self.u_title = "Unknown Title"
 
     def get_title(self):
         return self.u_title
@@ -48,10 +48,40 @@ class Book(object):
             self.u_author = author.strip()
         except AttributeError:
             print("### Could not set author")
-            self.u_author = "AttributeError"
+            self.u_author = "Unknown Author"
 
     def get_author(self):
         return self.u_author
+
+    def set_isbn_13(self, isbn13):
+        self.isbn_13 = isbn13.strip()
+
+    def get_isbn_13(self):
+        return self.isbn_13
+
+    def set_isbn_10(self, isbn10):
+        self.isbn_10 = isbn10.strip()
+
+    def get_isbn_10(self):
+        return self.isbn_10
+
+    def set_binding(self, binding):
+        self.binding = binding.strip()
+
+    def get_binding(self):
+        return self.binding
+
+    def set_publisher(self, publisher):
+        self.publisher = publisher.strip()
+
+    def get_publisher(self):
+        return self.publisher
+
+    def set_published(self, published):
+        self.published = published.strip()
+
+    def get_published(self):
+        return self.published
 
     def __repr__(self):
         return 'crwBook.Book("' + self.u_isbn + \
