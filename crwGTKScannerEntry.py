@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from gi.repository import Gtk
 import crwBook
@@ -50,7 +50,7 @@ class GTKScannerEntry(Gtk.Window):
 
     def destroy(self, widget, data=None):
         if self.library_page != None:
-            print "Saving...",
+            print("Saving...", end=' ')
             self.library_page.save_to_file()
         Gtk.main_quit()
 
@@ -60,7 +60,7 @@ class GTKScannerEntry(Gtk.Window):
         isbn_text = entry.get_text()
 
         if self.library_page != None:
-            print "ISBN exists:", self.library_page.isbn_exists(isbn_text)[0]
+            print("ISBN exists:", self.library_page.isbn_exists(isbn_text)[0])
             self.library_page.search_isbn(isbn_text)
 
         entry.set_text("")

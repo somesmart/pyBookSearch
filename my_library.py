@@ -1,4 +1,4 @@
-#!/usr/bin/env /usr/bin/python
+#!/usr/bin/env /usr/bin/python3
 
 
 import sys
@@ -77,7 +77,7 @@ def main(argv=None):
         library = crwLibrary.Library(opts.libfile)
         library.read_from_file()
         isbn = input("Enter ISBN:")
-        while isbn != 0:
+        while isbn != '0':
             if isbn == "save":
                 library.save_to_file()
             else:

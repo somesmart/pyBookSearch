@@ -1,10 +1,16 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import crwBook
 
 try:
     import urllib.request, urllib.error, urllib.parse
-    from BeautifulSoup import BeautifulSoup, SoupStrainer
+    HAVE_URLLIB = True
+except ImportError:
+    import urllib2
+    HAVE_URLLIB = False
+
+try:
+    from bs4 import BeautifulSoup, SoupStrainer
     HAVE_SOUP = True
 except ImportError:
     print("### Sorry, I can't search for book info")
@@ -43,11 +49,16 @@ class ISBNSearchOrg(BaseSearcher):
         book = super(ISBNSearchOrg, self).search(isbn)
 
         if HAVE_SOUP == True:
-            full_url = self.search_url + isbn
+            full_url = self.search_url + str(isbn)
             try:
-                page = urllib.request.urlopen(full_url)
+                if HAVE_URLLIB:
+                    urlexception = urllib.error.URLError
+                    page = urllib.request.urlopen(full_url)
+                else:
+                    urlexception = urllib2.URLError
+                    page = urllib2.urlopen(full_url)
                 soup = BeautifulSoup(page.read(),
-                    parseOnlyThese= self.bookinfo_filter)
+                    parse_only = self.bookinfo_filter)
 
                 # get the original encoding
                 original_encoding = soup.originalEncoding
@@ -77,7 +88,7 @@ class ISBNSearchOrg(BaseSearcher):
                             print("### Error retrieving Author.")
                             book.set_author("AttributeError")
                             
-            except urllib.error.URLError:
+            except urlexception:
                 print("### Could not contact server.")
         return book
 

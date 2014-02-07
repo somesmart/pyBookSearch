@@ -4,7 +4,7 @@ class GTKBookEntry(Gtk.Window):
     def __init__(self, parent=None):
         """A window to allow full text entry of new books."""
         
-        print "Book Entry created"
+        print("Book Entry created")
         
         # create window
         Gtk.Window.__init__(self)

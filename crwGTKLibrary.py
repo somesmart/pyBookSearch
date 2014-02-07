@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import crwBook
 import crwLibrary
@@ -10,7 +10,7 @@ from crwGTKBookEntry import GTKBookEntry
     COLUMN_ISBN,
     COLUMN_AUTHOR,
     COLUMN_TITLE
-) = range(3)
+) = list(range(3))
 
 MENU_INFO = """
 <ui>
@@ -175,37 +175,37 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
     def on_title_edited(self, widget, path, text):
         """Called when the user edits a title, updates the book."""
         if self.book_model[path][1] != text:
-            print "title edited"
+            print("title edited")
             self.book_model[path][1] = text
 
     def on_author_edited(self, widget, path, text):
         """Called when the user edits a author, updates the book."""
         if self.book_model[path][2] != text:
-            print "author edited"
+            print("author edited")
             self.book_model[path][2] = text
             
     def on_selection_changed(self, selection, data=None):
         model, treeiter = selection.get_selected()
         if treeiter != None:
-            print "Selected", model[treeiter][0]
+            print("Selected", model[treeiter][0])
 
     def on_menu_book_add(self, widget, data=None):
-        print "Book Add"
+        print("Book Add")
 
     def on_menu_book_search(self, widget, data=None):
-        print "Book Search"
+        print("Book Search")
 
     def on_query_callback(self, widget, data=None):
         """Called from the query button, attempts to update data from web."""
         selection = self.tree_view.get_selection()
         (model, iter) = selection.get_selected()
         isbn = model.get(iter, 0)[0]
-        print "querying %s" % (isbn)
+        print("querying %s" % (isbn))
         self.search_isbn(isbn, add=False)
 
     def on_save_callback(self, widget, data=None):
         """Called from various save buttons, saves the CSV file."""
-        print "Saving...",
+        print("Saving...", end=' ')
         self.save_to_file()
 
     def on_delete_callback(self, widget, data=None):
@@ -213,7 +213,7 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
             It would also be better if the overloaded remove_isbn function actually did
             the remove from the model.
         '''
-        print "Delete - logic wrong"
+        print("Delete - logic wrong")
         selection = self.tree_view.get_selection()
         (model, iter) = selection.get_selected()
         isbn = model.get(iter, 0)[0]
@@ -221,7 +221,7 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         model.remove(iter)
 
     def destroy(self, widget, data=None):
-        print "Saving...",
+        print("Saving...", end=' ')
         self.save_to_file()
         Gtk.main_quit()
 

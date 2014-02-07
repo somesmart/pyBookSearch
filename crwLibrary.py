@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Define a Library class to store a list of books."""
 
 import crwBook
@@ -18,8 +18,6 @@ class Library(object):
 
         exists = False
         book = None
-        if type(isbn) == str:
-            isbn = unicode(isbn)
         for book in self.book_list:
             if book.get_isbn() == isbn:
                 exists = True
@@ -35,12 +33,10 @@ class Library(object):
         try:
             self.book_list.remove(book)
         except ValueError:
-            print "### Could not remove book."
+            print("### Could not remove book.")
 
     def remove_isbn(self, isbn):
         """Remove all books with the given ISBN from the list managed by this Library."""
-        if type(isbn) == str:
-            isbn = unicode(isbn)
 
         # Use a list comprehension to modify the book list
         # http://stackoverflow.com/questions/1207406/remove-items-from-a-list-while-iterating-in-python
@@ -55,14 +51,14 @@ class Library(object):
            each book described within."""
 
         try:
-            library_file = open(self.filename, "rb")
+            library_file = open(self.filename, "rt")
 
             book_reader = csv.DictReader(library_file)
 
             for book in book_reader:
-                isbn = book[crwBook.STR_ISBN].decode("iso-8859-1")
-                title = book[crwBook.STR_TITLE].decode("iso-8859-1")
-                author = book[crwBook.STR_AUTHOR].decode("iso-8859-1")
+                isbn = book[crwBook.STR_ISBN]
+                title = book[crwBook.STR_TITLE]
+                author = book[crwBook.STR_AUTHOR]
 
                 self.book_list.append(crwBook.Book(isbn,
                                            title,
@@ -70,10 +66,10 @@ class Library(object):
 
             library_file.close()
         except IOError:
-            print "### No library file."
+            print("### No library file.")
 
     def save_to_file(self):
-        library_file = open(self.filename, "wb")
+        library_file = open(self.filename, "wt")
         book_writer = csv.writer(library_file)
 
         book_writer.writerow([crwBook.STR_ISBN,
@@ -81,15 +77,15 @@ class Library(object):
                               crwBook.STR_AUTHOR])
 
         for book in self.book_list:
-            isbn = book.get_isbn().encode("iso-8859-1")
-            title = book.get_title().encode("iso-8859-1")
-            author = book.get_author().encode("iso-8859-1")
+            isbn = book.get_isbn()
+            title = book.get_title()
+            author = book.get_author()
             book_writer.writerow([isbn, title, author])
 
         # Close the library file
         library_file.close()
 
-        print "Saved", self.filename
+        print("Saved", self.filename)
 
 if __name__ == "__main__":
     library = Library("library_test.csv")
