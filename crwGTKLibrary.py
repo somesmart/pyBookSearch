@@ -151,7 +151,7 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         # column for author
         renderer = Gtk.CellRendererText()
         renderer.set_property("editable", True)
-        column = Gtk.TreeViewColumn(crwBook.bkFields[crwBook.bkAuthor], renderer, text=COLUMN_AUTHOR)
+        column = Gtk.TreeViewColumn(crwBook.bkFields[crwBook.bkAuthor], renderer, markup=COLUMN_AUTHOR)
         column.set_sort_column_id(COLUMN_AUTHOR)
         column.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
         column.set_resizable(True)
@@ -162,7 +162,7 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         # column for title
         renderer = Gtk.CellRendererText()
         renderer.set_property("editable", True)
-        column = Gtk.TreeViewColumn(crwBook.bkFields[crwBook.bkTitle], renderer, text=COLUMN_TITLE)
+        column = Gtk.TreeViewColumn(crwBook.bkFields[crwBook.bkTitle], renderer, markup=COLUMN_TITLE)
         column.set_sort_column_id(COLUMN_TITLE)
         column.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
         column.set_resizable(True)
@@ -272,10 +272,16 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         
         for book in self.book_list:
             iter = self.book_model.append()
+            title = book.get_title()
+            if title == "Unknown Title":
+                title = "<span background='yellow'>Unknown Title</span>"
+            author = book.get_author()
+            if author == "Unknown Author":
+                author = "<span background='yellow'>Unknown Author</span>"
             self.book_model.set(iter,
                 COLUMN_ISBN, book.get_isbn(),
-                COLUMN_TITLE, book.get_title(),
-                COLUMN_AUTHOR, book.get_author())
+                COLUMN_TITLE, title,
+                COLUMN_AUTHOR, author)
 
 if __name__ == "__main__":
     gtkLibrary = GTKLibrary("library.csv")
