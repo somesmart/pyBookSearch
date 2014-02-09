@@ -63,11 +63,14 @@ class ISBNSearchOrg(BaseSearcher):
 
                 # get the original encoding
                 original_encoding = soup.originalEncoding
+                print ("encoding: ".format(original_encoding))
 
                 # Get the title, which may fail
                 try:
                     # This will be in unicode
                     book.set_title(soup.h2.string)
+                    # TODO: make html/xml safe
+                    print ("title: {}".format(soup.h2.string))
                 except AttributeError:
                     print("### Error retrieving Title.")
                     book.set_title("Unknown Title")
