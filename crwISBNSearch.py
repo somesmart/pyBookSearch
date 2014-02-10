@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 import crwBook
+import json
+import sys
 
 try:
     import urllib.request, urllib.error, urllib.parse
@@ -37,6 +39,71 @@ class LibraryThingCom(BaseSearcher):
         # Call the superclass method to create the book
         book = super(ISBNSearchOrg, self).search(isbn)
 
+class OpenISBNCom(BaseSearcher):
+    def __init__(self):
+        self.search_url = "http://www.openisbn.com/isbn/"
+
+class ISBNDBCom(BaseSearcher):
+    def __init__(self):
+        self.search_url = "http://isbndb.com/api/v2/json/[your-api-key]/book/"
+
+class OpenLibraryOrg(BaseSearcher):
+    def __init__(self):
+        # TODO: Not the actual URL
+        #self.search_url = "https://openlibrary.org/dev/docs/api/books"
+        #self.search_url = "https://openlibrary.org/api/books?bibkeys=ISBN:0451526538&callback=mycallback"
+        self.search_url = "https://openlibrary.org/api/books?bibkeys=ISBN:{}&format=json&jscmd=data"
+
+    def search(self, isbn):
+        # Call the superclass method to create the book
+        #book = super(OpenLibraryOrg, self).search(isbn)
+        book = {"found": False, "isbn": isbn, "title": "Unknown Title", "authors": "Unknown Author"}
+
+        # Create the URL
+        full_url = self.search_url.format(isbn)
+
+        # Guard against URL errors
+        try:
+
+            # Open the URL
+            page = urllib.request.urlopen(full_url)
+
+            # We expect JSON data
+            book_info = json.loads(page.read().decode())
+
+            # If there are no keys, there is no data
+            if len(book_info.keys()) > 0:
+                for k1 in book_info.keys():
+                    try:
+                        title = book_info[k1]['title']
+                        book["title"] = title
+                        book["found"] = True
+                    except:
+                        print("Unexpected error:", sys.exc_info()[0])
+                        raise
+
+                    try:
+                        authors = ""
+                        for a1 in book_info[k1]['authors']:
+                            authors += "{};".format(a1['name'])
+                        if authors != "":
+                            book["authors"] = authors[:-1]
+                            book["found"] = True
+                    except:
+                        print("Unexpected error:", sys.exc_info()[0])
+                        raise
+
+            else:
+                print ("No data")
+
+        except urllib.error.URLError as e:
+            print("URLError")
+        except:
+            print("Unexpected error:", sys.exc_info()[0])
+            raise
+
+        return book
+
 class ISBNSearchOrg(BaseSearcher):
     def __init__(self):
         self.search_url = "http://www.isbnsearch.org/isbn/"
@@ -67,9 +134,9 @@ class ISBNSearchOrg(BaseSearcher):
 
                 # Get the title, which may fail
                 try:
-                    # This will be in unicode
-                    book.set_title(soup.h2.string)
+                    # TODO: This is a hack for &
                     # TODO: make html/xml safe
+                    book.set_title(soup.h2.string.replace("&", "&amp;"))
                     print ("title: {}".format(soup.h2.string))
                 except AttributeError:
                     print("### Error retrieving Title.")
@@ -79,24 +146,30 @@ class ISBNSearchOrg(BaseSearcher):
                 for label in soup.findAll("strong"):
                     if label.string == "Author:":
                         try:
-                            # This will be in unicode
-                            book.set_author(label.nextSibling)
+                            # TODO: This is a hack for &
+                            # TODO: make html/xml safe
+                            book.set_author(label.nextSibling.replace("&", "&amp;"))
                         except AttributeError:
                             print("### Error retrieving Author.")
                             book.set_author("Unknown Author")
+
                     if label.string == "Authors:":
                         try:
-                            # This will be in unicode
-                            book.set_author(label.nextSibling)
+                            # TODO: This is a hack for &
+                            # TODO: make html/xml safe
+                            book.set_author(label.nextSibling.replace("&", "&amp;"))
                         except AttributeError:
                             print("### Error retrieving Author.")
                             book.set_author("Unknown Author")
                     if label.string == "Binding:":
-                        book.set_binding(label.nextSibling)
+                        # TODO: This is a hack for &
+                        book.set_binding(label.nextSibling.replace("&", "&amp;"))
                     if label.string == "Publisher:":
-                        book.set_publisher(label.nextSibling)
+                        # TODO: This is a hack for &
+                        book.set_publisher(label.nextSibling.replace("&", "&amp;"))
                     if label.string == "Published:":
-                        book.set_published(label.nextSibling)
+                        # TODO: This is a hack for &
+                        book.set_published(label.nextSibling.replace("&", "&amp;"))
 
             except urlexception:
                 print("### Could not contact server.")

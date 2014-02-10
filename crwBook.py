@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
 
+from html import entities
+import collections
+
+class BookDict(dict):
+    def __init__(self, *args, **kwargs):
+        super(BookDict, self).__init__(*args, **kwargs)
+        self['found'] = False
+        self['title'] = "Unknown Title"
+        self['authors'] = "Unknown Author"
+        
+BookTuple = collections.namedtuple('BookTuple', ['found', 'isbn', 'title', 'authors'])
+
 (bkISBN, bkTitle, bkAuthor, bkBinding, bkPublisher, bkPublished) = list(range(6))
 bkFields = {
     bkISBN : "ISBN",
@@ -10,6 +22,10 @@ bkFields = {
     bkPublished : "Published"
 }
 
+def check_and_sanitise(s):
+    # TODO: Parse the input string for non-escaped html entities
+    pass
+
 class Book(object):
     def __init__(self, isbn, title=None, author=None):
         self.binding = None
@@ -17,48 +33,48 @@ class Book(object):
         self.published = None
         try:
             # The ISBN
-            self.u_isbn = isbn.strip()
+            self.isbn = isbn.strip()
 
             # The Title
             if title != None:
-                self.u_title = title.strip()
+                self.title = title.strip()
 
             # The Author
             if author != None:
-                self.u_author = author.strip()
+                self.author = author.strip()
 
         except AttributeError:
             print("### Could not set book fields.")
 
     def set_isbn(self, isbn):
         try:
-            self.u_isbn = isbn.strip()
+            self.isbn = isbn.strip()
         except AttributeError:
             print("### Could not set ISBN")
-            self.u_isbn = "Unknown ISBN"
+            self.isbn = "Unknown ISBN"
 
     def get_isbn(self):
-        return self.u_isbn
+        return self.isbn
 
     def set_title(self, title):
         try:
-            self.u_title = title.strip()
+            self.title = title.strip()
         except AttributeError:
             print("### Could not set title")
-            self.u_title = "Unknown Title"
+            self.title = "Unknown Title"
 
     def get_title(self):
-        return self.u_title
+        return self.title
 
     def set_author(self, author):
         try:
-            self.u_author = author.strip()
+            self.author = author.strip()
         except AttributeError:
             print("### Could not set author")
-            self.u_author = "Unknown Author"
+            self.author = "Unknown Author"
 
     def get_author(self):
-        return self.u_author
+        return self.author
 
     def set_isbn_13(self, isbn13):
         self.isbn_13 = isbn13.strip()
@@ -91,15 +107,15 @@ class Book(object):
         return self.published
 
     def __repr__(self):
-        return 'crwBook.Book("' + self.u_isbn + \
-               '", "' + self.u_title + \
-               '", "' + self.u_author + \
+        return 'crwBook.Book("' + self.isbn + \
+               '", "' + self.title + \
+               '", "' + self.author + \
                '")'
 
     def __str__(self):
-        return "ISBN:" + self.u_isbn + \
-               ", Title:" + self.u_title + \
-               ", Author:" + self.u_author
+        return "ISBN:" + self.isbn + \
+               ", Title:" + self.title + \
+               ", Author:" + self.author
 
 if __name__ == "__main__":
     book = Book(" 0586039899 ", " The Fabulous Riverboat", "  Philip Jos\u00e9 Farmer")
