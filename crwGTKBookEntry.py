@@ -1,12 +1,14 @@
-
+from crwBook import Book
 from gi.repository import Gtk
 
 class GTKBookEntry(Gtk.Dialog):
-    def __init__(self, parent):
+    def __init__(self, parent, library=None):
         """A dialog to allow full text entry of new books."""
         
         print("Book Entry created")
         
+        self.library = library
+
         # create dialog
         Gtk.Dialog.__init__(self,
             title="Add book",
@@ -20,19 +22,9 @@ class GTKBookEntry(Gtk.Dialog):
         self.close_button = self.action_area.get_children()[0]
         self.close_button.connect("clicked", self.close_callback)
 
-#        try:
-#            self.set_screen(parent.get_screen())
-#            self.connect("destroy", parent.destroy)
-#        except AttributeError:
-#            self.connect("destroy", self.destroy)
-
-#        self.set_title("Books in Library")
         self.set_border_width(5)
-#        self.set_default_size(500, 250)
 
         box = self.get_content_area()
-#        vbox1 = Gtk.VBox(False, 4)
-#        self.add(vbox1)
 
 # ISBN
 
@@ -79,18 +71,6 @@ class GTKBookEntry(Gtk.Dialog):
         self.author_entry.connect("activate", self.author_enter_callback, self.author_entry)
         hbox3.pack_start(self.author_entry, expand=True, fill=True, padding=0)
 
-# BUTTONS
-
-        # add a horizontal box
-#        hbox4 = Gtk.HBox(False, 0)
-#        box.pack_start(hbox4, expand=False, fill=False, padding=0)
-        
-        # add an Add button
-#        self.add_button = Gtk.Button("Add")
-#        self.add_button.connect("clicked",
-#            self.add_callback, None)
-#        hbox4.pack_start(self.add_button, expand=True, fill=True, padding=0)
-
         # show stuff
         self.show_all()
 
@@ -105,6 +85,9 @@ class GTKBookEntry(Gtk.Dialog):
 
     def add_callback(self, widget, data=None):
         print ("Add")
+        if self.library != None:
+            book = Book(isbn=self.isbn_entry.get_text(), title=self.title_entry.get_text(), author=self.author_entry.get_text())
+            self.library.add_book(book)
         self.isbn_entry.grab_focus()
 
     def close_callback(self, widget, data=None):

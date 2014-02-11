@@ -198,7 +198,7 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
     def on_menu_book_add(self, widget, data=None):
         print("Book Add")
         if self.bookEntry == None:
-            self.bookEntry = GTKBookEntry(parent=self)
+            self.bookEntry = GTKBookEntry(parent=self, library=self)
         else:
             self.bookEntry.present()
 
