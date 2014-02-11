@@ -1,16 +1,16 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import crwBook
 import crwLibrary
 from gi.repository import Gtk, GObject
-import crwGTKScannerEntry
+from crwGTKScannerEntry import GTKScannerEntry
 from crwGTKBookEntry import GTKBookEntry
 
 (
     COLUMN_ISBN,
     COLUMN_AUTHOR,
     COLUMN_TITLE
-) = range(3)
+) = list(range(3))
 
 MENU_INFO = """
 <ui>
@@ -45,7 +45,7 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
 
         self.set_title("Books in Library")
         self.set_border_width(5)
-        self.set_default_size(500, 250)
+        self.set_default_size(700, 300)
 
         vbox1 = Gtk.VBox(False, 4)
         self.add(vbox1)
@@ -94,8 +94,8 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         hbox1.pack_start(self.delete_button,
             expand=True, fill=True, padding=0)
 
-        self.scannerEntry = crwGTKScannerEntry.GTKScannerEntry(library=self, parent=self)
-        #self.bookEntry = GTKBookEntry(parent=self)
+        self.scannerEntry = None
+        self.bookEntry = None
 
         # show stuff
         self.show_all()
@@ -141,26 +141,32 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
 
         # column for ISBN
         renderer = Gtk.CellRendererText()
-        column = Gtk.TreeViewColumn(crwBook.STR_ISBN, renderer, text=COLUMN_ISBN)
+        column = Gtk.TreeViewColumn(crwBook.bkFields[crwBook.bkISBN], renderer, text=COLUMN_ISBN)
         column.set_sort_column_id(COLUMN_ISBN)
+        column.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
         column.set_resizable(True)
+        column.set_min_width(120)
         self.tree_view.append_column(column)
 
         # column for author
         renderer = Gtk.CellRendererText()
         renderer.set_property("editable", True)
-        column = Gtk.TreeViewColumn(crwBook.STR_AUTHOR, renderer, text=COLUMN_AUTHOR)
+        column = Gtk.TreeViewColumn(crwBook.bkFields[crwBook.bkAuthor], renderer, markup=COLUMN_AUTHOR)
         column.set_sort_column_id(COLUMN_AUTHOR)
+        column.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
         column.set_resizable(True)
+        column.set_min_width(150)
         self.tree_view.append_column(column)
         renderer.connect("edited", self.on_author_edited, None)
         
         # column for title
         renderer = Gtk.CellRendererText()
         renderer.set_property("editable", True)
-        column = Gtk.TreeViewColumn(crwBook.STR_TITLE, renderer, text=COLUMN_TITLE)
+        column = Gtk.TreeViewColumn(crwBook.bkFields[crwBook.bkTitle], renderer, markup=COLUMN_TITLE)
         column.set_sort_column_id(COLUMN_TITLE)
+        column.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
         column.set_resizable(True)
+        column.set_min_width(150)
         self.tree_view.append_column(column)
         renderer.connect("edited", self.on_title_edited, None)
 
@@ -175,37 +181,45 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
     def on_title_edited(self, widget, path, text):
         """Called when the user edits a title, updates the book."""
         if self.book_model[path][1] != text:
-            print "title edited"
+            print("title edited")
             self.book_model[path][1] = text
 
     def on_author_edited(self, widget, path, text):
         """Called when the user edits a author, updates the book."""
         if self.book_model[path][2] != text:
-            print "author edited"
+            print("author edited")
             self.book_model[path][2] = text
             
     def on_selection_changed(self, selection, data=None):
         model, treeiter = selection.get_selected()
         if treeiter != None:
-            print "Selected", model[treeiter][0]
+            print("Selected", model[treeiter][0])
 
     def on_menu_book_add(self, widget, data=None):
-        print "Book Add"
+        print("Book Add")
+        if self.bookEntry == None:
+            self.bookEntry = GTKBookEntry(parent=self, library=self)
+        else:
+            self.bookEntry.present()
 
     def on_menu_book_search(self, widget, data=None):
-        print "Book Search"
+        print("Book Search")
+        if self.scannerEntry == None:
+            self.scannerEntry = GTKScannerEntry(library=self, parent=self)
+        else:
+            self.scannerEntry.present()
 
     def on_query_callback(self, widget, data=None):
         """Called from the query button, attempts to update data from web."""
         selection = self.tree_view.get_selection()
         (model, iter) = selection.get_selected()
         isbn = model.get(iter, 0)[0]
-        print "querying %s" % (isbn)
+        print("querying %s" % (isbn))
         self.search_isbn(isbn, add=False)
 
     def on_save_callback(self, widget, data=None):
         """Called from various save buttons, saves the CSV file."""
-        print "Saving...",
+        print("Saving...", end=' ')
         self.save_to_file()
 
     def on_delete_callback(self, widget, data=None):
@@ -213,7 +227,7 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
             It would also be better if the overloaded remove_isbn function actually did
             the remove from the model.
         '''
-        print "Delete - logic wrong"
+        print("Delete - logic wrong")
         selection = self.tree_view.get_selection()
         (model, iter) = selection.get_selected()
         isbn = model.get(iter, 0)[0]
@@ -221,7 +235,7 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         model.remove(iter)
 
     def destroy(self, widget, data=None):
-        print "Saving...",
+        print("Saving...", end=' ')
         self.save_to_file()
         Gtk.main_quit()
 
@@ -230,13 +244,14 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
 
     def search_isbn(self, isbn, add=True):
         if len(self.web_searcher_list) > 0:
+            # TODO: Process list properly
             for web_searcher in self.web_searcher_list:
                 book_description = web_searcher.search(isbn)
             if add:
                 self.add_book(book_description)
         else:
             if add:
-                self.add_book(crwBook.Book(isbn, "Unknown", "Unknown"))
+                self.add_book(crwBook.Book(isbn, "Unknown Title", "Unknown Author"))
 
 
     def add_book(self, book):
@@ -265,10 +280,16 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         
         for book in self.book_list:
             iter = self.book_model.append()
+            title = book.get_title()
+            if title == "Unknown Title":
+                title = "<span background='yellow'>Unknown Title</span>"
+            author = book.get_author()
+            if author == "Unknown Author":
+                author = "<span background='yellow'>Unknown Author</span>"
             self.book_model.set(iter,
                 COLUMN_ISBN, book.get_isbn(),
-                COLUMN_TITLE, book.get_title(),
-                COLUMN_AUTHOR, book.get_author())
+                COLUMN_TITLE, title,
+                COLUMN_AUTHOR, author)
 
 if __name__ == "__main__":
     gtkLibrary = GTKLibrary("library.csv")

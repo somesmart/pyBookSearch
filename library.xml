@@ -1,722 +1,774 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <library>
-<book><isbn>9780007327959</isbn><title>Someone Comes to Town, Someone Leaves Town</title><author>Doctorow, Cory</author></book>
-<book><isbn>9780586062739</isbn><title>Bearing an Hourglass</title><author>Anthony, Piers</author></book>
-<book><isbn>9780586062746</isbn><title>With A Tangled Skein</title><author>Anthony, Piers</author></book>
-<book><isbn>9780586025949</isbn><title>The Rest of the Robots</title><author>Asimov, Isaac</author></book>
-<book><isbn>9780586010167</isbn><title>Naked Sun</title><author>Asimov, Isaac</author></book>
-<book><isbn>9780586025321</isbn><title>I, Robot</title><author>Asimov, Isaac</author></book>
-<book><isbn>9780586008355</isbn><title>The Caves of Steel</title><author>Asimov, Isaac</author></book>
-<book><isbn>9780586061992</isbn><title>Robots of Dawn</title><author>Asimov, Isaac</author></book>
-<book><isbn>9780586061992</isbn><title>Robots of Dawn</title><author>Asimov, Isaac</author></book>
-<book><isbn>9780586008355</isbn><title>The Caves of Steel</title><author>Asimov, Isaac</author></book>
+<book><isbn>007Y665842</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>002969910X</isbn><title>Switzerland Country Guide (Berlitz Country Guide)</title><author>Berlitz Guides; Ken Bernstein</author></book>
+<book><isbn>004823155X</isbn><title>Lord of the Rings: The Fellowship of the Ring v. 1</title><author>Tolkien, J. R. R.</author></book>
+<book><isbn>0006152392</isbn><title>Lord Foul's Bane</title><author>Donaldson, Stephen</author></book>
+<book><isbn>0006152465</isbn><title>Illearth War</title><author>Donaldson, Stephen</author></book>
+<book><isbn>0006152473</isbn><title>Power That Preserves</title><author>Donaldson, Stephen</author></book>
+<book><isbn>0006161405</isbn><title>Wounded Land</title><author>Donaldson, Stephen</author></book>
+<book><isbn>0006163831</isbn><title>One Tree</title><author>Donaldson, Stephen</author></book>
+<book><isbn>013216292X</isbn><title>Discrete-Time Signal Processing (Prentice-Hall Signal Processing Series)</title><author>Alan V. Oppenheim; Ronald W. Schafer</author></book>
+<book><isbn>014030150X</isbn><title>Finn Family Moomintroll</title><author>Jansson, Tove</author></book>
+<book><isbn>017006137X</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>033026656X</isbn><title>Many-Coloured Land (Saga of the Exiles, Book 1)</title><author>May, Julian</author></book>
+<book><isbn>033026902X</isbn><title>Nonborn King</title><author>May, Julian</author></book>
+<book><isbn>033028097X</isbn><title>Masterglass: a Practical Course in Tasting Wine</title><author>Robinson, Jancis</author></book>
+<book><isbn>034529520X</isbn><title>The Curse of the Witch-Queen</title><author>Volsky, Paula</author></book>
+<book><isbn>0048030015</isbn><title>The Complete Guide To Middle-Earth: From The Hobbit To The Silmarillion</title><author>Foster, Robert</author></book>
+<book><isbn>0048230707</isbn><title>The Hobbit (U.Books)</title><author>Tolkien, J. R. R.</author></book>
+<book><isbn>0048231533</isbn><title>The Silmarillion</title><author>Tolkien, J. R. R.</author></book>
+<book><isbn>0048231568</isbn><title>Lord of the Rings: The Two Towers v. 2</title><author>Tolkien, J. R. R.</author></book>
+<book><isbn>0048231576</isbn><title>Lord of the Rings: The Return of the King v. 3</title><author>Tolkien, J. R. R.</author></book>
+<book><isbn>055326382X</isbn><title>The Dancing Wu Li Masters: An Overview of the New Physics</title><author>Zukav, Gary</author></book>
+<book><isbn>058604356X</isbn><title>Fahrenheit 451</title><author>Bradbury, Ray</author></book>
+<book><isbn>067170625X</isbn><title>Apollo: Race to the Moon</title><author>Charles Murray; Catherine Bly Cox</author></book>
+<book><isbn>0091833795</isbn><title>Discover Australia: National Parks</title><author>Moon, Ron and Viv</author></book>
+<book><isbn>0099288206</isbn><title>The Space Eater</title><author>Langford, David</author></book>
+<book><isbn>0140009078</isbn><title>The Trial (Modern Classics)</title><author>Kafka, Franz</author></book>
+<book><isbn>0140020551</isbn><title>Physical Fitness</title><author>Airforce, Royal Canadian</author></book>
+<book><isbn>0140224076</isbn><title>Einstein's Universe: Guide to the Theory of Relativity</title><author>Calder, Nigel</author></book>
+<book><isbn>0140303235</isbn><title>The Exploits of Moominpappa</title><author>Jansson, Tove</author></book>
+<book><isbn>0170062252</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>0198312415</isbn><title>Dragon Book of Verse</title><author>Harrison, Michael</author></book>
+<book><isbn>0207150222</isbn><title>Book of Runes (St) (Alt)</title><author>Blum, Ralph</author></book>
+<book><isbn>0304969508</isbn><title>Berlitz Travel Guide to Oxford and Stratford</title><author>Unknown, Author</author></book>
+<book><isbn>0330201077</isbn><title>The Spy Who Came in from the Cold</title><author>le Carre, John</author></book>
+<book><isbn>0330236199</isbn><title>Profiles Of The Future</title><author>Clarke, Arthur C.</author></book>
+<book><isbn>0330258648</isbn><title>The Hitch-Hikers Guide to the Galaxy</title><author>Adams, Douglas</author></book>
+<book><isbn>0330262130</isbn><title>The Restaurant at the End of the Universe</title><author>Adams, Douglas</author></book>
+<book><isbn>0330264621</isbn><title>Lord Valentine's Castle</title><author>Silverberg, Robert</author></book>
+<book><isbn>0330267191</isbn><title>Golden Torc (Saga of the Exiles, Book 2)</title><author>May, Julian</author></book>
+<book><isbn>0330267388</isbn><title>Life, the Universe and Everything</title><author>Adams, Douglas</author></book>
+<book><isbn>0330280317</isbn><title>The Adversary</title><author>May, Julian</author></book>
+<book><isbn>0330281178</isbn><title>Majipoor Chronicles</title><author>Silverberg, Robert</author></book>
+<book><isbn>0330287001</isbn><title>So Long, and Thanks for All the Fish</title><author>Adams, Douglas</author></book>
+<book><isbn>0333354605</isbn><title>Mastering Pascal Programming (Macmillan Master)</title><author>Huggins, Eric</author></book>
+<book><isbn>0340013613</isbn><title>Moonspinners (Coronet Books)</title><author>Stewart, Mary</author></book>
+<book><isbn>0340022027</isbn><title>This Rough Magic</title><author>Stewart, Mary</author></book>
+<book><isbn>0340043539</isbn><title>The Gabriel Hounds</title><author>Stewart, Mary</author></book>
+<book><isbn>0340186119</isbn><title>Hollow Hills (The Merlin Trilogy)</title><author>Stewart, Mary</author></book>
+<book><isbn>0340258292</isbn><title>Last Enchantment (The Merlin Trilogy)</title><author>Stewart, Mary</author></book>
+<book><isbn>0340369418</isbn><title>Role of Honor</title><author>Gardner, John</author></book>
+<book><isbn>0340397063</isbn><title>The Serpent's Circle (Coronet Books)</title><author>Harpur, Patrick</author></book>
+<book><isbn>0345296664</isbn><title>Dragonquest</title><author>McCaffrey, Anne</author></book>
+<book><isbn>0345298365</isbn><title>Six of Swords</title><author>Douglas, Carole Nelson</author></book>
+<book><isbn>0345337646</isbn><title>The Silent Tower (Windrose Chronicles, Book 1)</title><author>Hambly, Barbara</author></book>
+<book><isbn>0345424603</isbn><title>The Masterharper of Pern (Dragonriders of Pern)</title><author>McCaffrey, Anne</author></book>
+<book><isbn>0352306947</isbn><title>England Invaded</title><author>Moorcock, Michael</author></book>
+<book><isbn>0352309512</isbn><title>The Tolkien Quiz Book</title><author>Linda Wilson; Nigel Robinson</author></book>
+<book><isbn>0395445329</isbn><title>Birnbaum's France 1988</title><author>Birnbaum, Stephen</author></book>
+<book><isbn>0395445337</isbn><title>Birnbaum's Great Britain and Ireland 1988</title><author>Birnbaum, Stephen</author></book>
+<book><isbn>0413369005</isbn><title>Way Station (Methuen Paperbacks)</title><author>Simak, Clifford D.</author></book>
+<book><isbn>0441005314</isbn><title>Freedom's Choice</title><author>McCaffrey, Anne</author></book>
+<book><isbn>0441273874</isbn><title>The Gates of Creation</title><author>Farmer, Philip JosÃ©</author></book>
+<book><isbn>0441786537</isbn><title>The Stone God Awakens</title><author>Farmer, Philip JosÃ©</author></book>
+<book><isbn>0450035859</isbn><title>Revolt in 2100</title><author>Heinlein, Robert A.</author></book>
+<book><isbn>0450039528</isbn><title>The Day After Tomorrow</title><author>Heinlein, Robert A.</author></book>
+<book><isbn>0450040763</isbn><title>Podkayne Of Mars</title><author>Heinlein, Robert A.</author></book>
+<book><isbn>0450050300</isbn><title>Glory Road</title><author>Heinlein, Robert A</author></book>
+<book><isbn>0450051277</isbn><title>Number of the Beast</title><author>Heinlein, Robert A.</author></book>
+<book><isbn>0450054381</isbn><title>I Will Fear No Evil</title><author>Heinlein, Robert A</author></book>
+<book><isbn>0450058409</isbn><title>Job - A Comedy Of Justice</title><author>Heinlein, Robert A.</author></book>
+<book><isbn>0552092363</isbn><title>Dragonflight</title><author>Mccaffrey, Anne</author></book>
+<book><isbn>0552097551</isbn><title>Catch-22</title><author>Heller, Joseph</author></book>
+<book><isbn>0552101613</isbn><title>Restoree</title><author>McCaffrey, Anne</author></book>
+<book><isbn>0552106615</isbn><title>Dragonsong</title><author>McCaffrey, Anne</author></book>
+<book><isbn>0552108812</isbn><title>Dragonsinger</title><author>McCaffrey, Anne</author></book>
+<book><isbn>0552108847</isbn><title>Collapsing Universe: Story of Black Holes</title><author>Asimov, Isaac</author></book>
+<book><isbn>0552109657</isbn><title>Get Off the Unicorn</title><author>Mccaffrey, Anne</author></book>
+<book><isbn>0552113131</isbn><title>White Dragon</title><author>Mccaffrey, Anne</author></book>
+<book><isbn>0552115002</isbn><title>Devil's Alternative</title><author>Forsyth, Frederick</author></book>
+<book><isbn>0552118044</isbn><title>Dragondrums</title><author>Mccaffrey, Anne</author></book>
+<book><isbn>0552131199</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>0553234951</isbn><title>Startide Rising (Uplift Trilogy)</title><author>Brin, David</author></book>
+<book><isbn>0553238272</isbn><title>The Herb Book</title><author>Lust, John B</author></book>
+<book><isbn>0553255959</isbn><title>The Complete Book of Palmistry</title><author>Wilson, Joyce</author></book>
+<book><isbn>0553283685</isbn><title>Hyperion</title><author>Simmons, Dan</author></book>
+<book><isbn>0553288202</isbn><title>The Fall of Hyperion</title><author>Simmons, Dan</author></book>
+<book><isbn>0582555442</isbn><title>Pocket science dictionary (Longman top pocket series)</title><author>Unknown, Author</author></book>
+<book><isbn>0586008357</isbn><title>The Caves of Steel</title><author>Asimov, Isaac</author></book>
+<book><isbn>0586010165</isbn><title>Naked Sun</title><author>Asimov, Isaac</author></book>
+<book><isbn>0586010424</isbn><title>Earth Is Room Enough</title><author>Asimov, Isaac</author></book>
+<book><isbn>0586017992</isbn><title>The Martian Way</title><author>Asimov, Isaac</author></book>
+<book><isbn>0586037608</isbn><title>Triplanetary</title><author>Smith, E. E. (Doc)</author></book>
+<book><isbn>0586037721</isbn><title>The Gods Themselves</title><author>Asimov, Isaac</author></book>
+<book><isbn>0586037799</isbn><title>First Lensman (Panther Science Fiction)</title><author>Smith, E. E. (Doc)</author></book>
+<book><isbn>0586038280</isbn><title>Galactic Patrol (Panther Science Fiction)</title><author>Smith, E. E. (Doc)</author></book>
+<book><isbn>0586038450</isbn><title>Grey Lensman</title><author>Smith, E. E. (Doc)</author></book>
+<book><isbn>0586038469</isbn><title>Second Stage Lensman (Lensman Series #5)</title><author>Smith, E. E. (Doc)</author></book>
+<book><isbn>0586038477</isbn><title>Children of the Lens (Lensman Series)</title><author>Smith, E. E. (Doc)</author></book>
+<book><isbn>0586038485</isbn><title>Masters of the Vortex (Lensman Series)</title><author>Smith, E.E. (Doc)</author></book>
+<book><isbn>0586039899</isbn><title>The Fabulous Riverboat</title><author>Farmer, Philip JosÃ©</author></book>
+<book><isbn>0586043985</isbn><title>Buy Jupiter and Other Stories</title><author>Asimov, Isaac</author></book>
+<book><isbn>0586044345</isbn><title>Brave New World</title><author>Huxley, Aldous</author></book>
+<book><isbn>0586051287</isbn><title>Opus: A Selection from the First 200 Books</title><author>Asimov, Isaac</author></book>
+<book><isbn>0600202615</isbn><title>Duncton Wood</title><author>Horwood, William</author></book>
+<book><isbn>0642015317</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>0646134728</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>0646222317</isbn><title>The Lepers</title><author>Frank; Browning, Guy Weissenborn</author></book>
+<book><isbn>0671648705</isbn><title>Timetrap (Star Trek, No 40)</title><author>Dvorkin, David</author></book>
+<book><isbn>0671727214</isbn><title>Italian - English Dictionary</title><author>Fantonetti, Carlo;Tedeschi, Alberto</author></book>
+<book><isbn>0671877577</isbn><title>The Proteus Operation</title><author>Hogan, James P.</author></book>
+<book><isbn>0708880363</isbn><title>In The Hall Of The Martian Kings</title><author>Varley, John</author></book>
+<book><isbn>0708880681</isbn><title>Tales of Known Space</title><author>Niven, Larry</author></book>
+<book><isbn>0722116306</isbn><title>Timescape</title><author>Benford, Gregory</author></book>
+<book><isbn>0722134274</isbn><title>Maker Of Universes</title><author>Farmer, Philip JosÃ©</author></book>
+<book><isbn>0725512008</isbn><title>Dick Smith's Australian Amateur Radio Handbook</title><author>Smith, Dick</author></book>
+<book><isbn>0730936546</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>0747404135</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>0812524829</isbn><title>Slant</title><author>Bear, Greg</author></book>
+<book><isbn>0812558170</isbn><title>The Urth of the New Sun</title><author>Wolfe, Gene</author></book>
+<book><isbn>0842345523</isbn><title>More Than a Carpenter</title><author>McDowell, Josh</author></book>
+<book><isbn>0860078531</isbn><title>Hole in Space (Orbit Books)</title><author>Niven, Larry</author></book>
+<book><isbn>0863992315</isbn><title>Wine and Beermaking - Hints and Recipes</title><author>Turner, Ben</author></book>
+<book><isbn>0868246298</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>0872169510</isbn><title>Feast Unknown</title><author>Farmer, Philip JosÃ©</author></book>
+<book><isbn>0880381736</isbn><title>Dragons of Autumn Twilight (DragonLance Chronicles, Vol. 1)</title><author>Weiss, Margaret;Hickman, Tracy</author></book>
+<book><isbn>0880381744</isbn><title>Dragons of Winter Night (DragonLance Chronicles, Vol. 2)</title><author>Weiss, Margaret;Hickman, Tracy</author></book>
+<book><isbn>0880381752</isbn><title>Dragons of Spring Dawning (Dragonlance Chronicles, Vol. 3)</title><author>Weiss, Margaret;Hickman, Tracy</author></book>
+<book><isbn>0901496464</isbn><title>Hostelling International: Europe 1996</title><author>Federation, International Youth Hostel</author></book>
+<book><isbn>0901496472</isbn><title>Hostelling International Guides: The Official Guide to Hostels in Africa, America, Asia and the Pacific 1996</title><author>Federation, International Youth Hostel</author></book>
+<book><isbn>0909439060</isbn><title>Melway Greater Melbourne</title><author>Unknown, Author</author></book>
+<book><isbn>0931988799</isbn><title>Discover FORTH: Learning and programming the FORTH language</title><author>Hogan, Thom</author></book>
+<book><isbn>0949290076</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>0959562931</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>0959915443</isbn><title>Historic Mount Gambier</title><author>Dean, Lois</author></book>
+<book><isbn>0977504719</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>1563331667</isbn><title>Image of the Beast</title><author>Farmer, Philip JosÃ©</author></book>
+<book><isbn>1857239067</isbn><title>Inversions</title><author>Banks, Iain M</author></book>
+<book><isbn>1863300309</isbn><title>The Black Grail</title><author>Broderick, Damien</author></book>
+<book><isbn>1863300325</isbn><title>Striped Holes</title><author>Broderick, Damien</author></book>
+<book><isbn>1875889930</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>031809004999</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>037145003955</isbn><title>The Edge of Tomorrow</title><author>Asimov, Isaac</author></book>
+<book><isbn>070999002507</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>070999002750</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>070999003955</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>072742006992</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>074470240938</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>076092022923</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>076714003958</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>076714005990</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>076783004504</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>076783004955</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>076783007994</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>078021002501</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>9318923008289</isbn><title>Cradle Mountain and Lake St Clair</title><author>Unknown, Author</author></book>
+<book><isbn>9770952620014</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>9780002201377</isbn><title>Galapagos (Safari Guide)</title><author>Fitter, Julian</author></book>
+<book><isbn>9780004704814</isbn><title>Collins Gem German Study Set</title><author>Unknown, Author</author></book>
+<book><isbn>9780006167778</isbn><title>White Gold Wielder</title><author>Donaldson, Stephen</author></book>
+<book><isbn>9780006169857</isbn><title>Daughter of Regals</title><author>Donaldson, Stephen</author></book>
+<book><isbn>9780006173434</isbn><title>Prophet of Lamath</title><author>Hughes, Robert Don</author></book>
+<book><isbn>9780006173441</isbn><title>The Wizard in Waiting</title><author>Hughes, Robert Don</author></book>
+<book><isbn>9780006173458</isbn><title>Power and the Prophet</title><author>Hughes, Robert Don</author></book>
+<book><isbn>9780006173991</isbn><title>Mirror of Her Dreams</title><author>Donaldson, Stephen</author></book>
+<book><isbn>9780006174288</isbn><title>The Ring of Allaire</title><author>Dexter, Susan</author></book>
+<book><isbn>9780006176541</isbn><title>Man Rides Through</title><author>Donaldson, Stephen</author></book>
+<book><isbn>9780006470199</isbn><title>Real Story</title><author>Donaldson, Stephen</author></book>
+<book><isbn>9780006470229</isbn><title>Chaos and Order</title><author>Donaldson, Stephen</author></book>
+<book><isbn>9780006471011</isbn><title>Hidden Echoes</title><author>Jefferies, Mike</author></book>
+<book><isbn>9780006480013</isbn><title>Merlin's Wood</title><author>Holdstock, Robert</author></book>
+<book><isbn>9780006511380</isbn><title>Darwins Radio</title><author>Bear, Greg</author></book>
+<book><isbn>9780006530916</isbn><title>Sony: The Private Life</title><author>Nathan, John</author></book>
+<book><isbn>9780007170579</isbn><title>Gollum: How We Made Movie Magic (The Lord of the Rings)</title><author>Serkis, Andy</author></book>
+<book><isbn>9780007196555</isbn><title>Collins Express English-Japanese Dictionary (Shubun Express)</title><author>Unknown, Author</author></book>
+<book><isbn>9780007288427</isbn><title>Little Brother</title><author>Doctorow, Cory</author></book>
+<book><isbn>9780007325221</isbn><title>Makers</title><author>Doctorow, Cory</author></book>
 <book><isbn>9780007327942</isbn><title>Eastern Standard Tribe</title><author>Doctorow, Cory</author></book>
+<book><isbn>9780007327959</isbn><title>Someone Comes to Town, Someone Leaves Town</title><author>Doctorow, Cory</author></book>
+<book><isbn>9780007331680</isbn><title>The Man in the White Suit</title><author>Collins, Ben</author></book>
+<book><isbn>9780048232083</isbn><title>Unfinished Tales of Numenor and Middle-Earth</title><author>Tolkien, J.R.R.</author></book>
+<book><isbn>9780048233431</isbn><title>Dragonsbane</title><author>Hambly, Barbara</author></book>
+<book><isbn>9780060199067</isbn><title>Evolution: The Triumph of an Idea</title><author>Zimmer, Carl</author></book>
+<book><isbn>9780060675073</isbn><title>Living in Sin?: A Bishop Rethinks Human Sexuality</title><author>Spong, John Shelby</author></book>
+<book><isbn>9780060675479</isbn><title>Resurrection: Myth or Reality? : A Bishop's Search for the Origins of Christianity</title><author>Spong, John Shelby</author></book>
+<book><isbn>9780060977719</isbn><title>Blind Man's Bluff: The Untold Story of American Submarine Espionage</title><author>Sherry Sontag; Christopher Drew</author></book>
+<book><isbn>9780061242700</isbn><title>Freakonomics</title><author>Steven D. Levitt; Stephen J. Dubner</author></book>
+<book><isbn>9780071422741</isbn><title>Build Your Own Humanoid Robots : 6 Amazing and Affordable Projects (TAB Robotics)</title><author>Williams, Karl</author></book>
+<book><isbn>9780071750363</isbn><title>Robot Builder's Bonanza, 4th Edition</title><author>McComb, Gordon</author></book>
+<book><isbn>9780073380230</isbn><title>Introduction to Mechatronics and Measurement Systems</title><author>Alciatore, David</author></book>
+<book><isbn>9780091874155</isbn><title>Madhur Jaffrey's Ultimate Curry Bible: India, Singapore, Malaysia, Indonesia, Thailand, South Africa, Kenya, Great Britain, Trinidad, Guyana, Japan, U</title><author>Jaffrey, Madhur</author></book>
+<book><isbn>9780091886578</isbn><title>Science of Discworld</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780091888053</isbn><title>The Science of Discworld II: The Globe</title><author>Pratchett, Terry;Stewart, Ian;Cohen, Jack</author></book>
+<book><isbn>9780099040309</isbn><title>The Black Art</title><author>Ahmed, Rollo</author></book>
+<book><isbn>9780099263203</isbn><title>The Shadow of the Torturer (The Book of the new sun)</title><author>Wolfe, Gene</author></book>
+<book><isbn>9780099274704</isbn><title>The Claw Of The Conciliator</title><author>Wolfe, Gene</author></book>
+<book><isbn>9780099285830</isbn><title>The Lying Stones of Marrakech: Penultimate Reflections in Natural History</title><author>Gould, Stephen Jay</author></book>
+<book><isbn>9780099287377</isbn><title>London Under</title><author>Ackroyd, Peter</author></book>
+<book><isbn>9780099295402</isbn><title>The Sword of the Lictor</title><author>Wolfe, Gene</author></book>
+<book><isbn>9780099302780</isbn><title>Guns, Germs and Steel</title><author>Diamond, Jared</author></book>
+<book><isbn>9780099304913</isbn><title>Stiffed</title><author>Faludi, Susan</author></book>
+<book><isbn>9780099320609</isbn><title>The Citadel of the Autarch (The Book of the New Sun)</title><author>Wolfe, Gene</author></book>
+<book><isbn>9780099348504</isbn><title>The Crucible of Time</title><author>Brunner, John</author></book>
+<book><isbn>9780099350712</isbn><title>Legacy</title><author>Bear, Greg</author></book>
+<book><isbn>9780099373001</isbn><title>Golden Witchbreed</title><author>Gentle, Mary</author></book>
+<book><isbn>9780099377702</isbn><title>Sheep Look Up</title><author>Brunner, John</author></book>
+<book><isbn>9780099385608</isbn><title>Twilight Realm</title><author>Carpenter, Christopher</author></book>
+<book><isbn>9780099410676</isbn><title>Cryptonomicon</title><author>Stephenson, Neal</author></book>
+<book><isbn>9780099410683</isbn><title>Quicksilver</title><author>Stephenson, Neal</author></book>
+<book><isbn>9780099455400</isbn><title>The Stonor Eagles</title><author>Horwood, William</author></book>
+<book><isbn>9780099460275</isbn><title>Raw Spirit</title><author>Banks, Iain</author></book>
+<book><isbn>9780099510703</isbn><title>Stalking The Unicorn: A Fable Of Tonight</title><author>Resnick, Mike</author></book>
+<book><isbn>9780099529934</isbn><title>The Complete Sherlock Holmes</title><author>Doyle, Sir Arthur Conan</author></book>
+<book><isbn>9780099547105</isbn><title>Eon</title><author>Bear, Greg</author></book>
+<book><isbn>9780099579939</isbn><title>Fifty Shades of Grey</title><author>James, E. L.</author></book>
+<book><isbn>9780099627500</isbn><title>Another Fine Myth</title><author>Asprin, Robert</author></book>
 <book><isbn>9780099627609</isbn><title>Myth Conceptions</title><author>Asprin, Robert</author></book>
 <book><isbn>9780099662600</isbn><title>Myth Directions</title><author>Asprin, Robert</author></book>
 <book><isbn>9780099745204</isbn><title>Hit or Myth</title><author>Asprin, Robert</author></book>
-<book><isbn>9780099627500</isbn><title>Another Fine Myth</title><author>Asprin, Robert</author></book>
+<book><isbn>9780099745303</isbn><title>Little Myth Marker</title><author>Asprin, Robert</author></book>
 <book><isbn>9780099745402</isbn><title>Myth-ing Persons</title><author>Asprin, Robert</author></book>
 <book><isbn>9780099804208</isbn><title>M.Y.T.H. Inc.Link</title><author>Asprin, Robert</author></book>
-<book><isbn>9780099745303</isbn><title>Little Myth Marker</title><author>Asprin, Robert</author></book>
-<book><isbn>9781841490618</isbn><title>Look to Windward</title><author>Banks, Iain</author></book>
-<book><isbn>9780708883587</isbn><title>Use of Weapons</title><author>Banks, Iain M</author></book>
-<book><isbn>9781857232738</isbn><title>Feersum Endjinn</title><author>Banks, Iain M</author></book>
-<book><isbn>9781857234572</isbn><title>Excession</title><author>Banks, Iain M</author></book>
-<book><isbn>9781857231793</isbn><title>Against A Dark Background</title><author>Banks, Iain M</author></book>
-<book><isbn>9781841494197</isbn><title>Matter</title><author>Banks, Iain M</author></book>
-<book><isbn>9781841494197</isbn><title>Matter</title><author>Banks, Iain M</author></book>
-<book><isbn>9780708837078</isbn><title>Consider Phlebas B</title><author>Banks, Iain M.</author></book>
-<book><isbn>9781841498959</isbn><title>Surface Detail</title><author>Banks, Iain M</author></book>
+<book><isbn>9780131405301</isbn><title>Enterprise J2ME: Developing Mobile Java Applications</title><author>Yuan, Michael Juntao</author></book>
+<book><isbn>9780137914845</isbn><title>Frommer's Scandinavia on $60 a Day, 1989-90</title><author>Darwin Porter; Danforth Prince; Margaret Foresman</author></book>
+<book><isbn>9780140042351</isbn><title>The Great Railway Bazaar</title><author>Theroux, Paul</author></book>
+<book><isbn>9780140060560</isbn><title>The Norse Myths: Gods of the Vikings</title><author>Holland, Kevin Crossley</author></book>
+<book><isbn>9780140065978</isbn><title>Monsignor Quixote</title><author>Greene, Graham</author></book>
+<book><isbn>9780140071818</isbn><title>The Kingdom by the Sea: A Journey Around the Coast of Great Britain</title><author>Theroux, Paul</author></book>
+<book><isbn>9780140112894</isbn><title>Herbs in Australian Gardens</title><author>Fletcher, Kim</author></book>
+<book><isbn>9780140112955</isbn><title>Riding the Iron Rooster By Train Through China</title><author>Theroux, Paul</author></book>
+<book><isbn>9780140153736</isbn><title>Voltaire's Bastards : The Dictatorship of Reason in the West</title><author>Saul, John Ralston</author></book>
+<book><isbn>9780140157727</isbn><title>Virtual Light</title><author>Gibson, William</author></book>
+<book><isbn>9780140159769</isbn><title>The Happy Isles of Oceania: Paddling the Pacific</title><author>Theroux, Paul</author></book>
+<book><isbn>9780140232929</isbn><title>Snow Crash</title><author>Stephenson, Neal</author></book>
+<book><isbn>9780140245011</isbn><title>The Complete Dead Sea Scrolls in English</title><author>Vermes, Geza</author></book>
+<book><isbn>9780140257458</isbn><title>The Crusades (BBC Books)</title><author>Jones, J. Sydney</author></book>
+<book><isbn>9780140258370</isbn><title>How to Be More Interesting</title><author>Bono, Edward De</author></book>
+<book><isbn>9780140264647</isbn><title>The Unconscious Civilization</title><author>Saul, John Ralston</author></book>
+<book><isbn>9780140264913</isbn><title>The Private Life of the Brain (Penguin Press Science)</title><author>Greenfield, Susan</author></book>
+<book><isbn>9780140266139</isbn><title>All Tomorrow's Parties</title><author>Gibson, William</author></book>
+<book><isbn>9780140266146</isbn><title>Pattern Recognition</title><author>Gibson, William</author></book>
+<book><isbn>9780140269635</isbn><title>Bachelor Kisses</title><author>Earls, Nick</author></book>
+<book><isbn>9780140270372</isbn><title>Diamond Age</title><author>Stephenson, Neal</author></book>
+<book><isbn>9780140302868</isbn><title>Comet in Moominland (Moomintroll)</title><author>Jansson, Tove</author></book>
+<book><isbn>9780140305029</isbn><title>Moominland Midwinter (Moomintroll)</title><author>Jansson, Tove</author></book>
+<book><isbn>9780140307153</isbn><title>Moominvalley in November</title><author>Jansson, Tove</author></book>
+<book><isbn>9780141005034</isbn><title>Evolution's Workshop (Haemostasis S.)</title><author>Larson, Edward J.</author></book>
+<book><isbn>9780141016719</isbn><title>Spook Country</title><author>Gibson, William</author></book>
+<book><isbn>9780141023304</isbn><title>The Defence of the Realm</title><author>Andrew, Christopher</author></book>
+<book><isbn>9780141026114</isbn><title>Don't Stop Me Now</title><author>Clarkson, Jeremy</author></book>
+<book><isbn>9780141029290</isbn><title>The Joys of Engrish</title><author>Caires, Steven</author></book>
+<book><isbn>9780141044224</isbn><title>Don't Swallow Your Gum!</title><author>Carroll, Aaron E.; Vreeman, Rachel C.</author></book>
+<book><isbn>9780141323954</isbn><title>Dot.Robot</title><author>Bradbury, Jason</author></book>
+<book><isbn>9780141328607</isbn><title>Finn Family Moomintroll (Moomins)</title><author>Jansson, Tove</author></book>
+<book><isbn>9780141334394</isbn><title>Moominpappa at Sea</title><author>Jansson, Tove</author></book>
+<book><isbn>9780143204787</isbn><title>Obernewtyn</title><author>Carmody, Isobelle</author></book>
+<book><isbn>9780143566434</isbn><title>The Time Machine</title><author>Wells, H.G.</author></book>
+<book><isbn>9780192851390</isbn><title>A History of the Vikings (Oxford paperbacks)</title><author>Jones, Gwyn</author></book>
+<book><isbn>9780195530872</isbn><title>Australian Words and Their Origins</title><author>Unknown, Author</author></book>
+<book><isbn>9780198661856</isbn><title>The Oxford Dictionary of Quotations</title><author>Unknown, Author</author></book>
+<book><isbn>9780199534043</isbn><title>Concise Oxford Dictionary of Archaeology (Oxford Paperback Reference)</title><author>Darvill, Timothy</author></book>
+<book><isbn>9780201403633</isbn><title>Ada95 for C and C++ Programmers (International Computer Science Series)</title><author>Johnston, Simon</author></book>
+<book><isbn>9780201565393</isbn><title>Programming in Ada Plus Language Reference Manual (International computer science series)</title><author>Barnes</author></book>
+<book><isbn>9780201696967</isbn><title>HTML 4 for the World Wide Web: VQS (3rd Edition)</title><author>Castro, Elizabeth</author></book>
+<book><isbn>9780201710984</isbn><title>XML for the World Wide Web</title><author>Castro, Elizabeth</author></book>
+<book><isbn>9780241140123</isbn><title>The Art of Travel</title><author>Botton, Alain De</author></book>
+<book><isbn>9780316848633</isbn><title>The Business</title><author>Banks, Iain</author></book>
+<book><isbn>9780330239226</isbn><title>Indecent Exposure</title><author>Sharpe, Tom</author></book>
+<book><isbn>9780330242813</isbn><title>Gravity's Rainbow</title><author>Pynchon, Thomas</author></book>
+<book><isbn>9780330246675</isbn><title>Porterhouse Blue</title><author>Sharpe, Tom</author></book>
+<book><isbn>9780330250801</isbn><title>Blott On The Landscape</title><author>Sharpe, Tom</author></book>
+<book><isbn>9780330256773</isbn><title>The Great Pursuit</title><author>Sharpe, Tom</author></book>
+<book><isbn>9780330274869</isbn><title>Tomorrow, When the War Began</title><author>Marsden, John</author></book>
+<book><isbn>9780330284141</isbn><title>Name of the Rose</title><author>Eco, Umberto</author></book>
+<book><isbn>9780330285537</isbn><title>Jack the Bodiless (Galactic Milieu Trilogy)</title><author>May, Julian</author></book>
+<book><isbn>9780330287074</isbn><title>Valentine Pontifex</title><author>Silverberg, Robert</author></book>
+<book><isbn>9780330294911</isbn><title>Man Who Mistook His Wife for a Hat (Picador)</title><author>Sacks, Oliver</author></book>
+<book><isbn>9780330298926</isbn><title>Fatal Shore</title><author>Hughes, Robert</author></book>
 <book><isbn>9780330301626</isbn><title>Dirk Gently's Holistic Detective Agency</title><author>Adams, Douglas</author></book>
+<book><isbn>9780330303095</isbn><title>Intervention</title><author>May, Julian</author></book>
 <book><isbn>9780330309554</isbn><title>The Long Dark Tea-Time of the Soul</title><author>Adams, Douglas</author></book>
+<book><isbn>9780330311113</isbn><title>Greenmantle</title><author>de Lint, Charles</author></book>
+<book><isbn>9780330315760</isbn><title>Moonheart</title><author>de Lint, Charles</author></book>
+<book><isbn>9780330320023</isbn><title>Last Chance to See....</title><author>Adams, Douglas</author></book>
+<book><isbn>9780330322997</isbn><title>Diamond Mask (The Galactic Mileu Trilogy)</title><author>May, Julian</author></book>
+<book><isbn>9780330323055</isbn><title>Magnificat (The Galactic Mileu Trilogy)</title><author>May, Julian</author></book>
 <book><isbn>9780330323116</isbn><title>Mostly Harmless</title><author>Adams, Douglas</author></book>
-<book><isbn>9780099040309</isbn><title>The Black Art</title><author>Ahmed, Rollo</author></book>
-<book><isbn>9780586053676</isbn><title>Helliconia Winter</title><author>Aldiss, Brian</author></book>
+<book><isbn>9780330330442</isbn><title>Nano Flower (Greg Mandel)</title><author>Hamilton, Peter F</author></book>
+<book><isbn>9780330330459</isbn><title>A Quantum Murder (Greg Mandel)</title><author>Hamilton, Peter F</author></book>
+<book><isbn>9780330339599</isbn><title>Memory And Dream</title><author>de Lint, Charles</author></book>
+<book><isbn>9780330340328</isbn><title>The Reality Dysfunction (Night's Dawn Trilogy, Book 1)</title><author>Hamilton, Peter F.</author></book>
+<book><isbn>9780330351430</isbn><title>Neutronium Alchemist (Nights Dawn Trilogy 2)</title><author>Hamilton, Peter F</author></book>
+<book><isbn>9780330351454</isbn><title>Naked God (Nights Dawn Trilogy 3)</title><author>Hamilton, Peter F</author></book>
+<book><isbn>9780330351829</isbn><title>Second Chance at Eden</title><author>Hamilton, Peter F</author></book>
+<book><isbn>9780330391658</isbn><title>E=mc2</title><author>Bodanis, David</author></book>
+<book><isbn>9780330392891</isbn><title>Perdido Street Station</title><author>Mieville, China</author></book>
+<book><isbn>9780330392907</isbn><title>Scar</title><author>Mieville, China</author></book>
+<book><isbn>9780330434188</isbn><title>Looking for Jake: And Other Stories</title><author>Mieville, China</author></book>
+<book><isbn>9780330443029</isbn><title>The Dreaming Void</title><author>Hamilton, Peter F.</author></book>
+<book><isbn>9780330480062</isbn><title>Fallen Dragon</title><author>Hamilton, Peter F</author></book>
+<book><isbn>9780330480222</isbn><title>Misspent Youth</title><author>Hamilton, Peter F</author></book>
+<book><isbn>9780330492324</isbn><title>Kraken: An Anatomy</title><author>Mieville, China</author></book>
+<book><isbn>9780330492522</isbn><title>Iron Council</title><author>Mieville, China</author></book>
+<book><isbn>9780330493314</isbn><title>Pandora's Star</title><author>Hamilton, Peter F.</author></book>
+<book><isbn>9780330493536</isbn><title>Judas Unchained (Commonwealth Saga)</title><author>Hamilton, Peter F</author></book>
+<book><isbn>9780330522205</isbn><title>Manhattan in Reverse</title><author>Hamilton, Peter F.</author></book>
+<book><isbn>9780330534222</isbn><title>Looking for Jake and Other Stories</title><author>Mieville, China</author></book>
+<book><isbn>9780333521984</isbn><title>The Golden Bough</title><author>Frazer, J.G.</author></book>
+<book><isbn>9780340212813</isbn><title>Russian (Teach Yourself Series)</title><author>Frewin, Michael</author></book>
+<book><isbn>9780340270226</isbn><title>Esperanto (Teach Yourself)</title><author>John Cresswell; John Hartley</author></book>
+<book><isbn>9780340728345</isbn><title>Wallace and Gromit: Anoraknophobia (Wallace &amp; Gromit)</title><author>Tristan Davies; Nick Newman</author></book>
+<book><isbn>9780340837955</isbn><title>Stranger in a Strange Land</title><author>Heinlein, Robert A.</author></book>
+<book><isbn>9780340950920</isbn><title>James May's Magnificent Machines</title><author>May, James</author></book>
+<book><isbn>9780349101712</isbn><title>Canal Dreams</title><author>Banks, Iain</author></book>
+<book><isbn>9780349101774</isbn><title>Wasp Factory Uk</title><author>Banks, Iain</author></book>
+<book><isbn>9780349102153</isbn><title>The Bridge</title><author>Banks, Iain</author></book>
+<book><isbn>9780349103235</isbn><title>The Crow Road</title><author>Banks, Iain</author></book>
+<book><isbn>9780349105710</isbn><title>Complicity</title><author>Banks, Iain</author></book>
+<book><isbn>9780356500287</isbn><title>Fool Moon</title><author>Butcher, Jim</author></book>
+<book><isbn>9780356501727</isbn><title>Existence - Limited Edition 3d Cover</title><author>Brin, David</author></book>
+<book><isbn>9780385267748</isbn><title>The Design of Everyday Things</title><author>Norman, Donald</author></book>
+<book><isbn>9780385409858</isbn><title>Almost Like a Whale</title><author>Jones, Steve</author></book>
+<book><isbn>9780393316896</isbn><title>The Bible and the Ancient Near East (Revised Edition)</title><author>Cyrus H. Gordon; Gary A. Rendsburg</author></book>
+<book><isbn>9780413523501</isbn><title>Gormenghast</title><author>Peake, Mervyn</author></book>
+<book><isbn>9780413523600</isbn><title>Titus Alone</title><author>Peake, Mervyn</author></book>
+<book><isbn>9780413523709</isbn><title>Titus Groan</title><author>Peake, Mervyn</author></book>
+<book><isbn>9780415078542</isbn><title>A History of Western Philosophy</title><author>Russell, Bertrand</author></book>
+<book><isbn>9780439968034</isbn><title>Mad Miscellany (Horrible Histories)</title><author>Deary, Terry</author></book>
+<book><isbn>9780440539810</isbn><title>The Illuminatus! Trilogy: The Eye in the Pyramid, The Golden Apple, Leviathan</title><author>Shea, Robert;Wilson, Robert Anton</author></book>
+<book><isbn>9780450056963</isbn><title>Mute</title><author>Anthony, Piers</author></book>
+<book><isbn>9780450058486</isbn><title>Sword of the Lamb</title><author>Wren, M.K.</author></book>
+<book><isbn>9780450058684</isbn><title>Shadow of the Swan</title><author>Wren, M.K.</author></book>
+<book><isbn>9780450393785</isbn><title>House of the Wolf</title><author>Wren, M. K.</author></book>
+<book><isbn>9780450398742</isbn><title>Voyage to the City of the Dead</title><author>Foster, Alan Dean</author></book>
+<book><isbn>9780451457813</isbn><title>Storm Front</title><author>Butcher, Jim</author></book>
+<book><isbn>9780460876162</isbn><title>Edda (Everyman's Library)</title><author>Sturluson, Snorri</author></book>
+<book><isbn>9780471308249</isbn><title>Rogue Asteroids and Doomsday Comets: The Search for the Million Megaton Menace That Threatens Life on Earth</title><author>Duncan Steel; Arthur C. Clarke</author></book>
+<book><isbn>9780500284414</isbn><title>Archaeology: Theories, Methods, and Practice (Portuguese Edition)</title><author>Colin Renfrew; Paul Bahn</author></book>
+<book><isbn>9780521366830</isbn><title>Black Holes and the Universe (Canto)</title><author>Novikov, Igor D.</author></book>
+<book><isbn>9780552086615</isbn><title>Decision at Doona</title><author>Mccaffrey, Anne</author></book>
+<book><isbn>9780552122849</isbn><title>Pawn of Prophecy</title><author>Eddings, David</author></book>
+<book><isbn>9780552123488</isbn><title>Queen of Sorcery</title><author>Eddings, David</author></book>
+<book><isbn>9780552123822</isbn><title>Magician's Gambit</title><author>Eddings, David</author></book>
+<book><isbn>9780552124355</isbn><title>Castle Of Wizardry</title><author>Eddings, David</author></book>
+<book><isbn>9780552124478</isbn><title>Enchanters' End Game (Belgariad)</title><author>Eddings, David</author></book>
+<book><isbn>9780552124751</isbn><title>The colour of Magic</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552124997</isbn><title>Moreta</title><author>McCaffrey, Anne</author></book>
+<book><isbn>9780552125666</isbn><title>The Wizards And The Warriors</title><author>Cook, Hugh</author></book>
+<book><isbn>9780552125697</isbn><title>The Fourth Protocol</title><author>Forsyth, Frederick</author></book>
+<book><isbn>9780552126465</isbn><title>Bridge of Birds</title><author>Hughart, Barry</author></book>
+<book><isbn>9780552126793</isbn><title>Master of the Five Magics</title><author>Hardy, Lyndon</author></book>
+<book><isbn>9780552126809</isbn><title>Secret Of The Sixth Magic</title><author>Hardy, Lyndon</author></book>
+<book><isbn>9780552126830</isbn><title>Exiles of the Rynth</title><author>Douglas, Carole Nelson</author></book>
+<book><isbn>9780552128483</isbn><title>The Light Fantastic (Discworld Novel)</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552128490</isbn><title>The Revenants</title><author>Tepper, Sheri S.</author></book>
+<book><isbn>9780552130172</isbn><title>Guardians of the West (The Malloreon)</title><author>Eddings, David</author></book>
+<book><isbn>9780552130189</isbn><title>King Of The Murgos (The Malloreon)</title><author>Eddings, David</author></book>
+<book><isbn>9780552130196</isbn><title>Demon Lord of Karanda (The Malloreon)</title><author>Eddings, David</author></book>
+<book><isbn>9780552130202</isbn><title>Sorceress Of Darshiva (The Malloreon)</title><author>Eddings, David</author></book>
+<book><isbn>9780552130219</isbn><title>Seeress of Kell</title><author>Eddings, David</author></book>
+<book><isbn>9780552130981</isbn><title>Dragonsdawn</title><author>Mccaffrey, Anne</author></book>
+<book><isbn>9780552130998</isbn><title>Renegades of Pern</title><author>McCaffrey, Anne</author></book>
+<book><isbn>9780552131018</isbn><title>The First Named (Servants Of Ark)</title><author>Wylie, Jonathan</author></book>
+<book><isbn>9780552131056</isbn><title>Equal Rites</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552131063</isbn><title>Mort</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552131070</isbn><title>Sourcery</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552131186</isbn><title>Shapechangers</title><author>Roberson, Jennifer</author></book>
+<book><isbn>9780552131193</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>9780552131193</isbn><title>The Song Of Homana</title><author>Roberson, Jennifer</author></book>
+<book><isbn>9780552131209</isbn><title>Legacy Of The Sword (Chronicles of The Cheysuli Book Three)</title><author>Roberson, Jennifer</author></book>
+<book><isbn>9780552131308</isbn><title>Wordsmiths and the Warguild</title><author>Cook, Hugh</author></book>
+<book><isbn>9780552131315</isbn><title>The Women and the Warlords</title><author>Cook, Hugh</author></book>
+<book><isbn>9780552131346</isbn><title>The Centre of the Circle</title><author>Wylie, Jonathan</author></book>
+<book><isbn>9780552131612</isbn><title>The Mage-Born Child (Servants Of Ark)</title><author>Wylie, Jonathan</author></book>
+<book><isbn>9780552133258</isbn><title>Strata</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552133265</isbn><title>The Dark Side of the Sun</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552133272</isbn><title>The Walrus and the Warwolf</title><author>Cook, Hugh</author></book>
+<book><isbn>9780552134002</isbn><title>The Story of the Stone</title><author>Hughart, Barry</author></book>
+<book><isbn>9780552134019</isbn><title>Eight Skilled Gentlemen</title><author>Hughart, Barry</author></book>
+<book><isbn>9780552134392</isbn><title>The Wicked and The Witless</title><author>Cook, Hugh</author></book>
+<book><isbn>9780552134606</isbn><title>Wyrd Sisters (A Discworld Novel)</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552134613</isbn><title>Pyramids</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552134620</isbn><title>Guards! Guards! (Discworld)</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552134637</isbn><title>Moving Pictures (Discworld Novel S.)</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552134644</isbn><title>Reaper Man, A Discworld Novel</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552134651</isbn><title>Witches Abroad</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552135368</isbn><title>The Wishstone and the Wonderworkers</title><author>Cook, Hugh</author></book>
+<book><isbn>9780552135375</isbn><title>The Wazir and the Witch</title><author>Cook, Hugh</author></book>
+<book><isbn>9780552135382</isbn><title>The Werewolf and the Wormlord</title><author>Cook, Hugh</author></book>
+<book><isbn>9780552136273</isbn><title>Rats And Gargoyles</title><author>Gentle, Mary</author></book>
+<book><isbn>9780552137034</isbn><title>Good Omens</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552137294</isbn><title>All the Weyrs of Pern</title><author>McCaffrey, Anne</author></book>
+<book><isbn>9780552138413</isbn><title>The Antipope (Brentford Trilogy)</title><author>Rankin, Robert</author></book>
+<book><isbn>9780552138482</isbn><title>The Worshippers and the Way</title><author>Cook, Hugh</author></book>
+<book><isbn>9780552138901</isbn><title>Small Gods</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552138918</isbn><title>Lords and Ladies</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552139137</isbn><title>Chronicles of Pern</title><author>Mccaffrey, Anne</author></book>
+<book><isbn>9780552139229</isbn><title>The Book of Ultimate Truths</title><author>Rankin, Robert</author></book>
+<book><isbn>9780552140287</isbn><title>Men at Arms</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552140294</isbn><title>Soul Music</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552142359</isbn><title>Interesting Times (Discworld)</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552142373</isbn><title>Feet of clay (Discworld novel)</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552142717</isbn><title>Freedom's Landing (Catteni 1)</title><author>McCaffrey, Anne</author></book>
+<book><isbn>9780552145893</isbn><title>Apocalypso</title><author>Rankin, Robert</author></book>
+<book><isbn>9780552145985</isbn><title>Jingo (A Discworld Novel)</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552146142</isbn><title>The Last Continent: A Discworld Novel</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552146159</isbn><title>Carpe Jugulum (Discworld #23)</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552146166</isbn><title>The Fifth Elephant</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552146272</isbn><title>Freedom's Challenge (Catteni 3)</title><author>McCaffrey, Anne</author></book>
+<book><isbn>9780552146739</isbn><title>Nanny Ogg's Cookbook</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552147682</isbn><title>The Truth</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552148405</isbn><title>Thief of Time</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552154901</isbn><title>Making Money (Discworld Novels)</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552525862</isbn><title>Diggers (Truckers Trilogy)</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552525954</isbn><title>Truckers</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552526494</isbn><title>Wings (The Nome Trilogy)</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552527521</isbn><title>The Carpet People</title><author>Pratchett, Terry</author></book>
+<book><isbn>9780552773911</isbn><title>Blind Faith</title><author>Elton, Ben</author></book>
+<book><isbn>9780552997034</isbn><title>Down Under</title><author>Bryson, Bill</author></book>
+<book><isbn>9780553171549</isbn><title>Damiano</title><author>MacAvoy, R.A.</author></book>
+<book><isbn>9780553171556</isbn><title>Damiano's Lute</title><author>MacAvoy, R. A.</author></book>
+<book><isbn>9780553171563</isbn><title>Raphael</title><author>MacAvoy, R.A.</author></book>
+<book><isbn>9780553172829</isbn><title>Song Of Sorcery</title><author>Scarborough, Elizabeth</author></book>
+<book><isbn>9780553172843</isbn><title>Bronwyn's Bane</title><author>Scarborough, Elizabeth</author></book>
+<book><isbn>9780553173987</isbn><title>The River of Time</title><author>Brin, David</author></book>
+<book><isbn>9780553505894</isbn><title>Paradox (Nulapeiron 1)</title><author>Meaney, John</author></book>
+<book><isbn>9780563215141</isbn><title>BBC Phrase Books and Cassettes: German Book</title><author>Philippa Goodrich; Carol Stanley</author></book>
+<book><isbn>9780563370772</isbn><title>Flavours of India</title><author>Jaffrey, Madhur</author></book>
+<book><isbn>9780571164431</isbn><title>The Story of English</title><author>Mccrum, Robert</author></book>
+<book><isbn>9780571209804</isbn><title>Mosquito: The Story Of Man's Deadliest Foe</title><author>Spielman, Michael D'Antonio' 'Andrew</author></book>
+<book><isbn>9780575039957</isbn><title>Witch World (Book 1)</title><author>Norton, Andre</author></book>
+<book><isbn>9780575039964</isbn><title>Web of the Witch World</title><author>Norton, Andre</author></book>
+<book><isbn>9780575039971</isbn><title>Warlock of the Witch World</title><author>Norton, Andre</author></book>
+<book><isbn>9780575039988</isbn><title>Three Against the Witch World</title><author>Norton, Andre</author></book>
+<book><isbn>9780575039995</isbn><title>Year of the Unicorn (Witch World) (U.K.)</title><author>Norton, Andre</author></book>
+<book><isbn>9780575040007</isbn><title>Sorceress Of The Witchworld</title><author>Norton, Andre</author></book>
+<book><isbn>9780575040403</isbn><title>The Time Hoppers (A Gollancz Paperback)</title><author>Silverberg, Robert</author></book>
+<book><isbn>9780575041240</isbn><title>Star Man's Son</title><author>Norton, Andre</author></book>
+<book><isbn>9780575043091</isbn><title>The Witches Of Karres</title><author>Schmitz, James H.</author></book>
+<book><isbn>9780575052970</isbn><title>The Difference Engine</title><author>Gibson, William; Sterling, Bruce</author></book>
+<book><isbn>9780575079977</isbn><title>The Three Stigmata of Palmer Eldritch</title><author>Dick, Philip K.</author></book>
+<book><isbn>9780575097575</isbn><title>Rivers of London</title><author>Aaronovitch, Ben</author></book>
+<book><isbn>9780583118170</isbn><title>The Swords of Lankhmar (The swords series)</title><author>Leiber, Fritz</author></book>
+<book><isbn>9780583130844</isbn><title>Swords and Deviltry</title><author>Leiber, Fritz</author></book>
+<book><isbn>9780583130875</isbn><title>Swords Against Death</title><author>Leiber, Fritz</author></book>
+<book><isbn>9780583130882</isbn><title>Swords In The Mist</title><author>Leiber, Fritz</author></book>
+<book><isbn>9780583130899</isbn><title>Swords Against Wizardry: Book 4 of Fafhrd And The Gray Mouser</title><author>Leiber, Fritz</author></book>
+<book><isbn>9780583131131</isbn><title>Swords And Ice Magic: Book 6 In The Swords Series</title><author>Leiber, Fritz</author></book>
+<book><isbn>9780586008355</isbn><title>The Caves of Steel</title><author>Asimov, Isaac</author></book>
+<book><isbn>9780586010167</isbn><title>Naked Sun</title><author>Asimov, Isaac</author></book>
+<book><isbn>9780586025321</isbn><title>I, Robot</title><author>Asimov, Isaac</author></book>
+<book><isbn>9780586025949</isbn><title>The Rest of the Robots</title><author>Asimov, Isaac</author></book>
+<book><isbn>9780586039397</isbn><title>To Your Scattered Bodies Go</title><author>Farmer, Philip JosÃ©</author></book>
+<book><isbn>9780586042199</isbn><title>The Dispossessed (Panther science fiction)</title><author>le Guin, Ursula</author></book>
+<book><isbn>9780586045947</isbn><title>Moonraker</title><author>Fleming, Ian</author></book>
+<book><isbn>9780586048351</isbn><title>The Dark Design</title><author>Farmer, Philip JosÃ©</author></book>
 <book><isbn>9780586053652</isbn><title>Helliconia Spring</title><author>Aldiss, Brian</author></book>
 <book><isbn>9780586053669</isbn><title>Helliconia Summer</title><author>Aldiss, Brian</author></book>
-<book><isbn>9780747406099</isbn><title>Boat of a Million Years</title><author>Anderson, Poul</author></book>
-<book><isbn>9780708881071</isbn><title>Castle Roogna</title><author>Anthony, Piers</author></book>
-<book><isbn>9780708881484</isbn><title>Crewel Lye</title><author>Anthony, Piers</author></book>
-<book><isbn>9780708881200</isbn><title>Dragon on a Pedestal</title><author>Anthony, Piers</author></book>
-<book><isbn>9780708881095</isbn><title>Night Mare</title><author>Anthony, Piers</author></book>
-<book><isbn>9780708882122</isbn><title>Golem in the Gears</title><author>Anthony, Piers</author></book>
-<book><isbn>9780708881040</isbn><title>A Spell For Chameleon</title><author>Anthony, Piers</author></book>
-<book><isbn>9780708881064</isbn><title>Centaur Aisle</title><author>Anthony, Piers</author></book>
-<book><isbn>9780708881088</isbn><title>Ogre Ogre</title><author>Anthony, Piers</author></book>
-<book><isbn>9780708881033</isbn><title>The Source of Magic</title><author>Anthony, Piers</author></book>
+<book><isbn>9780586053676</isbn><title>Helliconia Winter</title><author>Aldiss, Brian</author></book>
+<book><isbn>9780586053874</isbn><title>The Magic Labyrinth</title><author>Farmer, Philip JosÃ©</author></book>
+<book><isbn>9780586054444</isbn><title>Split Infinity</title><author>Anthony, Piers</author></book>
+<book><isbn>9780586054451</isbn><title>Blue Adept</title><author>Anthony, Piers</author></book>
+<book><isbn>9780586054468</isbn><title>Juxtaposition (Split Infinity)</title><author>Anthony, Piers</author></book>
+<book><isbn>9780586058282</isbn><title>Magician</title><author>Feist, Raymond E.</author></book>
+<book><isbn>9780586061992</isbn><title>Robots of Dawn</title><author>Asimov, Isaac</author></book>
 <book><isbn>9780586062593</isbn><title>Bio of a Space Tyrant: Refugee v. 1</title><author>Anthony, Piers</author></book>
+<book><isbn>9780586062623</isbn><title>On a Pale Horse</title><author>Anthony, Piers</author></book>
 <book><isbn>9780586062685</isbn><title>Bio of a Space Tyrant: Mercenary v. 2</title><author>Anthony, Piers</author></book>
 <book><isbn>9780586062692</isbn><title>Bio Of A Space Tyrant: Politician v. 3</title><author>Anthony, Piers</author></book>
 <book><isbn>9780586062715</isbn><title>Bio Of A Space Tyrant: Executive v. 4</title><author>Anthony, Piers</author></book>
 <book><isbn>9780586062722</isbn><title>Bio Of A Space Tyrant: Statesman v. 5</title><author>Anthony, Piers</author></book>
-<book><isbn>9780450056963</isbn><title>Mute</title><author>Anthony, Piers</author></book>
+<book><isbn>9780586062739</isbn><title>Bearing an Hourglass</title><author>Anthony, Piers</author></book>
+<book><isbn>9780586062746</isbn><title>With A Tangled Skein</title><author>Anthony, Piers</author></book>
+<book><isbn>9780586064177</isbn><title>Silverthorn (Riftwar Saga)</title><author>Feist, Raymond E</author></book>
 <book><isbn>9780586065846</isbn><title>Macroscope</title><author>Anthony, Piers</author></book>
-<book><isbn>9780586054444</isbn><title>Split Infinity</title><author>Anthony, Piers</author></book>
-<book><isbn>9780586054451</isbn><title>Blue Adept</title><author>Anthony, Piers</author></book>
-<book><isbn>9780586054468</isbn><title>Juxtaposition (Split Infinity)</title><author>Anthony, Piers</author></book>
-<book><isbn>9780586062623</isbn><title>On a Pale Horse</title><author>Anthony, Piers</author></book>
-<book><isbn>0330258648</isbn><title>The Hitch-Hikers Guide to the Galaxy</title><author>Adams, Douglas</author></book>
-<book><isbn>0330287001</isbn><title>So Long, and Thanks for All the Fish</title><author>Adams, Douglas</author></book>
-<book><isbn>0330267388</isbn><title>Life, the Universe and Everything</title><author>Adams, Douglas</author></book>
-<book><isbn>1857239067</isbn><title>Inversions</title><author>Banks, Iain M</author></book>
-<book><isbn>0586017992</isbn><title>The Martian Way</title><author>Asimov, Isaac</author></book>
-<book><isbn>0586008357</isbn><title>The Caves of Steel</title><author>Asimov, Isaac</author></book>
-<book><isbn>0586037721</isbn><title>The Gods Themselves</title><author>Asimov, Isaac</author></book>
-<book><isbn>0586051287</isbn><title>Opus: A Selection from the First 200 Books</title><author>Asimov, Isaac</author></book>
-<book><isbn>0586043985</isbn><title>Buy Jupiter and Other Stories</title><author>Asimov, Isaac</author></book>
-<book><isbn>0586010424</isbn><title>Earth Is Room Enough</title><author>Asimov, Isaac</author></book>
-<book><isbn>0330262130</isbn><title>The Restaurant at the End of the Universe</title><author>Adams, Douglas</author></book>
-<book><isbn>0586010165</isbn><title>Naked Sun</title><author>Asimov, Isaac</author></book>
-<book><isbn>9780099377702</isbn><title>Sheep Look Up</title><author>Brunner, John</author></book>
-<book><isbn>9780356500287</isbn><title>Fool Moon</title><author>Butcher, Jim</author></book>
-<book><isbn>9780732270957</isbn><title>Magician's Guild: Book 1 of Black Magician Trilogy</title><author>Canavan, Trudi</author></book>
-<book><isbn>9781857232028</isbn><title>Glory Season</title><author>Brin, David</author></book>
+<book><isbn>9780586065853</isbn><title>Mythago Wood</title><author>Holdstock, Robert</author></book>
+<book><isbn>9780586066454</isbn><title>Neuromancer</title><author>Gibson, William</author></book>
+<book><isbn>9780586066881</isbn><title>Darkness at Sethanon (Riftwar Saga)</title><author>Feist, Raymond E.</author></book>
+<book><isbn>9780586070482</isbn><title>Falling Apart</title><author>Salaman, Nicholas</author></book>
+<book><isbn>9780586071212</isbn><title>Count Zero</title><author>Gibson, William</author></book>
+<book><isbn>9780586073155</isbn><title>Daggerspell (Deverry)</title><author>Kerr, Katharine</author></book>
+<book><isbn>9780586074619</isbn><title>Burning Chrome</title><author>Gibson, William</author></book>
+<book><isbn>9780586200087</isbn><title>The Misenchanted Sword</title><author>Watt-Evans, Lawrence</author></book>
+<book><isbn>9780586200797</isbn><title>Epic Deverry Series. Darkspell. Volume I I</title><author>Kerr, Katharine</author></book>
+<book><isbn>9780586203729</isbn><title>The Diamond Throne (The Elenium, Book 1)</title><author>Eddings, David</author></book>
+<book><isbn>9780586204825</isbn><title>Sorcerer's Legacy</title><author>Wurts, Janny</author></book>
+<book><isbn>9780586207413</isbn><title>Dawnspell (Deverry Cycle 3)</title><author>Kerr, Katherine</author></book>
+<book><isbn>9780586207475</isbn><title>Mona Lisa Overdrive</title><author>Gibson, William</author></book>
+<book><isbn>9780586207604</isbn><title>Lavondyss</title><author>Holdstock, Robert</author></book>
+<book><isbn>9780586207871</isbn><title>Dragonspell (Deverry Cycle 4)</title><author>Kerr, Katharine</author></book>
+<book><isbn>9780586212936</isbn><title>The Hollowing</title><author>Holdstock, Robert</author></book>
+<book><isbn>9780586213148</isbn><title>Polgara the Sorceress</title><author>Eddings, David</author></book>
+<book><isbn>9780586213155</isbn><title>Belgarath the Sorcerer</title><author>Eddings, David</author></book>
+<book><isbn>9780586213896</isbn><title>Red Mars (Mars Trilogy)</title><author>Robinson, Kim Stanley</author></book>
+<book><isbn>9780586215272</isbn><title>Stone Angels</title><author>Jefferies, Michael</author></book>
+<book><isbn>9780586217498</isbn><title>Children of the flame</title><author>Jefferies, Mike</author></book>
+<book><isbn>9780596001889</isbn><title>Python in a Nutshell</title><author>Martelli, Alex</author></book>
+<book><isbn>9780596100469</isbn><title>Python in a Nutshell, Second Edition (In a Nutshell)</title><author>Martelli, Alex</author></book>
+<book><isbn>9780596158064</isbn><title>Learning Python: Powerful Object-Oriented Programming</title><author>Lutz, Mark</author></book>
+<book><isbn>9780596158088</isbn><title>Python Pocket Reference: Python in Your Pocket (Pocket Reference (O'Reilly))</title><author>Lutz, Mark</author></book>
+<book><isbn>9780596158101</isbn><title>Programming Python</title><author>Lutz, Mark</author></book>
+<book><isbn>9780600384045</isbn><title>The Proud Robot</title><author>Kutner, Henry</author></book>
+<book><isbn>9780684854212</isbn><title>In Search of Deep Time: Beyond the Fossil Record to a New History of Life</title><author>Gee, Henry</author></book>
+<book><isbn>9780691089232</isbn><title>One True God: Historical Consequences of Monotheism.</title><author>Stark, Rodney</author></book>
+<book><isbn>9780708823156</isbn><title>Dream Park (Orbit Books)</title><author>Steven Barnes, Jerry Pournelle Larry Niven</author></book>
+<book><isbn>9780708830406</isbn><title>The First Name</title><author>Schmidt, Dennis</author></book>
+<book><isbn>9780708830413</isbn><title>Groa's Other Eye</title><author>Schmidt, Dennis</author></book>
+<book><isbn>9780708837078</isbn><title>Consider Phlebas B</title><author>Banks, Iain M.</author></book>
+<book><isbn>9780708839836</isbn><title>Twilight of the Gods, No. 3: Three Trumps Sounding</title><author>Schmidt, Dennis</author></book>
+<book><isbn>9780708849828</isbn><title>The PreHistory of the Far Side - A 10th Anniversary Exhibit</title><author>Larson, Gary</author></book>
+<book><isbn>9780708880500</isbn><title>Heir of Sea and Fire</title><author>McKillip, Patricia A.</author></book>
+<book><isbn>9780708880517</isbn><title>The Riddle-Master Of Hed (Orbit Books)</title><author>McKillip, Patricia A.</author></book>
+<book><isbn>9780708880524</isbn><title>Harpist in the wind</title><author>McKillip, Patricia A.</author></book>
+<book><isbn>9780708881033</isbn><title>The Source of Magic</title><author>Anthony, Piers</author></book>
+<book><isbn>9780708881040</isbn><title>A Spell For Chameleon</title><author>Anthony, Piers</author></book>
+<book><isbn>9780708881064</isbn><title>Centaur Aisle</title><author>Anthony, Piers</author></book>
+<book><isbn>9780708881071</isbn><title>Castle Roogna</title><author>Anthony, Piers</author></book>
+<book><isbn>9780708881088</isbn><title>Ogre Ogre</title><author>Anthony, Piers</author></book>
+<book><isbn>9780708881095</isbn><title>Night Mare</title><author>Anthony, Piers</author></book>
+<book><isbn>9780708881200</isbn><title>Dragon on a Pedestal</title><author>Anthony, Piers</author></book>
+<book><isbn>9780708881484</isbn><title>Crewel Lye</title><author>Anthony, Piers</author></book>
 <book><isbn>9780708881927</isbn><title>Gods of the Greataway</title><author>Coney, Michael G.</author></book>
 <book><isbn>9780708881941</isbn><title>Celestial Steam Locomotive</title><author>Coney, Michael G.</author></book>
+<book><isbn>9780708882108</isbn><title>Winter of World 1 Anvil of Ice a</title><author>Rohan, Michael Scott</author></book>
+<book><isbn>9780708882122</isbn><title>Golem in the Gears</title><author>Anthony, Piers</author></book>
+<book><isbn>9780708882139</isbn><title>Down Town</title><author>Polikarpus, Viido; King, Tappan</author></book>
 <book><isbn>9780708882313</isbn><title>Fang the Gnome</title><author>Coney, Michael G.</author></book>
-<book><isbn>9780099385608</isbn><title>Twilight Realm</title><author>Carpenter, Christopher</author></book>
-<book><isbn>9780451457813</isbn><title>Storm Front</title><author>Butcher, Jim</author></book>
-<book><isbn>9780099348504</isbn><title>The Crucible of Time</title><author>Brunner, John</author></book>
 <book><isbn>9780708882405</isbn><title>Magic Kingdom For Sale/Sold</title><author>Brooks, Terry</author></book>
-<book><isbn>9780006511380</isbn><title>Darwins Radio</title><author>Bear, Greg</author></book>
-<book><isbn>9780330315760</isbn><title>Moonheart</title><author>de Lint, Charles</author></book>
-<book><isbn>9780330339599</isbn><title>Memory And Dream</title><author>de Lint, Charles</author></book>
-<book><isbn>9780099547105</isbn><title>Eon</title><author>Bear, Greg</author></book>
-<book><isbn>9780099350712</isbn><title>Legacy</title><author>Bear, Greg</author></book>
-<book><isbn>9780330311113</isbn><title>Greenmantle</title><author>de Lint, Charles</author></book>
-<book><isbn>9780732283872</isbn><title>Prey</title><author>Crichton, Michael</author></book>
-<book><isbn>9780732283872</isbn><title>Prey</title><author>Crichton, Michael</author></book>
-<book><isbn>9780349102153</isbn><title>The Bridge</title><author>Banks, Iain</author></book>
-<book><isbn>9780349103235</isbn><title>The Crow Road</title><author>Banks, Iain</author></book>
-<book><isbn>9780349101774</isbn><title>Wasp Factory Uk</title><author>Banks, Iain</author></book>
-<book><isbn>9780349105710</isbn><title>Complicity</title><author>Banks, Iain</author></book>
-<book><isbn>9780349101712</isbn><title>Canal Dreams</title><author>Banks, Iain</author></book>
+<book><isbn>9780708882542</isbn><title>Winter of World 2 Forge Forest a</title><author>Rohan, Michael Scott</author></book>
+<book><isbn>9780708882719</isbn><title>The Hammer of the Sun</title><author>Rohan, Michael Scott</author></book>
 <book><isbn>9780708883099</isbn><title>The Player of Games</title><author>Banks, Iain M</author></book>
-<book><isbn>9780006167778</isbn><title>White Gold Wielder</title><author>Donaldson, Stephen</author></book>
-<book><isbn>9780006470199</isbn><title>Real Story</title><author>Donaldson, Stephen</author></book>
-<book><isbn>9780552135382</isbn><title>The Werewolf and the Wormlord</title><author>Cook, Hugh</author></book>
-<book><isbn>9780552134392</isbn><title>The Wicked and The Witless</title><author>Cook, Hugh</author></book>
-<book><isbn>9780552131315</isbn><title>The Women and the Warlords</title><author>Cook, Hugh</author></book>
-<book><isbn>9780552133272</isbn><title>The Walrus and the Warwolf</title><author>Cook, Hugh</author></book>
-<book><isbn>9780007288427</isbn><title>Little Brother</title><author>Doctorow, Cory</author></book>
-<book><isbn>9780552125666</isbn><title>The Wizards And The Warriors</title><author>Cook, Hugh</author></book>
-<book><isbn>9780552138482</isbn><title>The Worshippers and the Way</title><author>Cook, Hugh</author></book>
-<book><isbn>9780552135368</isbn><title>The Wishstone and the Wonderworkers</title><author>Cook, Hugh</author></book>
+<book><isbn>9780708883587</isbn><title>Use of Weapons</title><author>Banks, Iain M</author></book>
+<book><isbn>9780713683752</isbn><title>Ktg Fencing (Know the Game)</title><author>Unknown, Author</author></book>
+<book><isbn>9780713995206</isbn><title>Rebel Code:[The Inside Story of Linux and the Open Source Revolution]</title><author>Moody, Glyn</author></book>
+<book><isbn>9780713998627</isbn><title>Collapse</title><author>Diamond, Jared</author></book>
+<book><isbn>9780716733874</isbn><title>Why People Believe Weird Things: Pseudoscience, Superstition, and Other Confusions of Our Time</title><author>Shermer, Michael</author></book>
 <book><isbn>9780722129999</isbn><title>Ancient, My Enemy</title><author>Dickson, Gordon R.</author></book>
-<book><isbn>9780552131308</isbn><title>Wordsmiths and the Warguild</title><author>Cook, Hugh</author></book>
-<book><isbn>9780752864303</isbn><title>Do Androids Dream of Electric Sheep?</title><author>Dick, Philip K.</author></book>
-<book><isbn>9780575079977</isbn><title>The Three Stigmata of Palmer Eldritch</title><author>Dick, Philip K.</author></book>
-<book><isbn>9780553173987</isbn><title>The River of Time</title><author>Brin, David</author></book>
-<book><isbn>9781857232233</isbn><title>Earth</title><author>Brin, David</author></book>
-<book><isbn>9780552135375</isbn><title>The Wazir and the Witch</title><author>Cook, Hugh</author></book>
-<book><isbn>9781857989472</isbn><title>Minority Report</title><author>Dick, Philip K</author></book>
-<book><isbn>9780006174288</isbn><title>The Ring of Allaire</title><author>Dexter, Susan</author></book>
-<book><isbn>0330236199</isbn><title>Profiles Of The Future</title><author>Clarke, Arthur C.</author></book>
-<book><isbn>0140224076</isbn><title>Einstein's Universe: Guide to the Theory of Relativity</title><author>Calder, Nigel</author></book>
-<book><isbn>058604356X</isbn><title>Fahrenheit 451</title><author>Bradbury, Ray</author></book>
-<book><isbn>0722116306</isbn><title>Timescape</title><author>Benford, Gregory</author></book>
-<book><isbn>0812524829</isbn><title>Slant</title><author>Bear, Greg</author></book>
-<book><isbn>0006152473</isbn><title>Power That Preserves</title><author>Donaldson, Stephen</author></book>
-<book><isbn>0006161405</isbn><title>Wounded Land</title><author>Donaldson, Stephen</author></book>
-<book><isbn>0006163831</isbn><title>One Tree</title><author>Donaldson, Stephen</author></book>
-<book><isbn>0006152392</isbn><title>Lord Foul's Bane</title><author>Donaldson, Stephen</author></book>
-<book><isbn>0006152465</isbn><title>Illearth War</title><author>Donaldson, Stephen</author></book>
-<book><isbn>0553234951</isbn><title>Startide Rising (Uplift Trilogy)</title><author>Brin, David</author></book>
-<book><isbn>0198312415</isbn><title>Dragon Book of Verse</title><author>Harrison, Michael</author></book>
-<book><isbn>9780586048351</isbn><title>The Dark Design</title><author>Farmer, Philip José</author></book>
-<book><isbn>9780586053874</isbn><title>The Magic Labyrinth</title><author>Farmer, Philip José</author></book>
-<book><isbn>9780747403906</isbn><title>Stark</title><author>Elton, Ben</author></book>
-<book><isbn>9780552773911</isbn><title>Blind Faith</title><author>Elton, Ben</author></book>
-<book><isbn>9780747405689</isbn><title>Gridlock</title><author>Elton, Ben</author></book>
-<book><isbn>9780140307153</isbn><title>Moominvalley in November</title><author>Jansson, Tove</author></book>
-<book><isbn>9781740669818</isbn><title>Preincarnate</title><author>Micallef, Shaun</author></book>
-<book><isbn>9780586039397</isbn><title>To Your Scattered Bodies Go</title><author>Farmer, Philip José</author></book>
-<book><isbn>9780586058282</isbn><title>Magician</title><author>Feist, Raymond E.</author></book>
-<book><isbn>9780586064177</isbn><title>Silverthorn (Riftwar Saga)</title><author>Feist, Raymond E</author></book>
-<book><isbn>9780586045947</isbn><title>Moonraker</title><author>Fleming, Ian</author></book>
-<book><isbn>9780552125697</isbn><title>The Fourth Protocol</title><author>Forsyth, Frederick</author></book>
-<book><isbn>9780450398742</isbn><title>Voyage to the City of the Dead</title><author>Foster, Alan Dean</author></book>
-<book><isbn>9780755322800</isbn><title>Neverwhere</title><author>Gaiman, Neil</author></book>
+<book><isbn>9780722145432</isbn><title>Yearwood</title><author>Hazel, Paul</author></book>
+<book><isbn>9780722145449</isbn><title>Undersea (The Finnbranch Vol. 2)</title><author>Hazel, Paul</author></book>
+<book><isbn>9780722147610</isbn><title>The Last Gasp</title><author>Hoyle, Trevor</author></book>
+<book><isbn>9780725107550</isbn><title>The autobiography of the woman the Gestapo called the White Mouse</title><author>Wake, Nancy</author></book>
+<book><isbn>9780731914425</isbn><title>Gregory's Adelaide Street Directory</title><author>Unknown, Author</author></book>
+<book><isbn>9780731914913</isbn><title>UBD Canberra Map</title><author>Unknown, Author</author></book>
+<book><isbn>9780732256821</isbn><title>The Ancient Future</title><author>Harding, Traci</author></book>
+<book><isbn>9780732267162</isbn><title>Snowtown: The Bodies in Barrels Murders</title><author>Merriman, J.; Pudney, J.</author></book>
+<book><isbn>9780732270957</isbn><title>Magician's Guild: Book 1 of Black Magician Trilogy</title><author>Canavan, Trudi</author></book>
+<book><isbn>9780732271930</isbn><title>Blood (Ashuak chronicles)</title><author>Shillitoe, Tony</author></book>
+<book><isbn>9780732283872</isbn><title>Prey</title><author>Crichton, Michael</author></book>
+<book><isbn>9780733314971</isbn><title>Enough Rope 2</title><author>Denton, Andrew</author></book>
+<book><isbn>9780733316739</isbn><title>The Glass House</title><author>Simmons, Ian</author></book>
+<book><isbn>9780736041850</isbn><title>Strength Training Anatomy</title><author>Delavier, Frederic</author></book>
 <book><isbn>9780747231363</isbn><title>Malady of Magicks (Ebenezum Trilgy)</title><author>Gardner, Craig Shaw</author></book>
 <book><isbn>9780747231578</isbn><title>A Multitude of Monsters (Ebenezum trilgy)</title><author>Gardner, Craig Shaw</author></book>
 <book><isbn>9780747232131</isbn><title>A Difficulty with Dwarves (Ballad Wuntvor)</title><author>Gardner, Craig Shaw</author></book>
-<book><isbn>9780552136273</isbn><title>Rats And Gargoyles</title><author>Gentle, Mary</author></book>
-<book><isbn>9780099373001</isbn><title>Golden Witchbreed</title><author>Gentle, Mary</author></book>
-<book><isbn>9780141016719</isbn><title>Spook Country</title><author>Gibson, William</author></book>
-<book><isbn>9780140266146</isbn><title>Pattern Recognition</title><author>Gibson, William</author></book>
-<book><isbn>9780140266139</isbn><title>All Tomorrow's Parties</title><author>Gibson, William</author></book>
-<book><isbn>9780586071212</isbn><title>Count Zero</title><author>Gibson, William</author></book>
-<book><isbn>9780140157727</isbn><title>Virtual Light</title><author>Gibson, William</author></book>
-<book><isbn>9780330284141</isbn><title>Name of the Rose</title><author>Eco, Umberto</author></book>
-<book><isbn>9780552130196</isbn><title>Demon Lord of Karanda (The Malloreon)</title><author>Eddings, David</author></book>
-<book><isbn>9780552130202</isbn><title>Sorceress Of Darshiva (The Malloreon)</title><author>Eddings, David</author></book>
-<book><isbn>9780552130189</isbn><title>King Of The Murgos (The Malloreon)</title><author>Eddings, David</author></book>
-<book><isbn>9780586213148</isbn><title>Polgara the Sorceress</title><author>Eddings, David</author></book>
-<book><isbn>9780552124478</isbn><title>Enchanters' End Game (Belgariad)</title><author>Eddings, David</author></book>
-<book><isbn>9780552123822</isbn><title>Magician's Gambit</title><author>Eddings, David</author></book>
-<book><isbn>9780552122849</isbn><title>Pawn of Prophecy</title><author>Eddings, David</author></book>
-<book><isbn>9780552124355</isbn><title>Castle Of Wizardry</title><author>Eddings, David</author></book>
-<book><isbn>9780552130172</isbn><title>Guardians of the West (The Malloreon)</title><author>Eddings, David</author></book>
-<book><isbn>9780586203729</isbn><title>The Diamond Throne (The Elenium, Book 1)</title><author>Eddings, David</author></book>
-<book><isbn>9780552130219</isbn><title>Seeress of Kell</title><author>Eddings, David</author></book>
-<book><isbn>9780552123488</isbn><title>Queen of Sorcery</title><author>Eddings, David</author></book>
-<book><isbn>9780586213155</isbn><title>Belgarath the Sorcerer</title><author>Eddings, David</author></book>
-<book><isbn>9780575097575</isbn><title>Rivers of London</title><author>Aaronovitch, Ben</author></book>
-<book><isbn>9780140269635</isbn><title>Bachelor Kisses</title><author>Earls, Nick</author></book>
-<book><isbn>9780552126830</isbn><title>Exiles of the Rynth</title><author>Douglas, Carole Nelson</author></book>
-<book><isbn>9780006176541</isbn><title>Man Rides Through</title><author>Donaldson, Stephen</author></book>
-<book><isbn>9780006173991</isbn><title>Mirror of Her Dreams</title><author>Donaldson, Stephen</author></book>
-<book><isbn>9780006169857</isbn><title>Daughter of Regals</title><author>Donaldson, Stephen</author></book>
-<book><isbn>9780006470229</isbn><title>Chaos and Order</title><author>Donaldson, Stephen</author></book>
-<book><isbn>9780316848633</isbn><title>The Business</title><author>Banks, Iain</author></book>
-<book><isbn>9781841492391</isbn><title>The Algebraist</title><author>Banks, Iain M</author></book>
-<book><isbn>0345298365</isbn><title>Six of Swords</title><author>Douglas, Carole Nelson</author></book>
-<book><isbn>0671648705</isbn><title>Timetrap (Star Trek, No 40)</title><author>Dvorkin, David</author></book>
-<book><isbn>0340369418</isbn><title>Role of Honor</title><author>Gardner, John</author></book>
-<book><isbn>0552115002</isbn><title>Devil's Alternative</title><author>Forsyth, Frederick</author></book>
-<book><isbn>0722134274</isbn><title>Maker Of Universes</title><author>Farmer, Philip José</author></book>
-<book><isbn>0872169510</isbn><title>Feast Unknown</title><author>Farmer, Philip José</author></book>
-<book><isbn>1563331667</isbn><title>Image of the Beast</title><author>Farmer, Philip José</author></book>
-<book><isbn>0586039899</isbn><title>The Fabulous Riverboat</title><author>Farmer, Philip José</author></book>
-<book><isbn>0441273874</isbn><title>The Gates of Creation</title><author>Farmer, Philip José</author></book>
-<book><isbn>0441786537</isbn><title>The Stone God Awakens</title><author>Farmer, Philip José</author></book>
-<book><isbn>1863300325</isbn><title>Striped Holes</title><author>Broderick, Damien</author></book>
-<book><isbn>1863300309</isbn><title>The Black Grail</title><author>Broderick, Damien</author></book>
-<book><isbn>9780141323954</isbn><title>Dot.Robot</title><author>Bradbury, Jason</author></book>
-<book><isbn>9781846462153</isbn><title>Mr Christmas</title><author>Hargreaves, Roger</author></book>
-<book><isbn>9780007325221</isbn><title>Makers</title><author>Doctorow, Cory</author></book>
-<book><isbn>9781849900270</isbn><title>Top Gear: The Alternative Highway Code</title><author>Gear, Ministry of Top</author></book>
-<book><isbn>9781875992928</isbn><title>France Country Map by Hema</title><author>Maps, Hema</author></book>
-<book><isbn>9781865003108</isbn><title>Finland Map by Hema</title><author>Hema</author></book>
-<book><isbn>9781865003245</isbn><title>Scandinavia Map by Hema</title><author>Maps, Hema</author></book>
-<book><isbn>9780099529934</isbn><title>The Complete Sherlock Holmes</title><author>Doyle, Sir Arthur Conan</author></book>
-<book><isbn>9780141023304</isbn><title>The Defence of the Realm</title><author>Andrew, Christopher</author></book>
-<book><isbn>9781921145698</isbn><title>The 7.56 Report</title><author>Clarke, John</author></book>
-<book><isbn>9780143566434</isbn><title>The Time Machine</title><author>Wells, H.G.</author></book>
-<book><isbn>9780141026114</isbn><title>Don't Stop Me Now</title><author>Clarkson, Jeremy</author></book>
-<book><isbn>9780143204787</isbn><title>Obernewtyn</title><author>Carmody, Isobelle</author></book>
-<book><isbn>9780099302780</isbn><title>Guns, Germs and Steel</title><author>Diamond, Jared</author></book>
-<book><isbn>9780340950920</isbn><title>James May's Magnificent Machines</title><author>May, James</author></book>
-<book><isbn>9781861979254</isbn><title>100 Things to Do Before You Die</title><author>Scientist, New</author></book>
-<book><isbn>9781840139792</isbn><title>Submarines of the World</title><author>Jackson, Robert</author></book>
-<book><isbn>9780141029290</isbn><title>The Joys of Engrish</title><author>Caires, Steven</author></book>
-<book><isbn>9781933662084</isbn><title>Home is On Top of a Dog House</title><author>Schulz, Charles M.</author></book>
-<book><isbn>9780753825631</isbn><title>Or Is That Just Me?</title><author>Hammond, Richard</author></book>
-<book><isbn>9781408804162</isbn><title>Magnificent Desolation</title><author>Aldrin, Buzz</author></book>
-<book><isbn>9781859845363</isbn><title>Bush in Babylon : The Recolonisation of Iraq</title><author>Ali, Tariq</author></book>
-<book><isbn>9780733314971</isbn><title>Enough Rope 2</title><author>Denton, Andrew</author></book>
-<book><isbn>9780007331680</isbn><title>The Man in the White Suit</title><author>Collins, Ben</author></book>
-<book><isbn>9780857520272</isbn><title>The Disappearing Spoon</title><author>Kean, Sam</author></book>
-<book><isbn>9780733316739</isbn><title>The Glass House</title><author>Simmons, Ian</author></book>
-<book><isbn>9780415078542</isbn><title>A History of Western Philosophy</title><author>Russell, Bertrand</author></book>
-<book><isbn>9781905443260</isbn><title>Rapid French</title><author>Earworms</author></book>
-<book><isbn>9781405341691</isbn><title>Lego Book</title><author>Lipkowitz, Daniel</author></book>
-<book><isbn>9781405906968</isbn><title>Top Gear: Official Annual 2011</title><author>BBC</author></book>
-<book><isbn>9781846074639</isbn><title>The Big Book of Top Gear 2009</title><author>Porter, Richard</author></book>
-<book><isbn>9781846078248</isbn><title>The Big Book of Top Gear 2010</title><author>Books, BBC</author></book>
-<book><isbn>9780864550163</isbn><title>How to Stop Worrying and be Happy</title><author>Gressor, Megan</author></book>
-<book><isbn>9780751338645</isbn><title>Supersex</title><author>Cox, Tracey</author></book>
-<book><isbn>0091833795</isbn><title>Discover Australia: National Parks</title><author>Moon, Ron and Viv</author></book>
-<book><isbn>9780596158064</isbn><title>Learning Python: Powerful Object-Oriented Programming</title><author>Lutz, Mark</author></book>
-<book><isbn>9780596001889</isbn><title>Python in a Nutshell</title><author>Martelli, Alex</author></book>
-<book><isbn>9781921259333</isbn><title>Essential Guide to Woodwork</title><author>Simpson, Chris</author></book>
-<book><isbn>9780586066881</isbn><title>Darkness at Sethanon (Riftwar Saga)</title><author>Feist, Raymond E.</author></book>
-<book><isbn>9780732267162</isbn><title>Snowtown: The Bodies in Barrels Murders</title><author>Merriman, J.; Pudney, J.</author></book>
-<book><isbn>9783822855669</isbn><title>Robots and Spaceships</title><author>Kitahara, Teruhisa; Shimizu, Yukio</author></book>
-<book><isbn>9781740591638</isbn><title>Japanese: Lonely Planet Phrasebook</title><author>Abe, Yoshi; Lonely Planet Phrasebooks</author></book>
-<book><isbn>9780141044224</isbn><title>Don't Swallow Your Gum!</title><author>Carroll, Aaron E.; Vreeman, Rachel C.</author></book>
-<book><isbn>9780963009609</isbn><title>Pihkal: A Chemical Love Story</title><author>Shulgin, Alexander; Shulgin, Ann</author></book>
-<book><isbn>9781921462023</isbn><title>Tricky People</title><author>Fuller, Andrew</author></book>
-<book><isbn>9781863300322</isbn><title>Striped Holes</title><author>Broderick, Damien</author></book>
-<book><isbn>1863300325</isbn><title>Striped Holes</title><author>Broderick, Damien</author></book>
-<book><isbn>9781863300308</isbn><title>The Black Grail</title><author>Broderick, Damien</author></book>
-<book><isbn>1863300309</isbn><title>The Black Grail</title><author>Broderick, Damien</author></book>
-<book><isbn>9781861979834</isbn><title>Does Anything Eat Wasps?</title><author>Scientist, New</author></book>
-<book><isbn>9781863251846</isbn><title>Don't Sweat the Small Stuff at Work</title><author>Carlson, Richard</author></book>
-<book><isbn>9780141328607</isbn><title>Finn Family Moomintroll (Moomins)</title><author>Jansson, Tove</author></book>
-<book><isbn>9780141334394</isbn><title>Moominpappa at Sea</title><author>Jansson, Tove</author></book>
-<book><isbn>9780552126809</isbn><title>Secret Of The Sixth Magic</title><author>Hardy, Lyndon</author></book>
-<book><isbn>0340397063</isbn><title>The Serpent's Circle (Coronet Books)</title><author>Harpur, Patrick</author></book>
+<book><isbn>9780747403906</isbn><title>Stark</title><author>Elton, Ben</author></book>
+<book><isbn>9780747404132</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>9780747405689</isbn><title>Gridlock</title><author>Elton, Ben</author></book>
+<book><isbn>9780747406099</isbn><title>Boat of a Million Years</title><author>Anderson, Poul</author></book>
+<book><isbn>9780747527244</isbn><title>Leith's Cooking for One or Two</title><author>Tyrer, Polly</author></book>
+<book><isbn>9780747580232</isbn><title>How To Survive A Robot Uprising: Tips On Defending Yourself Against The Coming Rebellion</title><author>Wilson, Daniel H.</author></book>
 <book><isbn>9780749309428</isbn><title>The Silence of the Lambs</title><author>Harris, Thomas</author></book>
-<book><isbn>9780722145432</isbn><title>Yearwood</title><author>Hazel, Paul</author></book>
-<book><isbn>9780722145449</isbn><title>Undersea (The Finnbranch Vol. 2)</title><author>Hazel, Paul</author></book>
-<book><isbn>0450051277</isbn><title>Number of the Beast</title><author>Heinlein, Robert A.</author></book>
-<book><isbn>9780340837955</isbn><title>Stranger in a Strange Land</title><author>Heinlein, Robert A.</author></book>
-<book><isbn>9780586065853</isbn><title>Mythago Wood</title><author>Holdstock, Robert</author></book>
-<book><isbn>9780006480013</isbn><title>Merlin's Wood</title><author>Holdstock, Robert</author></book>
-<book><isbn>9780586207604</isbn><title>Lavondyss</title><author>Holdstock, Robert</author></book>
-<book><isbn>9780586212936</isbn><title>The Hollowing</title><author>Holdstock, Robert</author></book>
-<book><isbn>9781841492827</isbn><title>Earth, Air, Fire and Custard</title><author>Holt, Tom</author></book>
-<book><isbn>9781841492193</isbn><title>In Your Dreams</title><author>Holt, Tom</author></book>
-<book><isbn>9781841492087</isbn><title>The Portable Door</title><author>Holt, Tom</author></book>
-<book><isbn>9780099455400</isbn><title>The Stonor Eagles</title><author>Horwood, William</author></book>
-<book><isbn>9780722147610</isbn><title>The Last Gasp</title><author>Hoyle, Trevor</author></book>
-<book><isbn>9780552134002</isbn><title>The Story of the Stone</title><author>Hughart, Barry</author></book>
-<book><isbn>9780552126465</isbn><title>Bridge of Birds</title><author>Hughart, Barry</author></book>
-<book><isbn>9780552134019</isbn><title>Eight Skilled Gentlemen</title><author>Hughart, Barry</author></book>
-<book><isbn>9780006173434</isbn><title>Prophet of Lamath</title><author>Hughes, Robert Don</author></book>
-<book><isbn>9780006173441</isbn><title>The Wizard in Waiting</title><author>Hughes, Robert Don</author></book>
-<book><isbn>9780330480062</isbn><title>Fallen Dragon</title><author>Hamilton, Peter F</author></book>
-<book><isbn>9780330351454</isbn><title>Naked God (Nights Dawn Trilogy 3)</title><author>Hamilton, Peter F</author></book>
-<book><isbn>9780330351430</isbn><title>Neutronium Alchemist (Nights Dawn Trilogy 2)</title><author>Hamilton, Peter F</author></book>
-<book><isbn>9780330330459</isbn><title>A Quantum Murder (Greg Mandel)</title><author>Hamilton, Peter F</author></book>
-<book><isbn>9780330480222</isbn><title>Misspent Youth</title><author>Hamilton, Peter F</author></book>
-<book><isbn>9780330330442</isbn><title>Nano Flower (Greg Mandel)</title><author>Hamilton, Peter F</author></book>
-<book><isbn>9780330340328</isbn><title>The Reality Dysfunction (Night's Dawn Trilogy, Book 1)</title><author>Hamilton, Peter F.</author></book>
-<book><isbn>9780330443029</isbn><title>The Dreaming Void</title><author>Hamilton, Peter F.</author></book>
-<book><isbn>9780330351829</isbn><title>Second Chance at Eden</title><author>Hamilton, Peter F</author></book>
-<book><isbn>9780732256821</isbn><title>The Ancient Future</title><author>Harding, Traci</author></book>
-<book><isbn>9780552126793</isbn><title>Master of the Five Magics</title><author>Hardy, Lyndon</author></book>
-<book><isbn>9780330493536</isbn><title>Judas Unchained (Commonwealth Saga)</title><author>Hamilton, Peter F</author></book>
-<book><isbn>9780330493314</isbn><title>Pandora's Star</title><author>Hamilton, Peter F.</author></book>
-<book><isbn>9780048233431</isbn><title>Dragonsbane</title><author>Hambly, Barbara</author></book>
-<book><isbn>9780140065978</isbn><title>Monsignor Quixote</title><author>Greene, Graham</author></book>
-<book><isbn>9780140157727</isbn><title>Virtual Light</title><author>Gibson, William</author></book>
-<book><isbn>9780586207475</isbn><title>Mona Lisa Overdrive</title><author>Gibson, William</author></book>
-<book><isbn>9780575052970</isbn><title>The Difference Engine</title><author>Gibson, William; Sterling, Bruce</author></book>
-<book><isbn>9780586074619</isbn><title>Burning Chrome</title><author>Gibson, William</author></book>
-<book><isbn>9780586066454</isbn><title>Neuromancer</title><author>Gibson, William</author></book>
-<book><isbn>0345337646</isbn><title>The Silent Tower (Windrose Chronicles, Book 1)</title><author>Hambly, Barbara</author></book>
-<book><isbn>0600202615</isbn><title>Duncton Wood</title><author>Horwood, William</author></book>
-<book><isbn>0671877577</isbn><title>The Proteus Operation</title><author>Hogan, James P.</author></book>
-<book><isbn>0552097551</isbn><title>Catch-22</title><author>Heller, Joseph</author></book>
-<book><isbn>0450050300</isbn><title>Glory Road</title><author>Heinlein, Robert A</author></book>
-<book><isbn>0450040763</isbn><title>Podkayne Of Mars</title><author>Heinlein, Robert A.</author></book>
-<book><isbn>0450035859</isbn><title>Revolt in 2100</title><author>Heinlein, Robert A.</author></book>
-<book><isbn>0450039528</isbn><title>The Day After Tomorrow</title><author>Heinlein, Robert A.</author></book>
-<book><isbn>0450054381</isbn><title>I Will Fear No Evil</title><author>Heinlein, Robert A</author></book>
-<book><isbn>0450058409</isbn><title>Job - A Comedy Of Justice</title><author>Heinlein, Robert A.</author></book>
-<book><isbn>9780330285537</isbn><title>Jack the Bodiless (Galactic Milieu Trilogy)</title><author>May, Julian</author></book>
-<book><isbn>9780330322997</isbn><title>Diamond Mask (The Galactic Mileu Trilogy)</title><author>May, Julian</author></book>
-<book><isbn>9780330323055</isbn><title>Magnificat (The Galactic Mileu Trilogy)</title><author>May, Julian</author></book>
-<book><isbn>9780552124997</isbn><title>Moreta</title><author>McCaffrey, Anne</author></book>
-<book><isbn>9780552139137</isbn><title>Chronicles of Pern</title><author>Mccaffrey, Anne</author></book>
-<book><isbn>9780552130998</isbn><title>Renegades of Pern</title><author>McCaffrey, Anne</author></book>
-<book><isbn>0441005314</isbn><title>Freedom's Choice</title><author>McCaffrey, Anne</author></book>
-<book><isbn>9780552137294</isbn><title>All the Weyrs of Pern</title><author>McCaffrey, Anne</author></book>
-<book><isbn>9780552130981</isbn><title>Dragonsdawn</title><author>Mccaffrey, Anne</author></book>
-<book><isbn>0345296664</isbn><title>Dragonquest</title><author>McCaffrey, Anne</author></book>
-<book><isbn>9780552086615</isbn><title>Decision at Doona</title><author>Mccaffrey, Anne</author></book>
-<book><isbn>9780552142717</isbn><title>Freedom's Landing (Catteni 1)</title><author>McCaffrey, Anne</author></book>
-<book><isbn>9780552146272</isbn><title>Freedom's Challenge (Catteni 3)</title><author>McCaffrey, Anne</author></book>
-<book><isbn>0345424603</isbn><title>The Masterharper of Pern (Dragonriders of Pern)</title><author>McCaffrey, Anne</author></book>
-<book><isbn>9780708880524</isbn><title>Harpist in the wind</title><author>McKillip, Patricia A.</author></book>
-<book><isbn>9780708880517</isbn><title>The Riddle-Master Of Hed (Orbit Books)</title><author>McKillip, Patricia A.</author></book>
-<book><isbn>9780708880500</isbn><title>Heir of Sea and Fire</title><author>McKillip, Patricia A.</author></book>
-<book><isbn>9780553505894</isbn><title>Paradox (Nulapeiron 1)</title><author>Meaney, John</author></book>
-<book><isbn>9780330492522</isbn><title>Iron Council</title><author>Mieville, China</author></book>
-<book><isbn>9780330434188</isbn><title>Looking for Jake: And Other Stories</title><author>Mieville, China</author></book>
-<book><isbn>9780140305029</isbn><title>Moominland Midwinter (Moomintroll)</title><author>Jansson, Tove</author></book>
-<book><isbn>9780586215272</isbn><title>Stone Angels</title><author>Jefferies, Michael</author></book>
-<book><isbn>9780006471011</isbn><title>Hidden Echoes</title><author>Jefferies, Mike</author></book>
-<book><isbn>9780099320609</isbn><title>The Citadel of the Autarch (The Book of the New Sun)</title><author>Wolfe, Gene</author></book>
-<book><isbn>9780586217498</isbn><title>Children of the flame</title><author>Jefferies, Mike</author></book>
-<book><isbn>9780006173458</isbn><title>Power and the Prophet</title><author>Hughes, Robert Don</author></book>
-<book><isbn>9780586207413</isbn><title>Dawnspell (Deverry Cycle 3)</title><author>Kerr, Katherine</author></book>
-<book><isbn>9780586073155</isbn><title>Daggerspell (Deverry)</title><author>Kerr, Katharine</author></book>
-<book><isbn>9780586207871</isbn><title>Dragonspell (Deverry Cycle 4)</title><author>Kerr, Katharine</author></book>
-<book><isbn>037145003955</isbn><title>The Edge of Tomorrow</title><author>Asimov, Isaac</author></book>
-<book><isbn>0812558170</isbn><title>The Urth of the New Sun</title><author>Wolfe, Gene</author></book>
-<book><isbn>9780450393785</isbn><title>House of the Wolf</title><author>Wren, M. K.</author></book>
-<book><isbn>9780586200797</isbn><title>Epic Deverry Series. Darkspell. Volume I I</title><author>Kerr, Katharine</author></book>
-<book><isbn>9780450058486</isbn><title>Sword of the Lamb</title><author>Wren, M.K.</author></book>
-<book><isbn>9780450058684</isbn><title>Shadow of the Swan</title><author>Wren, M.K.</author></book>
-<book><isbn>9780586042199</isbn><title>The Dispossessed (Panther science fiction)</title><author>le Guin, Ursula</author></book>
-<book><isbn>9780583130899</isbn><title>Swords Against Wizardry: Book 4 of Fafhrd And The Gray Mouser</title><author>Leiber, Fritz</author></book>
-<book><isbn>9780583118170</isbn><title>The Swords of Lankhmar (The swords series)</title><author>Leiber, Fritz</author></book>
-<book><isbn>0330201077</isbn><title>The Spy Who Came in from the Cold</title><author>le Carre, John</author></book>
-<book><isbn>9780600384045</isbn><title>The Proud Robot</title><author>Kutner, Henry</author></book>
-<book><isbn>0099288206</isbn><title>The Space Eater</title><author>Langford, David</author></book>
-<book><isbn>9780583131131</isbn><title>Swords And Ice Magic: Book 6 In The Swords Series</title><author>Leiber, Fritz</author></book>
-<book><isbn>9781857988109</isbn><title>Ill Met in Lankhmar (Swords and Deviltry and Swords Against Death)</title><author>Leiber, Fritz</author></book>
-<book><isbn>9780583130844</isbn><title>Swords and Deviltry</title><author>Leiber, Fritz</author></book>
-<book><isbn>9780583130875</isbn><title>Swords Against Death</title><author>Leiber, Fritz</author></book>
-<book><isbn>9780583130882</isbn><title>Swords In The Mist</title><author>Leiber, Fritz</author></book>
-<book><isbn>9780586204825</isbn><title>Sorcerer's Legacy</title><author>Wurts, Janny</author></book>
-<book><isbn>9780552131612</isbn><title>The Mage-Born Child (Servants Of Ark)</title><author>Wylie, Jonathan</author></book>
-<book><isbn>9780553171549</isbn><title>Damiano</title><author>MacAvoy, R.A.</author></book>
-<book><isbn>9780553171556</isbn><title>Damiano's Lute</title><author>MacAvoy, R. A.</author></book>
-<book><isbn>9780553171563</isbn><title>Raphael</title><author>MacAvoy, R.A.</author></book>
-<book><isbn>9781841492247</isbn><title>Newton's Wake</title><author>Macleod, Ken</author></book>
-<book><isbn>9780552131346</isbn><title>The Centre of the Circle</title><author>Wylie, Jonathan</author></book>
-<book><isbn>9780552131018</isbn><title>The First Named (Servants Of Ark)</title><author>Wylie, Jonathan</author></book>
-<book><isbn>9781841493442</isbn><title>Learning the World: A Novel of First Contact</title><author>MacLeod, Ken</author></book>
+<book><isbn>9780749537555</isbn><title>The AA Pub Guide 2004</title><author>Publishing, AA</author></book>
+<book><isbn>9780749547929</isbn><title>AA Caravan &amp; Camping France 2006</title><author>Publishing, AA</author></book>
+<book><isbn>9780750673891</isbn><title>Robotics, Mechatronics, and Artificial Intelligence: Experimental Circuit Blocks for Designers</title><author>Braga, Newton C.</author></book>
+<book><isbn>9780751338645</isbn><title>Supersex</title><author>Cox, Tracey</author></book>
+<book><isbn>9780751536805</isbn><title>Long Way Round</title><author>McGregor, Ewan</author></book>
+<book><isbn>9780752837512</isbn><title>Ultra Secret Pb</title><author>Winterbottom, F W</author></book>
+<book><isbn>9780752864303</isbn><title>Do Androids Dream of Electric Sheep?</title><author>Dick, Philip K.</author></book>
+<book><isbn>9780753825631</isbn><title>Or Is That Just Me?</title><author>Hammond, Richard</author></book>
+<book><isbn>9780755322800</isbn><title>Neverwhere</title><author>Gaiman, Neil</author></book>
+<book><isbn>9780764554292</isbn><title>Japanese for Dummies AUDIO+CD</title><author>Sato, Eriko</author></book>
+<book><isbn>9780804833653</isbn><title>Guide to Reading &amp; Writing Japanese: Third Edition</title><author>Kenneth Hanshall; Christropher Seeley; Florence Sakade; Henk de Groot</author></book>
+<book><isbn>9780850305685</isbn><title>Using the Runes</title><author>Cooper, D. Jason</author></book>
+<book><isbn>9780853648673</isbn><title>Is the New Testament History?</title><author>Barnett, Paul</author></book>
+<book><isbn>9780857520272</isbn><title>The Disappearing Spoon</title><author>Kean, Sam</author></book>
+<book><isbn>9780860078494</isbn><title>The Flight of the Horse (Orbit Books)</title><author>Niven, Larry</author></book>
+<book><isbn>9780864424099</isbn><title>Lonely Planet Canada</title><author>Mark Lightbody; Dorinda Talbot; Jim Dufresne; Tom Smallman</author></book>
+<book><isbn>9780864424754</isbn><title>Lonely Planet Spanish Phrasebook (Spanish Edition)</title><author>Izaskun Arretxe; Allison Jones</author></book>
+<book><isbn>9780864424778</isbn><title>Lonely Planet Trekking in the Patagonian Andes</title><author>Lindenmayer, Clem</author></book>
+<book><isbn>9780864425584</isbn><title>Lonely Planet Latin American Spanish (Lonely Planet Phrasebook: India)</title><author>Unknown, Author</author></book>
+<book><isbn>9780864426390</isbn><title>Lonely Planet Western Europe (Lonley Planet on a Shoestring)</title><author>Fallon, Steve</author></book>
+<book><isbn>9780864426413</isbn><title>Lonely Planet Argentina: Uruguay &amp; Paraguay</title><author>Bernhardson, Wayne</author></book>
+<book><isbn>9780864426567</isbn><title>Lonely Planet South America on a Shoestring</title><author>James Lyon; Andrew Draffen; Krzysztof Dydynski; Conner Gorry; Mark Plotkin</author></book>
+<book><isbn>9780864426680</isbn><title>Lonely Planet Bolivia</title><author>Swaney, Deanna</author></book>
+<book><isbn>9780864427106</isbn><title>Lonely Planet Peru</title><author>Rachowiecki, Rob</author></book>
+<book><isbn>9780864427137</isbn><title>Lonely Planet Russia, Ukraine &amp; Belarus</title><author>Richard Nebesky; John Noble; George Wesley; Nick Selby; Deanna Swaney; Anthony Haywood</author></book>
+<book><isbn>9780864427618</isbn><title>Lonely Planet Ecuador &amp; the Galapagos Islands</title><author>Rob Rachowiecki; Danny Palmerlee</author></book>
+<book><isbn>9780864550163</isbn><title>How to Stop Worrying and be Happy</title><author>Gressor, Megan</author></book>
+<book><isbn>9780868246222</isbn><title>Fundamentalism and freedom</title><author>Cameron, Peter Scott</author></book>
+<book><isbn>9780868246291</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>9780908988822</isbn><title>Eye on the Sky</title><author>Andersen, Geoff</author></book>
+<book><isbn>9780909439064</isbn><title>Melway Greater Melbourne</title><author>Unknown, Author</author></book>
+<book><isbn>9780946983063</isbn><title>Trans-Siberian rail guide</title><author>Strauss, Robert</author></book>
+<book><isbn>9780947148102</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>9780949757456</isbn><title>The Macquarie dictionary of Australian colloquial language</title><author>Delbridge, Arthur</author></book>
+<book><isbn>9780951868409</isbn><title>Shakespeare's Insults: Educating Your Wit</title><author>Wayne F. Hill; Cynthia J. Ottchen</author></book>
+<book><isbn>9780957735248</isbn><title>Radical Melbourne</title><author>Sparrow, Jeff</author></book>
+<book><isbn>9780957775411</isbn><title>The Ski and Snowboard Travel Guide - Australia/New Zealand</title><author>Rennie, Chris</author></book>
+<book><isbn>9780958079570</isbn><title>Radical Melbourne 2: The Enemy Within</title><author>Jeff and Sparrow, Jill Sparrow</author></book>
+<book><isbn>9780959773323</isbn><title>Travellers New Zealand</title><author>McIntosh, Gary Hannam and Lesley</author></book>
+<book><isbn>9780963009609</isbn><title>Pihkal: A Chemical Love Story</title><author>Shulgin, Alexander; Shulgin, Ann</author></book>
+<book><isbn>9780977504718</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>9780980600711</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>9781403985996</isbn><title>Bones, Rocks and Stars: The Science of When Things Happened</title><author>Turney, Chris</author></book>
+<book><isbn>9781405301039</isbn><title>Latin American Spanish (Three Months Course)</title><author>Cisneros, Isabel</author></book>
+<book><isbn>9781405306973</isbn><title>Herb &amp; Spice a Cooks Reference</title><author>Norman, Jill</author></book>
+<book><isbn>9781405315746</isbn><title>Go Snowboard</title><author>McNab, Neil</author></book>
+<book><isbn>9781405341691</isbn><title>Lego Book</title><author>Lipkowitz, Daniel</author></book>
+<book><isbn>9781405487863</isbn><title>Archaeology</title><author>Unknown, Author</author></book>
+<book><isbn>9781405487870</isbn><title>Archeology: Unearthing the Mysteries of the Past</title><author>Santon, Kate</author></book>
+<book><isbn>9781405904629</isbn><title>Top Gear Aqua Challenge Model Making Kit</title><author>Unknown, Author</author></book>
+<book><isbn>9781405906968</isbn><title>Top Gear: Official Annual 2011</title><author>BBC</author></book>
+<book><isbn>9781408804162</isbn><title>Magnificent Desolation</title><author>Aldrin, Buzz</author></book>
+<book><isbn>9781430231837</isbn><title>Arduino Robotics</title><author>John-David Warren; Josh Adams; Harald Molle</author></book>
+<book><isbn>9781444736311</isbn><title>Man Lab</title><author>May, James</author></book>
+<book><isbn>9781449316549</isbn><title>Programming Computer Vision with Python: Tools and algorithms for analyzing images</title><author>Solem, Jan Erik</author></book>
+<book><isbn>9781568363875</isbn><title>Felt Friends from Japan: 86 Super-cute Toys and Accessories to Make Yourself</title><author>Tabatha, Naomi</author></book>
+<book><isbn>9781740214179</isbn><title>Field Guide to Australian Birds</title><author>Morecombe, Michael</author></book>
+<book><isbn>9781740590297</isbn><title>Lonely Planet Canada</title><author>Mark Lightbody; Jeff Davis; Lisa Dunford; Steve Kokker; Susan Rimerman; Don Root; David Stanley</author></book>
+<book><isbn>9781740591638</isbn><title>Japanese: Lonely Planet Phrasebook</title><author>Abe, Yoshi; Lonely Planet Phrasebooks</author></book>
+<book><isbn>9781740594318</isbn><title>Lonely Planet Trekking in the Central Andes</title><author>Rob Rachowiecki; Greg Caire; Grant Dixon</author></book>
+<book><isbn>9781740598668</isbn><title>Lonely Planet The Career Break Book</title><author>Joe Bindloss; Andrew Dean Nystrom</author></book>
+<book><isbn>9781740599245</isbn><title>Lonely Planet Japan</title><author>Chris Rowthorn; Ray Bartlett; Justin Ellis</author></book>
+<book><isbn>9781740661997</isbn><title>Phaic Tan : Sunstroke on a Shoestring</title><author>Santo; Gleisner, Tom; Sitch, Rob Cilauro</author></book>
+<book><isbn>9781740663434</isbn><title>Change the World for Ten Bucks - 50 Actions to Change the World and Make You Feel Great</title><author>Anonymous</author></book>
+<book><isbn>9781740669818</isbn><title>Preincarnate</title><author>Micallef, Shaun</author></book>
+<book><isbn>9781741145007</isbn><title>Hegemony or Survival</title><author>Chomsky, Noam</author></book>
+<book><isbn>9781741662696</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>9781741665918</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>9781741790207</isbn><title>Volunteer: A Traveler's Guide to Making a Difference Around the World (Lonely Planet)</title><author>Charlotte Hindle; Nate Cavalieri; Rachel Collinson; Korina Miller; Mike Richard</author></book>
+<book><isbn>9781741797718</isbn><title>Lonely Planet French Phrasebook and Audio CD</title><author>Planet, Lonely</author></book>
+<book><isbn>9781741962321</isbn><title>Lygon Street: Stories and Recipes from Melbourne's Melting Pot</title><author>Harden, Michael</author></book>
+<book><isbn>9781742377261</isbn><title>You'll Be Sorry When I'm Dead</title><author>Hardy, Marieke</author></book>
+<book><isbn>9781742480008</isbn><title>James May's Toy Stories</title><author>James, May</author></book>
+<book><isbn>9781742667218</isbn><title>The Soup Bible</title><author>Unknown, Author</author></book>
+<book><isbn>9781840139792</isbn><title>Submarines of the World</title><author>Jackson, Robert</author></book>
+<book><isbn>9781841490182</isbn><title>The Proof House (The Fencer Trilogy, Volume Three)</title><author>Parker, K. J.</author></book>
+<book><isbn>9781841490618</isbn><title>Look to Windward</title><author>Banks, Iain</author></book>
 <book><isbn>9781841490670</isbn><title>Cosmonaut Keep (Engines of Light S.) (Bk.1)</title><author>Macleod, Ken</author></book>
 <book><isbn>9781841491097</isbn><title>Dark Light</title><author>MacLeod, Ken</author></book>
 <book><isbn>9781841492032</isbn><title>Engine City (Engines of Light Book 3)</title><author>Macleod, Ken</author></book>
-<book><isbn>9781857237306</isbn><title>Cassini Division (Fall Revolutions Series)</title><author>Macleod, Ken</author></book>
-<book><isbn>9781857239676</isbn><title>The Sky Road (Fall Revolutions Series)</title><author>McLeod, Ken</author></book>
-<book><isbn>9780330274869</isbn><title>Tomorrow, When the War Began</title><author>Marsden, John</author></book>
-<book><isbn>9780330303095</isbn><title>Intervention</title><author>May, Julian</author></book>
-<book><isbn>0140009078</isbn><title>The Trial (Modern Classics)</title><author>Kafka, Franz</author></book>
-<book><isbn>0552109657</isbn><title>Get Off the Unicorn</title><author>Mccaffrey, Anne</author></book>
-<book><isbn>0552118044</isbn><title>Dragondrums</title><author>Mccaffrey, Anne</author></book>
-<book><isbn>0552101613</isbn><title>Restoree</title><author>McCaffrey, Anne</author></book>
-<book><isbn>0552113131</isbn><title>White Dragon</title><author>Mccaffrey, Anne</author></book>
-<book><isbn>0552092363</isbn><title>Dragonflight</title><author>Mccaffrey, Anne</author></book>
-<book><isbn>033026902X</isbn><title>Nonborn King</title><author>May, Julian</author></book>
-<book><isbn>0330280317</isbn><title>The Adversary</title><author>May, Julian</author></book>
-<book><isbn>033026656X</isbn><title>Many-Coloured Land (Saga of the Exiles, Book 1)</title><author>May, Julian</author></book>
-<book><isbn>0330267191</isbn><title>Golden Torc (Saga of the Exiles, Book 2)</title><author>May, Julian</author></book>
-<book><isbn>0586044345</isbn><title>Brave New World</title><author>Huxley, Aldous</author></book>
-<book><isbn>014030150X</isbn><title>Finn Family Moomintroll</title><author>Jansson, Tove</author></book>
-<book><isbn>9780099295402</isbn><title>The Sword of the Lictor</title><author>Wolfe, Gene</author></book>
-<book><isbn>0140303235</isbn><title>The Exploits of Moominpappa</title><author>Jansson, Tove</author></book>
-<book><isbn>0552108812</isbn><title>Dragonsinger</title><author>McCaffrey, Anne</author></book>
-<book><isbn>0552106615</isbn><title>Dragonsong</title><author>McCaffrey, Anne</author></book>
-<book><isbn>9780552140294</isbn><title>Soul Music</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552131056</isbn><title>Equal Rites</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552131063</isbn><title>Mort</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552147682</isbn><title>The Truth</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552137034</isbn><title>Good Omens</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552134637</isbn><title>Moving Pictures (Discworld Novel S.)</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780099274704</isbn><title>The Claw Of The Conciliator</title><author>Wolfe, Gene</author></book>
-<book><isbn>9780552145985</isbn><title>Jingo (A Discworld Novel)</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552134620</isbn><title>Guards! Guards! (Discworld)</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552146166</isbn><title>The Fifth Elephant</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780099263203</isbn><title>The Shadow of the Torturer (The Book of the new sun)</title><author>Wolfe, Gene</author></book>
-<book><isbn>9780552131070</isbn><title>Sourcery</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552134644</isbn><title>Reaper Man, A Discworld Novel</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552140287</isbn><title>Men at Arms</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552526494</isbn><title>Wings (The Nome Trilogy)</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552525954</isbn><title>Truckers</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552142359</isbn><title>Interesting Times (Discworld)</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552134651</isbn><title>Witches Abroad</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552525862</isbn><title>Diggers (Truckers Trilogy)</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552138901</isbn><title>Small Gods</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552134613</isbn><title>Pyramids</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552124751</isbn><title>The colour of Magic</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552146159</isbn><title>Carpe Jugulum (Discworld #23)</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552527521</isbn><title>The Carpet People</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780091886578</isbn><title>Science of Discworld</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552133258</isbn><title>Strata</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552128483</isbn><title>The Light Fantastic (Discworld Novel)</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552142373</isbn><title>Feet of clay (Discworld novel)</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780091888053</isbn><title>The Science of Discworld II: The Globe</title><author>Pratchett, Terry;Stewart, Ian;Cohen, Jack</author></book>
-<book><isbn>9780552146739</isbn><title>Nanny Ogg's Cookbook</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780330242813</isbn><title>Gravity's Rainbow</title><author>Pynchon, Thomas</author></book>
-<book><isbn>9780552139229</isbn><title>The Book of Ultimate Truths</title><author>Rankin, Robert</author></book>
-<book><isbn>9780552138413</isbn><title>The Antipope (Brentford Trilogy)</title><author>Rankin, Robert</author></book>
-<book><isbn>9780552145893</isbn><title>Apocalypso</title><author>Rankin, Robert</author></book>
-<book><isbn>9780099510703</isbn><title>Stalking The Unicorn: A Fable Of Tonight</title><author>Resnick, Mike</author></book>
-<book><isbn>9780552138918</isbn><title>Lords and Ladies</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552134606</isbn><title>Wyrd Sisters (A Discworld Novel)</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552146142</isbn><title>The Last Continent: A Discworld Novel</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552154901</isbn><title>Making Money (Discworld Novels)</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780552148405</isbn><title>Thief of Time</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780708882139</isbn><title>Down Town</title><author>Polikarpus, Viido; King, Tappan</author></book>
-<book><isbn>9780552133265</isbn><title>The Dark Side of the Sun</title><author>Pratchett, Terry</author></book>
-<book><isbn>9780413523600</isbn><title>Titus Alone</title><author>Peake, Mervyn</author></book>
-<book><isbn>9780413523501</isbn><title>Gormenghast</title><author>Peake, Mervyn</author></book>
-<book><isbn>9780413523709</isbn><title>Titus Groan</title><author>Peake, Mervyn</author></book>
-<book><isbn>9781857236101</isbn><title>Colours in the Steel (Fencer, Book 1)</title><author>Parker, K.J.</author></book>
-<book><isbn>9781857239607</isbn><title>The Belly of the Bow (Fencer, Book 2)</title><author>Parker, K. J.</author></book>
-<book><isbn>9780575040007</isbn><title>Sorceress Of The Witchworld</title><author>Norton, Andre</author></book>
-<book><isbn>9781841490182</isbn><title>The Proof House (The Fencer Trilogy, Volume Three)</title><author>Parker, K. J.</author></book>
-<book><isbn>9780575039964</isbn><title>Web of the Witch World</title><author>Norton, Andre</author></book>
-<book><isbn>9780575039995</isbn><title>Year of the Unicorn (Witch World) (U.K.)</title><author>Norton, Andre</author></book>
-<book><isbn>9780575039988</isbn><title>Three Against the Witch World</title><author>Norton, Andre</author></book>
-<book><isbn>9780575039971</isbn><title>Warlock of the Witch World</title><author>Norton, Andre</author></book>
-<book><isbn>9780575039957</isbn><title>Witch World (Book 1)</title><author>Norton, Andre</author></book>
-<book><isbn>9780575041240</isbn><title>Star Man's Son</title><author>Norton, Andre</author></book>
-<book><isbn>0860078531</isbn><title>Hole in Space (Orbit Books)</title><author>Niven, Larry</author></book>
-<book><isbn>9780708823156</isbn><title>Dream Park (Orbit Books)</title><author>Steven Barnes, Jerry Pournelle Larry Niven</author></book>
-<book><isbn>0708880681</isbn><title>Tales of Known Space</title><author>Niven, Larry</author></book>
-<book><isbn>9780860078494</isbn><title>The Flight of the Horse (Orbit Books)</title><author>Niven, Larry</author></book>
-<book><isbn>9780330392891</isbn><title>Perdido Street Station</title><author>Mieville, China</author></book>
-<book><isbn>9780330392907</isbn><title>Scar</title><author>Mieville, China</author></book>
-<book><isbn>0352306947</isbn><title>England Invaded</title><author>Moorcock, Michael</author></book>
-<book><isbn>9780330492324</isbn><title>Kraken: An Anatomy</title><author>Mieville, China</author></book>
-<book><isbn>9780330534222</isbn><title>Looking for Jake and Other Stories</title><author>Mieville, China</author></book>
-<book><isbn>9780099410676</isbn><title>Cryptonomicon</title><author>Stephenson, Neal</author></book>
-<book><isbn>9780099410683</isbn><title>Quicksilver</title><author>Stephenson, Neal</author></book>
-<book><isbn>9780140270372</isbn><title>Diamond Age</title><author>Stephenson, Neal</author></book>
-<book><isbn>9780140232929</isbn><title>Snow Crash</title><author>Stephenson, Neal</author></book>
-<book><isbn>0340258292</isbn><title>Last Enchantment (The Merlin Trilogy)</title><author>Stewart, Mary</author></book>
-<book><isbn>0340186119</isbn><title>Hollow Hills (The Merlin Trilogy)</title><author>Stewart, Mary</author></book>
+<book><isbn>9781841492087</isbn><title>The Portable Door</title><author>Holt, Tom</author></book>
+<book><isbn>9781841492193</isbn><title>In Your Dreams</title><author>Holt, Tom</author></book>
+<book><isbn>9781841492247</isbn><title>Newton's Wake</title><author>Macleod, Ken</author></book>
+<book><isbn>9781841492391</isbn><title>The Algebraist</title><author>Banks, Iain M</author></book>
+<book><isbn>9781841492827</isbn><title>Earth, Air, Fire and Custard</title><author>Holt, Tom</author></book>
 <book><isbn>9781841493374</isbn><title>Double Vision C</title><author>Tricia, Sullivan</author></book>
-<book><isbn>9780552128490</isbn><title>The Revenants</title><author>Tepper, Sheri S.</author></book>
-<book><isbn>0340013613</isbn><title>Moonspinners (Coronet Books)</title><author>Stewart, Mary</author></book>
-<book><isbn>0340043539</isbn><title>The Gabriel Hounds</title><author>Stewart, Mary</author></book>
-<book><isbn>0340022027</isbn><title>This Rough Magic</title><author>Stewart, Mary</author></book>
-<book><isbn>9780140042351</isbn><title>The Great Railway Bazaar</title><author>Theroux, Paul</author></book>
-<book><isbn>9780140071818</isbn><title>The Kingdom by the Sea: A Journey Around the Coast of Great Britain</title><author>Theroux, Paul</author></book>
-<book><isbn>0048231576</isbn><title>Lord of the Rings: The Return of the King v. 3</title><author>Tolkien, J. R. R.</author></book>
-<book><isbn>0048231568</isbn><title>Lord of the Rings: The Two Towers v. 2</title><author>Tolkien, J. R. R.</author></book>
-<book><isbn>004823155X</isbn><title>Lord of the Rings: The Fellowship of the Ring v. 1</title><author>Tolkien, J. R. R.</author></book>
-<book><isbn>0048230707</isbn><title>The Hobbit (U.Books)</title><author>Tolkien, J. R. R.</author></book>
-<book><isbn>0048231533</isbn><title>The Silmarillion</title><author>Tolkien, J. R. R.</author></book>
-<book><isbn>0048030015</isbn><title>The Complete Guide To Middle-Earth: From The Hobbit To The Silmarillion</title><author>Foster, Robert</author></book>
-<book><isbn>0352309512</isbn><title>The Tolkien Quiz Book</title><author>Linda Wilson; Nigel Robinson</author></book>
-<book><isbn>9780048232083</isbn><title>Unfinished Tales of Numenor and Middle-Earth</title><author>Tolkien, J.R.R.</author></book>
-<book><isbn>0708880363</isbn><title>In The Hall Of The Martian Kings</title><author>Varley, John</author></book>
-<book><isbn>034529520X</isbn><title>The Curse of the Witch-Queen</title><author>Volsky, Paula</author></book>
-<book><isbn>9780586200087</isbn><title>The Misenchanted Sword</title><author>Watt-Evans, Lawrence</author></book>
-<book><isbn>0880381752</isbn><title>Dragons of Spring Dawning (Dragonlance Chronicles, Vol. 3)</title><author>Weiss, Margaret;Hickman, Tracy</author></book>
-<book><isbn>0880381736</isbn><title>Dragons of Autumn Twilight (DragonLance Chronicles, Vol. 1)</title><author>Weiss, Margaret;Hickman, Tracy</author></book>
-<book><isbn>0880381744</isbn><title>Dragons of Winter Night (DragonLance Chronicles, Vol. 2)</title><author>Weiss, Margaret;Hickman, Tracy</author></book>
-<book><isbn>0586038280</isbn><title>Galactic Patrol (Panther Science Fiction)</title><author>Smith, E. E. (Doc)</author></book>
-<book><isbn>0586038485</isbn><title>Masters of the Vortex (Lensman Series)</title><author>Smith, E.E. (Doc)</author></book>
-<book><isbn>0586038469</isbn><title>Second Stage Lensman (Lensman Series #5)</title><author>Smith, E. E. (Doc)</author></book>
-<book><isbn>9781920885588</isbn><title>Players</title><author>Wilson, Tony</author></book>
-<book><isbn>9780586213896</isbn><title>Red Mars (Mars Trilogy)</title><author>Robinson, Kim Stanley</author></book>
-<book><isbn>9780708882719</isbn><title>The Hammer of the Sun</title><author>Rohan, Michael Scott</author></book>
-<book><isbn>9780708882542</isbn><title>Winter of World 2 Forge Forest a</title><author>Rohan, Michael Scott</author></book>
-<book><isbn>9780708882108</isbn><title>Winter of World 1 Anvil of Ice a</title><author>Rohan, Michael Scott</author></book>
-<book><isbn>9780586070482</isbn><title>Falling Apart</title><author>Salaman, Nicholas</author></book>
-<book><isbn>9780553172829</isbn><title>Song Of Sorcery</title><author>Scarborough, Elizabeth</author></book>
-<book><isbn>9780553172843</isbn><title>Bronwyn's Bane</title><author>Scarborough, Elizabeth</author></book>
-<book><isbn>9780708830406</isbn><title>The First Name</title><author>Schmidt, Dennis</author></book>
-<book><isbn>9780708839836</isbn><title>Twilight of the Gods, No. 3: Three Trumps Sounding</title><author>Schmidt, Dennis</author></book>
-<book><isbn>9780575043091</isbn><title>The Witches Of Karres</title><author>Schmitz, James H.</author></book>
-<book><isbn>9780330256773</isbn><title>The Great Pursuit</title><author>Sharpe, Tom</author></book>
-<book><isbn>9780330239226</isbn><title>Indecent Exposure</title><author>Sharpe, Tom</author></book>
-<book><isbn>9780330250801</isbn><title>Blott On The Landscape</title><author>Sharpe, Tom</author></book>
-<book><isbn>9780330246675</isbn><title>Porterhouse Blue</title><author>Sharpe, Tom</author></book>
-<book><isbn>9780440539810</isbn><title>The Illuminatus! Trilogy: The Eye in the Pyramid, The Golden Apple, Leviathan</title><author>Shea, Robert;Wilson, Robert Anton</author></book>
-<book><isbn>9780708830413</isbn><title>Groa's Other Eye</title><author>Schmidt, Dennis</author></book>
-<book><isbn>9780552131186</isbn><title>Shapechangers</title><author>Roberson, Jennifer</author></book>
-<book><isbn>9780552131209</isbn><title>Legacy Of The Sword (Chronicles of The Cheysuli Book Three)</title><author>Roberson, Jennifer</author></book>
-<book><isbn>9780552131193</isbn><title>The Song Of Homana</title><author>Roberson, Jennifer</author></book>
-<book><isbn>9780732271930</isbn><title>Blood (Ashuak chronicles)</title><author>Shillitoe, Tony</author></book>
-<book><isbn>0330264621</isbn><title>Lord Valentine's Castle</title><author>Silverberg, Robert</author></book>
-<book><isbn>0330281178</isbn><title>Majipoor Chronicles</title><author>Silverberg, Robert</author></book>
-<book><isbn>9780575040403</isbn><title>The Time Hoppers (A Gollancz Paperback)</title><author>Silverberg, Robert</author></book>
-<book><isbn>9780330287074</isbn><title>Valentine Pontifex</title><author>Silverberg, Robert</author></book>
-<book><isbn>0413369005</isbn><title>Way Station (Methuen Paperbacks)</title><author>Simak, Clifford D.</author></book>
-<book><isbn>0553283685</isbn><title>Hyperion</title><author>Simmons, Dan</author></book>
-<book><isbn>0553288202</isbn><title>The Fall of Hyperion</title><author>Simmons, Dan</author></book>
-<book><isbn>0586038477</isbn><title>Children of the Lens (Lensman Series)</title><author>Smith, E. E. (Doc)</author></book>
-<book><isbn>0586037799</isbn><title>First Lensman (Panther Science Fiction)</title><author>Smith, E. E. (Doc)</author></book>
-<book><isbn>0586037608</isbn><title>Triplanetary</title><author>Smith, E. E. (Doc)</author></book>
-<book><isbn>0586038450</isbn><title>Grey Lensman</title><author>Smith, E. E. (Doc)</author></book>
-<book><isbn>0671727214</isbn><title>Italian - English Dictionary</title><author>Fantonetti, Carlo;Tedeschi, Alberto</author></book>
-<book><isbn>9781741797718</isbn><title>Lonely Planet French Phrasebook and Audio CD</title><author>Planet, Lonely</author></book>
-<book><isbn>0395445329</isbn><title>Birnbaum's France 1988</title><author>Birnbaum, Stephen</author></book>
-<book><isbn>9780749547929</isbn><title>AA Caravan &amp; Camping France 2006</title><author>Publishing, AA</author></book>
-<book><isbn>9780749537555</isbn><title>The AA Pub Guide 2004</title><author>Publishing, AA</author></book>
-<book><isbn>9780864424754</isbn><title>Lonely Planet Spanish Phrasebook (Spanish Edition)</title><author>Izaskun Arretxe; Allison Jones</author></book>
-<book><isbn>9781864500530</isbn><title>Lonely Planet Healthy Travel - Central &amp; South America</title><author>Young, Isabelle</author></book>
-<book><isbn>9780563215141</isbn><title>BBC Phrase Books and Cassettes: German Book</title><author>Philippa Goodrich; Carol Stanley</author></book>
-<book><isbn>9780957775411</isbn><title>The Ski and Snowboard Travel Guide - Australia/New Zealand</title><author>Rennie, Chris</author></book>
-<book><isbn>9781405301039</isbn><title>Latin American Spanish (Three Months Course)</title><author>Cisneros, Isabel</author></book>
-<book><isbn>9780959773323</isbn><title>Travellers New Zealand</title><author>McIntosh, Gary Hannam and Lesley</author></book>
-<book><isbn>002969910X</isbn><title>Switzerland Country Guide (Berlitz Country Guide)</title><author>Berlitz Guides; Ken Bernstein</author></book>
-<book><isbn>0901496464</isbn><title>Hostelling International: Europe 1996</title><author>Federation, International Youth Hostel</author></book>
-<book><isbn>0901496472</isbn><title>Hostelling International Guides: The Official Guide to Hostels in Africa, America, Asia and the Pacific 1996</title><author>Federation, International Youth Hostel</author></book>
-<book><isbn>9781740594318</isbn><title>Lonely Planet Trekking in the Central Andes</title><author>Rob Rachowiecki; Greg Caire; Grant Dixon</author></book>
-<book><isbn>9780864424778</isbn><title>Lonely Planet Trekking in the Patagonian Andes</title><author>Lindenmayer, Clem</author></book>
-<book><isbn>9780864426413</isbn><title>Lonely Planet Argentina: Uruguay &amp; Paraguay</title><author>Bernhardson, Wayne</author></book>
-<book><isbn>9780864426680</isbn><title>Lonely Planet Bolivia</title><author>Swaney, Deanna</author></book>
-<book><isbn>9780864424099</isbn><title>Lonely Planet Canada</title><author>Mark Lightbody; Dorinda Talbot; Jim Dufresne; Tom Smallman</author></book>
-<book><isbn>9781740590297</isbn><title>Lonely Planet Canada</title><author>Mark Lightbody; Jeff Davis; Lisa Dunford; Steve Kokker; Susan Rimerman; Don Root; David Stanley</author></book>
-<book><isbn>9781864500882</isbn><title>Lonely Planet Chile &amp; Easter Island (Lonely Planet Chile and Easter Island)</title><author>Bernhardson, Wayne</author></book>
-<book><isbn>9780864427618</isbn><title>Lonely Planet Ecuador &amp; the Galapagos Islands</title><author>Rob Rachowiecki; Danny Palmerlee</author></book>
-<book><isbn>9781864501490</isbn><title>Lonely Planet Eastern Europe</title><author>Steve Fallon; Mara Vorhees; Emma Miller</author></book>
-<book><isbn>9780864426390</isbn><title>Lonely Planet Western Europe (Lonley Planet on a Shoestring)</title><author>Fallon, Steve</author></book>
-<book><isbn>9781740599245</isbn><title>Lonely Planet Japan</title><author>Chris Rowthorn; Ray Bartlett; Justin Ellis</author></book>
-<book><isbn>9781864501889</isbn><title>Lonely Planet Malaysia, Singapore and Brunei</title><author>Chris Rowthorn; Sara Benson; Russell Kerr; Christine Niven</author></book>
-<book><isbn>9781864502473</isbn><title>Lonely Planet Nepal</title><author>Finlay, Hugh</author></book>
-<book><isbn>9780864427106</isbn><title>Lonely Planet Peru</title><author>Rachowiecki, Rob</author></book>
-<book><isbn>9780864427137</isbn><title>Lonely Planet Russia, Ukraine &amp; Belarus</title><author>Richard Nebesky; John Noble; George Wesley; Nick Selby; Deanna Swaney; Anthony Haywood</author></book>
-<book><isbn>9780864426567</isbn><title>Lonely Planet South America on a Shoestring</title><author>James Lyon; Andrew Draffen; Krzysztof Dydynski; Conner Gorry; Mark Plotkin</author></book>
-<book><isbn>9781741790207</isbn><title>Volunteer: A Traveler's Guide to Making a Difference Around the World (Lonely Planet)</title><author>Charlotte Hindle; Nate Cavalieri; Rachel Collinson; Korina Miller; Mike Richard</author></book>
-<book><isbn>9781740598668</isbn><title>Lonely Planet The Career Break Book</title><author>Joe Bindloss; Andrew Dean Nystrom</author></book>
-<book><isbn>9781873756294</isbn><title>The Inca Trail: Cuzco &amp; Machu Picchu</title><author>Danbury, Richard</author></book>
-<book><isbn>9781843530794</isbn><title>The Rough Guide to Skiing &amp; Snowboarding in North America</title><author>Tam Leach; Stephen Timblin; Christian Williams</author></book>
-<book><isbn>9780946983063</isbn><title>Trans-Siberian rail guide</title><author>Strauss, Robert</author></book>
-<book><isbn>9781858288048</isbn><title>The Rough Guide to Central America on a Budget 1</title><author>Guides, Rough</author></book>
-<book><isbn>9780002201377</isbn><title>Galapagos (Safari Guide)</title><author>Fitter, Julian</author></book>
-<book><isbn>9781864501964</isbn><title>Lonely Planet Provence &amp; the Cote D'Azur</title><author>Williams, Nicola</author></book>
-<book><isbn>0395445337</isbn><title>Birnbaum's Great Britain and Ireland 1988</title><author>Birnbaum, Stephen</author></book>
-<book><isbn>9780137914845</isbn><title>Frommer's Scandinavia on $60 a Day, 1989-90</title><author>Darwin Porter; Danforth Prince; Margaret Foresman</author></book>
-<book><isbn>9781405315746</isbn><title>Go Snowboard</title><author>McNab, Neil</author></book>
-<book><isbn>9781846812224</isbn><title>Archeology Step By Step - A Practical Guide to Uncovering the Past</title><author>Catling</author></book>
-<book><isbn>9781405487870</isbn><title>Archeology: Unearthing the Mysteries of the Past</title><author>Santon, Kate</author></book>
-<book><isbn>9781846811203</isbn><title>The Complete Illustrated World Encyclopedia of Archeology</title><author>Unknown, Author</author></book>
-<book><isbn>0304969508</isbn><title>Berlitz Travel Guide to Oxford and Stratford</title><author>Unknown, Author</author></book>
-<book><isbn>9780201710984</isbn><title>XML for the World Wide Web</title><author>Castro, Elizabeth</author></book>
-<book><isbn>9780201696967</isbn><title>HTML 4 for the World Wide Web: VQS (3rd Edition)</title><author>Castro, Elizabeth</author></book>
-<book><isbn>9780460876162</isbn><title>Edda (Everyman's Library)</title><author>Sturluson, Snorri</author></book>
-<book><isbn>9780140257458</isbn><title>The Crusades (BBC Books)</title><author>Jones, J. Sydney</author></book>
-<book><isbn>9780853648673</isbn><title>Is the New Testament History?</title><author>Barnett, Paul</author></book>
-<book><isbn>9780850305685</isbn><title>Using the Runes</title><author>Cooper, D. Jason</author></book>
-<book><isbn>9780140258370</isbn><title>How to Be More Interesting</title><author>Bono, Edward De</author></book>
-<book><isbn>9780868246222</isbn><title>Fundamentalism and freedom</title><author>Cameron, Peter Scott</author></book>
-<book><isbn>9780140245011</isbn><title>The Complete Dead Sea Scrolls in English</title><author>Vermes, Geza</author></book>
-<book><isbn>9780393316896</isbn><title>The Bible and the Ancient Near East (Revised Edition)</title><author>Cyrus H. Gordon; Gary A. Rendsburg</author></book>
-<book><isbn>9780060675073</isbn><title>Living in Sin?: A Bishop Rethinks Human Sexuality</title><author>Spong, John Shelby</author></book>
-<book><isbn>9780060675479</isbn><title>Resurrection: Myth or Reality? : A Bishop's Search for the Origins of Christianity</title><author>Spong, John Shelby</author></book>
-<book><isbn>9780330391658</isbn><title>E=mc2</title><author>Bodanis, David</author></book>
-<book><isbn>9780751536805</isbn><title>Long Way Round</title><author>McGregor, Ewan</author></book>
-<book><isbn>9780192851390</isbn><title>A History of the Vikings (Oxford paperbacks)</title><author>Jones, Gwyn</author></book>
-<book><isbn>9780241140123</isbn><title>The Art of Travel</title><author>Botton, Alain De</author></book>
-<book><isbn>9780340270226</isbn><title>Esperanto (Teach Yourself)</title><author>John Cresswell; John Hartley</author></book>
-<book><isbn>9780140264913</isbn><title>The Private Life of the Brain (Penguin Press Science)</title><author>Greenfield, Susan</author></book>
-<book><isbn>9780140159769</isbn><title>The Happy Isles of Oceania: Paddling the Pacific</title><author>Theroux, Paul</author></book>
-<book><isbn>9780140112955</isbn><title>Riding the Iron Rooster By Train Through China</title><author>Theroux, Paul</author></book>
-<book><isbn>9780571164431</isbn><title>The Story of English</title><author>Mccrum, Robert</author></book>
-<book><isbn>9781900512442</isbn><title>Can Reindeer Fly? Hb</title><author>Highfield, Roger</author></book>
-<book><isbn>9780330320023</isbn><title>Last Chance to See....</title><author>Adams, Douglas</author></book>
-<book><isbn>9780099460275</isbn><title>Raw Spirit</title><author>Banks, Iain</author></book>
-<book><isbn>9780552997034</isbn><title>Down Under</title><author>Bryson, Bill</author></book>
-<book><isbn>9780340212813</isbn><title>Russian (Teach Yourself Series)</title><author>Frewin, Michael</author></book>
-<book><isbn>9780330298926</isbn><title>Fatal Shore</title><author>Hughes, Robert</author></book>
-<book><isbn>9780061242700</isbn><title>Freakonomics</title><author>Steven D. Levitt; Stephen J. Dubner</author></book>
-<book><isbn>9780747580232</isbn><title>How To Survive A Robot Uprising: Tips On Defending Yourself Against The Coming Rebellion</title><author>Wilson, Daniel H.</author></book>
-<book><isbn>0553238272</isbn><title>The Herb Book</title><author>Lust, John B</author></book>
-<book><isbn>055326382X</isbn><title>The Dancing Wu Li Masters: An Overview of the New Physics</title><author>Zukav, Gary</author></book>
-<book><isbn>0863992315</isbn><title>Wine and Beermaking - Hints and Recipes</title><author>Turner, Ben</author></book>
-<book><isbn>0207150222</isbn><title>Book of Runes (St) (Alt)</title><author>Blum, Ralph</author></book>
-<book><isbn>0842345523</isbn><title>More Than a Carpenter</title><author>McDowell, Josh</author></book>
-<book><isbn>0553255959</isbn><title>The Complete Book of Palmistry</title><author>Wilson, Joyce</author></book>
-<book><isbn>0582555442</isbn><title>Pocket science dictionary (Longman top pocket series)</title><author>Unknown, Author</author></book>
-<book><isbn>9780099285830</isbn><title>The Lying Stones of Marrakech: Penultimate Reflections in Natural History</title><author>Gould, Stephen Jay</author></book>
-<book><isbn>9780141005034</isbn><title>Evolution's Workshop (Haemostasis S.)</title><author>Larson, Edward J.</author></book>
-<book><isbn>9781865088044</isbn><title>Platypus</title><author>Moyal, Ann</author></book>
-<book><isbn>9780752837512</isbn><title>Ultra Secret Pb</title><author>Winterbottom, F W</author></book>
-<book><isbn>9781857029635</isbn><title>Dinosaur Hunters</title><author>Cadbury, Deborah</author></book>
-<book><isbn>9780385267748</isbn><title>The Design of Everyday Things</title><author>Norman, Donald</author></book>
-<book><isbn>9781741145007</isbn><title>Hegemony or Survival</title><author>Chomsky, Noam</author></book>
-<book><isbn>9780006530916</isbn><title>Sony: The Private Life</title><author>Nathan, John</author></book>
-<book><isbn>9781403985996</isbn><title>Bones, Rocks and Stars: The Science of When Things Happened</title><author>Turney, Chris</author></book>
-<book><isbn>9780951868409</isbn><title>Shakespeare's Insults: Educating Your Wit</title><author>Wayne F. Hill; Cynthia J. Ottchen</author></book>
-<book><isbn>9780330294911</isbn><title>Man Who Mistook His Wife for a Hat (Picador)</title><author>Sacks, Oliver</author></book>
-<book><isbn>9780140112894</isbn><title>Herbs in Australian Gardens</title><author>Fletcher, Kim</author></book>
-<book><isbn>9780571209804</isbn><title>Mosquito: The Story Of Man's Deadliest Foe</title><author>Spielman, Michael D'Antonio' 'Andrew</author></book>
-<book><isbn>9780521366830</isbn><title>Black Holes and the Universe (Canto)</title><author>Novikov, Igor D.</author></book>
-<book><isbn>9781742377261</isbn><title>You'll Be Sorry When I'm Dead</title><author>Hardy, Marieke</author></book>
-<book><isbn>0646222317</isbn><title>The Lepers</title><author>Frank; Browning, Guy Weissenborn</author></book>
-<book><isbn>9780140153736</isbn><title>Voltaire's Bastards : The Dictatorship of Reason in the West</title><author>Saul, John Ralston</author></book>
-<book><isbn>9781845290795</isbn><title>Corporation</title><author>Bakan, Joel</author></book>
+<book><isbn>9781841493442</isbn><title>Learning the World: A Novel of First Contact</title><author>MacLeod, Ken</author></book>
+<book><isbn>9781841494197</isbn><title>Matter</title><author>Banks, Iain M</author></book>
+<book><isbn>9781841498959</isbn><title>Surface Detail</title><author>Banks, Iain M</author></book>
 <book><isbn>9781842121429</isbn><title>Templars</title><author>Read, Piers Paul</author></book>
-<book><isbn>9781847442475</isbn><title>By Any Means: His Brand New Adventure from Wicklow to Wollongong</title><author>Boorman, Charley</author></book>
-<book><isbn>9781740661997</isbn><title>Phaic Tan : Sunstroke on a Shoestring</title><author>Santo; Gleisner, Tom; Sitch, Rob Cilauro</author></book>
-<book><isbn>033028097X</isbn><title>Masterglass: a Practical Course in Tasting Wine</title><author>Robinson, Jancis</author></book>
-<book><isbn>0140020551</isbn><title>Physical Fitness</title><author>Airforce, Royal Canadian</author></book>
-<book><isbn>9781862044586</isbn><title>The Dark Side of God: A Quest for the Lost Heart of Christianity</title><author>Lockhart, Douglas</author></book>
-<book><isbn>9780333521984</isbn><title>The Golden Bough</title><author>Frazer, J.G.</author></book>
-<book><isbn>9780140060560</isbn><title>The Norse Myths: Gods of the Vikings</title><author>Holland, Kevin Crossley</author></book>
-<book><isbn>9780471308249</isbn><title>Rogue Asteroids and Doomsday Comets: The Search for the Million Megaton Menace That Threatens Life on Earth</title><author>Duncan Steel; Arthur C. Clarke</author></book>
-<book><isbn>9780684854212</isbn><title>In Search of Deep Time: Beyond the Fossil Record to a New History of Life</title><author>Gee, Henry</author></book>
-<book><isbn>9780563370772</isbn><title>Flavours of India</title><author>Jaffrey, Madhur</author></book>
-<book><isbn>9780340728345</isbn><title>Wallace and Gromit: Anoraknophobia (Wallace &amp; Gromit)</title><author>Tristan Davies; Nick Newman</author></book>
-<book><isbn>9780007170579</isbn><title>Gollum: How We Made Movie Magic (The Lord of the Rings)</title><author>Serkis, Andy</author></book>
-<book><isbn>9780736041850</isbn><title>Strength Training Anatomy</title><author>Delavier, Frederic</author></book>
-<book><isbn>9781740214179</isbn><title>Field Guide to Australian Birds</title><author>Morecombe, Michael</author></book>
-<book><isbn>9781843094029</isbn><title>Vegetarian &amp; Vegetable Cooking</title><author>Ingram, Christine</author></book>
-<book><isbn>9781862545861</isbn><title>A Taste of Africa</title><author>Hafner, Dorinda</author></book>
-<book><isbn>9781405306973</isbn><title>Herb &amp; Spice a Cooks Reference</title><author>Norman, Jill</author></book>
-<book><isbn>9780747527244</isbn><title>Leith's Cooking for One or Two</title><author>Tyrer, Polly</author></book>
-<book><isbn>9780091874155</isbn><title>Madhur Jaffrey's Ultimate Curry Bible: India, Singapore, Malaysia, Indonesia, Thailand, South Africa, Kenya, Great Britain, Trinidad, Guyana, Japan, U</title><author>Jaffrey, Madhur</author></book>
-<book><isbn>9780949757456</isbn><title>The Macquarie dictionary of Australian colloquial language</title><author>Delbridge, Arthur</author></book>
-<book><isbn>9781876429850</isbn><title>Macquarie Concise Dictionary</title><author>Unknown, Author</author></book>
-<book><isbn>9780198661856</isbn><title>The Oxford Dictionary of Quotations</title><author>Unknown, Author</author></book>
-<book><isbn>9780195530872</isbn><title>Australian Words and Their Origins</title><author>Unknown, Author</author></book>
-<book><isbn>9789812466464</isbn><title>Berlitz Essential Japanese (Japanese Edition)</title><author>Strugnell, Lynne</author></book>
-<book><isbn>9780804833653</isbn><title>Guide to Reading &amp; Writing Japanese: Third Edition</title><author>Kenneth Hanshall; Christropher Seeley; Florence Sakade; Henk de Groot</author></book>
-<book><isbn>9780764554292</isbn><title>Japanese for Dummies AUDIO+CD</title><author>Sato, Eriko</author></book>
-<book><isbn>9780385409858</isbn><title>Almost Like a Whale</title><author>Jones, Steve</author></book>
-<book><isbn>9780716733874</isbn><title>Why People Believe Weird Things: Pseudoscience, Superstition, and Other Confusions of Our Time</title><author>Shermer, Michael</author></book>
-<book><isbn>9781857994735</isbn><title>Sixth Extinction (Science Masters S.)</title><author>Leakey, Richard</author></book>
-<book><isbn>9781920885847</isbn><title>The weather makers: the history &amp; future impact of climate change</title><author>Flannery, Tim</author></book>
-<book><isbn>0552108847</isbn><title>Collapsing Universe: Story of Black Holes</title><author>Asimov, Isaac</author></book>
-<book><isbn>9780691089232</isbn><title>One True God: Historical Consequences of Monotheism.</title><author>Stark, Rodney</author></book>
-<book><isbn>9780060199067</isbn><title>Evolution: The Triumph of an Idea</title><author>Zimmer, Carl</author></book>
-<book><isbn>9781740663434</isbn><title>Change the World for Ten Bucks - 50 Actions to Change the World and Make You Feel Great</title><author>Anonymous</author></book>
-<book><isbn>9781742480008</isbn><title>James May's Toy Stories</title><author>James, May</author></book>
-<book><isbn>9781921332227</isbn><title>Mythbusters: Rock the Body</title><author>Searle, Nicholas</author></book>
-<book><isbn>9781444736311</isbn><title>Man Lab</title><author>May, James</author></book>
-<book><isbn>9780140264647</isbn><title>The Unconscious Civilization</title><author>Saul, John Ralston</author></book>
-<book><isbn>9780713683752</isbn><title>Ktg Fencing (Know the Game)</title><author>Unknown, Author</author></book>
-<book><isbn>9780099304913</isbn><title>Stiffed</title><author>Faludi, Susan</author></book>
-<book><isbn>0725512008</isbn><title>Dick Smith's Australian Amateur Radio Handbook</title><author>Smith, Dick</author></book>
-<book><isbn>9780713998627</isbn><title>Collapse</title><author>Diamond, Jared</author></book>
-<book><isbn>9780199534043</isbn><title>Concise Oxford Dictionary of Archaeology (Oxford Paperback Reference)</title><author>Darvill, Timothy</author></book>
 <book><isbn>9781842772218</isbn><title>Rogue State</title><author>Blum, William</author></book>
-<book><isbn>9780439968034</isbn><title>Mad Miscellany (Horrible Histories)</title><author>Deary, Terry</author></book>
-<book><isbn>9780725107550</isbn><title>The autobiography of the woman the Gestapo called the White Mouse</title><author>Wake, Nancy</author></book>
-<book><isbn>9780713995206</isbn><title>Rebel Code:[The Inside Story of Linux and the Open Source Revolution]</title><author>Moody, Glyn</author></book>
-<book><isbn>9780908988822</isbn><title>Eye on the Sky</title><author>Andersen, Geoff</author></book>
-<book><isbn>9780500284414</isbn><title>Archaeology: Theories, Methods, and Practice (Portuguese Edition)</title><author>Colin Renfrew; Paul Bahn</author></book>
-<book><isbn>9780957735248</isbn><title>Radical Melbourne</title><author>Sparrow, Jeff</author></book>
-<book><isbn>9780958079570</isbn><title>Radical Melbourne 2: The Enemy Within</title><author>Jeff and Sparrow, Jill Sparrow</author></book>
-<book><isbn>9781741962321</isbn><title>Lygon Street: Stories and Recipes from Melbourne's Melting Pot</title><author>Harden, Michael</author></book>
-<book><isbn>0959915443</isbn><title>Historic Mount Gambier</title><author>Dean, Lois</author></book>
-<book><isbn>0909439060</isbn><title>Melway Greater Melbourne</title><author>Unknown, Author</author></book>
-<book><isbn>9318923008289</isbn><title>Cradle Mountain and Lake St Clair</title><author>Unknown, Author</author></book>
-<book><isbn>9780007196555</isbn><title>Collins Express English-Japanese Dictionary (Shubun Express)</title><author>Unknown, Author</author></book>
-<book><isbn>9780731914425</isbn><title>Gregory's Adelaide Street Directory</title><author>Unknown, Author</author></book>
-<book><isbn>9780731914913</isbn><title>UBD Canberra Map</title><author>Unknown, Author</author></book>
-<book><isbn>9780909439064</isbn><title>Melway Greater Melbourne</title><author>Unknown, Author</author></book>
-<book><isbn>9781405904629</isbn><title>Top Gear Aqua Challenge Model Making Kit</title><author>Unknown, Author</author></book>
-<book><isbn>9781742667218</isbn><title>The Soup Bible</title><author>Unknown, Author</author></book>
-<book><isbn>9781850150541</isbn><title>Teddy Bear Quotations</title><author>Unknown, Author</author></book>
-<book><isbn>9781863965767</isbn><title>Australian Women's Weekly Soups</title><author>Unknown, Author</author></book>
-<book><isbn>9781876624545</isbn><title>The Triumph of the Airheads</title><author>Unknown, Author</author></book>
-<book><isbn>9781905443345</isbn><title>Rapid Japanese</title><author>Unknown, Author</author></book>
-<book><isbn>9780004704814</isbn><title>Collins Gem German Study Set</title><author>Unknown, Author</author></book>
-<book><isbn>9780864425584</isbn><title>Lonely Planet Latin American Spanish (Lonely Planet Phrasebook: India)</title><author>Unknown, Author</author></book>
-<book><isbn>9781405487863</isbn><title>Archaeology</title><author>Unknown, Author</author></book>
-<book><isbn>017006137X</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>0170062252</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>0552131199</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>0642015317</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>0646134728</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>0730936546</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>0747404135</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>0868246298</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>0949290076</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>0959562931</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>0977504719</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>1875889930</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>9780552131193</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>9780747404132</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>9780868246291</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>9780947148102</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>9780977504718</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>9780980600711</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>9781741662696</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>9781741665918</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>9781875447619</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>9781875889938</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>9781876551216</isbn><title>AttributeError</title><author>Unknown, Author</author></book>
-<book><isbn>031809004999</isbn><title>Title Unknown</title><author>Unknown, Author</author></book>
-<book><isbn>076783004955</isbn><title>Title Unknown</title><author>Unknown, Author</author></book>
-<book><isbn>9770952620014</isbn><title>Title Unknown</title><author>Unknown, Author</author></book>
-<book><isbn>070999002507</isbn><title>Title Unknown</title><author>Unknown, Author</author></book>
-<book><isbn>070999002750</isbn><title>Title Unknown</title><author>Unknown, Author</author></book>
-<book><isbn>070999003955</isbn><title>Title Unknown</title><author>Unknown, Author</author></book>
-<book><isbn>072742006992</isbn><title>Title Unknown</title><author>Unknown, Author</author></book>
-<book><isbn>076714003958</isbn><title>Title Unknown</title><author>Unknown, Author</author></book>
-<book><isbn>076714005990</isbn><title>Title Unknown</title><author>Unknown, Author</author></book>
-<book><isbn>076783004504</isbn><title>Title Unknown</title><author>Unknown, Author</author></book>
-<book><isbn>076783007994</isbn><title>Title Unknown</title><author>Unknown, Author</author></book>
-<book><isbn>078021002501</isbn><title>Title Unknown</title><author>Unknown, Author</author></book>
-<book><isbn>9780330522205</isbn><title>Manhattan in Reverse</title><author>Hamilton, Peter F.</author></book>
-<book><isbn>9780356501727</isbn><title>Existence - Limited Edition 3d Cover</title><author>Brin, David</author></book>
+<book><isbn>9781843094029</isbn><title>Vegetarian &amp; Vegetable Cooking</title><author>Ingram, Christine</author></book>
+<book><isbn>9781843530794</isbn><title>The Rough Guide to Skiing &amp; Snowboarding in North America</title><author>Tam Leach; Stephen Timblin; Christian Williams</author></book>
+<book><isbn>9781845290795</isbn><title>Corporation</title><author>Bakan, Joel</author></book>
+<book><isbn>9781846074639</isbn><title>The Big Book of Top Gear 2009</title><author>Porter, Richard</author></book>
+<book><isbn>9781846078248</isbn><title>The Big Book of Top Gear 2010</title><author>Books, BBC</author></book>
+<book><isbn>9781846462153</isbn><title>Mr Christmas</title><author>Hargreaves, Roger</author></book>
+<book><isbn>9781846811203</isbn><title>The Complete Illustrated World Encyclopedia of Archeology</title><author>Unknown, Author</author></book>
+<book><isbn>9781846812224</isbn><title>Archeology Step By Step - A Practical Guide to Uncovering the Past</title><author>Catling</author></book>
+<book><isbn>9781847442475</isbn><title>By Any Means: His Brand New Adventure from Wicklow to Wollongong</title><author>Boorman, Charley</author></book>
 <book><isbn>9781848874510</isbn><title>Reamde</title><author>Stephenson, Neal</author></book>
-<book><isbn>9780596158101</isbn><title>Programming Python</title><author>Lutz, Mark</author></book>
-<book><isbn>9780596158088</isbn><title>Python Pocket Reference: Python in Your Pocket (Pocket Reference (O'Reilly))</title><author>Lutz, Mark</author></book>
-<book><isbn>9780596100469</isbn><title>Python in a Nutshell, Second Edition (In a Nutshell)</title><author>Martelli, Alex</author></book>
-<book><isbn>9780099579939</isbn><title>Fifty Shades of Grey</title><author>James, E. L.</author></book>
-<book><isbn>9781568363875</isbn><title>Felt Friends from Japan: 86 Super-cute Toys and Accessories to Make Yourself</title><author>Tabatha, Naomi</author></book>
-<book><isbn>9781449316549</isbn><title>Programming Computer Vision with Python: Tools and algorithms for analyzing images</title><author>Solem, Jan Erik</author></book>
-<book><isbn>9780099287377</isbn><title>London Under</title><author>Ackroyd, Peter</author></book>
-<book><isbn>9780073380230</isbn><title>Introduction to Mechatronics and Measurement Systems</title><author>Alciatore, David</author></book>
-<book><isbn>9780071422741</isbn><title>Build Your Own Humanoid Robots : 6 Amazing and Affordable Projects (TAB Robotics)</title><author>Williams, Karl</author></book>
+<book><isbn>9781849900270</isbn><title>Top Gear: The Alternative Highway Code</title><author>Gear, Ministry of Top</author></book>
+<book><isbn>9781850150541</isbn><title>Teddy Bear Quotations</title><author>Unknown, Author</author></book>
+<book><isbn>9781857029635</isbn><title>Dinosaur Hunters</title><author>Cadbury, Deborah</author></book>
+<book><isbn>9781857231793</isbn><title>Against A Dark Background</title><author>Banks, Iain M</author></book>
+<book><isbn>9781857232028</isbn><title>Glory Season</title><author>Brin, David</author></book>
+<book><isbn>9781857232233</isbn><title>Earth</title><author>Brin, David</author></book>
+<book><isbn>9781857232738</isbn><title>Feersum Endjinn</title><author>Banks, Iain M</author></book>
+<book><isbn>9781857234572</isbn><title>Excession</title><author>Banks, Iain M</author></book>
+<book><isbn>9781857236101</isbn><title>Colours in the Steel (Fencer, Book 1)</title><author>Parker, K.J.</author></book>
+<book><isbn>9781857237306</isbn><title>Cassini Division (Fall Revolutions Series)</title><author>Macleod, Ken</author></book>
+<book><isbn>9781857239607</isbn><title>The Belly of the Bow (Fencer, Book 2)</title><author>Parker, K. J.</author></book>
+<book><isbn>9781857239676</isbn><title>The Sky Road (Fall Revolutions Series)</title><author>McLeod, Ken</author></book>
+<book><isbn>9781857988109</isbn><title>Ill Met in Lankhmar (Swords and Deviltry and Swords Against Death)</title><author>Leiber, Fritz</author></book>
+<book><isbn>9781857989472</isbn><title>Minority Report</title><author>Dick, Philip K</author></book>
+<book><isbn>9781857994735</isbn><title>Sixth Extinction (Science Masters S.)</title><author>Leakey, Richard</author></book>
+<book><isbn>9781858288048</isbn><title>The Rough Guide to Central America on a Budget 1</title><author>Guides, Rough</author></book>
+<book><isbn>9781859845363</isbn><title>Bush in Babylon : The Recolonisation of Iraq</title><author>Ali, Tariq</author></book>
+<book><isbn>9781861979834</isbn><title>Does Anything Eat Wasps?</title><author>Scientist, New</author></book>
+<book><isbn>9781862044586</isbn><title>The Dark Side of God: A Quest for the Lost Heart of Christianity</title><author>Lockhart, Douglas</author></book>
+<book><isbn>9781862545861</isbn><title>A Taste of Africa</title><author>Hafner, Dorinda</author></book>
+<book><isbn>9781863251846</isbn><title>Don't Sweat the Small Stuff at Work</title><author>Carlson, Richard</author></book>
+<book><isbn>9781863300308</isbn><title>The Black Grail</title><author>Broderick, Damien</author></book>
+<book><isbn>9781863300322</isbn><title>Striped Holes</title><author>Broderick, Damien</author></book>
+<book><isbn>9781863965767</isbn><title>Australian Women's Weekly Soups</title><author>Unknown, Author</author></book>
+<book><isbn>9781864500530</isbn><title>Lonely Planet Healthy Travel - Central &amp; South America</title><author>Young, Isabelle</author></book>
+<book><isbn>9781864500882</isbn><title>Lonely Planet Chile &amp; Easter Island (Lonely Planet Chile and Easter Island)</title><author>Bernhardson, Wayne</author></book>
+<book><isbn>9781864501490</isbn><title>Lonely Planet Eastern Europe</title><author>Steve Fallon; Mara Vorhees; Emma Miller</author></book>
+<book><isbn>9781864501889</isbn><title>Lonely Planet Malaysia, Singapore and Brunei</title><author>Chris Rowthorn; Sara Benson; Russell Kerr; Christine Niven</author></book>
+<book><isbn>9781864501964</isbn><title>Lonely Planet Provence &amp; the Cote D'Azur</title><author>Williams, Nicola</author></book>
+<book><isbn>9781864502473</isbn><title>Lonely Planet Nepal</title><author>Finlay, Hugh</author></book>
+<book><isbn>9781865003108</isbn><title>Finland Map by Hema</title><author>Hema</author></book>
+<book><isbn>9781865003245</isbn><title>Scandinavia Map by Hema</title><author>Maps, Hema</author></book>
+<book><isbn>9781865088044</isbn><title>Platypus</title><author>Moyal, Ann</author></book>
+<book><isbn>9781873756294</isbn><title>The Inca Trail: Cuzco &amp; Machu Picchu</title><author>Danbury, Richard</author></book>
+<book><isbn>9781875447619</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>9781875889938</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>9781875992928</isbn><title>France Country Map by Hema</title><author>Maps, Hema</author></book>
+<book><isbn>9781876429850</isbn><title>Macquarie Concise Dictionary</title><author>Unknown, Author</author></book>
+<book><isbn>9781876551216</isbn><title>Unknown Title</title><author>Unknown, Author</author></book>
+<book><isbn>9781876624545</isbn><title>The Triumph of the Airheads</title><author>Unknown, Author</author></book>
+<book><isbn>9781900512442</isbn><title>Can Reindeer Fly? Hb</title><author>Highfield, Roger</author></book>
+<book><isbn>9781905443260</isbn><title>Rapid French</title><author>Earworms</author></book>
+<book><isbn>9781905443345</isbn><title>Rapid Japanese</title><author>Unknown, Author</author></book>
+<book><isbn>9781920885588</isbn><title>Players</title><author>Wilson, Tony</author></book>
+<book><isbn>9781920885847</isbn><title>The weather makers: the history &amp; future impact of climate change</title><author>Flannery, Tim</author></book>
+<book><isbn>9781921145698</isbn><title>The 7.56 Report</title><author>Clarke, John</author></book>
+<book><isbn>9781921259333</isbn><title>Essential Guide to Woodwork</title><author>Simpson, Chris</author></book>
+<book><isbn>9781921332227</isbn><title>Mythbusters: Rock the Body</title><author>Searle, Nicholas</author></book>
+<book><isbn>9781921462023</isbn><title>Tricky People</title><author>Fuller, Andrew</author></book>
+<book><isbn>9781933662084</isbn><title>Home is On Top of a Dog House</title><author>Schulz, Charles M.</author></book>
+<book><isbn>9783822855669</isbn><title>Robots and Spaceships</title><author>Kitahara, Teruhisa; Shimizu, Yukio</author></book>
+<book><isbn>9789812466464</isbn><title>Berlitz Essential Japanese (Japanese Edition)</title><author>Strugnell, Lynne</author></book>
+<book><isbn>9781861979254</isbn><title>100 Things to Do Before You Die</title><author>Scientist, New</author></book>
+<book><isbn>9781855018044</isbn><title>Submarines of the 20Th Century</title><author>Christopher Chant</author></book>
+<book><isbn>0304352314</isbn><title>Das Boot: The Boat</title><author>Lothar-GÃ¼nther Buchheim</author></book>
+<book><isbn>9780670075843</isbn><title>Tony Robinson's History of Australia</title><author>Tony Robinson</author></book>
+<book><isbn>9780947148102</isbn><title>Unknown Title</title><author>Unknown Author</author></book>
+<book><isbn>0947148108</isbn><title>Unknown Title</title><author>Unknown Author</author></book>
+<book><isbn>0140033920</isbn><title>Night of Light</title><author>Farmer, Philip JosÃ©</author></book>
+<book><isbn>9780071362962</isbn><title>Robot Builder's Bonanza (Tab Electronics)</title><author>Gordon McComb</author></book>
+<book><isbn>9781742200989</isbn><title>Discover Japan (Au and UK) (Lonely Planet Discover Guides)</title><author>Chris Rowthorn</author></book>
+<book><isbn>0586042008</isbn><title>Traitor to the Living</title><author>Farmer, Philip JosÃ©</author></book>
+<book><isbn>0586042261</isbn><title>Stone God Awakens</title><author>Farmer, Philip JosÃ©</author></book>
+<book><isbn>0586042091</isbn><title>Time's Last Gift</title><author>Farmer, Philip JosÃ©</author></book>
+<book><isbn>0851795315</isbn><title>Unknown Title</title><author>Unknown Author</author></book>
+<book><isbn>9781742612959</isbn><title>Fukushima (Paperback)</title><author>Mark Willacy</author></book>
+<book><isbn>9781741145113</isbn><title>There and Back Again : An Actor's Tale</title><author>Sean, and Layden, Joseph Astin</author></book>
+<book><isbn>0751502375</isbn><title>The Far Side Gallery (No.2)</title><author>Gary Larson</author></book>
+<book><isbn>9780330521772</isbn><title>Great North Road</title><author>Peter F. Hamilton</author></book>
+<book><isbn>9781593272159</isbn><title>The Unofficial LEGO MINDSTORMS NXT 2.0 Inventor's Guide</title><author>David J. Perdue; Laurens Valk</author></book>
+<book><isbn>9781593274344</isbn><title>The Unofficial LEGO Technic Builder's Guide</title><author>Pawel "Sariel" Kmiec</author></book>
+<book><isbn>9781863251846</isbn><title>Don't Sweat The Small Stuff At Work</title><author>Unknown Author</author></book>
+<book><isbn>9781862545762</isbn><title>Llama for Lunch</title><author>Lydia Laube</author></book>
+<book><isbn>9782060070551</isbn><title>Michelin Red Guide 1985: Main Cities, Europe</title><author>Michelin Travel Publications</author></book>
+<book><isbn>9780349114507</isbn><title>Facing the Congo</title><author>Jeffrey Tayler</author></book>
+<book><isbn>0395445280</isbn><title>Birnbaum's Canada 1988</title><author>Stephen Birnbaum</author></book>
+<book><isbn>9780140054934</isbn><title>THE OLD PATAGONIAN EXPRESS: BY TRAIN THROUGH THE AMERICAS</title><author>PAUL THEROUX</author></book>
+<book><isbn>9300728464353</isbn><title>Unknown Title</title><author>Unknown Author</author></book>
+<book><isbn>9780575097612</isbn><title>Unknown Title</title><author>Unknown Author</author></book>
+<book><isbn>9780340994559</isbn><title>Car Fever</title><author>James May</author></book>
+<book><isbn>9780575097667</isbn><title>Whispers Under Ground</title><author>Ben Aaronovitch</author></book>
+<book><isbn>9780316731058</isbn><title>The Steep Approach to Garbadale</title><author>Iain Banks</author></book>
+<book><isbn>9780575097612</isbn><title>Unknown Title</title><author>Unknown Author</author></book>
+<book><isbn>9300728464353</isbn><title>Unknown Title</title><author>Unknown Author</author></book>
+<book><isbn>9781848874510</isbn><title>Reamde</title><author>Neal Stephenson</author></book>
 <book><isbn>9780060977719</isbn><title>Blind Man's Bluff: The Untold Story of American Submarine Espionage</title><author>Sherry Sontag; Christopher Drew</author></book>
-<book><isbn>9780140302868</isbn><title>Comet in Moominland (Moomintroll)</title><author>Jansson, Tove</author></book>
-<book><isbn>007Y665842</isbn><title>Title Unknown</title><author>Unknown, Author</author></book>
-<book><isbn>013216292X</isbn><title>Discrete-Time Signal Processing (Prentice-Hall Signal Processing Series)</title><author>Alan V. Oppenheim; Ronald W. Schafer</author></book>
-<book><isbn>9781430231837</isbn><title>Arduino Robotics</title><author>John-David Warren; Josh Adams; Harald Molle</author></book>
-<book><isbn>9780750673891</isbn><title>Robotics, Mechatronics, and Artificial Intelligence: Experimental Circuit Blocks for Designers</title><author>Braga, Newton C.</author></book>
-<book><isbn>074470240938</isbn><title>Title Unknown</title><author>Unknown, Author</author></book>
-<book><isbn>9780071750363</isbn><title>Robot Builder's Bonanza, 4th Edition</title><author>McComb, Gordon</author></book>
-<book><isbn>0333354605</isbn><title>Mastering Pascal Programming (Macmillan Master)</title><author>Huggins, Eric</author></book>
-<book><isbn>076092022923</isbn><title>Title Unknown</title><author>Unknown, Author</author></book>
-<book><isbn>0931988799</isbn><title>Discover FORTH: Learning and programming the FORTH language</title><author>Hogan, Thom</author></book>
-<book><isbn>9780201565393</isbn><title>Programming in Ada Plus Language Reference Manual (International computer science series)</title><author>Barnes</author></book>
-<book><isbn>9780201403633</isbn><title>Ada95 for C and C++ Programmers (International Computer Science Series)</title><author>Johnston, Simon</author></book>
-<book><isbn>9780131405301</isbn><title>Enterprise J2ME: Developing Mobile Java Applications</title><author>Yuan, Michael Juntao</author></book>
+<book><isbn>9780330522205</isbn><title>Manhattan in Reverse</title><author>Peter F. Hamilton</author></book>
+<book><isbn>9780141044200</isbn><title>Driven to Distraction</title><author>Jeremy Clarkson</author></book>
+<book><isbn>9780141028996</isbn><title>Born to be Riled</title><author>Jeremy Clarkson</author></book>
+<book><isbn>9780141017884</isbn><title>Clarkson on Cars</title><author>Jeremy Clarkson</author></book>
+<book><isbn>9780753511862</isbn><title>May on Motors: On the Road with James May</title><author>James May</author></book>
+<book><isbn>9780141022925</isbn><title>I Know You Got Soul: Machines with That Certain Something</title><author>Jeremy Clarkson</author></book>
+<book><isbn>9780141017891</isbn><title>The World According to Clarkson</title><author>Jeremy Clarkson</author></book>
+<book><isbn>9781741146981</isbn><title>Don't Tell Mum I Work on the Rigs, She Thinks I'm a Piano Player in a Whorehouse</title><author>Paul Carter</author></book>
+<book><isbn>9780980672947</isbn><title>The Internet is a Playground (Paperback)</title><author>David Thorne</author></book>
+<book><isbn>9780718158415</isbn><title>Round the Bend</title><author>Unknown Author</author></book>
+<book><isbn>9780552145428</isbn><title>Hogfather (Discworld)</title><author>TERRY PRATCHETT</author></book>
+<book><isbn>9780349119274</isbn><title>Transition</title><author>Iain Banks</author></book>
+<book><isbn>9780593072523</isbn><title>My Brief History</title><author>Stephen Hawking</author></book>
+<book><isbn>9780857867254</isbn><title>Mastermind How to Think Like Sherlock Holmes</title><author>Maria Konnikova</author></book>
+<book><isbn>9781847941169</isbn><title>Brick by Brick</title><author>Bill Breen David Robertson</author></book>
+<book><isbn>9781743051252</isbn><title>Those Dry-Stone Walls</title><author>Bruce Munday</author></book>
+<book><isbn>039864039550</isbn><title>Unknown Title</title><author>Unknown Author</author></book>
+<book><isbn>9780785803959</isbn><title>The Art of Blacksmithing</title><author>Alex W. Bealer</author></book>
+<book><isbn>9781449321062</isbn><title>Make: LEGO and Arduino Projects: Projects for extending MINDSTORMS NXT with open-source electronics</title><author>John Baichtal; Matthew Beckler; Adam Wolf</author></book>
+<book><isbn>9780123786074</isbn><title>A Practical Guide to SysML: The Systems Modeling Language (The MK/OMG Press)</title><author>Sanford Friedenthal; Alan Moore; Rick Steiner</author></book>
+<book><isbn>9781420079135</isbn><title>The Art of Systems Architecting, Third Edition (Systems Engineering)</title><author>Mark W. Maier</author></book>
+<book><isbn>9780898158960</isbn><title>The Complete Modern Blacksmith</title><author>Alexander Weygers</author></book>
+<book><isbn>9780864388568</isbn><title>Reader's Digest Book Of Skills &amp; Tools</title><author>ET AL MYLIUS DIETER</author></book>
+<book><isbn>9781450248020</isbn><title>Radar Man: A Personal History of Stealth</title><author>Edward Lovick Jr</author></book>
 </library>

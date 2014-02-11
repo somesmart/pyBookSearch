@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Define a Library class to store a list of books."""
 
 import crwBook
@@ -18,8 +18,6 @@ class Library(object):
 
         exists = False
         book = None
-        if type(isbn) == str:
-            isbn = unicode(isbn)
         for book in self.book_list:
             if book.get_isbn() == isbn:
                 exists = True
@@ -35,12 +33,10 @@ class Library(object):
         try:
             self.book_list.remove(book)
         except ValueError:
-            print "### Could not remove book."
+            print("### Could not remove book.")
 
     def remove_isbn(self, isbn):
         """Remove all books with the given ISBN from the list managed by this Library."""
-        if type(isbn) == str:
-            isbn = unicode(isbn)
 
         # Use a list comprehension to modify the book list
         # http://stackoverflow.com/questions/1207406/remove-items-from-a-list-while-iterating-in-python
@@ -55,41 +51,54 @@ class Library(object):
            each book described within."""
 
         try:
-            library_file = open(self.filename, "rb")
+            library_file = open(self.filename, "rt")
 
             book_reader = csv.DictReader(library_file)
 
             for book in book_reader:
-                isbn = book[crwBook.STR_ISBN].decode("iso-8859-1")
-                title = book[crwBook.STR_TITLE].decode("iso-8859-1")
-                author = book[crwBook.STR_AUTHOR].decode("iso-8859-1")
+                isbn = book[crwBook.bkFields[crwBook.bkISBN]]
+                title = book[crwBook.bkFields[crwBook.bkTitle]]
+                author = book[crwBook.bkFields[crwBook.bkAuthor]]
 
-                self.book_list.append(crwBook.Book(isbn,
-                                           title,
-                                           author))
+                new_book = crwBook.Book(isbn, title, author)
+
+                try:
+                    new_book.set_binding(book[crwBook.bkFields[crwBook.bkBinding]])
+                    new_book.set_publisher(book[crwBook.bkFields[crwBook.bkPublisher]])
+                    new_book.set_published(book[crwBook.bkFields[crwBook.bkPublished]])
+                except KeyError:
+                    print("No optional info")
+
+                self.book_list.append(new_book)
 
             library_file.close()
         except IOError:
-            print "### No library file."
+            print("### No library file.")
 
     def save_to_file(self):
-        library_file = open(self.filename, "wb")
+        library_file = open(self.filename, "wt")
         book_writer = csv.writer(library_file)
 
-        book_writer.writerow([crwBook.STR_ISBN,
-                              crwBook.STR_TITLE,
-                              crwBook.STR_AUTHOR])
+        book_writer.writerow([crwBook.bkFields[crwBook.bkISBN],
+                              crwBook.bkFields[crwBook.bkTitle],
+                              crwBook.bkFields[crwBook.bkAuthor],
+                              crwBook.bkFields[crwBook.bkBinding],
+                              crwBook.bkFields[crwBook.bkPublisher],
+                              crwBook.bkFields[crwBook.bkPublished]])
 
         for book in self.book_list:
-            isbn = book.get_isbn().encode("iso-8859-1")
-            title = book.get_title().encode("iso-8859-1")
-            author = book.get_author().encode("iso-8859-1")
-            book_writer.writerow([isbn, title, author])
+            isbn = book.get_isbn()
+            title = book.get_title()
+            author = book.get_author()
+            binding = book.get_binding()
+            publisher = book.get_publisher()
+            published = book.get_published()
+            book_writer.writerow([isbn, title, author, binding, publisher, published])
 
         # Close the library file
         library_file.close()
 
-        print "Saved", self.filename
+        print("Saved", self.filename)
 
 if __name__ == "__main__":
     library = Library("library_test.csv")
