@@ -3,7 +3,7 @@
 import crwBook
 import crwLibrary
 from gi.repository import Gtk, GObject
-import crwGTKScannerEntry
+from crwGTKScannerEntry import GTKScannerEntry
 from crwGTKBookEntry import GTKBookEntry
 
 (
@@ -94,8 +94,8 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         hbox1.pack_start(self.delete_button,
             expand=True, fill=True, padding=0)
 
-        self.scannerEntry = crwGTKScannerEntry.GTKScannerEntry(library=self, parent=self)
-        #self.bookEntry = GTKBookEntry(parent=self)
+        self.scannerEntry = None
+        self.bookEntry = None
 
         # show stuff
         self.show_all()
@@ -197,9 +197,17 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
 
     def on_menu_book_add(self, widget, data=None):
         print("Book Add")
+        if self.bookEntry == None:
+            self.bookEntry = GTKBookEntry(parent=self)
+        else:
+            self.bookEntry.present()
 
     def on_menu_book_search(self, widget, data=None):
         print("Book Search")
+        if self.scannerEntry == None:
+            self.scannerEntry = GTKScannerEntry(library=self, parent=self)
+        else:
+            self.scannerEntry.present()
 
     def on_query_callback(self, widget, data=None):
         """Called from the query button, attempts to update data from web."""
