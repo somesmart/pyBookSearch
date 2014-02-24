@@ -282,10 +282,10 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
             iter = self.book_model.append()
             title = book.get_title()
             if title == "Unknown Title":
-                title = "<span background='yellow'>Unknown Title</span>"
+                title = "<span background='yellow' foreground='black'>Unknown Title</span>"
             author = book.get_author()
             if author == "Unknown Author":
-                author = "<span background='yellow'>Unknown Author</span>"
+                author = "<span background='yellow' foreground='black'>Unknown Author</span>"
             self.book_model.set(iter,
                 COLUMN_ISBN, book.get_isbn(),
                 COLUMN_TITLE, title,
