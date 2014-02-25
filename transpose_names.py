@@ -1,16 +1,16 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import csv
 
-input_file = open("auto_library.csv", "rb")
-output_file = open("transposed_library.csv", "wb")
+input_file = open("auto_library.csv", "r")
+output_file = open("transposed_library.csv", "w")
 
-headings = ("ISBN", "Title", "Author")
+headings = ("ISBN", "Title", "Author", "Binding", "Publisher", "Published")
 
 reader = csv.DictReader(input_file, headings)
 writer = csv.DictWriter(output_file, headings)
 
 for book in reader:
-    author = book["Author"].decode("iso-8859-1")
+    author = book["Author"]
 
     # Don't transpose lines with multiple authors.
     # Occasionally a semi-colon is used to separate last_name
@@ -32,7 +32,8 @@ for book in reader:
             #
             if len(split_name) > 1:
                 lastname_first = split_name[1] + ", " + split_name[0]
-                book["Author"] = lastname_first.encode("iso-8859-1")
+                print ("Converting ({}) -> ({})".format(author, lastname_first))
+                book["Author"] = lastname_first
 
     writer.writerow(book)
 
