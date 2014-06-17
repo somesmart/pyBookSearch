@@ -178,13 +178,13 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
 
     # ============ CALLBACKS
 
-    def on_title_edited(self, widget, path, text):
+    def on_title_edited(self, widget, path, text, user_data):
         """Called when the user edits a title, updates the book."""
         if self.book_model[path][1] != text:
             print("title edited")
             self.book_model[path][1] = text
 
-    def on_author_edited(self, widget, path, text):
+    def on_author_edited(self, widget, path, text, user_data):
         """Called when the user edits a author, updates the book."""
         if self.book_model[path][2] != text:
             print("author edited")
