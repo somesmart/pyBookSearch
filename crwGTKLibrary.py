@@ -9,8 +9,9 @@ from crwGTKBookEntry import GTKBookEntry
 (
     COLUMN_ISBN,
     COLUMN_AUTHOR,
-    COLUMN_TITLE
-) = list(range(3))
+    COLUMN_TITLE,
+    COLUMN_REFERENCE
+) = list(range(4))
 
 MENU_INFO = """
 <ui>
@@ -61,7 +62,8 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         self.book_model = Gtk.ListStore(
             GObject.TYPE_STRING,
             GObject.TYPE_STRING,
-            GObject.TYPE_STRING)
+            GObject.TYPE_STRING,
+            GObject.TYPE_PYOBJECT)
 
         # fill the model from file
         self.read_from_file()
@@ -180,20 +182,23 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
 
     def on_title_edited(self, widget, path, text, user_data):
         """Called when the user edits a title, updates the book."""
-        if self.book_model[path][1] != text:
+        if self.book_model[path][COLUMN_TITLE] != text:
             print("title edited")
-            self.book_model[path][1] = text
+            self.book_model[path][COLUMN_TITLE] = text
+            self.book_model[path][COLUMN_REFERENCE].set_title(text)
 
     def on_author_edited(self, widget, path, text, user_data):
         """Called when the user edits a author, updates the book."""
-        if self.book_model[path][2] != text:
+        if self.book_model[path][COLUMN_AUTHOR] != text:
             print("author edited")
-            self.book_model[path][2] = text
+            self.book_model[path][COLUMN_AUTHOR] = text
+            self.book_model[path][COLUMN_REFERENCE].set_author(text)
             
     def on_selection_changed(self, selection, data=None):
         model, treeiter = selection.get_selected()
         if treeiter != None:
-            print("Selected", model[treeiter][0])
+            print("Selected", model[treeiter][COLUMN_ISBN])
+            print(model[treeiter][COLUMN_REFERENCE])
 
     def on_menu_book_add(self, widget, data=None):
         print("Book Add")
@@ -213,7 +218,7 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         """Called from the query button, attempts to update data from web."""
         selection = self.tree_view.get_selection()
         (model, iter) = selection.get_selected()
-        isbn = model.get(iter, 0)[0]
+        isbn = model.get(iter, 0)[COLUMN_ISBN]
         print("querying %s" % (isbn))
         self.search_isbn(isbn, add=False)
 
@@ -230,7 +235,7 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         print("Delete - logic wrong")
         selection = self.tree_view.get_selection()
         (model, iter) = selection.get_selected()
-        isbn = model.get(iter, 0)[0]
+        isbn = model.get(iter, 0)[COLUMN_ISBN]
         self.remove_isbn(isbn)
         model.remove(iter)
 
@@ -263,7 +268,8 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         self.book_model.set(iter,
             COLUMN_ISBN, book.get_isbn(),
             COLUMN_TITLE, book.get_title(),
-            COLUMN_AUTHOR, book.get_author())
+            COLUMN_AUTHOR, book.get_author(),
+            COLUMN_REFERENCE, book)
         self.tree_view.scroll_to_cell(
             path=self.book_model.get_path(iter),
             use_align=True)
@@ -289,7 +295,8 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
             self.book_model.set(iter,
                 COLUMN_ISBN, book.get_isbn(),
                 COLUMN_TITLE, title,
-                COLUMN_AUTHOR, author)
+                COLUMN_AUTHOR, author,
+                COLUMN_REFERENCE, book)
 
 if __name__ == "__main__":
     gtkLibrary = GTKLibrary("library.csv")
