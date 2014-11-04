@@ -28,10 +28,10 @@ ISBN,Title,Author,Binding,Publisher,Published
 0140020551,Physical Fitness,"Airforce, Royal Canadian",,,
 0140224076,Einstein's Universe: Guide to the Theory of Relativity,"Calder, Nigel",,,
 0140303235,The Exploits of Moominpappa,"Jansson, Tove",,,
-0170062252,Unknown Title,"Unknown, Author",,,
+0170062252,Unknown,Unknown,,,
 0198312415,Dragon Book of Verse,"Harrison, Michael",,,
 0207150222,Book of Runes (St) (Alt),"Blum, Ralph",,,
-0304969508,Berlitz Travel Guide to Oxford and Stratford,"Unknown, Author",,,
+0304969508,Berlitz Travel Guide to Oxford and Stratford,Unknown,,,
 0330201077,The Spy Who Came in from the Cold,"le Carre, John",,,
 0330236199,Profiles Of The Future,"Clarke, Arthur C.",,,
 0330258648,The Hitch-Hikers Guide to the Galaxy,"Adams, Douglas",,,
@@ -79,13 +79,13 @@ ISBN,Title,Author,Binding,Publisher,Published
 0552113131,White Dragon,"Mccaffrey, Anne",,,
 0552115002,Devil's Alternative,"Forsyth, Frederick",,,
 0552118044,Dragondrums,"Mccaffrey, Anne",,,
-0552131199,Unknown Title,"Unknown, Author",,,
+0552131199,Unknown,Unknown,,,
 0553234951,Startide Rising (Uplift Trilogy),"Brin, David",,,
 0553238272,The Herb Book,"Lust, John B",,,
 0553255959,The Complete Book of Palmistry,"Wilson, Joyce",,,
 0553283685,Hyperion,"Simmons, Dan",,,
 0553288202,The Fall of Hyperion,"Simmons, Dan",,,
-0582555442,Pocket science dictionary (Longman top pocket series),"Unknown, Author",,,
+0582555442,Pocket science dictionary (Longman top pocket series),Unknown,,,
 0586008357,The Caves of Steel,"Asimov, Isaac",,,
 0586010165,Naked Sun,"Asimov, Isaac",,,
 0586010424,Earth Is Room Enough,"Asimov, Isaac",,,
@@ -103,8 +103,8 @@ ISBN,Title,Author,Binding,Publisher,Published
 0586044345,Brave New World,"Huxley, Aldous",,,
 0586051287,Opus: A Selection from the First 200 Books,"Asimov, Isaac",,,
 0600202615,Duncton Wood,"Horwood, William",,,
-0642015317,Unknown Title,"Unknown, Author",,,
-0646134728,Unknown Title,"Unknown, Author",,,
+0642015317,Unknown,Unknown,,,
+0646134728,Unknown,Unknown,,,
 0646222317,The Lepers,"Frank; Browning, Guy Weissenborn",,,
 0671648705,"Timetrap (Star Trek, No 40)","Dvorkin, David",,,
 0671727214,Italian - English Dictionary,"Fantonetti, Carlo;Tedeschi, Alberto",,,
@@ -114,49 +114,49 @@ ISBN,Title,Author,Binding,Publisher,Published
 0722116306,Timescape,"Benford, Gregory",,,
 0722134274,Maker Of Universes,"Farmer, Philip José",,,
 0725512008,Dick Smith's Australian Amateur Radio Handbook,"Smith, Dick",,,
-0730936546,Unknown Title,"Unknown, Author",,,
-0747404135,Unknown Title,"Unknown, Author",,,
+0730936546,Unknown,Unknown,,,
+0747404135,Unknown,Unknown,,,
 0812524829,Slant,"Bear, Greg",,,
 0812558170,The Urth of the New Sun,"Wolfe, Gene",,,
 0842345523,More Than a Carpenter,"McDowell, Josh",,,
 0860078531,Hole in Space (Orbit Books),"Niven, Larry",,,
 0863992315,Wine and Beermaking - Hints and Recipes,"Turner, Ben",,,
-0868246298,Unknown Title,"Unknown, Author",,,
+0868246298,Unknown,Unknown,,,
 0872169510,Feast Unknown,"Farmer, Philip José",,,
 0880381736,"Dragons of Autumn Twilight (DragonLance Chronicles, Vol. 1)","Weiss, Margaret;Hickman, Tracy",,,
 0880381744,"Dragons of Winter Night (DragonLance Chronicles, Vol. 2)","Weiss, Margaret;Hickman, Tracy",,,
 0880381752,"Dragons of Spring Dawning (Dragonlance Chronicles, Vol. 3)","Weiss, Margaret;Hickman, Tracy",,,
 0901496464,Hostelling International: Europe 1996,"Federation, International Youth Hostel",,,
 0901496472,"Hostelling International Guides: The Official Guide to Hostels in Africa, America, Asia and the Pacific 1996","Federation, International Youth Hostel",,,
-0909439060,Melway Greater Melbourne,"Unknown, Author",,,
+0909439060,Melway Greater Melbourne,Unknown,,,
 0931988799,Discover FORTH: Learning and programming the FORTH language,"Hogan, Thom",,,
-0949290076,Unknown Title,"Unknown, Author",,,
-0959562931,Unknown Title,"Unknown, Author",,,
+0949290076,Unknown,Unknown,,,
+0959562931,Unknown,Unknown,,,
 0959915443,Historic Mount Gambier,"Dean, Lois",,,
-0977504719,Unknown Title,"Unknown, Author",,,
+0977504719,Unknown,Unknown,,,
 1563331667,Image of the Beast,"Farmer, Philip José",,,
 1857239067,Inversions,"Banks, Iain M",,,
 1863300309,The Black Grail,"Broderick, Damien",,,
 1863300325,Striped Holes,"Broderick, Damien",,,
-1875889930,Unknown Title,"Unknown, Author",,,
-031809004999,Unknown Title,"Unknown, Author",,,
+1875889930,Unknown,Unknown,,,
+031809004999,Unknown,Unknown,,,
 037145003955,The Edge of Tomorrow,"Asimov, Isaac",,,
-070999002507,Unknown Title,"Unknown, Author",,,
-070999002750,Unknown Title,"Unknown, Author",,,
-070999003955,Unknown Title,"Unknown, Author",,,
-072742006992,Unknown Title,"Unknown, Author",,,
-074470240938,Unknown Title,"Unknown, Author",,,
-076092022923,Unknown Title,"Unknown, Author",,,
-076714003958,Unknown Title,"Unknown, Author",,,
-076714005990,Unknown Title,"Unknown, Author",,,
-076783004504,Unknown Title,"Unknown, Author",,,
-076783004955,Unknown Title,"Unknown, Author",,,
-076783007994,Unknown Title,"Unknown, Author",,,
-078021002501,Unknown Title,"Unknown, Author",,,
-9318923008289,Cradle Mountain and Lake St Clair,"Unknown, Author",,,
-9770952620014,Unknown Title,"Unknown, Author",,,
+070999002507,Unknown,Unknown,,,
+070999002750,Unknown,Unknown,,,
+070999003955,Unknown,Unknown,,,
+072742006992,Unknown,Unknown,,,
+074470240938,Unknown,Unknown,,,
+076092022923,Unknown,Unknown,,,
+076714003958,Unknown,Unknown,,,
+076714005990,Unknown,Unknown,,,
+076783004504,Unknown,Unknown,,,
+076783004955,Unknown,Unknown,,,
+076783007994,Unknown,Unknown,,,
+078021002501,Unknown,Unknown,,,
+9318923008289,Cradle Mountain and Lake St Clair,Unknown,,,
+9770952620014,Unknown,Unknown,,,
 9780002201377,Galapagos (Safari Guide),"Fitter, Julian",,,
-9780004704814,Collins Gem German Study Set,"Unknown, Author",,,
+9780004704814,Collins Gem German Study Set,Unknown,,,
 9780006167778,White Gold Wielder,"Donaldson, Stephen",,,
 9780006169857,Daughter of Regals,"Donaldson, Stephen",,,
 9780006173434,Prophet of Lamath,"Hughes, Robert Don",,,
@@ -172,7 +172,7 @@ ISBN,Title,Author,Binding,Publisher,Published
 9780006511380,Darwins Radio,"Bear, Greg",,,
 9780006530916,Sony: The Private Life,"Nathan, John",,,
 9780007170579,Gollum: How We Made Movie Magic (The Lord of the Rings),"Serkis, Andy",,,
-9780007196555,Collins Express English-Japanese Dictionary (Shubun Express),"Unknown, Author",,,
+9780007196555,Collins Express English-Japanese Dictionary (Shubun Express),Unknown,,,
 9780007288427,Little Brother,"Doctorow, Cory",,,
 9780007325221,Makers,"Doctorow, Cory",,,
 9780007327942,Eastern Standard Tribe,"Doctorow, Cory",,,
@@ -256,8 +256,8 @@ ISBN,Title,Author,Binding,Publisher,Published
 9780143204787,Obernewtyn,"Carmody, Isobelle",,,
 9780143566434,The Time Machine,"Wells, H.G.",,,
 9780192851390,A History of the Vikings (Oxford paperbacks),"Jones, Gwyn",,,
-9780195530872,Australian Words and Their Origins,"Unknown, Author",,,
-9780198661856,The Oxford Dictionary of Quotations,"Unknown, Author",,,
+9780195530872,Australian Words and Their Origins,Unknown,,,
+9780198661856,The Oxford Dictionary of Quotations,Unknown,,,
 9780199534043,Concise Oxford Dictionary of Archaeology (Oxford Paperback Reference),"Darvill, Timothy",,,
 9780201403633,Ada95 for C and C++ Programmers (International Computer Science Series),"Johnston, Simon",,,
 9780201565393,Programming in Ada Plus Language Reference Manual (International computer science series),Barnes,,,
@@ -365,7 +365,7 @@ ISBN,Title,Author,Binding,Publisher,Published
 9780552131063,Mort,"Pratchett, Terry",,,
 9780552131070,Sourcery,"Pratchett, Terry",,,
 9780552131186,Shapechangers,"Roberson, Jennifer",,,
-9780552131193,Unknown Title,"Unknown, Author",,,
+9780552131193,Unknown,Unknown,,,
 9780552131193,The Song Of Homana,"Roberson, Jennifer",,,
 9780552131209,Legacy Of The Sword (Chronicles of The Cheysuli Book Three),"Roberson, Jennifer",,,
 9780552131308,Wordsmiths and the Warguild,"Cook, Hugh",,,
@@ -530,7 +530,7 @@ ISBN,Title,Author,Binding,Publisher,Published
 9780708882719,The Hammer of the Sun,"Rohan, Michael Scott",,,
 9780708883099,The Player of Games,"Banks, Iain M",,,
 9780708883587,Use of Weapons,"Banks, Iain M",,,
-9780713683752,Ktg Fencing (Know the Game),"Unknown, Author",,,
+9780713683752,Ktg Fencing (Know the Game),Unknown,,,
 9780713995206,Rebel Code:[The Inside Story of Linux and the Open Source Revolution],"Moody, Glyn",,,
 9780713998627,Collapse,"Diamond, Jared",,,
 9780716733874,"Why People Believe Weird Things: Pseudoscience, Superstition, and Other Confusions of Our Time","Shermer, Michael",,,
@@ -539,8 +539,8 @@ ISBN,Title,Author,Binding,Publisher,Published
 9780722145449,Undersea (The Finnbranch Vol. 2),"Hazel, Paul",,,
 9780722147610,The Last Gasp,"Hoyle, Trevor",,,
 9780725107550,The autobiography of the woman the Gestapo called the White Mouse,"Wake, Nancy",,,
-9780731914425,Gregory's Adelaide Street Directory,"Unknown, Author",,,
-9780731914913,UBD Canberra Map,"Unknown, Author",,,
+9780731914425,Gregory's Adelaide Street Directory,Unknown,,,
+9780731914913,UBD Canberra Map,Unknown,,,
 9780732256821,The Ancient Future,"Harding, Traci",,,
 9780732267162,Snowtown: The Bodies in Barrels Murders,"Merriman, J.; Pudney, J.",,,
 9780732270957,Magician's Guild: Book 1 of Black Magician Trilogy,"Canavan, Trudi",,,
@@ -553,7 +553,7 @@ ISBN,Title,Author,Binding,Publisher,Published
 9780747231578,A Multitude of Monsters (Ebenezum trilgy),"Gardner, Craig Shaw",,,
 9780747232131,A Difficulty with Dwarves (Ballad Wuntvor),"Gardner, Craig Shaw",,,
 9780747403906,Stark,"Elton, Ben",,,
-9780747404132,Unknown Title,"Unknown, Author",,,
+9780747404132,Unknown,Unknown,,,
 9780747405689,Gridlock,"Elton, Ben",,,
 9780747406099,Boat of a Million Years,"Anderson, Poul",,,
 9780747527244,Leith's Cooking for One or Two,"Tyrer, Polly",,,
@@ -577,7 +577,7 @@ ISBN,Title,Author,Binding,Publisher,Published
 9780864424099,Lonely Planet Canada,Mark Lightbody; Dorinda Talbot; Jim Dufresne; Tom Smallman,,,
 9780864424754,Lonely Planet Spanish Phrasebook (Spanish Edition),Izaskun Arretxe; Allison Jones,,,
 9780864424778,Lonely Planet Trekking in the Patagonian Andes,"Lindenmayer, Clem",,,
-9780864425584,Lonely Planet Latin American Spanish (Lonely Planet Phrasebook: India),"Unknown, Author",,,
+9780864425584,Lonely Planet Latin American Spanish (Lonely Planet Phrasebook: India),Unknown,,,
 9780864426390,Lonely Planet Western Europe (Lonley Planet on a Shoestring),"Fallon, Steve",,,
 9780864426413,Lonely Planet Argentina: Uruguay &amp; Paraguay,"Bernhardson, Wayne",,,
 9780864426567,Lonely Planet South America on a Shoestring,James Lyon; Andrew Draffen; Krzysztof Dydynski; Conner Gorry; Mark Plotkin,,,
@@ -587,11 +587,11 @@ ISBN,Title,Author,Binding,Publisher,Published
 9780864427618,Lonely Planet Ecuador &amp; the Galapagos Islands,Rob Rachowiecki; Danny Palmerlee,,,
 9780864550163,How to Stop Worrying and be Happy,"Gressor, Megan",,,
 9780868246222,Fundamentalism and freedom,"Cameron, Peter Scott",,,
-9780868246291,Unknown Title,"Unknown, Author",,,
+9780868246291,Unknown,Unknown,,,
 9780908988822,Eye on the Sky,"Andersen, Geoff",,,
-9780909439064,Melway Greater Melbourne,"Unknown, Author",,,
+9780909439064,Melway Greater Melbourne,Unknown,,,
 9780946983063,Trans-Siberian rail guide,"Strauss, Robert",,,
-9780947148102,Unknown Title,"Unknown, Author",,,
+9780947148102,Unknown,Unknown,,,
 9780949757456,The Macquarie dictionary of Australian colloquial language,"Delbridge, Arthur",,,
 9780951868409,Shakespeare's Insults: Educating Your Wit,Wayne F. Hill; Cynthia J. Ottchen,,,
 9780957735248,Radical Melbourne,"Sparrow, Jeff",,,
@@ -599,16 +599,16 @@ ISBN,Title,Author,Binding,Publisher,Published
 9780958079570,Radical Melbourne 2: The Enemy Within,"Jeff and Sparrow, Jill Sparrow",,,
 9780959773323,Travellers New Zealand,"McIntosh, Gary Hannam and Lesley",,,
 9780963009609,Pihkal: A Chemical Love Story,"Shulgin, Alexander; Shulgin, Ann",,,
-9780977504718,Unknown Title,"Unknown, Author",,,
-9780980600711,Unknown Title,"Unknown, Author",,,
+9780977504718,Unknown,Unknown,,,
+9780980600711,Unknown,Unknown,,,
 9781403985996,"Bones, Rocks and Stars: The Science of When Things Happened","Turney, Chris",,,
 9781405301039,Latin American Spanish (Three Months Course),"Cisneros, Isabel",,,
 9781405306973,Herb &amp; Spice a Cooks Reference,"Norman, Jill",,,
 9781405315746,Go Snowboard,"McNab, Neil",,,
 9781405341691,Lego Book,"Lipkowitz, Daniel",,,
-9781405487863,Archaeology,"Unknown, Author",,,
+9781405487863,Archaeology,Unknown,,,
 9781405487870,Archeology: Unearthing the Mysteries of the Past,"Santon, Kate",,,
-9781405904629,Top Gear Aqua Challenge Model Making Kit,"Unknown, Author",,,
+9781405904629,Top Gear Aqua Challenge Model Making Kit,Unknown,,,
 9781405906968,Top Gear: Official Annual 2011,BBC,,,
 9781408804162,Magnificent Desolation,"Aldrin, Buzz",,,
 9781430231837,Arduino Robotics,John-David Warren; Josh Adams; Harald Molle,,,
@@ -625,14 +625,14 @@ ISBN,Title,Author,Binding,Publisher,Published
 9781740663434,Change the World for Ten Bucks - 50 Actions to Change the World and Make You Feel Great,Anonymous,,,
 9781740669818,Preincarnate,"Micallef, Shaun",,,
 9781741145007,Hegemony or Survival,"Chomsky, Noam",,,
-9781741662696,Unknown Title,"Unknown, Author",,,
-9781741665918,Unknown Title,"Unknown, Author",,,
+9781741662696,Unknown,Unknown,,,
+9781741665918,Unknown,Unknown,,,
 9781741790207,Volunteer: A Traveler's Guide to Making a Difference Around the World (Lonely Planet),Charlotte Hindle; Nate Cavalieri; Rachel Collinson; Korina Miller; Mike Richard,,,
 9781741797718,Lonely Planet French Phrasebook and Audio CD,"Planet, Lonely",,,
 9781741962321,Lygon Street: Stories and Recipes from Melbourne's Melting Pot,"Harden, Michael",,,
 9781742377261,You'll Be Sorry When I'm Dead,"Hardy, Marieke",,,
 9781742480008,James May's Toy Stories,"James, May",,,
-9781742667218,The Soup Bible,"Unknown, Author",,,
+9781742667218,The Soup Bible,Unknown,,,
 9781840139792,Submarines of the World,"Jackson, Robert",,,
 9781841490182,"The Proof House (The Fencer Trilogy, Volume Three)","Parker, K. J.",,,
 9781841490618,Look to Windward,"Banks, Iain",,,
@@ -656,12 +656,12 @@ ISBN,Title,Author,Binding,Publisher,Published
 9781846074639,The Big Book of Top Gear 2009,"Porter, Richard",,,
 9781846078248,The Big Book of Top Gear 2010,"Books, BBC",,,
 9781846462153,Mr Christmas,"Hargreaves, Roger",,,
-9781846811203,The Complete Illustrated World Encyclopedia of Archeology,"Unknown, Author",,,
+9781846811203,The Complete Illustrated World Encyclopedia of Archeology,Unknown,,,
 9781846812224,Archeology Step By Step - A Practical Guide to Uncovering the Past,Catling,,,
 9781847442475,By Any Means: His Brand New Adventure from Wicklow to Wollongong,"Boorman, Charley",,,
 9781848874510,Reamde,"Stephenson, Neal",,,
 9781849900270,Top Gear: The Alternative Highway Code,"Gear, Ministry of Top",,,
-9781850150541,Teddy Bear Quotations,"Unknown, Author",,,
+9781850150541,Teddy Bear Quotations,Unknown,,,
 9781857029635,Dinosaur Hunters,"Cadbury, Deborah",,,
 9781857231793,Against A Dark Background,"Banks, Iain M",,,
 9781857232028,Glory Season,"Brin, David",,,
@@ -683,7 +683,7 @@ ISBN,Title,Author,Binding,Publisher,Published
 9781863251846,Don't Sweat the Small Stuff at Work,"Carlson, Richard",,,
 9781863300308,The Black Grail,"Broderick, Damien",,,
 9781863300322,Striped Holes,"Broderick, Damien",,,
-9781863965767,Australian Women's Weekly Soups,"Unknown, Author",,,
+9781863965767,Australian Women's Weekly Soups,Unknown,,,
 9781864500530,Lonely Planet Healthy Travel - Central &amp; South America,"Young, Isabelle",,,
 9781864500882,Lonely Planet Chile &amp; Easter Island (Lonely Planet Chile and Easter Island),"Bernhardson, Wayne",,,
 9781864501490,Lonely Planet Eastern Europe,Steve Fallon; Mara Vorhees; Emma Miller,,,
@@ -694,15 +694,15 @@ ISBN,Title,Author,Binding,Publisher,Published
 9781865003245,Scandinavia Map by Hema,"Maps, Hema",,,
 9781865088044,Platypus,"Moyal, Ann",,,
 9781873756294,The Inca Trail: Cuzco &amp; Machu Picchu,"Danbury, Richard",,,
-9781875447619,Unknown Title,"Unknown, Author",,,
-9781875889938,Unknown Title,"Unknown, Author",,,
+9781875447619,Unknown,Unknown,,,
+9781875889938,Unknown,Unknown,,,
 9781875992928,France Country Map by Hema,"Maps, Hema",,,
-9781876429850,Macquarie Concise Dictionary,"Unknown, Author",,,
-9781876551216,Unknown Title,"Unknown, Author",,,
-9781876624545,The Triumph of the Airheads,"Unknown, Author",,,
+9781876429850,Macquarie Concise Dictionary,Unknown,,,
+9781876551216,Unknown,Unknown,,,
+9781876624545,The Triumph of the Airheads,Unknown,,,
 9781900512442,Can Reindeer Fly? Hb,"Highfield, Roger",,,
 9781905443260,Rapid French,Earworms,,,
-9781905443345,Rapid Japanese,"Unknown, Author",,,
+9781905443345,Rapid Japanese,Unknown,,,
 9781920885588,Players,"Wilson, Tony",,,
 9781920885847,The weather makers: the history &amp; future impact of climate change,"Flannery, Tim",,,
 9781921145698,The 7.56 Report,"Clarke, John",,,
@@ -716,34 +716,34 @@ ISBN,Title,Author,Binding,Publisher,Published
 9781855018044,Submarines of the 20Th Century,"Chant, Christopher",,,
 0304352314,Das Boot: The Boat,"Buchheim, Lothar-Günther",,,
 9780670075843,Tony Robinson's History of Australia,"Robinson, Tony",,,
-9780947148102,Unknown Title,"Author, Unknown",,,
-0947148108,Unknown Title,"Author, Unknown",,,
+9780947148102,Unknown,Unknown,,,
+0947148108,Unknown,Unknown,,,
 0140033920,Night of Light,"Farmer, Philip José",,,
 9780071362962,Robot Builder's Bonanza (Tab Electronics),"McComb, Gordon",,,
 9781742200989,Discover Japan (Au and UK) (Lonely Planet Discover Guides),"Rowthorn, Chris",,,
 0586042008,Traitor to the Living,"Farmer, Philip José",,,
 0586042261,Stone God Awakens,"Farmer, Philip José",,,
 0586042091,Time's Last Gift,"Farmer, Philip José",,,
-0851795315,Unknown Title,"Author, Unknown",,,
+0851795315,Unknown,Unknown,,,
 9781742612959,Fukushima (Paperback),"Willacy, Mark",,,
 9781741145113,There and Back Again : An Actor's Tale,"Sean, and Layden, Joseph Astin",,,
 0751502375,The Far Side Gallery (No.2),"Larson, Gary",,,
 9780330521772,Great North Road,"Hamilton, Peter F.",Paperback,Macmillan,December
 9781593272159,The Unofficial LEGO MINDSTORMS NXT 2.0 Inventor's Guide,David J. Perdue; Laurens Valk,Paperback,No Starch Press,December 2010
 9781593274344,The Unofficial LEGO Technic Builder's Guide,"Kmiec, Pawel ""Sariel""",Paperback,No Starch Press,November 2012
-9781863251846,Don't Sweat The Small Stuff At Work,"Author, Unknown",Paperback,Bantam,December
+9781863251846,Don't Sweat The Small Stuff At Work,Unknown,Paperback,Bantam,December
 9781862545762,Llama for Lunch,"Laube, Lydia",Paperback,Wakefield Press,April 2004
 9782060070551,"Michelin Red Guide 1985: Main Cities, Europe","Publications, Michelin Travel",Hardcover,Michelin Travel Publications,April 1985
 9780349114507,Facing the Congo,"Tayler, Jeffrey",Paperback,Abacus,May 2002
 0395445280,Birnbaum's Canada 1988,"Birnbaum, Stephen",Paperback,Houghton Mifflin Company,October 1987
 9780140054934,The Old Patagonian Express: By Train Through The Americas,"Theroux, Paul",Paperback,Penguin Books Ltd,December 1982
-9300728464353,Unknown Title,"Author, Unknown",,,
-9780575097612,Unknown Title,"Author, Unknown",,,December
+9300728464353,Unknown,Unknown,,,
+9780575097612,Unknown,Unknown,,,December
 9780340994559,Car Fever,"May, James",Paperback,Hodder &amp; Stoughton,September 2010
 9780575097667,Whispers Under Ground,"Aaronovitch, Ben",Paperback,Gollancz,October 2012
 9780316731058,The Steep Approach to Garbadale,"Banks, Iain",Hardcover,"Little, Brown",December 2007
-9780575097612,Unknown Title,"Author, Unknown",,,December
-9300728464353,Unknown Title,"Author, Unknown",,,
+9780575097612,Unknown,Unknown,,,December
+9300728464353,Unknown,Unknown,,,
 9781848874510,Reamde,"Stephenson, Neal",Paperback,Atlantic Books,August 2012
 9780060977719,Blind Man's Bluff: The Untold Story of American Submarine Espionage,Sherry Sontag; Christopher Drew,Paperback,William Morrow Paperbacks,October 2000
 9780330522205,Manhattan in Reverse,"Hamilton, Peter F.",Paperback,Pan Publishing,May 2012
@@ -755,14 +755,14 @@ ISBN,Title,Author,Binding,Publisher,Published
 9780141017891,The World According to Clarkson,"Clarkson, Jeremy",Paperback,Penguin Global,March 2010
 9781741146981,"Don't Tell Mum I Work on the Rigs, She Thinks I'm a Piano Player in a Whorehouse","Carter, Paul",Paperback,Allen &amp; Unwin,May 2006
 9780980672947,The Internet is a Playground (Paperback),"Thorne, David",,,December 2010
-9780718158415,Round the Bend,"Author, Unknown",Paperback,Michael Joseph,December
+9780718158415,Round the Bend,Unknown,Paperback,Michael Joseph,December
 9780552145428,Hogfather (Discworld),"Pratchett, Terry",Paperback,Corgi Books,December 1997
 9780349119274,Transition,"Banks, Iain",Paperback,Abacus,December 2010
 9780593072523,My Brief History,"Hawking, Stephen",Hardcover,,December 2013
 9780857867254,Mastermind How to Think Like Sherlock Holmes,"Konnikova, Maria",Paperback,Canongate,December
 9781847941169,Brick by Brick,"Robertson, Bill Breen David",Paperback,Random House Books,June 2013
 9781743051252,Those Dry-Stone Walls,"Munday, Bruce",Paperback,Wakefield Press,2013
-039864039550,Unknown Title,"Author, Unknown",,,
+039864039550,Unknown,Unknown,,,
 9780785803959,The Art of Blacksmithing,"Bealer, Alex W.",Hardcover,Castle Books,November 2009
 9781449321062,Make: LEGO and Arduino Projects: Projects for extending MINDSTORMS NXT with open-source electronics,John Baichtal; Matthew Beckler; Adam Wolf,Paperback,"Maker Media, Inc",December 2012
 9780123786074,A Practical Guide to SysML: The Systems Modeling Language (The MK/OMG Press),Sanford Friedenthal; Alan Moore; Rick Steiner,Paperback,Morgan Kaufmann,September 2009
@@ -820,7 +820,7 @@ NA,Saws: Their Care and Treatment,"Durham, Harry W.",,,
 9783895089251,Living Spaces: Ecological Building and Design,Fisher; Thomas Schmitz-Guenther,Hardcover,Konemann,August 1999
 9780007265480,Kevin McCloud's 43 Principles of Home: Enjoying Life in the 21st Century.,Kevin McCloud,Hardcover,Collins,October 2010
 9781857320985,Victorian Style,Judith Miller; Martin Miller; James Merrell,Hardcover,Antique Collectors Club Ltd,September 1993
-9783822851432,"Small City Houses (Petites Maisons de Ville / Kleine Stadthauser) (English, French and German Edition)",Unknown Author,Paperback,Evergreen,May 2006
+9783822851432,"Small City Houses (Petites Maisons de Ville / Kleine Stadthauser) (English, French and German Edition)",Unknown,Paperback,Evergreen,May 2006
 9780867883503,Victorian Style,"Freeman, John Crosby",,,
 NA,Workshop Technology Part 1,"Chapman, W. A. J.",,,
 NA,The Handyman's Complete Self Instructor,Odhams Press,,,
@@ -832,12 +832,12 @@ NA,The Handyman's Complete Carpentry Guide,"Waugh, Andrew",,,
 9780586061992,The Robots of Dawn,Isaac Asimov,Paperback,Panther Books,December 1985
 0099170604,A Torrent of Faces.,James &amp; Norman L. Blish &amp; Knight,Paperback,Arrow,December 1978
 0552115002,DEVIL'S ALTERNATIVE,FREDERICK FORSYTH,Paperback,CORGI,December 1985
-450007081,Unknown Title,Unknown Author,,,
-045000708,Unknown Title,Unknown Author,,,
-x450007081,Unknown Title,Unknown Author,,,
+450007081,Unknown,Unknown,,,
+045000708,Unknown,Unknown,,,
+x450007081,Unknown,Unknown,,,
 0552101621,Decision At Doona,Anne McCaffrey,Paperback,Corgi,December 1971
-9781922213303,Unknown Title,Unknown Author,,,December
-9781922213303,Unknown Title,Unknown Author,,,December
+9781922213303,Unknown,Unknown,,,December
+9781922213303,Unknown,Unknown,,,December
 9781740456692,History's Worst Decisions and the People Who Made Them,Stephen Weir,Hardcover,Pier 9,October 2005
 0049120115,Journeys of Frodo- An Atlas of J.R.R. Tolkien's The Lord of the Rings,Barbara Strachey,Paperback,Unwin Paperbacks,December 1981
 0330201719,Nine Tomorrows,Isaac Asimov,Paperback,Macmillan,December 1972
@@ -855,7 +855,7 @@ x450007081,Unknown Title,Unknown Author,,,
 9780316491976,The Soul of A New Machine,Tracy Kidder,Paperback,Back Bay Books,June 2000
 0140305017,Moominsummer Madness (Puffin Books),Tove Jansson,Paperback,Puffin Books,June 1973
 9780141328607,Finn Family Moomintroll,Tove Jansson,Hardcover,Puffin Books,August 2009
-9780710519375,Unknown Title,Unknown Author,,,
+9780710519375,Unknown,Unknown,,,
 9781449334994,HTML5 Hacks,Jesse Cravens; Jeff Burtoft,Paperback,O'Reilly Media,December 2012
 9781118012529,HTML5 For Dummies Quick Reference,Andy Harris,Spiral-bound,For Dummies,May 2011
 9780140305012,Moominsummer Madness (Puffin Books),Tove Jansson,Paperback,Puffin Books,June 1973
@@ -865,16 +865,16 @@ x450007081,Unknown Title,Unknown Author,,,
 9781897299197,Moomin: The Complete Tove Jansson Comic Strip - Book Two,Tove Jansson,Hardcover,Drawn and Quarterly,October 2007
 9781894937801,Moomin: The Complete Tove Jansson Comic Strip - Book One,Tove Jansson,Hardcover,Drawn and Quarterly,November 2006
 9781908745132,Moomins and the Great Flood,Tove Jansson,Hardcover,Imprint unknown,December 2012
-076783001756,Unknown Title,Unknown Author,,,
-076783001756,Unknown Title,Unknown Author,,,
+076783001756,Unknown,Unknown,,,
+076783001756,Unknown,Unknown,,,
 0553151495,Your Very Own Robot (Choose your own adventure),R.A. Montgomery,Paperback,Bantam USA,August 1983
 0408001496,110 Operational Amplifier Projects for the Home Constructor,R.M. Marston,Hardcover,Newnes Technical Books,February 1975
 ,Around the World in Eighty Days,"Verne, Jules",,,
 ,Every Man His Own Mechanic,"Barnard, John",,,
 ,The Threshold of Science,"Wright, C. R. Alder",,,
 ,Home Mechanic's Workshop Companion,"Jackson, Andrew Jr.",,,
-,Odhams Practical and Technical Encyclopedia,Unknown Author,,,
-,"Spons' Workshop Receipts, Vol IV",Unknown Author,,,
+,Odhams Practical and Technical Encyclopedia,Unknown,,,
+,"Spons' Workshop Receipts, Vol IV",Unknown,,,
 ,"Annual Summaries from The Times, 1876-1892","Times, The",,,
 ,"20,000 Leagues Under the Sea","Verne, Jules",,,
 ,Pocket Oxford Dictionary,"Fowler, F. G. and H. W.",,,
@@ -892,7 +892,7 @@ x450007081,Unknown Title,Unknown Author,,,
 9781449368104,Make: Sensors: A Hands-On Primer for Monitoring the Real World with Arduino and Raspberry Pi,Tero Karvinen; Kimmo Karvinen; Ville Valtokari,Paperback,"Maker Media, Inc",June 2014
 9780141975658,The Signal and the Noise: The Art and Science of Prediction,Nate Silver,Paperback,Puffin Books,April 2013
 ,Electric Motors and Generators Illustrated,Various,,,
-,"Mechanical World Year Book, 1938",Unknown Author,,,
+,"Mechanical World Year Book, 1938",Unknown,,,
 0553273469,The Black Tower (The Dungeon),Philip JosÃ© Farmer; Richard A. Lupoff,Mass Market Paperback,Bantam Spectra,July 1988
 0417018002,Hadon of Ancient Opar,Philip Jose Farmer,Paperback,Littlehampton Book Services Ltd,May 1977
 0553285424,"The Final Battle (Dungeon, Vol 6)",Richard Lupoff,Mass Market Paperback,Spectra,June 1990
@@ -901,8 +901,8 @@ x450007081,Unknown Title,Unknown Author,,,
 0600367479,Other Log of Phileas Fogg (Hamlyn science fiction),PHILIP JOSE FARMER,Paperback,HAMLYN,January 1979
 0586053794,Riverworld and Other Stories,Philip Jose Farmer,Paperback,Panther UK,January 1981
 0704311658,Dare,Philip Jose Farmer,Paperback,Quartet Books,December 1965
-0441833559,Unknown Title,Unknown Author,,,
-0441833659195,Unknown Title,Unknown Author,,,
+0441833559,Unknown,Unknown,,,
+0441833659195,Unknown,Unknown,,,
 ,Two Hawks from Earth,"Farmer, Philip Jose",,,
 ,Calculated Risk,"Maine, Charles Eric",,,
 ,Laugh Magazine No.66,Contributors,,,

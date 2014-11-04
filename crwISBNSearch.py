@@ -5,7 +5,9 @@ import json
 import sys
 
 try:
-    import urllib.request, urllib.error, urllib.parse
+    import urllib.request
+    import urllib.error
+    import urllib.parse
     HAVE_URLLIB = True
 except ImportError:
     import urllib2
@@ -18,11 +20,13 @@ except ImportError:
     print("### Sorry, I can't search for book info")
     HAVE_SOUP = False
 
+
 class BaseSearcher(object):
     def search(self, isbn):
-        book = crwBook.Book(str(isbn), "Unknown Title", "Unknown Author")
+        book = crwBook.Book(str(isbn))
         return book
-    
+
+
 class UPCDatabaseCom(BaseSearcher):
     def __init__(self):
         self.search_url = "http://www.upcdatabase.com/item/"
@@ -30,6 +34,7 @@ class UPCDatabaseCom(BaseSearcher):
     def search(self, isbn):
         # Call the superclass method to create the book
         book = super(ISBNSearchOrg, self).search(isbn)
+
 
 class LibraryThingCom(BaseSearcher):
     def __init__(self):
@@ -39,13 +44,16 @@ class LibraryThingCom(BaseSearcher):
         # Call the superclass method to create the book
         book = super(ISBNSearchOrg, self).search(isbn)
 
+
 class OpenISBNCom(BaseSearcher):
     def __init__(self):
         self.search_url = "http://www.openisbn.com/isbn/"
 
+
 class ISBNDBCom(BaseSearcher):
     def __init__(self):
         self.search_url = "http://isbndb.com/api/v2/json/[your-api-key]/book/"
+
 
 class OpenLibraryOrg(BaseSearcher):
     def __init__(self):
@@ -57,7 +65,7 @@ class OpenLibraryOrg(BaseSearcher):
     def search(self, isbn):
         # Call the superclass method to create the book
         #book = super(OpenLibraryOrg, self).search(isbn)
-        book = {"found": False, "isbn": isbn, "title": "Unknown Title", "authors": "Unknown Author"}
+        book = {"found": False, "isbn": isbn, "title": "Unknown", "authors": "Unknown"}
 
         # Create the URL
         full_url = self.search_url.format(isbn)
@@ -136,11 +144,11 @@ class ISBNSearchOrg(BaseSearcher):
                 try:
                     # TODO: This is a hack for &
                     # TODO: make html/xml safe
-                    book.set_title(soup.h2.string.replace("&", "&amp;"))
+                    book.title = soup.h2.string.replace("&", "&amp;")
                     print ("title: {}".format(soup.h2.string))
                 except AttributeError:
                     print("### Error retrieving Title.")
-                    book.set_title("Unknown Title")
+                    book.title = "Unknown"
 
                 # Get the author
                 for label in soup.findAll("strong"):
@@ -148,28 +156,31 @@ class ISBNSearchOrg(BaseSearcher):
                         try:
                             # TODO: This is a hack for &
                             # TODO: make html/xml safe
-                            book.set_author(label.nextSibling.replace("&", "&amp;"))
+                            book.author = label.nextSibling.replace("&", "&amp;")
                         except AttributeError:
                             print("### Error retrieving Author.")
-                            book.set_author("Unknown Author")
+                            book.author = "Unknown"
 
                     if label.string == "Authors:":
                         try:
                             # TODO: This is a hack for &
                             # TODO: make html/xml safe
-                            book.set_author(label.nextSibling.replace("&", "&amp;"))
+                            book.author = label.nextSibling.replace("&", "&amp;")
                         except AttributeError:
                             print("### Error retrieving Author.")
-                            book.set_author("Unknown Author")
+                            book.author = "Unknown"
+
                     if label.string == "Binding:":
                         # TODO: This is a hack for &
-                        book.set_binding(label.nextSibling.replace("&", "&amp;"))
+                        book.binding = label.nextSibling.replace("&", "&amp;")
+
                     if label.string == "Publisher:":
                         # TODO: This is a hack for &
-                        book.set_publisher(label.nextSibling.replace("&", "&amp;"))
+                        book.publisher = label.nextSibling.replace("&", "&amp;")
+
                     if label.string == "Published:":
                         # TODO: This is a hack for &
-                        book.set_published(label.nextSibling.replace("&", "&amp;"))
+                        book.published = label.nextSibling.replace("&", "&amp;")
 
             except urlexception:
                 print("### Could not contact server.")

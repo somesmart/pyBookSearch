@@ -4,6 +4,7 @@
 import crwBook
 import csv
 
+
 class Library(object):
     """The Library class is responsible for..."""
 
@@ -19,7 +20,7 @@ class Library(object):
         exists = False
         book = None
         for book in self.book_list:
-            if book.get_isbn() == isbn:
+            if book.isbn == isbn:
                 exists = True
                 break
         return exists, book
@@ -36,19 +37,22 @@ class Library(object):
             print("### Could not remove book.")
 
     def remove_isbn(self, isbn):
-        """Remove all books with the given ISBN from the list managed by this Library."""
+        """
+        Remove all books with the given ISBN from the list
+        managed by this Library.
+        """
 
         # Use a list comprehension to modify the book list
         # http://stackoverflow.com/questions/1207406/remove-items-from-a-list-while-iterating-in-python
-        self.book_list[:] = [book for book in self.book_list if book.get_isbn() != isbn]
+        self.book_list[:] = [book for book in self.book_list if book.isbn != isbn]
 
 ##        for book in self.book_list:
-##            if book.get_isbn() == isbn:
+##            if book.isbn == isbn:
 ##                self.remove_book(book)
 
     def read_from_file(self):
-        """Open the CSV file associated with this Library, and create a Book for
-           each book described within."""
+        """Open the CSV file associated with this Library, and create a
+           Book for each book described within."""
 
         try:
             library_file = open(self.filename, "rt")
@@ -63,9 +67,12 @@ class Library(object):
                 new_book = crwBook.Book(isbn, title, author)
 
                 try:
-                    new_book.set_binding(book[crwBook.bkFields[crwBook.bkBinding]])
-                    new_book.set_publisher(book[crwBook.bkFields[crwBook.bkPublisher]])
-                    new_book.set_published(book[crwBook.bkFields[crwBook.bkPublished]])
+                    new_book.binding = book[
+                        crwBook.bkFields[crwBook.bkBinding]]
+                    new_book.publisher = book[
+                        crwBook.bkFields[crwBook.bkPublisher]]
+                    new_book.published = book[
+                        crwBook.bkFields[crwBook.bkPublished]]
                 except KeyError:
                     print("No optional info")
 
@@ -87,13 +94,14 @@ class Library(object):
                               crwBook.bkFields[crwBook.bkPublished]])
 
         for book in self.book_list:
-            isbn = book.get_isbn()
-            title = book.get_title()
-            author = book.get_author()
-            binding = book.get_binding()
-            publisher = book.get_publisher()
-            published = book.get_published()
-            book_writer.writerow([isbn, title, author, binding, publisher, published])
+            isbn = book.isbn
+            title = book.title
+            author = book.author
+            binding = book.binding
+            publisher = book.publisher
+            published = book.published
+            book_writer.writerow(
+                [isbn, title, author, binding, publisher, published])
 
         # Close the library file
         library_file.close()
@@ -112,4 +120,4 @@ if __name__ == "__main__":
 
     library.save_to_file()
 
-    
+

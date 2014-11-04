@@ -77,7 +77,7 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         hbox1 = Gtk.HBox(False, 0)
         vbox1.pack_start(hbox1,
             expand=False, fill=False, padding=0)
-        
+
         # add a query button
         self.query_button = Gtk.Button("Query")
         self.query_button.connect("clicked", self.on_query_callback, None)
@@ -160,7 +160,7 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         column.set_min_width(150)
         self.tree_view.append_column(column)
         renderer.connect("edited", self.on_author_edited, None)
-        
+
         # column for title
         renderer = Gtk.CellRendererText()
         renderer.set_property("editable", True)
@@ -185,15 +185,15 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         if self.book_model[path][COLUMN_TITLE] != text:
             print("title edited")
             self.book_model[path][COLUMN_TITLE] = text
-            self.book_model[path][COLUMN_REFERENCE].set_title(text)
+            self.book_model[path][COLUMN_REFERENCE].title = text
 
     def on_author_edited(self, widget, path, text, user_data):
         """Called when the user edits a author, updates the book."""
         if self.book_model[path][COLUMN_AUTHOR] != text:
             print("author edited")
             self.book_model[path][COLUMN_AUTHOR] = text
-            self.book_model[path][COLUMN_REFERENCE].set_author(text)
-            
+            self.book_model[path][COLUMN_REFERENCE].author = text
+
     def on_selection_changed(self, selection, data=None):
         model, treeiter = selection.get_selected()
         if treeiter != None:
@@ -256,8 +256,8 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
                 self.add_book(book_description)
         else:
             if add:
-                self.add_book(crwBook.Book(isbn, "Unknown Title", "Unknown Author"))
-
+                self.add_book(
+                    crwBook.Book(isbn))
 
     def add_book(self, book):
         # Call the super class function
@@ -265,11 +265,13 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
 
         # Add it to the model
         iter = self.book_model.append()
-        self.book_model.set(iter,
-            COLUMN_ISBN, book.get_isbn(),
-            COLUMN_TITLE, book.get_title(),
-            COLUMN_AUTHOR, book.get_author(),
+        self.book_model.set(
+            iter,
+            COLUMN_ISBN, book.isbn,
+            COLUMN_TITLE, book.title,
+            COLUMN_AUTHOR, book.author,
             COLUMN_REFERENCE, book)
+
         self.tree_view.scroll_to_cell(
             path=self.book_model.get_path(iter),
             use_align=True)
@@ -283,17 +285,17 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
     def read_from_file(self):
         # Call the super class function
         super(GTKLibrary, self).read_from_file()
-        
+
         for book in self.book_list:
             iter = self.book_model.append()
-            title = book.get_title()
-            if title == "Unknown Title":
-                title = "<span background='yellow' foreground='black'>Unknown Title</span>"
-            author = book.get_author()
-            if author == "Unknown Author":
-                author = "<span background='yellow' foreground='black'>Unknown Author</span>"
+            title = book.title
+            if title == "Unknown":
+                title = "<span background='yellow' foreground='black'>Unknown</span>"
+            author = book.author
+            if author == "Unknown":
+                author = "<span background='yellow' foreground='black'>Unknown</span>"
             self.book_model.set(iter,
-                COLUMN_ISBN, book.get_isbn(),
+                COLUMN_ISBN, book.isbn,
                 COLUMN_TITLE, title,
                 COLUMN_AUTHOR, author,
                 COLUMN_REFERENCE, book)

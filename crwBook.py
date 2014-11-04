@@ -3,119 +3,117 @@
 from html import entities
 import collections
 
-class BookDict(dict):
-    def __init__(self, *args, **kwargs):
-        super(BookDict, self).__init__(*args, **kwargs)
-        self['found'] = False
-        self['title'] = "Unknown Title"
-        self['authors'] = "Unknown Author"
-        
-BookTuple = collections.namedtuple('BookTuple', ['found', 'isbn', 'title', 'authors'])
 
-(bkISBN, bkTitle, bkAuthor, bkBinding, bkPublisher, bkPublished) = list(range(6))
+# class BookDict(dict):
+#     def __init__(self, *args, **kwargs):
+#         super(BookDict, self).__init__(*args, **kwargs)
+#         self['found'] = False
+#         self['title'] = "Unknown Title"
+#         self['authors'] = "Unknown Author"
+
+# BookTuple = collections.namedtuple('BookTuple', ['found', 'isbn', 'title', 'authors'])
+
+(
+    bkISBN,
+    bkTitle,
+    bkAuthor,
+    bkBinding,
+    bkPublisher,
+    bkPublished
+) = list(range(6))
+
 bkFields = {
-    bkISBN : "ISBN",
-    bkTitle : "Title",
-    bkAuthor : "Author",
-    bkBinding : "Binding",
-    bkPublisher : "Publisher",
-    bkPublished : "Published"
+    bkISBN: "ISBN",
+    bkTitle: "Title",
+    bkAuthor: "Author",
+    bkBinding: "Binding",
+    bkPublisher: "Publisher",
+    bkPublished: "Published"
 }
+
 
 def check_and_sanitise(s):
     # TODO: Parse the input string for non-escaped html entities
     pass
 
+
 class Book(object):
-    def __init__(self, isbn, title=None, author=None):
-        self.binding = None
-        self.publisher = None
-        self.published = None
+    def __init__(self, isbn, title='Unknown', author='Unknown'):
+        self._binding = 'Unknown'
+        self._publisher = 'Unknown'
+        self._published = 'Unknown'
+
         try:
             # The ISBN
-            self.isbn = isbn.strip()
+            self._isbn = isbn.strip()
 
             # The Title
-            if title != None:
-                self.title = title.strip()
+            self._title = title.strip()
 
             # The Author
-            if author != None:
-                self.author = author.strip()
+            self._author = author.strip()
 
-        except AttributeError:
-            print("### Could not set book fields.")
+        except AttributeError as err:
+            print("Error setting book fields: {}".format(err))
 
-    def set_isbn(self, isbn):
-        try:
-            self.isbn = isbn.strip()
-        except AttributeError:
-            print("### Could not set ISBN")
-            self.isbn = "Unknown ISBN"
+    @property
+    def isbn(self):
+        return self._isbn
 
-    def get_isbn(self):
-        return self.isbn
+    @isbn.setter
+    def isbn(self, value):
+        self._isbn = value.strip()
 
-    def set_title(self, title):
-        try:
-            self.title = title.strip()
-        except AttributeError:
-            print("### Could not set title")
-            self.title = "Unknown Title"
+    @property
+    def title(self):
+        return self._title
 
-    def get_title(self):
-        return self.title
+    @title.setter
+    def title(self, value):
+        self._title = value.strip()
 
-    def set_author(self, author):
-        try:
-            self.author = author.strip()
-        except AttributeError:
-            print("### Could not set author")
-            self.author = "Unknown Author"
+    @property
+    def author(self):
+        return self._author
 
-    def get_author(self):
-        return self.author
+    @author.setter
+    def author(self, value):
+        self._author = value.strip()
 
-    def set_isbn_13(self, isbn13):
-        self.isbn_13 = isbn13.strip()
+    @property
+    def binding(self):
+        return self._binding
 
-    def get_isbn_13(self):
-        return self.isbn_13
+    @binding.setter
+    def binding(self, value):
+        self._binding = value.strip()
 
-    def set_isbn_10(self, isbn10):
-        self.isbn_10 = isbn10.strip()
+    @property
+    def publisher(self):
+        return self._publisher
 
-    def get_isbn_10(self):
-        return self.isbn_10
+    @publisher.setter
+    def publisher(self, value):
+        self._publisher = value.strip()
 
-    def set_binding(self, binding):
-        self.binding = binding.strip()
+    @property
+    def published(self):
+        return self._published
 
-    def get_binding(self):
-        return self.binding
-
-    def set_publisher(self, publisher):
-        self.publisher = publisher.strip()
-
-    def get_publisher(self):
-        return self.publisher
-
-    def set_published(self, published):
-        self.published = published.strip()
-
-    def get_published(self):
-        return self.published
+    @published.setter
+    def published(self, value):
+        self._published = value.strip()
 
     def __repr__(self):
-        return 'crwBook.Book("' + self.isbn + \
-               '", "' + self.title + \
-               '", "' + self.author + \
+        return 'crwBook.Book("' + self._isbn + \
+               '", "' + self._title + \
+               '", "' + self._author + \
                '")'
 
     def __str__(self):
-        return "ISBN:" + self.isbn + \
-               ", Title:" + self.title + \
-               ", Author:" + self.author
+        return "ISBN:" + self._isbn + \
+               ", Title:" + self._title + \
+               ", Author:" + self._author
 
 if __name__ == "__main__":
     book = Book(" 0586039899 ", " The Fabulous Riverboat", "  Philip Jos\u00e9 Farmer")
