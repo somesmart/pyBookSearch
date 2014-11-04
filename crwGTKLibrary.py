@@ -272,12 +272,10 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         '''
         print('Delete')
         selection = self.tree_view.get_selection()
-        (model, iter) = selection.get_selected()
-        # isbn = model.get(iter, 0)[COLUMN_ISBN]
-        # self.remove_isbn(isbn)
-        book = model.get(iter, 0)[COLUMN_REFERENCE]
+        model, treeiter = selection.get_selected()
+        book = model[treeiter][COLUMN_REFERENCE]
         self.remove_book(book)
-        model.remove(iter)
+        model.remove(treeiter)
 
     def destroy(self, widget, data=None):
         '''
