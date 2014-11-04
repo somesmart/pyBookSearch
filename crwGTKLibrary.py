@@ -255,8 +255,8 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
     def on_query_callback(self, widget, data=None):
         """Called from the query button, attempts to update data from web."""
         selection = self.tree_view.get_selection()
-        (model, iter) = selection.get_selected()
-        isbn = model.get(iter, 0)[COLUMN_ISBN]
+        (model, treeiter) = selection.get_selected()
+        isbn = model.get(treeiter, 0)[COLUMN_ISBN]
         print("querying %s" % (isbn))
         self.search_isbn(isbn, add=False)
 
@@ -293,6 +293,7 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
             # TODO: Process list properly
             for web_searcher in self.web_searcher_list:
                 book_description = web_searcher.search(isbn)
+                print(book_description)
             if add:
                 self.add_book(book_description)
         else:

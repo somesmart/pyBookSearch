@@ -22,8 +22,11 @@ except ImportError:
 
 
 class BaseSearcher(object):
-    def search(self, isbn):
-        book = crwBook.Book(str(isbn))
+    def search(self, isbn, book=None):
+        if book is None:
+            book = crwBook.Book(str(isbn))
+        else:
+            book.isbn = isbn
         return book
 
 
@@ -31,18 +34,20 @@ class UPCDatabaseCom(BaseSearcher):
     def __init__(self):
         self.search_url = "http://www.upcdatabase.com/item/"
 
-    def search(self, isbn):
+    def search(self, isbn, book=None):
         # Call the superclass method to create the book
-        book = super(ISBNSearchOrg, self).search(isbn)
+        book = super(ISBNSearchOrg, self).search(isbn, book=book)
+        return book
 
 
 class LibraryThingCom(BaseSearcher):
     def __init__(self):
         self.search_url = "http://www.librarything.com/tag/"
 
-    def search(self, isbn):
+    def search(self, isbn, book=None):
         # Call the superclass method to create the book
-        book = super(ISBNSearchOrg, self).search(isbn)
+        book = super(ISBNSearchOrg, self).search(isbn, book=book)
+        return book
 
 
 class OpenISBNCom(BaseSearcher):
@@ -62,9 +67,9 @@ class OpenLibraryOrg(BaseSearcher):
         #self.search_url = "https://openlibrary.org/api/books?bibkeys=ISBN:0451526538&callback=mycallback"
         self.search_url = "https://openlibrary.org/api/books?bibkeys=ISBN:{}&format=json&jscmd=data"
 
-    def search(self, isbn):
+    def search(self, isbn, book=None):
         # Call the superclass method to create the book
-        #book = super(OpenLibraryOrg, self).search(isbn)
+        #book = super(OpenLibraryOrg, self).search(isbn, book=book)
         book = {"found": False, "isbn": isbn, "title": "Unknown", "authors": "Unknown"}
 
         # Create the URL
@@ -104,13 +109,14 @@ class OpenLibraryOrg(BaseSearcher):
             else:
                 print ("No data")
 
-        except urllib.error.URLError as e:
-            print("URLError")
+        except urllib.error.URLError as err:
+            print("URLError {}".format(err))
         except:
             print("Unexpected error:", sys.exc_info()[0])
             raise
 
         return book
+
 
 class ISBNSearchOrg(BaseSearcher):
     def __init__(self):
@@ -119,11 +125,11 @@ class ISBNSearchOrg(BaseSearcher):
         # Only process the bookinfo division
         self.bookinfo_filter = SoupStrainer("div", "bookinfo")
 
-    def search(self, isbn):
+    def search(self, isbn, book=None):
         # Call the superclass method to create the book
-        book = super(ISBNSearchOrg, self).search(isbn)
+        book = super(ISBNSearchOrg, self).search(isbn, book=book)
 
-        if HAVE_SOUP == True:
+        if HAVE_SOUP:
             full_url = self.search_url + str(isbn)
             try:
                 if HAVE_URLLIB:
@@ -152,6 +158,7 @@ class ISBNSearchOrg(BaseSearcher):
 
                 # Get the author
                 for label in soup.findAll("strong"):
+
                     if label.string == "Author:":
                         try:
                             # TODO: This is a hack for &
