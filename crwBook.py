@@ -37,6 +37,20 @@ def check_and_sanitise(s):
     pass
 
 
+def new_book(from_dict):
+    isbn = from_dict.get('ISBN', 'None')
+    title = from_dict.get('Title', 'Unknown')
+    author = from_dict.get('Author', 'Unknown')
+
+    book = Book(isbn, title, author)
+
+    book.binding = from_dict.get('Binding')
+    book.publisher = from_dict.get('Publisher')
+    book.published = from_dict.get('Published')
+
+    return book
+
+
 class Book(object):
     def __init__(self, isbn, title='Unknown', author='Unknown'):
         self._binding = 'Unknown'

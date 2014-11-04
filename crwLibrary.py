@@ -57,26 +57,11 @@ class Library(object):
         try:
             library_file = open(self.filename, "rt")
 
+            # The first line of the file is to be used for key names
             book_reader = csv.DictReader(library_file)
 
             for book in book_reader:
-                isbn = book[crwBook.bkFields[crwBook.bkISBN]]
-                title = book[crwBook.bkFields[crwBook.bkTitle]]
-                author = book[crwBook.bkFields[crwBook.bkAuthor]]
-
-                new_book = crwBook.Book(isbn, title, author)
-
-                try:
-                    new_book.binding = book[
-                        crwBook.bkFields[crwBook.bkBinding]]
-                    new_book.publisher = book[
-                        crwBook.bkFields[crwBook.bkPublisher]]
-                    new_book.published = book[
-                        crwBook.bkFields[crwBook.bkPublished]]
-                except KeyError:
-                    print("No optional info")
-
-                self.book_list.append(new_book)
+                self.book_list.append(crwBook.new_book(from_dict=book))
 
             library_file.close()
         except IOError:
@@ -119,5 +104,4 @@ if __name__ == "__main__":
     library.remove_isbn("2345")
 
     library.save_to_file()
-
 

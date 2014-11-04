@@ -20,16 +20,22 @@ MENU_INFO = """
       <menuitem action='BookAdd' />
       <menuitem action='BookSearch' />
     </menu>
+    <menu action='LibraryMenu'>
+      <menuitem action='ExportXML'/>
+    </menu>
   </menubar>
 </ui>
 """
+
+HIGHLIGHT = "<span background='yellow' foreground='black'>{}</span>"
+
 
 class GTKLibrary(Gtk.Window, crwLibrary.Library):
     def __init__(self, filename, searcher=None, parent=None):
         """Create a window with a list and a couple of buttons."""
 
         self.web_searcher_list = []
-        if searcher != None:
+        if searcher is not None:
             self.web_searcher_list.append(searcher)
 
         # create window
@@ -75,26 +81,26 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
 
         # add a horizontal box
         hbox1 = Gtk.HBox(False, 0)
-        vbox1.pack_start(hbox1,
-            expand=False, fill=False, padding=0)
+        vbox1.pack_start(
+            hbox1, expand=False, fill=False, padding=0)
 
         # add a query button
         self.query_button = Gtk.Button("Query")
         self.query_button.connect("clicked", self.on_query_callback, None)
-        hbox1.pack_start(self.query_button,
-            expand=True, fill=True, padding=0)
+        hbox1.pack_start(
+            self.query_button, expand=True, fill=True, padding=0)
 
         # add a save button
         self.save_button = Gtk.Button("Save")
         self.save_button.connect("clicked", self.on_save_callback, None)
-        hbox1.pack_start(self.save_button,
-            expand=True, fill=True, padding=0)
+        hbox1.pack_start(
+            self.save_button, expand=True, fill=True, padding=0)
 
         # add a delete button
         self.delete_button = Gtk.Button("Delete")
         self.delete_button.connect("clicked", self.on_delete_callback, None)
-        hbox1.pack_start(self.delete_button,
-            expand=True, fill=True, padding=0)
+        hbox1.pack_start(
+            self.delete_button, expand=True, fill=True, padding=0)
 
         self.scannerEntry = None
         self.bookEntry = None
@@ -105,20 +111,40 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
     def __add_menu(self, box):
         """Create the menus."""
 
+        uimanager = Gtk.UIManager()
+        uimanager.add_ui_from_string(MENU_INFO)
+
+        accelgroup = uimanager.get_accel_group()
+        self.add_accel_group(accelgroup)
+
         action_group = Gtk.ActionGroup("book_actions")
+
         action_book_menu = Gtk.Action("BookMenu", "Book", None, None)
         action_group.add_action(action_book_menu)
+
         action_book_add = Gtk.Action("BookAdd", "Add", None, Gtk.STOCK_ADD)
         action_book_add.connect("activate", self.on_menu_book_add, None)
         action_group.add_action(action_book_add)
-        action_book_search = Gtk.Action("BookSearch", "Search", None, Gtk.STOCK_FIND)
+
+        action_book_search = Gtk.Action(
+            "BookSearch", "Search", None, Gtk.STOCK_FIND)
         action_book_search.connect("activate", self.on_menu_book_search, None)
         action_group.add_action(action_book_search)
-        uimanager = Gtk.UIManager()
-        uimanager.add_ui_from_string(MENU_INFO)
-        accelgroup = uimanager.get_accel_group()
-        self.add_accel_group(accelgroup)
+
         uimanager.insert_action_group(action_group)
+
+        # LIBRARY MENU
+
+        action_group = Gtk.ActionGroup("library_actions")
+
+        action_library_menu = Gtk.Action("LibraryMenu", "Library", None, None)
+        action_group.add_action(action_library_menu)
+
+        action_library_xml = Gtk.Action('ExportXML', 'Export to XML', None, None)
+        action_group.add_action(action_library_xml)
+
+        uimanager.insert_action_group(action_group)
+
         menubar = uimanager.get_widget("/Book")
         box.pack_start(menubar, expand=False, fill=False, padding=0)
 
@@ -129,7 +155,6 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         #mb.append(mi1)
 
         #m1 = Gtk.Menu()
-
 
     def __add_tree(self):
         """Create the tree."""
@@ -143,7 +168,8 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
 
         # column for ISBN
         renderer = Gtk.CellRendererText()
-        column = Gtk.TreeViewColumn(crwBook.bkFields[crwBook.bkISBN], renderer, text=COLUMN_ISBN)
+        column = Gtk.TreeViewColumn(
+            crwBook.bkFields[crwBook.bkISBN], renderer, text=COLUMN_ISBN)
         column.set_sort_column_id(COLUMN_ISBN)
         column.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
         column.set_resizable(True)
@@ -153,7 +179,8 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         # column for author
         renderer = Gtk.CellRendererText()
         renderer.set_property("editable", True)
-        column = Gtk.TreeViewColumn(crwBook.bkFields[crwBook.bkAuthor], renderer, markup=COLUMN_AUTHOR)
+        column = Gtk.TreeViewColumn(
+            crwBook.bkFields[crwBook.bkAuthor], renderer, markup=COLUMN_AUTHOR)
         column.set_sort_column_id(COLUMN_AUTHOR)
         column.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
         column.set_resizable(True)
@@ -164,7 +191,8 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         # column for title
         renderer = Gtk.CellRendererText()
         renderer.set_property("editable", True)
-        column = Gtk.TreeViewColumn(crwBook.bkFields[crwBook.bkTitle], renderer, markup=COLUMN_TITLE)
+        column = Gtk.TreeViewColumn(
+            crwBook.bkFields[crwBook.bkTitle], renderer, markup=COLUMN_TITLE)
         column.set_sort_column_id(COLUMN_TITLE)
         column.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
         column.set_resizable(True)
@@ -196,20 +224,20 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
 
     def on_selection_changed(self, selection, data=None):
         model, treeiter = selection.get_selected()
-        if treeiter != None:
+        if treeiter is not None:
             print("Selected", model[treeiter][COLUMN_ISBN])
             print(model[treeiter][COLUMN_REFERENCE])
 
     def on_menu_book_add(self, widget, data=None):
         print("Book Add")
-        if self.bookEntry == None:
+        if self.bookEntry is None:
             self.bookEntry = GTKBookEntry(parent=self, library=self)
         else:
             self.bookEntry.present()
 
     def on_menu_book_search(self, widget, data=None):
         print("Book Search")
-        if self.scannerEntry == None:
+        if self.scannerEntry is None:
             self.scannerEntry = GTKScannerEntry(library=self, parent=self)
         else:
             self.scannerEntry.present()
@@ -223,14 +251,17 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         self.search_isbn(isbn, add=False)
 
     def on_save_callback(self, widget, data=None):
-        """Called from various save buttons, saves the CSV file."""
+        '''
+        Called from various save buttons, saves the CSV file.
+        '''
         print("Saving...", end=' ')
         self.save_to_file()
 
     def on_delete_callback(self, widget, data=None):
-        ''' The remove_isbn call removes all entries, the model remove only removes one.
-            It would also be better if the overloaded remove_isbn function actually did
-            the remove from the model.
+        '''
+        The remove_isbn call removes all entries, the model remove only removes one.
+        It would also be better if the overloaded remove_isbn function actually did
+        the remove from the model.
         '''
         print("Delete - logic wrong")
         selection = self.tree_view.get_selection()
@@ -288,13 +319,17 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
 
         for book in self.book_list:
             iter = self.book_model.append()
+
             title = book.title
             if title == "Unknown":
-                title = "<span background='yellow' foreground='black'>Unknown</span>"
+                title = HIGHLIGHT.format(title)
+
             author = book.author
             if author == "Unknown":
-                author = "<span background='yellow' foreground='black'>Unknown</span>"
-            self.book_model.set(iter,
+                author = HIGHLIGHT.format(author)
+
+            self.book_model.set(
+                iter,
                 COLUMN_ISBN, book.isbn,
                 COLUMN_TITLE, title,
                 COLUMN_AUTHOR, author,
