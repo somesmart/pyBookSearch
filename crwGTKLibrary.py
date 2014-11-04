@@ -140,7 +140,8 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         action_library_menu = Gtk.Action("LibraryMenu", "Library", None, None)
         action_group.add_action(action_library_menu)
 
-        action_library_xml = Gtk.Action('ExportXML', 'Export to XML', None, None)
+        action_library_xml = Gtk.Action(
+            'ExportXML', 'Export to XML', None, Gtk.STOCK_SAVE_AS)
         action_group.add_action(action_library_xml)
 
         uimanager.insert_action_group(action_group)
@@ -211,22 +212,31 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
     def on_title_edited(self, widget, path, text, user_data):
         """Called when the user edits a title, updates the book."""
         if self.book_model[path][COLUMN_TITLE] != text:
-            print("title edited")
+            book = self.book_model[path][COLUMN_REFERENCE]
+            print('Title From: {}'.format(book))
+            book.title = text
+            print('Title To  : {}'.format(book))
+
+            # Do this last - if the column is sorted the path
+            # points to the wrong entry
             self.book_model[path][COLUMN_TITLE] = text
-            self.book_model[path][COLUMN_REFERENCE].title = text
 
     def on_author_edited(self, widget, path, text, user_data):
         """Called when the user edits a author, updates the book."""
         if self.book_model[path][COLUMN_AUTHOR] != text:
-            print("author edited")
+            book = self.book_model[path][COLUMN_REFERENCE]
+            print('Author From: {}'.format(book))
+            book.author = text
+            print('Author To  : {}'.format(book))
+
+            # Do this last - if the column is sorted the path
+            # points to the wrong entry
             self.book_model[path][COLUMN_AUTHOR] = text
-            self.book_model[path][COLUMN_REFERENCE].author = text
 
     def on_selection_changed(self, selection, data=None):
         model, treeiter = selection.get_selected()
         if treeiter is not None:
-            print("Selected", model[treeiter][COLUMN_ISBN])
-            print(model[treeiter][COLUMN_REFERENCE])
+            print("Selected: {}".format(model[treeiter][COLUMN_REFERENCE]))
 
     def on_menu_book_add(self, widget, data=None):
         print("Book Add")
@@ -254,24 +264,26 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         '''
         Called from various save buttons, saves the CSV file.
         '''
-        print("Saving...", end=' ')
+        print('Saving...', end=' ')
         self.save_to_file()
 
     def on_delete_callback(self, widget, data=None):
         '''
-        The remove_isbn call removes all entries, the model remove only removes one.
-        It would also be better if the overloaded remove_isbn function actually did
-        the remove from the model.
         '''
-        print("Delete - logic wrong")
+        print('Delete')
         selection = self.tree_view.get_selection()
         (model, iter) = selection.get_selected()
-        isbn = model.get(iter, 0)[COLUMN_ISBN]
-        self.remove_isbn(isbn)
+        # isbn = model.get(iter, 0)[COLUMN_ISBN]
+        # self.remove_isbn(isbn)
+        book = model.get(iter, 0)[COLUMN_REFERENCE]
+        self.remove_book(book)
         model.remove(iter)
 
     def destroy(self, widget, data=None):
-        print("Saving...", end=' ')
+        '''
+        Called on closing the window, saves the CSV file.
+        '''
+        print('Saving...', end=' ')
         self.save_to_file()
         Gtk.main_quit()
 
@@ -307,11 +319,11 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
             path=self.book_model.get_path(iter),
             use_align=True)
 
-    def remove_book(self, book):
-        super(GTKLibrary, self).remove_book(book)
+    # def remove_book(self, book):
+    #     super(GTKLibrary, self).remove_book(book)
 
-    def remove_isbn(self, isbn):
-        super(GTKLibrary, self).remove_isbn(isbn)
+    # def remove_isbn(self, isbn):
+    #     super(GTKLibrary, self).remove_isbn(isbn)
 
     def read_from_file(self):
         # Call the super class function

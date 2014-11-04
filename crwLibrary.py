@@ -36,19 +36,19 @@ class Library(object):
         except ValueError:
             print("### Could not remove book.")
 
-    def remove_isbn(self, isbn):
-        """
-        Remove all books with the given ISBN from the list
-        managed by this Library.
-        """
+#     def remove_isbn(self, isbn):
+#         """
+#         Remove all books with the given ISBN from the list
+#         managed by this Library.
+#         """
 
-        # Use a list comprehension to modify the book list
-        # http://stackoverflow.com/questions/1207406/remove-items-from-a-list-while-iterating-in-python
-        self.book_list[:] = [book for book in self.book_list if book.isbn != isbn]
+#         # Use a list comprehension to modify the book list
+#         # http://stackoverflow.com/questions/1207406/remove-items-from-a-list-while-iterating-in-python
+#         self.book_list[:] = [book for book in self.book_list if book.isbn != isbn]
 
-##        for book in self.book_list:
-##            if book.isbn == isbn:
-##                self.remove_book(book)
+# ##        for book in self.book_list:
+# ##            if book.isbn == isbn:
+# ##                self.remove_book(book)
 
     def read_from_file(self):
         """Open the CSV file associated with this Library, and create a
@@ -101,7 +101,7 @@ if __name__ == "__main__":
     library.add_book(crwBook.Book("2345", "title2345", "author2345"))
     library.add_book(crwBook.Book("3456", "title3456", "author3456"))
 
-    library.remove_isbn("2345")
+    # library.remove_isbn("2345")
 
     library.save_to_file()
 
