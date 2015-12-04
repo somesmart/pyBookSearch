@@ -149,13 +149,13 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         menubar = uimanager.get_widget("/Book")
         box.pack_start(menubar, expand=False, fill=False, padding=0)
 
-        #mb = Gtk.MenuBar()
-        #box.pack_start(mb, expand=False, fill=False, padding=0)
+        # mb = Gtk.MenuBar()
+        # box.pack_start(mb, expand=False, fill=False, padding=0)
 
-        #mi1 = Gtk.MenuItem("_Book")
-        #mb.append(mi1)
+        # mi1 = Gtk.MenuItem("_Book")
+        # mb.append(mi1)
 
-        #m1 = Gtk.Menu()
+        # m1 = Gtk.Menu()
 
     def __add_tree(self):
         """Create the tree."""
