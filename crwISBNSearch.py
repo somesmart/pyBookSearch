@@ -189,9 +189,10 @@ class ISBNSearchOrg(BaseSearcher):
                         # TODO: This is a hack for &
                         book.published = label.nextSibling.replace("&", "&amp;")
 
-                for priceList in (i[1] for i in soup.findAll("table", class_="price", limit=2)):
+                for priceList in (i[1] for i in soup.findAll("table", class_="prices", limit=2)):
                     for price in soup.findAll(class_="pricelink", limit=1):
-                        book.usedPrice = soup.select("p > a")
+                        pricelink = price.contents[0]
+                        book.usedPrice = pricelink.string
 
             except urlexception:
                 print("### Could not contact server.")
