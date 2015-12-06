@@ -19,8 +19,9 @@ import collections
     bkAuthor,
     bkBinding,
     bkPublisher,
-    bkPublished
-) = list(range(6))
+    bkPublished,
+    bkUsedPrice
+) = list(range(7))
 
 bkFields = {
     bkISBN: "ISBN",
@@ -28,7 +29,8 @@ bkFields = {
     bkAuthor: "Author",
     bkBinding: "Binding",
     bkPublisher: "Publisher",
-    bkPublished: "Published"
+    bkPublished: "Published",
+    bkUsedPrice: "UsedPrice"
 }
 
 
@@ -47,6 +49,7 @@ def new_book(from_dict):
     book.binding = from_dict.get('Binding')
     book.publisher = from_dict.get('Publisher')
     book.published = from_dict.get('Published')
+    book.usedPrice = from_dict.get('UsedPrice')
 
     return book
 
@@ -56,6 +59,7 @@ class Book(object):
         self._binding = 'Unknown'
         self._publisher = 'Unknown'
         self._published = 'Unknown'
+        self._usedPrice = 'Unknown'
 
         try:
             # The ISBN
@@ -117,6 +121,14 @@ class Book(object):
     @published.setter
     def published(self, value):
         self._published = value.strip()
+
+    @property
+    def usedPrice(self):
+        return self._usedPrice
+
+    @usedPrice.setter
+    def usedPrice(self, value):
+        self._usedPrice = value.strip()
 
     def __repr__(self):
         return 'crwBook.Book("' + self._isbn + \
