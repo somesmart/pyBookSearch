@@ -124,6 +124,8 @@ class ISBNSearchOrg(BaseSearcher):
 
         # Only process the bookinfo division
         self.bookinfo_filter = SoupStrainer("div", "bookinfo")
+        # Only process the pricing elements
+        self.priceinfo_filter = SoupStrainer("p", "pricelink")
 
     def search(self, isbn, book=None):
         # Call the superclass method to create the book
@@ -139,8 +141,9 @@ class ISBNSearchOrg(BaseSearcher):
                     urlexception = urllib2.URLError
                     page = urllib2.urlopen(full_url)
 
-                soup = BeautifulSoup(page.read(),
-                    parse_only = self.bookinfo_filter)
+                soup = BeautifulSoup(page.read(), "html.parser", parse_only = self.bookinfo_filter)
+
+                prices = BeautifulSoup(page.read(), "html.parser", parse_only = self.priceinfo_filter)
 
                 # get the original encoding
                 original_encoding = soup.originalEncoding
@@ -156,9 +159,10 @@ class ISBNSearchOrg(BaseSearcher):
                     print("### Error retrieving Title.")
                     book.title = "Unknown"
 
-                # Get the author
+                # Get the remaining values
                 for label in soup.findAll("strong"):
 
+                    # Get the author
                     if label.string == "Author:":
                         try:
                             # TODO: This is a hack for &
@@ -189,10 +193,12 @@ class ISBNSearchOrg(BaseSearcher):
                         # TODO: This is a hack for &
                         book.published = label.nextSibling.replace("&", "&amp;")
 
-                for priceList in (i[1] for i in soup.findAll("table", class_="prices", limit=2)):
-                    for price in soup.findAll(class_="pricelink", limit=1):
-                        pricelink = price.contents[0]
-                        book.usedPrice = pricelink.string
+                # pull the sixth record from the price list (gets the first used price)
+                try:
+                    book.usedPrice = prices.findAll('p')[5].a.contents
+                # if there isn't a sixth record just error out
+                except IndexError:
+                    book.usedPrice = "X"
 
             except urlexception:
                 print("### Could not contact server.")
