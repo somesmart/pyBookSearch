@@ -2,8 +2,9 @@
 
 import json
 import sys
+import copy 
 
-from bs4 import BeautifulSoup, SoupStrainer
+from bs4 import BeautifulSoup, SoupStrainer, diagnose
 
 import urllib.request
 import urllib.parse
@@ -13,10 +14,13 @@ search_url = "http://www.isbnsearch.org/isbn/"
 
 full_url = search_url + '9780195003437'
 
-priceinfo_filter = SoupStrainer("p", "pricelink")
+bookinfo_filter = SoupStrainer("div")
 
 page = urllib.request.urlopen(full_url)
 
-prices = BeautifulSoup(page.read(), "html.parser", parse_only = priceinfo_filter)
+soup = BeautifulSoup(page.read(), "html.parser", parse_only=bookinfo_filter)
 
-print(prices.findAll('p')[5].a.contents)
+# for label in soup.find_all('strong'):
+#     if label.string == "Author:":
+#         print(label.nextSibling.string)
+print(soup.find_all('p', class_='pricelink')[5].a.contents)

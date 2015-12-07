@@ -132,7 +132,7 @@ class Book(object):
     @usedPrice.setter
     def usedPrice(self, value):
         if value is not None:
-            self._usedPrice = value.strip()
+            self._usedPrice = value
 
     def __repr__(self):
         return 'crwBook.Book("' + self._isbn + \
