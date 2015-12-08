@@ -61,18 +61,17 @@ class Book(object):
         self._published = 'Unknown'
         self._usedPrice = 'Unknown'
 
-        try:
-            # The ISBN
+        # The ISBN
+        if isbn is not None:
             self._isbn = isbn.strip()
 
-            # The Title
+        # The Title
+        if title is not None:
             self._title = title.strip()
 
-            # The Author
+        # The Author
+        if author is not None:
             self._author = author.strip()
-
-        except AttributeError as err:
-            print("Error setting book fields: {}".format(err))
 
     @property
     def isbn(self):
@@ -80,7 +79,8 @@ class Book(object):
 
     @isbn.setter
     def isbn(self, value):
-        self._isbn = value.strip()
+        if value is not None:
+            self._isbn = value.strip()
 
     @property
     def title(self):
@@ -88,7 +88,8 @@ class Book(object):
 
     @title.setter
     def title(self, value):
-        self._title = value.strip()
+        if value is not None:
+            self._title = value.strip()
 
     @property
     def author(self):
@@ -96,7 +97,8 @@ class Book(object):
 
     @author.setter
     def author(self, value):
-        self._author = value.strip()
+        if value is not None:
+            self._author = value.strip()
 
     @property
     def binding(self):
