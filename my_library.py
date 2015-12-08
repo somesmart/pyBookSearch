@@ -3,7 +3,7 @@
 
 import sys
 import os
-from optparse import OptionParser
+import argparse
 
 try:
     from gi.repository import Gtk
@@ -19,9 +19,9 @@ import crwISBNSearch
 # ==========================
 
 __all__ = []
-__version__ = 0.1
-__date__ = '2014-01-30'
-__updated__ = '2014-01-30'
+__version__ = 0.2
+__date__ = '2015-12-08'
+__updated__ = '2015-12-08'
 
 DEBUG = 0
 TESTRUN = 0
@@ -37,60 +37,59 @@ def main(argv=None):
     program_version = "v%1.2f" % __version__
     program_build_date = "%s" % __updated__
 
-    program_version_string = '%%prog %s (%s)' % (
-        program_version, program_build_date)
-    program_longdesc = '''Search for ISBN and add to library file.'''
-    program_license = """Copyright 2013 Chris Willoughby (Home)
-Licensed under the Apache License 2.0
-http://www.apache.org/licenses/LICENSE-2.0"""
+    program_desc = '''Search for book information by ISBN and add to a library CSV file.'''
 
-    if argv is None:
-        argv = sys.argv[1:]
+    program_epilog = """{} {} ({})
+Copyright 2013, 2014, 2015 Chris Willoughby and contributors
+Licensed under the Apache License 2.0
+http://www.apache.org/licenses/LICENSE-2.0""".format(
+        program_name, program_version, program_build_date)
+
     try:
-        # setup option parser
-        parser = OptionParser(
-            version=program_version_string,
-            epilog=program_longdesc,
-            description=program_license)
-        parser.add_option(
+        # setup argument parser
+        parser = argparse.ArgumentParser(
+            formatter_class=argparse.RawDescriptionHelpFormatter,
+            epilog=program_epilog,
+            description=program_desc)
+
+        parser.add_argument(
             "-l", "--library",
             dest="libfile",
-            help="set library file path [default: %default]",
+            default='auto_library.csv',
+            help="set library file path (default: %(default)s)",
             metavar="FILE")
-        parser.add_option(
+        parser.add_argument(
             "-t", "--text",
             action="store_true",
             dest="textmode",
             default=False,
-            help="use text mode [default: %default]")
-
-        # set defaults
-        parser.set_defaults(libfile="./auto_library.csv")
+            help="use text mode (default: %(default)s)")
 
         # process options
-        (opts, args) = parser.parse_args(argv)
+        args = parser.parse_args()
 
-        if opts.libfile:
-            print("libfile = {}".format(opts.libfile))
+        if args.libfile:
+            print("libfile = {}".format(args.libfile))
 
-        print("Text mode", opts.textmode)
-        if opts.textmode:
+        print("Text mode", args.textmode)
+        if args.textmode:
             HAVE_GTK = False
 
     except Exception as e:
         indent = len(program_name) * " "
         sys.stderr.write(program_name + ": " + repr(e) + "\n")
-        sys.stderr.write(indent + "  for help use --help")
+        sys.stderr.write(indent + "  for help use --help\n")
         return 2
 
     isbnSearchOrg = crwISBNSearch.ISBNSearchOrg()
+    # openLibraryOrg = crwISBNSearch.OpenLibraryOrg()
 
     if HAVE_GTK:
         library = crwGTKLibrary.GTKLibrary(
-            filename=opts.libfile, searcher=isbnSearchOrg)
+            filename=args.libfile, searcher=isbnSearchOrg)
         Gtk.main()
     else:
-        library = crwLibrary.Library(opts.libfile)
+        library = crwLibrary.Library(args.libfile)
         library.read_from_file()
         isbn = input("Enter ISBN (0=save and quit):")
         while isbn != '0':
@@ -103,10 +102,14 @@ http://www.apache.org/licenses/LICENSE-2.0"""
                     add_again = input("### Book exists, do you want to search again?")
                     if add_again == "y":
                         book = isbnSearchOrg.search(isbn)
+                        # book2 = openLibraryOrg.search(isbn)
+                        # print(book2)
                         library.add_book(book)
                         print(book)
                 else:
                     book = isbnSearchOrg.search(isbn)
+                    # book2 = openLibraryOrg.search(isbn)
+                    # print(book2)
                     library.add_book(book)
                     print(book)
             isbn = input("Enter ISBN:")
