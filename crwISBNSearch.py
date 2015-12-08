@@ -3,6 +3,7 @@
 import crwBook
 import json
 import sys
+# from pprint import pprint
 
 try:
     import urllib.request
@@ -61,16 +62,14 @@ class ISBNDBCom(BaseSearcher):
 
 
 class OpenLibraryOrg(BaseSearcher):
+
     def __init__(self):
-        # TODO: Not the actual URL
-        #self.search_url = "https://openlibrary.org/dev/docs/api/books"
-        #self.search_url = "https://openlibrary.org/api/books?bibkeys=ISBN:0451526538&callback=mycallback"
+        # Documentation at https://openlibrary.org/dev/docs/api/books
         self.search_url = "https://openlibrary.org/api/books?bibkeys=ISBN:{}&format=json&jscmd=data"
 
     def search(self, isbn, book=None):
         # Call the superclass method to create the book
-        #book = super(OpenLibraryOrg, self).search(isbn, book=book)
-        book = {"found": False, "isbn": isbn, "title": "Unknown", "authors": "Unknown"}
+        book = super(OpenLibraryOrg, self).search(isbn, book=book)
 
         # Create the URL
         full_url = self.search_url.format(isbn)
@@ -84,30 +83,45 @@ class OpenLibraryOrg(BaseSearcher):
             # We expect JSON data
             book_info = json.loads(page.read().decode())
 
+            # identifiers -> {isbn_10, isbn_13, openlibrary, etc}
+            # authors -> list of {name, url}
+            # publish_date -> string
+            # publishers -> list of {name}
+            # title -> string
+            # subtitle -> string
+
             # If there are no keys, there is no data
             if len(book_info.keys()) > 0:
-                for k1 in book_info.keys():
-                    try:
-                        title = book_info[k1]['title']
-                        book["title"] = title
-                        book["found"] = True
-                    except:
-                        print("Unexpected error:", sys.exc_info()[0])
-                        raise
 
-                    try:
-                        authors = ""
-                        for a1 in book_info[k1]['authors']:
-                            authors += "{};".format(a1['name'])
-                        if authors != "":
-                            book["authors"] = authors[:-1]
-                            book["found"] = True
-                    except:
-                        print("Unexpected error:", sys.exc_info()[0])
-                        raise
+                for k1 in book_info.keys():
+
+                    # print('OpenLibraryOrg key: {}'.format(k1))
+
+                    # Get the title and subtitle, join them
+                    book.title = book_info[k1].get('title', 'Unknown')
+                    subtitle = book_info[k1].get('subtitle', '')
+                    if subtitle != '':
+                        book.title = '{} : {}'.format(book.title, subtitle)
+
+                    # Concatenate all the authors
+                    if 'authors' in book_info[k1]:
+                        authors = ';'.join(
+                            [a['name'] for a in book_info[k1]['authors']])
+                        if authors != '':
+                            book.author = authors
+
+                    # Concatenate all the publishers
+                    if 'publishers' in book_info[k1]:
+                        publishers = ';'.join(
+                            [p['name'] for p in book_info[k1]['publishers']])
+                        if publishers != '':
+                            book.publisher = publishers
+
+                    # Get the published date
+                    book.published = book_info[k1].get('publish_date', 'Unknown')
 
             else:
-                print ("No data")
+                print ("No openlibrary.org data")
 
         except urllib.error.URLError as err:
             print("URLError {}".format(err))
@@ -139,11 +153,14 @@ class ISBNSearchOrg(BaseSearcher):
                     urlexception = urllib2.URLError
                     page = urllib2.urlopen(full_url)
 
-                soup = BeautifulSoup(page.read(), "html.parser", parse_only=self.bookinfo_filter)
+                soup = BeautifulSoup(
+                    page.read(),
+                    "html.parser",
+                    parse_only=self.bookinfo_filter)
 
                 # get the original encoding
-                original_encoding = soup.originalEncoding
-                print ("encoding: ".format(original_encoding))
+                # original_encoding = soup.originalEncoding
+                # print ("encoding: ".format(original_encoding))
 
                 # Get the title, which may fail
                 try:
@@ -163,7 +180,8 @@ class ISBNSearchOrg(BaseSearcher):
                         try:
                             # TODO: This is a hack for &
                             # TODO: make html/xml safe
-                            book.author = label.nextSibling.string.replace("&", "&amp;")
+                            book.author = label.nextSibling.string.replace(
+                                "&", "&amp;")
                         except AttributeError:
                             print("### Error retrieving Author.")
                             book.author = "Unknown"
@@ -172,22 +190,26 @@ class ISBNSearchOrg(BaseSearcher):
                         try:
                             # TODO: This is a hack for &
                             # TODO: make html/xml safe
-                            book.author = label.nextSibling.replace("&", "&amp;")
+                            book.author = label.nextSibling.replace(
+                                "&", "&amp;")
                         except AttributeError:
                             print("### Error retrieving Author.")
                             book.author = "Unknown"
 
                     if label.string == "Binding:":
                         # TODO: This is a hack for &
-                        book.binding = label.nextSibling.replace("&", "&amp;")
+                        book.binding = label.nextSibling.replace(
+                            "&", "&amp;")
 
                     if label.string == "Publisher:":
                         # TODO: This is a hack for &
-                        book.publisher = label.nextSibling.replace("&", "&amp;")
+                        book.publisher = label.nextSibling.replace(
+                            "&", "&amp;")
 
                     if label.string == "Published:":
                         # TODO: This is a hack for &
-                        book.published = label.nextSibling.replace("&", "&amp;")
+                        book.published = label.nextSibling.replace(
+                            "&", "&amp;")
 
                 # pull the sixth record from the price list (gets the first used price)
                 try:
@@ -196,7 +218,8 @@ class ISBNSearchOrg(BaseSearcher):
                 except IndexError:
                     book.usedPrice = "X"
 
-            except urlexception:
-                print("### Could not contact server.")
+            except urlexception as err:
+                print("ISBN not found at www.isbnsearch.org: {}".format(err.code))
+
         return book
 
