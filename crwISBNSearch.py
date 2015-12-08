@@ -65,6 +65,7 @@ class OpenLibraryOrg(BaseSearcher):
 
     def __init__(self):
         # Documentation at https://openlibrary.org/dev/docs/api/books
+        # self.search_url = "https://openlibrary.org/api/books?bibkeys=LCCN:{}&format=json&jscmd=data"
         self.search_url = "https://openlibrary.org/api/books?bibkeys=ISBN:{}&format=json&jscmd=data"
 
     def search(self, isbn, book=None):
@@ -213,7 +214,7 @@ class ISBNSearchOrg(BaseSearcher):
 
                 # pull the sixth record from the price list (gets the first used price)
                 try:
-                    book.usedPrice = soup.find_all('p', class_='pricelink')[5].a.contents
+                    book.usedPrice = soup.find_all('table', class_='prices')[1].tbody.tr.td.find_next_sibling(class_='price').p.a.contents
                 # if there isn't a sixth record just error out
                 except IndexError:
                     book.usedPrice = "X"
