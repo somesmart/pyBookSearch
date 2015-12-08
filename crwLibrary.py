@@ -69,14 +69,15 @@ class Library(object):
 
     def save_to_file(self):
         library_file = open(self.filename, "wt")
-        book_writer = csv.writer(library_file)
+        book_writer = csv.writer(library_file, lineterminator='\n', delimiter='|')
 
         book_writer.writerow([crwBook.bkFields[crwBook.bkISBN],
                               crwBook.bkFields[crwBook.bkTitle],
                               crwBook.bkFields[crwBook.bkAuthor],
                               crwBook.bkFields[crwBook.bkBinding],
                               crwBook.bkFields[crwBook.bkPublisher],
-                              crwBook.bkFields[crwBook.bkPublished]])
+                              crwBook.bkFields[crwBook.bkPublished],
+                              crwBook.bkFields[crwBook.bkUsedPrice]])
 
         for book in self.book_list:
             isbn = book.isbn
@@ -85,8 +86,9 @@ class Library(object):
             binding = book.binding
             publisher = book.publisher
             published = book.published
+            usedPrice = book.usedPrice
             book_writer.writerow(
-                [isbn, title, author, binding, publisher, published])
+                [isbn, title, author, binding, publisher, published, usedPrice])
 
         # Close the library file
         library_file.close()
