@@ -122,8 +122,8 @@ class ISBNSearchOrg(BaseSearcher):
     def __init__(self):
         self.search_url = "http://www.isbnsearch.org/isbn/"
 
-        # Only process the bookinfo division
-        self.bookinfo_filter = SoupStrainer("div", "bookinfo")
+        # Only process the core content division
+        self.bookinfo_filter = SoupStrainer("div")
 
     def search(self, isbn, book=None):
         # Call the superclass method to create the book
@@ -139,8 +139,7 @@ class ISBNSearchOrg(BaseSearcher):
                     urlexception = urllib2.URLError
                     page = urllib2.urlopen(full_url)
 
-                soup = BeautifulSoup(page.read(),
-                    parse_only = self.bookinfo_filter)
+                soup = BeautifulSoup(page.read(), "html.parser", parse_only=self.bookinfo_filter)
 
                 # get the original encoding
                 original_encoding = soup.originalEncoding
@@ -156,14 +155,15 @@ class ISBNSearchOrg(BaseSearcher):
                     print("### Error retrieving Title.")
                     book.title = "Unknown"
 
-                # Get the author
-                for label in soup.findAll("strong"):
+                # Get the remaining values
+                for label in soup.find_all('strong'):
 
+                    # Get the author
                     if label.string == "Author:":
                         try:
                             # TODO: This is a hack for &
                             # TODO: make html/xml safe
-                            book.author = label.nextSibling.replace("&", "&amp;")
+                            book.author = label.nextSibling.string.replace("&", "&amp;")
                         except AttributeError:
                             print("### Error retrieving Author.")
                             book.author = "Unknown"
@@ -188,6 +188,13 @@ class ISBNSearchOrg(BaseSearcher):
                     if label.string == "Published:":
                         # TODO: This is a hack for &
                         book.published = label.nextSibling.replace("&", "&amp;")
+
+                # pull the sixth record from the price list (gets the first used price)
+                try:
+                    book.usedPrice = soup.find_all('p', class_='pricelink')[5].a.contents
+                # if there isn't a sixth record just error out
+                except IndexError:
+                    book.usedPrice = "X"
 
             except urlexception:
                 print("### Could not contact server.")
