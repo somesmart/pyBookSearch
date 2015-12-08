@@ -58,7 +58,7 @@ class Library(object):
             library_file = open(self.filename, "rt")
 
             # The first line of the file is to be used for key names
-            book_reader = csv.DictReader(library_file)
+            book_reader = csv.DictReader(library_file, delimiter='|')
 
             for book in book_reader:
                 self.book_list.append(crwBook.new_book(from_dict=book))
