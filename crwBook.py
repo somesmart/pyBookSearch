@@ -57,18 +57,17 @@ class Book(object):
         self._publisher = 'Unknown'
         self._published = 'Unknown'
 
-        try:
-            # The ISBN
+        # The ISBN
+        if isbn is not None:
             self._isbn = isbn.strip()
 
-            # The Title
+        # The Title
+        if title is not None:
             self._title = title.strip()
 
-            # The Author
+        # The Author
+        if author is not None:
             self._author = author.strip()
-
-        except AttributeError as err:
-            print("Error setting book fields: {}".format(err))
 
     @property
     def isbn(self):
@@ -76,7 +75,8 @@ class Book(object):
 
     @isbn.setter
     def isbn(self, value):
-        self._isbn = value.strip()
+        if value is not None:
+            self._isbn = value.strip()
 
     @property
     def title(self):
@@ -84,7 +84,8 @@ class Book(object):
 
     @title.setter
     def title(self, value):
-        self._title = value.strip()
+        if value is not None:
+            self._title = value.strip()
 
     @property
     def author(self):
@@ -92,7 +93,8 @@ class Book(object):
 
     @author.setter
     def author(self, value):
-        self._author = value.strip()
+        if value is not None:
+            self._author = value.strip()
 
     @property
     def binding(self):
@@ -100,7 +102,8 @@ class Book(object):
 
     @binding.setter
     def binding(self, value):
-        self._binding = value.strip()
+        if value is not None:
+            self._binding = value.strip()
 
     @property
     def publisher(self):
@@ -108,7 +111,8 @@ class Book(object):
 
     @publisher.setter
     def publisher(self, value):
-        self._publisher = value.strip()
+        if value is not None:
+            self._publisher = value.strip()
 
     @property
     def published(self):
@@ -116,7 +120,8 @@ class Book(object):
 
     @published.setter
     def published(self, value):
-        self._published = value.strip()
+        if value is not None:
+            self._published = value.strip()
 
     def __repr__(self):
         return 'crwBook.Book("' + self._isbn + \
