@@ -64,6 +64,11 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
             dest="textmode",
             default=False,
             help="use text mode (default: %(default)s)")
+        parser.add_argument(
+            "-d", "--delimit",
+            dest="delimiter",
+            default="|",
+            help="set the CSV delimiter (default: %(default)s)")
 
         # process options
         args = parser.parse_args()
@@ -75,6 +80,9 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
         if args.textmode:
             HAVE_GTK = False
 
+        if args.delimiter:
+            print("Delimiter = {}".format(args.delimiter))
+
     except Exception as e:
         indent = len(program_name) * " "
         sys.stderr.write(program_name + ": " + repr(e) + "\n")
@@ -85,16 +93,15 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
     # openLibraryOrg = crwISBNSearch.OpenLibraryOrg()
 
     if HAVE_GTK:
-        library = crwGTKLibrary.GTKLibrary(
-            filename=args.libfile, searcher=isbnSearchOrg)
+        library = crwGTKLibrary.GTKLibrary(filename=args.libfile, searcher=isbnSearchOrg, delimiter=args.delimiter)
         Gtk.main()
     else:
         library = crwLibrary.Library(args.libfile)
-        library.read_from_file()
+        library.read_from_file(args.delimiter)
         isbn = input("Enter ISBN (0=save and quit):")
         while isbn != '0':
             if isbn == "save":
-                library.save_to_file()
+                library.save_to_file(args.delimiter)
             else:
                 exists, book = library.isbn_exists(isbn)
                 if exists:
@@ -115,7 +122,7 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
             isbn = input("Enter ISBN:")
 
         # Save before exiting
-        library.save_to_file()
+        library.save_to_file(args.delimiter)
 
 
 if __name__ == "__main__":
