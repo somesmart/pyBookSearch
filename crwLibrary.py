@@ -8,14 +8,19 @@ import csv
 class Library(object):
     """The Library class is responsible for..."""
 
-    def __init__(self, filename):
-        """Initialise the book list to an empty list and store the filename."""
+    def __init__(self, filename, delimiter='|'):
+        """
+        Initialise the book list to an empty list and store the filename.
+        """
 
         self.book_list = []
         self.filename = filename
+        self.delimiter = delimiter
 
     def isbn_exists(self, isbn):
-        """Check for the existence of the given ISBN within the list of books."""
+        """
+        Check for the existence of the given ISBN within the list of books.
+        """
 
         exists = False
         book = None
@@ -51,47 +56,66 @@ class Library(object):
 # ##                self.remove_book(book)
 
     def read_from_file(self):
-        """Open the CSV file associated with this Library, and create a
-           Book for each book described within."""
+        """
+        Open the CSV file associated with this Library, and create a
+        Book for each book described within.
+        """
 
         try:
-            library_file = open(self.filename, "rt")
+            with open(self.filename, "rt") as library_file:
 
-            # The first line of the file is to be used for key names
-            book_reader = csv.DictReader(library_file, delimiter='|')
+                # Detect the dialect
+                dialect = csv.Sniffer().sniff(library_file.read(1024))
+                print('delimiter', dialect.delimiter)
+                # print('doublequote', dialect.doublequote)
+                # print('escapechar', dialect.escapechar)
+                # print('lineterminator', dialect.lineterminator)
+                # print('quotechar', dialect.quotechar)
+                # print('quoting', dialect.quoting)
+                # print('skipinitialspace', dialect.skipinitialspace)
 
-            for book in book_reader:
-                self.book_list.append(crwBook.new_book(from_dict=book))
+                # Go back to start of file
+                library_file.seek(0)
 
-            library_file.close()
+                # The first line of the file is to be used for key names
+                book_reader = csv.DictReader(library_file, dialect=dialect)
+
+                for book in book_reader:
+                    self.book_list.append(crwBook.new_book(from_dict=book))
+
         except IOError:
             print("### No library file.")
 
     def save_to_file(self):
-        library_file = open(self.filename, "wt")
-        book_writer = csv.writer(library_file, lineterminator='\n', delimiter='|')
+        '''
+        Open the CSV file associated with this library, and write an entry
+        for each book.
+        '''
 
-        book_writer.writerow([crwBook.bkFields[crwBook.bkISBN],
-                              crwBook.bkFields[crwBook.bkTitle],
-                              crwBook.bkFields[crwBook.bkAuthor],
-                              crwBook.bkFields[crwBook.bkBinding],
-                              crwBook.bkFields[crwBook.bkPublisher],
-                              crwBook.bkFields[crwBook.bkPublished],
-                              crwBook.bkFields[crwBook.bkUsedPrice]])
+        with open(self.filename, "wt") as library_file:
+            book_writer = csv.writer(
+                library_file,
+                lineterminator='\n',
+                delimiter=self.delimiter)
 
-        for book in self.book_list:
-            isbn = book.isbn
-            title = book.title
-            author = book.author
-            binding = book.binding
-            publisher = book.publisher
-            published = book.published
-            usedPrice = book.usedPrice
-            book_writer.writerow(
-                [isbn, title, author, binding, publisher, published, usedPrice])
+            book_writer.writerow([crwBook.bkFields[crwBook.bkISBN],
+                                  crwBook.bkFields[crwBook.bkTitle],
+                                  crwBook.bkFields[crwBook.bkAuthor],
+                                  crwBook.bkFields[crwBook.bkBinding],
+                                  crwBook.bkFields[crwBook.bkPublisher],
+                                  crwBook.bkFields[crwBook.bkPublished],
+                                  crwBook.bkFields[crwBook.bkUsedPrice]])
 
-        # Close the library file
-        library_file.close()
+            for book in self.book_list:
+                isbn = book.isbn
+                title = book.title
+                author = book.author
+                binding = book.binding
+                publisher = book.publisher
+                published = book.published
+                usedPrice = book.usedPrice
+                book_writer.writerow(
+                    [isbn, title, author, binding, publisher, published, usedPrice])
 
         print("Saved", self.filename)
 
@@ -106,4 +130,3 @@ if __name__ == "__main__":
     # library.remove_isbn("2345")
 
     library.save_to_file()
-

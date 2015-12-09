@@ -2,7 +2,7 @@
 
 import json
 import sys
-import copy 
+import copy
 
 from bs4 import BeautifulSoup, SoupStrainer, diagnose
 
@@ -23,4 +23,5 @@ soup = BeautifulSoup(page.read(), "html.parser", parse_only=bookinfo_filter)
 # for label in soup.find_all('strong'):
 #     if label.string == "Author:":
 #         print(label.nextSibling.string)
+
 print(soup.find_all('p', class_='pricelink')[5].a.contents)
