@@ -66,7 +66,7 @@ class Library(object):
 
                 # Detect the dialect
                 dialect = csv.Sniffer().sniff(library_file.read(1024))
-                print('delimiter', dialect.delimiter)
+                print('detected delimiter:', dialect.delimiter)
                 # print('doublequote', dialect.doublequote)
                 # print('escapechar', dialect.escapechar)
                 # print('lineterminator', dialect.lineterminator)

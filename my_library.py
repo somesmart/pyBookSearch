@@ -64,6 +64,11 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
             dest="textmode",
             default=False,
             help="use text mode (default: %(default)s)")
+        parser.add_argument(
+            "-d", "--delimit",
+            dest="delimiter",
+            default="|",
+            help="set the CSV delimiter (default: %(default)s)")
 
         # process options
         args = parser.parse_args()
@@ -74,6 +79,9 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
         print("Text mode", args.textmode)
         if args.textmode:
             HAVE_GTK = False
+
+        if args.delimiter:
+            print("Delimiter = {}".format(args.delimiter))
 
     except Exception as e:
         indent = len(program_name) * " "
@@ -86,10 +94,14 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
 
     if HAVE_GTK:
         library = crwGTKLibrary.GTKLibrary(
-            filename=args.libfile, searcher=isbnSearchOrg)
+            filename=args.libfile,
+            searcher=isbnSearchOrg,
+            delimiter=args.delimiter)
         Gtk.main()
     else:
-        library = crwLibrary.Library(args.libfile)
+        library = crwLibrary.Library(
+            filename=args.libfile,
+            delimiter=args.delimiter)
         library.read_from_file()
         isbn = input("Enter ISBN (0=save and quit):")
         while isbn != '0':
