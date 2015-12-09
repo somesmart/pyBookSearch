@@ -50,7 +50,7 @@ class Library(object):
 # ##            if book.isbn == isbn:
 # ##                self.remove_book(book)
 
-    def read_from_file(self):
+    def read_from_file(self, delimiter):
         """Open the CSV file associated with this Library, and create a
            Book for each book described within."""
 
@@ -58,7 +58,7 @@ class Library(object):
             library_file = open(self.filename, "rt")
 
             # The first line of the file is to be used for key names
-            book_reader = csv.DictReader(library_file, delimiter='|')
+            book_reader = csv.DictReader(library_file, delimiter=delimiter)
 
             for book in book_reader:
                 self.book_list.append(crwBook.new_book(from_dict=book))
@@ -67,9 +67,9 @@ class Library(object):
         except IOError:
             print("### No library file.")
 
-    def save_to_file(self):
+    def save_to_file(self, delimiter):
         library_file = open(self.filename, "wt")
-        book_writer = csv.writer(library_file, lineterminator='\n', delimiter='|')
+        book_writer = csv.writer(library_file, lineterminator='\n', delimiter=delimiter)
 
         book_writer.writerow([crwBook.bkFields[crwBook.bkISBN],
                               crwBook.bkFields[crwBook.bkTitle],
@@ -97,7 +97,7 @@ class Library(object):
 
 if __name__ == "__main__":
     library = Library("library_test.csv")
-    library.read_from_file()
+    library.read_from_file(delimiter)
 
     library.add_book(crwBook.Book("1234", "title1234", "author1234"))
     library.add_book(crwBook.Book("2345", "title2345", "author2345"))
@@ -105,5 +105,5 @@ if __name__ == "__main__":
 
     # library.remove_isbn("2345")
 
-    library.save_to_file()
+    library.save_to_file(delimiter)
 

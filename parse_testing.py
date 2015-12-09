@@ -23,4 +23,4 @@ soup = BeautifulSoup(page.read(), "html.parser", parse_only=bookinfo_filter)
 # for label in soup.find_all('strong'):
 #     if label.string == "Author:":
 #         print(label.nextSibling.string)
-print(soup.find_all('p', class_='pricelink')[5].a.contents)
+print(soup.find_all('table', class_='prices')[1].tbody.tr.td.find_next_sibling(class_='price').p.a.contents)
