@@ -17,6 +17,10 @@ class Library(object):
         self.filename = filename
         self.delimiter = delimiter
 
+    @property
+    def book_count(self):
+        return len(self.book_list)
+
     def isbn_exists(self, isbn):
         """
         Check for the existence of the given ISBN within the list of books.
