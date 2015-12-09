@@ -27,6 +27,14 @@ DEBUG = 0
 TESTRUN = 0
 PROFILE = 0
 
+TEXT_HELP = '''
+[h | help]     - show this help
+[0 | q | quit] - save and exit
+[s | save]     - save
+[i | isbn]     - ISBN search mode
+[c | lccn]     - LCCN search mode
+'''
+
 
 def main(argv=None):
     '''Command line options.'''
@@ -93,15 +101,28 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
     # openLibraryOrg = crwISBNSearch.OpenLibraryOrg()
 
     if HAVE_GTK:
-        library = crwGTKLibrary.GTKLibrary(filename=args.libfile, searcher=isbnSearchOrg, delimiter=args.delimiter)
+        library = crwGTKLibrary.GTKLibrary(
+            filename=args.libfile,
+            searcher=isbnSearchOrg,
+            delimiter=args.delimiter)
         Gtk.main()
     else:
-        library = crwLibrary.Library(args.libfile)
-        library.read_from_file(args.delimiter)
-        isbn = input("Enter ISBN (0=save and quit):")
-        while isbn != '0':
-            if isbn == "save":
-                library.save_to_file(args.delimiter)
+        library = crwLibrary.Library(
+            filename=args.libfile,
+            delimiter=args.delimiter)
+        library.read_from_file()
+        print('You have {} books in your library.'.format(library.book_count))
+        print(TEXT_HELP)
+        isbn = input("Enter ISBN:")
+        while (isbn != '0') and (isbn != 'q') and (isbn != 'quit'):
+            if isbn == "save" or isbn == 's':
+                library.save_to_file()
+            elif isbn == 'help' or isbn == 'h':
+                print(TEXT_HELP)
+            elif isbn == 'isbn' or isbn == 'i':
+                print('Sorry, not yet implemented')
+            elif isbn == 'lccn' or isbn == 'c':
+                print('Sorry, not yet implemented')
             else:
                 exists, book = library.isbn_exists(isbn)
                 if exists:
@@ -122,7 +143,7 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
             isbn = input("Enter ISBN:")
 
         # Save before exiting
-        library.save_to_file(args.delimiter)
+        library.save_to_file()
 
 
 if __name__ == "__main__":

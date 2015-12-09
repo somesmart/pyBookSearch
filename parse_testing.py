@@ -2,7 +2,7 @@
 
 import json
 import sys
-import copy 
+import copy
 
 from bs4 import BeautifulSoup, SoupStrainer, diagnose
 

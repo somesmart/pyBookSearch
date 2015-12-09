@@ -31,7 +31,7 @@ HIGHLIGHT = "<span background='yellow' foreground='black'>{}</span>"
 
 
 class GTKLibrary(Gtk.Window, crwLibrary.Library):
-    def __init__(self, filename, searcher=None, parent=None):
+    def __init__(self, filename, searcher=None, parent=None, delimiter='|'):
         """Create a window with a list and a couple of buttons."""
 
         self.web_searcher_list = []
@@ -42,7 +42,10 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         Gtk.Window.__init__(self)
 
         # create library
-        crwLibrary.Library.__init__(self, filename)
+        crwLibrary.Library.__init__(
+            self,
+            filename=filename,
+            delimiter=delimiter)
 
         try:
             self.set_screen(parent.get_screen())
