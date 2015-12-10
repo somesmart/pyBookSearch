@@ -1,6 +1,5 @@
 #!/usr/bin/env /usr/bin/python3
 
-
 import sys
 import os
 import argparse
@@ -21,8 +20,8 @@ import crwISBNSearch
 
 __all__ = []
 __version__ = 0.2
-__date__ = '2015-12-08'
-__updated__ = '2015-12-08'
+__date__ = '2015-12-10'
+__updated__ = '2015-12-10'
 
 DEBUG = 0
 TESTRUN = 0
@@ -32,7 +31,7 @@ TEXT_HELP = '''
 [h | help]     - show this help
 [0 | q | quit] - save and exit
 [s | save]     - save
-[i | isbn]     - ISBN search mode
+[i | isbn]     - ISBN search mode (default)
 [c | lccn]     - LCCN search mode
 '''
 
@@ -114,38 +113,53 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
         library.read_from_file()
         print('You have {} books in your library.'.format(library.book_count))
         print(TEXT_HELP)
-        isbn = input("Enter ISBN:")
+
+        def find_book(mode, value):
+
+            if mode == "isbn":
+                print("Checking for the ISBN at ISBNSearch.org...")
+                book = isbnSearchOrg.search(value)
+                if book.author == "Unknown":
+                    print("Unknown book, trying OpenLibrary.org...")
+                    book = openLibraryOrg.search(value, mode)
+                    library.add_book(book)
+                    print(book)
+                else:
+                    library.add_book(book)
+                    print(book)
+            if mode == "lccn":
+                print("Checking for the LCCN at OpenLibrary.org...")
+                book = openLibraryOrg.search(value, mode)
+                library.add_book(book)
+                print(book)
+
+        mode = "isbn"
+        isbn = input("Enter {}:".format(mode.upper()))
+
         while (isbn != '0') and (isbn != 'q') and (isbn != 'quit'):
             if isbn == "save" or isbn == 's':
                 library.save_to_file()
             elif isbn == 'help' or isbn == 'h':
                 print(TEXT_HELP)
             elif isbn == 'isbn' or isbn == 'i':
-                print('Sorry, not yet implemented')
+                mode = "isbn"
+                print("Searching by {}".format(mode))
             elif isbn == 'lccn' or isbn == 'c':
-                print('Sorry, not yet implemented')
+                mode = "lccn"
+                print('(WIP) - Searching by {}'.format(mode))
             else:
                 exists, book = library.isbn_exists(isbn)
                 if exists:
                     print(book)
                     add_again = input("### Book exists, do you want to search again?")
                     if add_again == "y":
-                        book = isbnSearchOrg.search(isbn)
-                        if book.title == crwBook.UNKNOWN:
-                            book = openLibraryOrg.search(isbn)
-                        library.add_book(book)
-                        print(book)
+                        find_book(mode, isbn)
                 else:
-                    book = isbnSearchOrg.search(isbn)
-                    if book.title == crwBook.UNKNOWN:
-                        book = openLibraryOrg.search(isbn)
-                    library.add_book(book)
-                    print(book)
-            isbn = input("Enter ISBN:")
+                    find_book(mode, isbn)
+            isbn = input("Enter {}:".format(mode.upper()))
 
         # Save before exiting
         library.save_to_file()
-
 
 if __name__ == "__main__":
     if DEBUG:

@@ -24,6 +24,8 @@ command line options. At this time the two main options are:
     Specify the file to use for the CSV output.
 *   -t or --text
     Use text mode (not the GTK inteface)
+*	-d DELIMITER or --delimit=DELMIITER
+	Specify the delmiter to use in the CSV file (default: |)
 
 ## Dependencies
 
@@ -33,5 +35,5 @@ command line options. At this time the two main options are:
 *   (optional) gi.repository (Gtk, GObject)
 *   html (entities)
 *   json
-*   optparse (OptionParser)
+*   argparse (ArgumentParser)
 *   urllib (request, error, parse)

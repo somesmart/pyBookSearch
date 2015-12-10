@@ -82,15 +82,17 @@ class OpenLibraryOrg(BaseSearcher):
 
     def __init__(self):
         # Documentation at https://openlibrary.org/dev/docs/api/books
-        # self.search_url = "https://openlibrary.org/api/books?bibkeys=LCCN:{}&format=json&jscmd=data"
-        self.search_url = "https://openlibrary.org/api/books?bibkeys=ISBN:{}&format=json&jscmd=data"
-
-    def search(self, isbn, book=None):
+        self.lccn_url = "https://openlibrary.org/api/books?bibkeys=LCCN:{}&format=json&jscmd=data"
+        self.isbn_url = "https://openlibrary.org/api/books?bibkeys=ISBN:{}&format=json&jscmd=data"
+        
+    def search(self, isbn, mode, book=None):
         # Call the superclass method to create the book
         book = super(OpenLibraryOrg, self).search(isbn, book=book)
 
-        # Create the URL
-        full_url = self.search_url.format(isbn)
+        if mode == "isbn":
+            full_url = self.isbn_url.format(isbn)
+        elif mode == "lccn":
+            full_url = self.lccn_url.format(isbn)
 
         # Guard against URL errors
         try:
