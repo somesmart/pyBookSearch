@@ -173,7 +173,7 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         # column for ISBN
         renderer = Gtk.CellRendererText()
         column = Gtk.TreeViewColumn(
-            crwBook.bkFields[crwBook.bkISBN], renderer, text=COLUMN_ISBN)
+            crwBook.bkFields[crwBook.bkISBN][1], renderer, text=COLUMN_ISBN)
         column.set_sort_column_id(COLUMN_ISBN)
         column.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
         column.set_resizable(True)
@@ -184,7 +184,7 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         renderer = Gtk.CellRendererText()
         renderer.set_property("editable", True)
         column = Gtk.TreeViewColumn(
-            crwBook.bkFields[crwBook.bkAuthor], renderer, markup=COLUMN_AUTHOR)
+            crwBook.bkFields[crwBook.bkAuthor][1], renderer, markup=COLUMN_AUTHOR)
         column.set_sort_column_id(COLUMN_AUTHOR)
         column.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
         column.set_resizable(True)
@@ -196,7 +196,7 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         renderer = Gtk.CellRendererText()
         renderer.set_property("editable", True)
         column = Gtk.TreeViewColumn(
-            crwBook.bkFields[crwBook.bkTitle], renderer, markup=COLUMN_TITLE)
+            crwBook.bkFields[crwBook.bkTitle][1], renderer, markup=COLUMN_TITLE)
         column.set_sort_column_id(COLUMN_TITLE)
         column.set_sizing(Gtk.TreeViewColumnSizing.FIXED)
         column.set_resizable(True)
@@ -302,7 +302,7 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         else:
             if add:
                 self.add_book(
-                    crwBook.Book(isbn))
+                    crwBook.Book(isbn=isbn))
 
     def add_book(self, book):
         # Call the super class function
@@ -351,5 +351,5 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
 
 if __name__ == "__main__":
     gtkLibrary = GTKLibrary("library.csv")
-    gtkLibrary.add_book(crwBook.Book("9876", "9876", "9876"))
+    gtkLibrary.add_book(crwBook.Book(isbn="9876", title="9876", author="9876"))
     Gtk.main()

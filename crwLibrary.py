@@ -70,7 +70,7 @@ class Library(object):
 
                 # Detect the dialect
                 dialect = csv.Sniffer().sniff(library_file.read(1024))
-                print('detected delimiter:', dialect.delimiter)
+                print('Detected delimiter:', dialect.delimiter)
                 # print('doublequote', dialect.doublequote)
                 # print('escapechar', dialect.escapechar)
                 # print('lineterminator', dialect.lineterminator)
@@ -85,7 +85,7 @@ class Library(object):
                 book_reader = csv.DictReader(library_file, dialect=dialect)
 
                 for book in book_reader:
-                    self.book_list.append(crwBook.new_book(from_dict=book))
+                    self.book_list.append(crwBook.Book(**book))
 
         except IOError:
             print("### No library file.")
@@ -102,24 +102,13 @@ class Library(object):
                 lineterminator='\n',
                 delimiter=self.delimiter)
 
-            book_writer.writerow([crwBook.bkFields[crwBook.bkISBN],
-                                  crwBook.bkFields[crwBook.bkTitle],
-                                  crwBook.bkFields[crwBook.bkAuthor],
-                                  crwBook.bkFields[crwBook.bkBinding],
-                                  crwBook.bkFields[crwBook.bkPublisher],
-                                  crwBook.bkFields[crwBook.bkPublished],
-                                  crwBook.bkFields[crwBook.bkUsedPrice]])
+            # Write the heading row
+            book_writer.writerow([f[1] for f in crwBook.bkFields])
 
+            # Write the book data
             for book in self.book_list:
-                isbn = book.isbn
-                title = book.title
-                author = book.author
-                binding = book.binding
-                publisher = book.publisher
-                published = book.published
-                usedPrice = book.usedPrice
                 book_writer.writerow(
-                    [isbn, title, author, binding, publisher, published, usedPrice])
+                    [getattr(book, f[0]) for f in crwBook.bkFields])
 
         print("Saved", self.filename)
 
@@ -127,9 +116,12 @@ if __name__ == "__main__":
     library = Library("library_test.csv")
     library.read_from_file()
 
-    library.add_book(crwBook.Book("1234", "title1234", "author1234"))
-    library.add_book(crwBook.Book("2345", "title2345", "author2345"))
-    library.add_book(crwBook.Book("3456", "title3456", "author3456"))
+    library.add_book(crwBook.Book(
+        isbn="1234", title="title1234", author="author1234"))
+    library.add_book(crwBook.Book(
+        isbn="2345", title="title2345", author="author2345"))
+    library.add_book(crwBook.Book(
+        isbn="3456", title="title3456", author="author3456"))
 
     # library.remove_isbn("2345")
 

@@ -25,7 +25,7 @@ except ImportError:
 class BaseSearcher(object):
     def search(self, isbn, book=None):
         if book is None:
-            book = crwBook.Book(str(isbn))
+            book = crwBook.Book(isbn=str(isbn))
         else:
             book.isbn = isbn
         return book
@@ -42,6 +42,12 @@ class UPCDatabaseCom(BaseSearcher):
 
 
 class LibraryThingCom(BaseSearcher):
+    # The following requires a key/username
+    # https://www.librarything.com/wiki/index.php/LibraryThing_JSON_Books_API
+    # www.librarything.com/api_getdata.php
+
+    # https://www.librarything.com/search.php?search=9780004704814&searchtype=media&searchtype=media&sortchoice=0
+    # https://www.librarything.com/search.php?term=9780004704814
     def __init__(self):
         self.search_url = "http://www.librarything.com/tag/"
 
@@ -54,11 +60,22 @@ class LibraryThingCom(BaseSearcher):
 class OpenISBNCom(BaseSearcher):
     def __init__(self):
         self.search_url = "http://www.openisbn.com/isbn/"
+        # http://openisbn.com/isbn/0006174280/
+
+    def search(self, isbn, book=None):
+        book = super(OpenISBNCom, self).search(isbn, book=book)
 
 
 class ISBNDBCom(BaseSearcher):
     def __init__(self):
+        # Call the superclass method to create the book
         self.search_url = "http://isbndb.com/api/v2/json/[your-api-key]/book/"
+
+
+class ISBNPlusOrg(BaseSearcher):
+    def __init__(self):
+        # http://isbnplus.org/api/
+        self.search_url = ''
 
 
 class OpenLibraryOrg(BaseSearcher):
@@ -99,7 +116,9 @@ class OpenLibraryOrg(BaseSearcher):
                     # print('OpenLibraryOrg key: {}'.format(k1))
 
                     # Get the title and subtitle, join them
-                    book.title = book_info[k1].get('title', 'Unknown')
+                    book.title = book_info[k1].get(
+                        'title',
+                        crwBook.UNKNOWN)
                     subtitle = book_info[k1].get('subtitle', '')
                     if subtitle != '':
                         book.title = '{} : {}'.format(book.title, subtitle)
@@ -119,7 +138,9 @@ class OpenLibraryOrg(BaseSearcher):
                             book.publisher = publishers
 
                     # Get the published date
-                    book.published = book_info[k1].get('publish_date', 'Unknown')
+                    book.published = book_info[k1].get(
+                        'publish_date',
+                        crwBook.UNKNOWN)
 
             else:
                 print ("No openlibrary.org data")

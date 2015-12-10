@@ -13,6 +13,7 @@ except ImportError:
     print("### No GTK - reverting to text mode")
     HAVE_GTK = False
 
+import crwBook
 import crwLibrary
 import crwISBNSearch
 
@@ -98,7 +99,7 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
         return 2
 
     isbnSearchOrg = crwISBNSearch.ISBNSearchOrg()
-    # openLibraryOrg = crwISBNSearch.OpenLibraryOrg()
+    openLibraryOrg = crwISBNSearch.OpenLibraryOrg()
 
     if HAVE_GTK:
         library = crwGTKLibrary.GTKLibrary(
@@ -130,14 +131,14 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
                     add_again = input("### Book exists, do you want to search again?")
                     if add_again == "y":
                         book = isbnSearchOrg.search(isbn)
-                        # book2 = openLibraryOrg.search(isbn)
-                        # print(book2)
+                        if book.title == crwBook.UNKNOWN:
+                            book = openLibraryOrg.search(isbn)
                         library.add_book(book)
                         print(book)
                 else:
                     book = isbnSearchOrg.search(isbn)
-                    # book2 = openLibraryOrg.search(isbn)
-                    # print(book2)
+                    if book.title == crwBook.UNKNOWN:
+                        book = openLibraryOrg.search(isbn)
                     library.add_book(book)
                     print(book)
             isbn = input("Enter ISBN:")

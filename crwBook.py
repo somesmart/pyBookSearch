@@ -4,15 +4,7 @@ from html import entities
 import collections
 
 
-# class BookDict(dict):
-#     def __init__(self, *args, **kwargs):
-#         super(BookDict, self).__init__(*args, **kwargs)
-#         self['found'] = False
-#         self['title'] = "Unknown Title"
-#         self['authors'] = "Unknown Author"
-
-# BookTuple = collections.namedtuple('BookTuple', ['found', 'isbn', 'title', 'authors'])
-
+# The order of fields in bkFields
 (
     bkISBN,
     bkTitle,
@@ -23,15 +15,18 @@ import collections
     bkUsedPrice
 ) = list(range(7))
 
-bkFields = {
-    bkISBN: "ISBN",
-    bkTitle: "Title",
-    bkAuthor: "Author",
-    bkBinding: "Binding",
-    bkPublisher: "Publisher",
-    bkPublished: "Published",
-    bkUsedPrice: "UsedPrice"
-}
+# A mapping from Book properties to CSV Column Titles.
+bkFields = [
+    ('isbn', "ISBN"),
+    ('title', "Title"),
+    ('author', "Author"),
+    ('binding', "Binding"),
+    ('publisher', "Publisher"),
+    ('published', "Published"),
+    ('usedPrice', "UsedPrice")
+]
+
+UNKNOWN = 'Unknown'
 
 
 def check_and_sanitise(s):
@@ -39,39 +34,27 @@ def check_and_sanitise(s):
     pass
 
 
-def new_book(from_dict):
-    isbn = from_dict.get('ISBN', 'None')
-    title = from_dict.get('Title', 'Unknown')
-    author = from_dict.get('Author', 'Unknown')
-
-    book = Book(isbn, title, author)
-
-    book.binding = from_dict.get('Binding')
-    book.publisher = from_dict.get('Publisher')
-    book.published = from_dict.get('Published')
-    book.usedPrice = from_dict.get('UsedPrice')
-
-    return book
-
-
 class Book(object):
-    def __init__(self, isbn, title='Unknown', author='Unknown'):
-        self._binding = 'Unknown'
-        self._publisher = 'Unknown'
-        self._published = 'Unknown'
-        self._usedPrice = 'Unknown'
+    '''
+    A class to hold book information.
+    '''
 
-        # The ISBN
-        if isbn is not None:
-            self._isbn = isbn.strip()
+    def __init__(self, **kwargs):
 
-        # The Title
-        if title is not None:
-            self._title = title.strip()
-
-        # The Author
-        if author is not None:
-            self._author = author.strip()
+        # Initialise the book from the given keyword arguments
+        # by iterating through bkFields and looking through kwargs
+        # for either the property name (f[0]) or the column name (f[1]),
+        # with a preference for the property name. If neither are found,
+        # UNKNOWN is used as the default.
+        for f in bkFields:
+            setattr(
+                self,
+                f[0],
+                kwargs.get(
+                    f[0],
+                    kwargs.get(
+                        f[1],
+                        UNKNOWN)))
 
     @property
     def isbn(self):
@@ -137,9 +120,9 @@ class Book(object):
             self._usedPrice = value
 
     def __repr__(self):
-        return 'crwBook.Book("' + self._isbn + \
-               '", "' + self._title + \
-               '", "' + self._author + \
+        return 'crwBook.Book(isbn="' + self._isbn + \
+               '", title="' + self._title + \
+               '", author="' + self._author + \
                '")'
 
     def __str__(self):
@@ -148,5 +131,8 @@ class Book(object):
                ", Author:" + self._author
 
 if __name__ == "__main__":
-    book = Book(" 0586039899 ", " The Fabulous Riverboat", "  Philip Jos\u00e9 Farmer")
+    book = Book(
+        isbn=" 0586039899 ",
+        title=" The Fabulous Riverboat",
+        author="  Philip Jos\u00e9 Farmer")
     print(book)
