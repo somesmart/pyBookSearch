@@ -141,10 +141,10 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
                 print(TEXT_HELP)
             elif isbn == 'isbn' or isbn == 'i':
                 mode = "isbn"
-                print("Searching by ISBN")
+                print("Searching by {}".format(mode))
             elif isbn == 'lccn' or isbn == 'c':
                 mode = "lccn"
-                print('Searching by {}'.format(mode))
+                print('(WIP) - Searching by {}'.format(mode))
             else:
                 exists, book = library.isbn_exists(isbn)
                 if exists:
