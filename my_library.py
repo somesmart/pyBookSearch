@@ -128,7 +128,7 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
             if mode == "lccn":
                 print("Checking for the LCCN at OpenLibrary.org...")
                 book = openLibraryOrg.search(value, mode)
-                libary.add_book(book)
+                library.add_book(book)
                 print(book)
 
         mode = "isbn"
