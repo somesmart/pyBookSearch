@@ -3,7 +3,6 @@
 import crwBook
 import json
 import sys
-# from pprint import pprint
 
 try:
     import urllib.request
@@ -84,7 +83,7 @@ class OpenLibraryOrg(BaseSearcher):
         # Documentation at https://openlibrary.org/dev/docs/api/books
         self.lccn_url = "https://openlibrary.org/api/books?bibkeys=LCCN:{}&format=json&jscmd=data"
         self.isbn_url = "https://openlibrary.org/api/books?bibkeys=ISBN:{}&format=json&jscmd=data"
-        
+
     def search(self, isbn, mode, book=None):
         # Call the superclass method to create the book
         book = super(OpenLibraryOrg, self).search(isbn, book=book)
@@ -194,7 +193,7 @@ class ISBNSearchOrg(BaseSearcher):
                     print ("title: {}".format(soup.h2.string))
                 except AttributeError:
                     print("### Error retrieving Title.")
-                    book.title = "Unknown"
+                    book.title = crwBook.UNKNOWN
 
                 # Get the remaining values
                 for label in soup.find_all('strong'):
@@ -208,7 +207,7 @@ class ISBNSearchOrg(BaseSearcher):
                                 "&", "&amp;")
                         except AttributeError:
                             print("### Error retrieving Author.")
-                            book.author = "Unknown"
+                            book.author = crwBook.UNKNOWN
 
                     if label.string == "Authors:":
                         try:
@@ -218,7 +217,7 @@ class ISBNSearchOrg(BaseSearcher):
                                 "&", "&amp;")
                         except AttributeError:
                             print("### Error retrieving Author.")
-                            book.author = "Unknown"
+                            book.author = crwBook.UNKNOWN
 
                     if label.string == "Binding:":
                         # TODO: This is a hack for &

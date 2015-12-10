@@ -23,9 +23,9 @@ command line options. At this time the two main options are:
 *   -l FILE or --library=FILE
     Specify the file to use for the CSV output.
 *   -t or --text
-    Use text mode (not the GTK inteface)
-*	-d DELIMITER or --delimit=DELMIITER
-	Specify the delmiter to use in the CSV file (default: |)
+    Use text mode (not the GTK interface)
+*	-d DELIMITER or --delimit=DELIMITER
+	Specify the delimiter to use in the CSV file (default: |)
 
 ## Dependencies
 

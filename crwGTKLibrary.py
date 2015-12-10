@@ -335,11 +335,11 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
             iter = self.book_model.append()
 
             title = book.title
-            if title == "Unknown":
+            if title == crwBook.UNKNOWN:
                 title = HIGHLIGHT.format(title)
 
             author = book.author
-            if author == "Unknown":
+            if author == crwBook.UNKNOWN:
                 author = HIGHLIGHT.format(author)
 
             self.book_model.set(

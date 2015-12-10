@@ -122,16 +122,14 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
                 if book.author == "Unknown":
                     print("Unknown book, trying OpenLibrary.org...")
                     book = openLibraryOrg.search(value, mode)
-                    library.add_book(book)
-                    print(book)
-                else:
-                    library.add_book(book)
-                    print(book)
-            if mode == "lccn":
+            elif mode == "lccn":
                 print("Checking for the LCCN at OpenLibrary.org...")
                 book = openLibraryOrg.search(value, mode)
-                library.add_book(book)
-                print(book)
+            else:
+                print('Oops, unknown mode')
+                book = crwBook.Book()
+            library.add_book(book)
+            print(book)
 
         mode = "isbn"
         isbn = input("Enter {}:".format(mode.upper()))
