@@ -3,7 +3,7 @@
 import crwBook
 import json
 import sys
-# from pprint import pprint
+from enum import IntEnum
 
 try:
     import urllib.request
@@ -22,59 +22,95 @@ except ImportError:
     HAVE_SOUP = False
 
 
+class Modes(IntEnum):
+    ISBN = 1
+    LCCN = 2
+
+
 class BaseSearcher(object):
-    def search(self, isbn, book=None):
+    name = ''
+
+    def search(self, isbn, mode, book=None):
         if book is None:
-            book = crwBook.Book(str(isbn))
+            book = crwBook.Book(isbn=str(isbn))
         else:
             book.isbn = isbn
         return book
 
 
 class UPCDatabaseCom(BaseSearcher):
+    name = 'www.upcdatabase.com'
+
     def __init__(self):
         self.search_url = "http://www.upcdatabase.com/item/"
 
-    def search(self, isbn, book=None):
+    def search(self, isbn, mode, book=None):
         # Call the superclass method to create the book
-        book = super(ISBNSearchOrg, self).search(isbn, book=book)
+        book = super(ISBNSearchOrg, self).search(isbn, mode, book=book)
         return book
 
 
 class LibraryThingCom(BaseSearcher):
+    name = 'www.librarything.com'
+
+    # The following requires a key/username
+    # https://www.librarything.com/wiki/index.php/LibraryThing_JSON_Books_API
+    # www.librarything.com/api_getdata.php
+
+    # https://www.librarything.com/search.php?search=9780004704814&searchtype=media&searchtype=media&sortchoice=0
+    # https://www.librarything.com/search.php?term=9780004704814
+
     def __init__(self):
         self.search_url = "http://www.librarything.com/tag/"
 
-    def search(self, isbn, book=None):
+    def search(self, isbn, mode, book=None):
         # Call the superclass method to create the book
-        book = super(ISBNSearchOrg, self).search(isbn, book=book)
+        book = super(ISBNSearchOrg, self).search(isbn, mode, book=book)
         return book
 
 
 class OpenISBNCom(BaseSearcher):
+    name = 'www.openisbn.com'
+
     def __init__(self):
         self.search_url = "http://www.openisbn.com/isbn/"
+        # http://openisbn.com/isbn/0006174280/
+
+    def search(self, isbn, mode, book=None):
+        book = super(OpenISBNCom, self).search(isbn, mode, book=book)
 
 
 class ISBNDBCom(BaseSearcher):
+    name = 'isbndb.com'
+
     def __init__(self):
+        # Call the superclass method to create the book
         self.search_url = "http://isbndb.com/api/v2/json/[your-api-key]/book/"
 
 
+class ISBNPlusOrg(BaseSearcher):
+    name = 'isbnplus.org'
+
+    def __init__(self):
+        # http://isbnplus.org/api/
+        self.search_url = ''
+
+
 class OpenLibraryOrg(BaseSearcher):
+    name = 'openlibrary.org'
 
     def __init__(self):
         # Documentation at https://openlibrary.org/dev/docs/api/books
         self.lccn_url = "https://openlibrary.org/api/books?bibkeys=LCCN:{}&format=json&jscmd=data"
         self.isbn_url = "https://openlibrary.org/api/books?bibkeys=ISBN:{}&format=json&jscmd=data"
-        
+
     def search(self, isbn, mode, book=None):
         # Call the superclass method to create the book
-        book = super(OpenLibraryOrg, self).search(isbn, book=book)
+        book = super(OpenLibraryOrg, self).search(isbn, mode, book=book)
 
-        if mode == "isbn":
+        if mode == Modes.ISBN:
             full_url = self.isbn_url.format(isbn)
-        elif mode == "lccn":
+        elif mode == Modes.LCCN:
             full_url = self.lccn_url.format(isbn)
 
         # Guard against URL errors
@@ -101,7 +137,9 @@ class OpenLibraryOrg(BaseSearcher):
                     # print('OpenLibraryOrg key: {}'.format(k1))
 
                     # Get the title and subtitle, join them
-                    book.title = book_info[k1].get('title', 'Unknown')
+                    book.title = book_info[k1].get(
+                        'title',
+                        crwBook.UNKNOWN)
                     subtitle = book_info[k1].get('subtitle', '')
                     if subtitle != '':
                         book.title = '{} : {}'.format(book.title, subtitle)
@@ -121,10 +159,12 @@ class OpenLibraryOrg(BaseSearcher):
                             book.publisher = publishers
 
                     # Get the published date
-                    book.published = book_info[k1].get('publish_date', 'Unknown')
+                    book.published = book_info[k1].get(
+                        'publish_date',
+                        crwBook.UNKNOWN)
 
             else:
-                print ("No openlibrary.org data")
+                print ("\tNo openlibrary.org data")
 
         except urllib.error.URLError as err:
             print("URLError {}".format(err))
@@ -136,15 +176,17 @@ class OpenLibraryOrg(BaseSearcher):
 
 
 class ISBNSearchOrg(BaseSearcher):
+    name = 'www.isbnsearch.org'
+
     def __init__(self):
         self.search_url = "http://www.isbnsearch.org/isbn/"
 
         # Only process the core content division
         self.bookinfo_filter = SoupStrainer("div")
 
-    def search(self, isbn, book=None):
+    def search(self, isbn, mode, book=None):
         # Call the superclass method to create the book
-        book = super(ISBNSearchOrg, self).search(isbn, book=book)
+        book = super(ISBNSearchOrg, self).search(isbn, mode, book=book)
 
         if HAVE_SOUP:
             full_url = self.search_url + str(isbn)
@@ -170,10 +212,10 @@ class ISBNSearchOrg(BaseSearcher):
                     # TODO: This is a hack for &
                     # TODO: make html/xml safe
                     book.title = soup.h2.string.replace("&", "&amp;")
-                    print ("title: {}".format(soup.h2.string))
+                    # print ("title: {}".format(soup.h2.string))
                 except AttributeError:
-                    print("### Error retrieving Title.")
-                    book.title = "Unknown"
+                    # print("### Error retrieving Title.")
+                    book.title = crwBook.UNKNOWN
 
                 # Get the remaining values
                 for label in soup.find_all('strong'):
@@ -186,8 +228,8 @@ class ISBNSearchOrg(BaseSearcher):
                             book.author = label.nextSibling.string.replace(
                                 "&", "&amp;")
                         except AttributeError:
-                            print("### Error retrieving Author.")
-                            book.author = "Unknown"
+                            # print("### Error retrieving Author.")
+                            book.author = crwBook.UNKNOWN
 
                     if label.string == "Authors:":
                         try:
@@ -196,8 +238,8 @@ class ISBNSearchOrg(BaseSearcher):
                             book.author = label.nextSibling.replace(
                                 "&", "&amp;")
                         except AttributeError:
-                            print("### Error retrieving Author.")
-                            book.author = "Unknown"
+                            # print("### Error retrieving Author.")
+                            book.author = crwBook.UNKNOWN
 
                     if label.string == "Binding:":
                         # TODO: This is a hack for &
@@ -219,10 +261,9 @@ class ISBNSearchOrg(BaseSearcher):
                     book.usedPrice = soup.find_all('table', class_='prices')[1].tbody.tr.td.find_next_sibling(class_='price').p.a.contents
                 # if there isn't a sixth record just error out
                 except IndexError:
-                    book.usedPrice = "X"
+                    book.usedPrice = crwBook.UNKNOWN
 
             except urlexception as err:
                 print("ISBN not found at www.isbnsearch.org: {}".format(err.code))
 
         return book
-

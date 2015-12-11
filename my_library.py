@@ -1,6 +1,5 @@
 #!/usr/bin/env /usr/bin/python3
 
-
 import sys
 import os
 import argparse
@@ -13,8 +12,9 @@ except ImportError:
     print("### No GTK - reverting to text mode")
     HAVE_GTK = False
 
+import crwBook
 import crwLibrary
-import crwISBNSearch
+from crwISBNSearch import Modes, ISBNSearchOrg, OpenLibraryOrg
 
 # ==========================
 
@@ -34,6 +34,7 @@ TEXT_HELP = '''
 [i | isbn]     - ISBN search mode (default)
 [c | lccn]     - LCCN search mode
 '''
+
 
 def main(argv=None):
     '''Command line options.'''
@@ -76,25 +77,50 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
             dest="delimiter",
             default="|",
             help="set the CSV delimiter (default: %(default)s)")
+        parser.add_argument(
+            "-f", "--fill",
+            action="store_true",
+            dest="fill",
+            default=False,
+            help="automatically fill missing details from multiple sources (default: %(default)s)")
+        parser.add_argument(
+            "-r", "--requery",
+            action="store_true",
+            dest="requery",
+            default=False,
+            help="automatically requery the entire library file, filling in missing details (default: %(default)s)")
 
         # process options
         args = parser.parse_args()
 
         if args.libfile:
-            print("libfile = {}".format(args.libfile))
+            print("Library File: {}".format(args.libfile))
 
-        print("Text mode", args.textmode)
+        print("Text mode:", args.textmode)
         if args.textmode:
             HAVE_GTK = False
 
         if args.delimiter:
-            print("Delimiter = {}".format(args.delimiter))
+            print("Delimiter: {}".format(args.delimiter))
+
+        print("Fill mode:", args.fill)
+        print("Re-query:", args.requery)
 
     except Exception as e:
         indent = len(program_name) * " "
         sys.stderr.write(program_name + ": " + repr(e) + "\n")
         sys.stderr.write(indent + "  for help use --help\n")
         return 2
+
+    # Create some searcher objects
+    isbnSearchOrg = ISBNSearchOrg()
+    openLibraryOrg = OpenLibraryOrg()
+
+    # Put them in lists for ordered processing
+    searchers = {
+        Modes.ISBN: [isbnSearchOrg, openLibraryOrg],
+        Modes.LCCN: [openLibraryOrg]
+    }
 
     if HAVE_GTK:
         library = crwGTKLibrary.GTKLibrary(
@@ -111,28 +137,30 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
         print(TEXT_HELP)
 
         def find_book(mode, value):
-            isbnSearchOrg = crwISBNSearch.ISBNSearchOrg()
-            openLibraryOrg = crwISBNSearch.OpenLibraryOrg()
-            
-            if mode == "isbn":
-                print("Checking for the ISBN at ISBNSearch.org...")
-                book = isbnSearchOrg.search(value)
-                if book.author == "Unknown":
-                    print("Unknown book, trying OpenLibrary.org...")
-                    book = openLibraryOrg.search(value, mode)
-                    library.add_book(book)
-                    print(book)
-                else:
-                    library.add_book(book)
-                    print(book)
-            if mode == "lccn":
-                print("Checking for the LCCN at OpenLibrary.org...")
-                book = openLibraryOrg.search(value, mode)
-                library.add_book(book)
-                print(book)
 
-        mode = "isbn"
-        isbn = input("Enter ISBN:")
+            # Create an empty book
+            book = crwBook.Book(isbn=value)
+
+            # Iterate through the searchers for the mode
+            for searcher in searchers[mode]:
+
+                print("Checking for the {} at {}... ".format(
+                    mode.name, searcher.name))
+
+                # TODO: This doesn't yet cope will fill mode as it
+                # will unconditionally overwrite known fields.
+                book = searcher.search(isbn=value, mode=mode, book=book)
+
+                if book.author != crwBook.UNKNOWN:
+                    break
+                else:
+                    print('\tNot found')
+
+            library.add_book(book)
+            print(book)
+
+        mode = Modes.ISBN
+        isbn = input("Enter {}:".format(mode.name))
 
         while (isbn != '0') and (isbn != 'q') and (isbn != 'quit'):
             if isbn == "save" or isbn == 's':
@@ -140,11 +168,11 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
             elif isbn == 'help' or isbn == 'h':
                 print(TEXT_HELP)
             elif isbn == 'isbn' or isbn == 'i':
-                mode = "isbn"
-                print("Searching by {}".format(mode))
+                mode = Modes.ISBN
+                print("Searching by {}".format(mode.name))
             elif isbn == 'lccn' or isbn == 'c':
-                mode = "lccn"
-                print('(WIP) - Searching by {}'.format(mode))
+                mode = Modes.LCCN
+                print('(WIP) - Searching by {}'.format(mode.name))
             else:
                 exists, book = library.isbn_exists(isbn)
                 if exists:
@@ -154,7 +182,7 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
                         find_book(mode, isbn)
                 else:
                     find_book(mode, isbn)
-            isbn = input("Enter ISBN:")
+            isbn = input("Enter {}:".format(mode.name))
 
         # Save before exiting
         library.save_to_file()

@@ -1,20 +1,26 @@
 from crwBook import Book
 from gi.repository import Gtk
 
+
 class GTKBookEntry(Gtk.Dialog):
     def __init__(self, parent, library=None):
         """A dialog to allow full text entry of new books."""
-        
+
         print("Book Entry created")
-        
+
         self.library = library
 
         # create dialog
-        Gtk.Dialog.__init__(self,
+        Gtk.Dialog.__init__(
+            self,
             title="Add book",
             parent=parent,
             flags=Gtk.DialogFlags.DESTROY_WITH_PARENT,
-            buttons=(Gtk.STOCK_ADD, Gtk.ResponseType.YES, Gtk.STOCK_CLOSE, Gtk.ResponseType.CLOSE))
+            buttons=(
+                Gtk.STOCK_ADD,
+                Gtk.ResponseType.YES,
+                Gtk.STOCK_CLOSE,
+                Gtk.ResponseType.CLOSE))
 
         self.connect("delete-event", self.on_delete_event)
         self.add_button = self.action_area.get_children()[1]
@@ -31,14 +37,15 @@ class GTKBookEntry(Gtk.Dialog):
         # add a horizontal box
         hbox1 = Gtk.HBox(False, 0)
         box.pack_start(hbox1, expand=False, fill=False, padding=0)
-        
+
         # add a label
         label1 = Gtk.Label("ISBN:")
         hbox1.pack_start(label1, expand=False, fill=False, padding=0)
 
         # add a text entry field
         self.isbn_entry = Gtk.Entry(max_length=0)
-        self.isbn_entry.connect("activate", self.isbn_enter_callback, self.isbn_entry)
+        self.isbn_entry.connect(
+            "activate", self.isbn_enter_callback, self.isbn_entry)
         hbox1.pack_start(self.isbn_entry, expand=True, fill=True, padding=0)
 
 # TITLE
@@ -46,14 +53,15 @@ class GTKBookEntry(Gtk.Dialog):
         # add a horizontal box
         hbox2 = Gtk.HBox(False, 0)
         box.pack_start(hbox2, expand=False, fill=False, padding=0)
-        
+
         # add a label
         label2 = Gtk.Label("Title:")
         hbox2.pack_start(label2, expand=False, fill=False, padding=0)
 
         # add a text entry field
         self.title_entry = Gtk.Entry(max_length=0)
-        self.title_entry.connect("activate", self.title_enter_callback, self.title_entry)
+        self.title_entry.connect(
+            "activate", self.title_enter_callback, self.title_entry)
         hbox2.pack_start(self.title_entry, expand=True, fill=True, padding=0)
 
 # AUTHORS
@@ -61,14 +69,15 @@ class GTKBookEntry(Gtk.Dialog):
         # add a horizontal box
         hbox3 = Gtk.HBox(False, 0)
         box.pack_start(hbox3, expand=False, fill=False, padding=0)
-        
+
         # add a label
         label3 = Gtk.Label("Authors:")
         hbox3.pack_start(label3, expand=False, fill=False, padding=0)
 
         # add a text entry field
         self.author_entry = Gtk.Entry(max_length=0)
-        self.author_entry.connect("activate", self.author_enter_callback, self.author_entry)
+        self.author_entry.connect(
+            "activate", self.author_enter_callback, self.author_entry)
         hbox3.pack_start(self.author_entry, expand=True, fill=True, padding=0)
 
         # show stuff
@@ -85,8 +94,11 @@ class GTKBookEntry(Gtk.Dialog):
 
     def add_callback(self, widget, data=None):
         print ("Add")
-        if self.library != None:
-            book = Book(isbn=self.isbn_entry.get_text(), title=self.title_entry.get_text(), author=self.author_entry.get_text())
+        if self.library is not None:
+            book = Book(
+                isbn=self.isbn_entry.get_text(),
+                title=self.title_entry.get_text(),
+                author=self.author_entry.get_text())
             self.library.add_book(book)
         self.isbn_entry.grab_focus()
 
