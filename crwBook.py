@@ -7,17 +7,23 @@ import collections
 # The order of fields in bkFields
 (
     bkISBN,
+    bkISBN10,
+    bkISBN13,
+    bkLCCN,
     bkTitle,
     bkAuthor,
     bkBinding,
     bkPublisher,
     bkPublished,
     bkUsedPrice
-) = list(range(7))
+) = list(range(10))
 
 # A mapping from Book properties to CSV Column Titles.
 bkFields = [
     ('isbn', "ISBN"),
+    ('isbn10', "ISBN10"),
+    ('isbn13', "ISBN13"),
+    ('lccn', "LCCN"),
     ('title', "Title"),
     ('author', "Author"),
     ('binding', "Binding"),
@@ -76,6 +82,13 @@ class Book(object):
                             UNKNOWN)))
 
     @property
+    def has_unknowns(self):
+        for f in bkFields:
+            if getattr(self, f[0]) == UNKNOWN:
+                return True
+        return False
+
+    @property
     def isbn(self):
         return self._isbn
 
@@ -83,6 +96,33 @@ class Book(object):
     def isbn(self, value):
         if value is not None:
             self._isbn = value.strip()
+
+    @property
+    def isbn10(self):
+        return self._isbn10
+
+    @isbn10.setter
+    def isbn10(self, value):
+        if value is not None:
+            self._isbn10 = value.strip()
+
+    @property
+    def isbn13(self):
+        return self._isbn13
+
+    @isbn13.setter
+    def isbn13(self, value):
+        if value is not None:
+            self._isbn13 = value.strip()
+
+    @property
+    def lccn(self):
+        return self._lccn
+
+    @lccn.setter
+    def lccn(self, value):
+        if value is not None:
+            self._lccn = value.strip()
 
     @property
     def title(self):
