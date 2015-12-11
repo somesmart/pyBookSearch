@@ -255,10 +255,9 @@ class ISBNSearchOrg(BaseSearcher):
                     book.usedPrice = soup.find_all('table', class_='prices')[1].tbody.tr.td.find_next_sibling(class_='price').p.a.contents
                 # if there isn't a sixth record just error out
                 except IndexError:
-                    book.usedPrice = "X"
+                    book.usedPrice = crwBook.UNKNOWN
 
             except urlexception as err:
                 print("ISBN not found at www.isbnsearch.org: {}".format(err.code))
 
         return book
-
