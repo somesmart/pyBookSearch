@@ -22,7 +22,9 @@ except ImportError:
 
 
 class BaseSearcher(object):
-    def search(self, isbn, book=None):
+    name = ''
+
+    def search(self, isbn, mode, book=None):
         if book is None:
             book = crwBook.Book(isbn=str(isbn))
         else:
@@ -31,53 +33,65 @@ class BaseSearcher(object):
 
 
 class UPCDatabaseCom(BaseSearcher):
+    name = 'www.upcdatabase.com'
+
     def __init__(self):
         self.search_url = "http://www.upcdatabase.com/item/"
 
-    def search(self, isbn, book=None):
+    def search(self, isbn, mode, book=None):
         # Call the superclass method to create the book
-        book = super(ISBNSearchOrg, self).search(isbn, book=book)
+        book = super(ISBNSearchOrg, self).search(isbn, mode, book=book)
         return book
 
 
 class LibraryThingCom(BaseSearcher):
+    name = 'www.librarything.com'
+
     # The following requires a key/username
     # https://www.librarything.com/wiki/index.php/LibraryThing_JSON_Books_API
     # www.librarything.com/api_getdata.php
 
     # https://www.librarything.com/search.php?search=9780004704814&searchtype=media&searchtype=media&sortchoice=0
     # https://www.librarything.com/search.php?term=9780004704814
+
     def __init__(self):
         self.search_url = "http://www.librarything.com/tag/"
 
-    def search(self, isbn, book=None):
+    def search(self, isbn, mode, book=None):
         # Call the superclass method to create the book
-        book = super(ISBNSearchOrg, self).search(isbn, book=book)
+        book = super(ISBNSearchOrg, self).search(isbn, mode, book=book)
         return book
 
 
 class OpenISBNCom(BaseSearcher):
+    name = ''
+
     def __init__(self):
         self.search_url = "http://www.openisbn.com/isbn/"
         # http://openisbn.com/isbn/0006174280/
 
-    def search(self, isbn, book=None):
-        book = super(OpenISBNCom, self).search(isbn, book=book)
+    def search(self, isbn, mode, book=None):
+        book = super(OpenISBNCom, self).search(isbn, mode, book=book)
 
 
 class ISBNDBCom(BaseSearcher):
+    name = ''
+
     def __init__(self):
         # Call the superclass method to create the book
         self.search_url = "http://isbndb.com/api/v2/json/[your-api-key]/book/"
 
 
 class ISBNPlusOrg(BaseSearcher):
+    name = ''
+
     def __init__(self):
         # http://isbnplus.org/api/
         self.search_url = ''
 
 
 class OpenLibraryOrg(BaseSearcher):
+    name = 'openlibrary.org'
 
     def __init__(self):
         # Documentation at https://openlibrary.org/dev/docs/api/books
@@ -86,7 +100,7 @@ class OpenLibraryOrg(BaseSearcher):
 
     def search(self, isbn, mode, book=None):
         # Call the superclass method to create the book
-        book = super(OpenLibraryOrg, self).search(isbn, book=book)
+        book = super(OpenLibraryOrg, self).search(isbn, mode, book=book)
 
         if mode == "isbn":
             full_url = self.isbn_url.format(isbn)
@@ -156,15 +170,17 @@ class OpenLibraryOrg(BaseSearcher):
 
 
 class ISBNSearchOrg(BaseSearcher):
+    name = 'www.isbnsearch.org'
+
     def __init__(self):
         self.search_url = "http://www.isbnsearch.org/isbn/"
 
         # Only process the core content division
         self.bookinfo_filter = SoupStrainer("div")
 
-    def search(self, isbn, book=None):
+    def search(self, isbn, mode, book=None):
         # Call the superclass method to create the book
-        book = super(ISBNSearchOrg, self).search(isbn, book=book)
+        book = super(ISBNSearchOrg, self).search(isbn, mode, book=book)
 
         if HAVE_SOUP:
             full_url = self.search_url + str(isbn)

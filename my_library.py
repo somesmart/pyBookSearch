@@ -99,6 +99,8 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
 
     isbnSearchOrg = crwISBNSearch.ISBNSearchOrg()
     openLibraryOrg = crwISBNSearch.OpenLibraryOrg()
+    isbn_searchers = [openLibraryOrg, isbnSearchOrg]
+    lccn_searchers = [openLibraryOrg]
 
     if HAVE_GTK:
         library = crwGTKLibrary.GTKLibrary(
@@ -117,17 +119,27 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
         def find_book(mode, value):
 
             if mode == "isbn":
-                print("Checking for the ISBN at ISBNSearch.org...")
-                book = isbnSearchOrg.search(value)
-                if book.author == "Unknown":
-                    print("Unknown book, trying OpenLibrary.org...")
-                    book = openLibraryOrg.search(value, mode)
+                for searcher in isbn_searchers:
+                    print("Checking for the ISBN at {}...".format(searcher.name))
+                    book = searcher.search(value, mode)
+                    if book.author != crwBook.UNKNOWN:
+                        break
+                    else:
+                        print('Not found')
+
             elif mode == "lccn":
-                print("Checking for the LCCN at OpenLibrary.org...")
-                book = openLibraryOrg.search(value, mode)
+                for searcher in lccn_searchers:
+                    print("Checking for the LCCN at {}...".format(searcher.name))
+                    book = searcher.search(value, mode)
+                    if book.author != crwBook.UNKNOWN:
+                        break
+                    else:
+                        print('Not found')
+
             else:
                 print('Oops, unknown mode')
                 book = crwBook.Book()
+
             library.add_book(book)
             print(book)
 
