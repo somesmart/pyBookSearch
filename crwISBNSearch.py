@@ -64,7 +64,7 @@ class LibraryThingCom(BaseSearcher):
 
 
 class OpenISBNCom(BaseSearcher):
-    name = ''
+    name = 'www.openisbn.com'
 
     def __init__(self):
         self.search_url = "http://www.openisbn.com/isbn/"
@@ -75,7 +75,7 @@ class OpenISBNCom(BaseSearcher):
 
 
 class ISBNDBCom(BaseSearcher):
-    name = ''
+    name = 'isbndb.com'
 
     def __init__(self):
         # Call the superclass method to create the book
@@ -83,7 +83,7 @@ class ISBNDBCom(BaseSearcher):
 
 
 class ISBNPlusOrg(BaseSearcher):
-    name = ''
+    name = 'isbnplus.org'
 
     def __init__(self):
         # http://isbnplus.org/api/
