@@ -40,12 +40,14 @@ class Book(object):
     '''
 
     def __init__(self, **kwargs):
+        '''
+        Initialise the book from the given keyword arguments
+        by iterating through bkFields and looking through kwargs
+        for either the property name (f[0]) or the column name (f[1]),
+        with a preference for the property name. If neither are found,
+        UNKNOWN is used as the default.
+        '''
 
-        # Initialise the book from the given keyword arguments
-        # by iterating through bkFields and looking through kwargs
-        # for either the property name (f[0]) or the column name (f[1]),
-        # with a preference for the property name. If neither are found,
-        # UNKNOWN is used as the default.
         for f in bkFields:
             setattr(
                 self,
@@ -55,6 +57,23 @@ class Book(object):
                     kwargs.get(
                         f[1],
                         UNKNOWN)))
+
+    def update_unknowns(self, **kwargs):
+        '''
+        Update the book information from the given keyword arguments,
+        but only if the current book information is UNKNOWN.
+        '''
+
+        for f in bkFields:
+            if getattr(self, f[0]) == UNKNOWN:
+                setattr(
+                    self,
+                    f[0],
+                    kwargs.get(
+                        f[0],
+                        kwargs.get(
+                            f[1],
+                            UNKNOWN)))
 
     @property
     def isbn(self):
