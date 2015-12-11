@@ -3,6 +3,7 @@
 import crwBook
 import json
 import sys
+from enum import IntEnum
 
 try:
     import urllib.request
@@ -19,6 +20,11 @@ try:
 except ImportError:
     print("### Sorry, I can't search for book info")
     HAVE_SOUP = False
+
+
+class Modes(IntEnum):
+    ISBN = 1
+    LCCN = 2
 
 
 class BaseSearcher(object):
@@ -102,9 +108,9 @@ class OpenLibraryOrg(BaseSearcher):
         # Call the superclass method to create the book
         book = super(OpenLibraryOrg, self).search(isbn, mode, book=book)
 
-        if mode == "isbn":
+        if mode == Modes.ISBN:
             full_url = self.isbn_url.format(isbn)
-        elif mode == "lccn":
+        elif mode == Modes.LCCN:
             full_url = self.lccn_url.format(isbn)
 
         # Guard against URL errors
@@ -158,7 +164,7 @@ class OpenLibraryOrg(BaseSearcher):
                         crwBook.UNKNOWN)
 
             else:
-                print ("No openlibrary.org data")
+                print ("\tNo openlibrary.org data")
 
         except urllib.error.URLError as err:
             print("URLError {}".format(err))
@@ -206,9 +212,9 @@ class ISBNSearchOrg(BaseSearcher):
                     # TODO: This is a hack for &
                     # TODO: make html/xml safe
                     book.title = soup.h2.string.replace("&", "&amp;")
-                    print ("title: {}".format(soup.h2.string))
+                    # print ("title: {}".format(soup.h2.string))
                 except AttributeError:
-                    print("### Error retrieving Title.")
+                    # print("### Error retrieving Title.")
                     book.title = crwBook.UNKNOWN
 
                 # Get the remaining values
@@ -222,7 +228,7 @@ class ISBNSearchOrg(BaseSearcher):
                             book.author = label.nextSibling.string.replace(
                                 "&", "&amp;")
                         except AttributeError:
-                            print("### Error retrieving Author.")
+                            # print("### Error retrieving Author.")
                             book.author = crwBook.UNKNOWN
 
                     if label.string == "Authors:":
@@ -232,7 +238,7 @@ class ISBNSearchOrg(BaseSearcher):
                             book.author = label.nextSibling.replace(
                                 "&", "&amp;")
                         except AttributeError:
-                            print("### Error retrieving Author.")
+                            # print("### Error retrieving Author.")
                             book.author = crwBook.UNKNOWN
 
                     if label.string == "Binding:":
