@@ -99,7 +99,7 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
 
     isbnSearchOrg = crwISBNSearch.ISBNSearchOrg()
     openLibraryOrg = crwISBNSearch.OpenLibraryOrg()
-    isbn_searchers = [openLibraryOrg, isbnSearchOrg]
+    isbn_searchers = [isbnSearchOrg, openLibraryOrg]
     lccn_searchers = [openLibraryOrg]
 
     if HAVE_GTK:
