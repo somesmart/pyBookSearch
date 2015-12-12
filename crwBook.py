@@ -81,6 +81,15 @@ class Book(object):
                             f[1],
                             UNKNOWN)))
 
+    def display_unknowns(self, **kwargs):
+        '''
+        Display the unknown fields in a book
+        '''
+
+        for f in bkFields:
+            if getattr(self, f[0]) == UNKNOWN:
+                print(f[0])
+
     @property
     def has_unknowns(self):
         for f in bkFields:
