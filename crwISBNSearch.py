@@ -163,6 +163,18 @@ class OpenLibraryOrg(BaseSearcher):
                         'publish_date',
                         crwBook.UNKNOWN)
 
+                    # Get the identifiers
+                    if 'identifiers' in book_info[k1]:
+                        for i in book_info[k1]['identifiers']['isbn_10']:
+                            book.isbn10 = i
+                        for i in book_info[k1]['identifiers']['isbn_13']:
+                            book.isbn13 = i
+                        try: 
+                            for i in book_info[k1]['identifiers']['lccn']:
+                                book.lccn = i
+                        except KeyError:
+                            pass
+
             else:
                 print ("\tNo openlibrary.org data")
 

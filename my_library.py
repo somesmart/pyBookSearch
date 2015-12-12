@@ -138,6 +138,7 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
 
         def find_book(mode, value):
 
+            fill = args.fill
             # Create an empty book
             book = crwBook.Book(isbn=value)
 
@@ -151,10 +152,21 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
                 # will unconditionally overwrite known fields.
                 book = searcher.search(isbn=value, mode=mode, book=book)
 
-                if book.author != crwBook.UNKNOWN:
+                if book.has_unknowns:
+                    print("No data for ")
+                    book.display_unknowns()
+
+                if book.author != crwBook.UNKNOWN and fill == False:
                     break
+                elif book.has_unknowns and fill:
+                    print("Attempting to fill unknown values...")
                 else:
                     print('\tNot found')
+
+            # if book.has_unknowns:
+            #     for f in book:
+            #         if getattr(self, f[0]) == UNKNOWN:
+            #             print(f[0])
 
             library.add_book(book)
             print(book)
@@ -172,7 +184,7 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
                 print("Searching by {}".format(mode.name))
             elif isbn == 'lccn' or isbn == 'c':
                 mode = Modes.LCCN
-                print('(WIP) - Searching by {}'.format(mode.name))
+                print('Searching by {}'.format(mode.name))
             else:
                 exists, book = library.isbn_exists(isbn)
                 if exists:
