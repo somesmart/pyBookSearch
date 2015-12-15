@@ -273,6 +273,10 @@ class ISBNSearchOrg(BaseSearcher):
                     # print('### Error retrieving Title.')
                     book_data['title'] = crwBook.UNKNOWN
 
+                if book_data['title'][:4] == 'ISBN':
+                    # BOGUS TITLE
+                    book_data['title'] = crwBook.UNKNOWN
+
                 # Get the remaining values
                 for label in soup.find_all('strong'):
 

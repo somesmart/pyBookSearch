@@ -153,7 +153,9 @@ class Book(object):
 
     @isbn.setter
     def isbn(self, value):
-        if value is not None:
+        if value == '' or value is None:
+            self._isbn = UNKNOWN
+        else:
             self._isbn = value.strip()
 
     @property
@@ -165,7 +167,9 @@ class Book(object):
 
     @isbn10.setter
     def isbn10(self, value):
-        if value is not None:
+        if value == '' or value is None:
+            self._isbn10 = UNKNOWN
+        else:
             self._isbn10 = value.strip()
 
     @property
@@ -177,7 +181,9 @@ class Book(object):
 
     @isbn13.setter
     def isbn13(self, value):
-        if value is not None:
+        if value == '' or value is None:
+            self._isbn13 = UNKNOWN
+        else:
             self._isbn13 = value.strip()
 
     @property
@@ -186,7 +192,9 @@ class Book(object):
 
     @lccn.setter
     def lccn(self, value):
-        if value is not None:
+        if value == '' or value is None:
+            self._lccn = UNKNOWN
+        else:
             self._lccn = value.strip()
 
     @property
@@ -195,7 +203,9 @@ class Book(object):
 
     @title.setter
     def title(self, value):
-        if value is not None:
+        if value == '' or value is None:
+            self._title = UNKNOWN
+        else:
             self._title = value.strip()
 
     @property
@@ -204,7 +214,9 @@ class Book(object):
 
     @author.setter
     def author(self, value):
-        if value is not None:
+        if value == '' or value is None:
+            self._author = UNKNOWN
+        else:
             self._author = value.strip()
 
     @property
@@ -213,7 +225,9 @@ class Book(object):
 
     @binding.setter
     def binding(self, value):
-        if value is not None:
+        if value == '' or value is None:
+            self._binding = UNKNOWN
+        else:
             self._binding = value.strip()
 
     @property
@@ -222,7 +236,9 @@ class Book(object):
 
     @publisher.setter
     def publisher(self, value):
-        if value is not None:
+        if value == '' or value is None:
+            self._publisher = UNKNOWN
+        else:
             self._publisher = value.strip()
 
     @property
@@ -231,7 +247,9 @@ class Book(object):
 
     @published.setter
     def published(self, value):
-        if value is not None:
+        if value == '' or value is None:
+            self._published = UNKNOWN
+        else:
             self._published = value.strip()
 
     @property
@@ -240,11 +258,12 @@ class Book(object):
 
     @usedPrice.setter
     def usedPrice(self, value):
-        if value is not None:
-            if isinstance(value, list):
-                self._usedPrice = ','.join(value)
-            else:
-                self._usedPrice = value.strip()
+        if isinstance(value, list):
+            self._usedPrice = ','.join(value)
+        elif value == '' or value is None:
+            self._usedPrice = UNKNOWN
+        else:
+            self._usedPrice = value.strip()
 
     def __repr__(self):
         return 'crwBook.Book(isbn="' + self._isbn + \
