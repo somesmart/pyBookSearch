@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 
+from difflib import SequenceMatcher
+
+try:
+    from fuzzywuzzy import fuzz
+    HAVE_FUZZ = True
+except ImportError:
+    HAVE_FUZZ = False
 
 # The order of fields in bkFields
 (
@@ -30,6 +37,10 @@ bkFields = [
 ]
 
 UNKNOWN = 'Unknown'
+
+# SM = SequenceMatcher(lambda x: x == " ")
+SM = SequenceMatcher()
+FUZZ_FACTOR = 60
 
 
 def check_and_sanitise(s):
@@ -84,6 +95,34 @@ class Book(object):
                         kwargs.get(
                             f[1],
                             UNKNOWN)))
+            else:
+                # Purely for experimental porpoises only at this stage.
+                # We could flag fields that differ wildly from one another
+                # based upon some heuristic. Here's one. Another would be
+                # the Levenshtein distance given by the fuzzywuzzy library.
+
+                new = kwargs.get(f[0], '')
+                if isinstance(new, list):
+                    new = ','.join(new)
+                new = new.lower()
+
+                old = getattr(self, f[0])
+                if isinstance(old, list):
+                    old = ','.join(old)
+                old = old.lower()
+
+                if new != '' and new != old:
+                    if HAVE_FUZZ:
+                        ratio = fuzz.ratio(new, old)
+                        # print('\tfuzz:{}'.format(fuzz.ratio(new, old)))
+                        # print('\tfuzz token sort:{}'.format(fuzz.token_sort_ratio(new, old)))
+                    else:
+                        SM.set_seqs(new, old)
+                        ratio = int(SM.ratio() * 10)
+                    if ratio < FUZZ_FACTOR:
+                        print('Not setting different values for: {}'.format(f[0]))
+                        print('\tnew:{}\n\told:{}\n\tratio:{}'.format(
+                            new, old, ratio))
 
     def display_unknowns(self, **kwargs):
         '''
@@ -201,7 +240,10 @@ class Book(object):
     @usedPrice.setter
     def usedPrice(self, value):
         if value is not None:
-            self._usedPrice = value
+            if isinstance(value, list):
+                self._usedPrice = ','.join(value)
+            else:
+                self._usedPrice = value.strip()
 
     def __repr__(self):
         return 'crwBook.Book(isbn="' + self._isbn + \
