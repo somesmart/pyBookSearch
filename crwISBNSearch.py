@@ -30,7 +30,7 @@ class Modes(IntEnum):
 class BaseSearcher(object):
     name = ''
 
-    def search(self, isbn, mode, book=None):
+    def search(self, isbn, mode, book=None, fill=False):
         if book is None:
             book = crwBook.Book(isbn=str(isbn))
         else:
@@ -42,11 +42,15 @@ class UPCDatabaseCom(BaseSearcher):
     name = 'www.upcdatabase.com'
 
     def __init__(self):
-        self.search_url = "http://www.upcdatabase.com/item/"
+        self.search_url = 'http://www.upcdatabase.com/item/'
 
-    def search(self, isbn, mode, book=None):
+    def search(self, isbn, mode, book=None, fill=False):
         # Call the superclass method to create the book
-        book = super(ISBNSearchOrg, self).search(isbn, mode, book=book)
+        book = super(UPCDatabaseCom, self).search(
+            isbn=isbn,
+            mode=mode,
+            book=book,
+            fill=fill)
         return book
 
 
@@ -61,11 +65,15 @@ class LibraryThingCom(BaseSearcher):
     # https://www.librarything.com/search.php?term=9780004704814
 
     def __init__(self):
-        self.search_url = "http://www.librarything.com/tag/"
+        self.search_url = 'http://www.librarything.com/tag/'
 
-    def search(self, isbn, mode, book=None):
+    def search(self, isbn, mode, book=None, fill=False):
         # Call the superclass method to create the book
-        book = super(ISBNSearchOrg, self).search(isbn, mode, book=book)
+        book = super(LibraryThingCom, self).search(
+            isbn=isbn,
+            mode=mode,
+            book=book,
+            fill=fill)
         return book
 
 
@@ -73,19 +81,33 @@ class OpenISBNCom(BaseSearcher):
     name = 'www.openisbn.com'
 
     def __init__(self):
-        self.search_url = "http://www.openisbn.com/isbn/"
+        self.search_url = 'http://www.openisbn.com/isbn/'
         # http://openisbn.com/isbn/0006174280/
 
-    def search(self, isbn, mode, book=None):
-        book = super(OpenISBNCom, self).search(isbn, mode, book=book)
+    def search(self, isbn, mode, book=None, fill=False):
+        # Call the superclass method to create the book
+        book = super(OpenISBNCom, self).search(
+            isbn=isbn,
+            mode=mode,
+            book=book,
+            fill=fill)
+        return book
 
 
 class ISBNDBCom(BaseSearcher):
     name = 'isbndb.com'
 
     def __init__(self):
+        self.search_url = 'http://isbndb.com/api/v2/json/[your-api-key]/book/'
+
+    def search(self, isbn, mode, book=None, fill=False):
         # Call the superclass method to create the book
-        self.search_url = "http://isbndb.com/api/v2/json/[your-api-key]/book/"
+        book = super(ISBNDBCom, self).search(
+            isbn=isbn,
+            mode=mode,
+            book=book,
+            fill=fill)
+        return book
 
 
 class ISBNPlusOrg(BaseSearcher):
@@ -95,18 +117,31 @@ class ISBNPlusOrg(BaseSearcher):
         # http://isbnplus.org/api/
         self.search_url = ''
 
+    def search(self, isbn, mode, book=None, fill=False):
+        # Call the superclass method to create the book
+        book = super(ISBNPlusOrg, self).search(
+            isbn=isbn,
+            mode=mode,
+            book=book,
+            fill=fill)
+        return book
+
 
 class OpenLibraryOrg(BaseSearcher):
     name = 'openlibrary.org'
 
     def __init__(self):
         # Documentation at https://openlibrary.org/dev/docs/api/books
-        self.lccn_url = "https://openlibrary.org/api/books?bibkeys=LCCN:{}&format=json&jscmd=data"
-        self.isbn_url = "https://openlibrary.org/api/books?bibkeys=ISBN:{}&format=json&jscmd=data"
+        self.lccn_url = 'https://openlibrary.org/api/books?bibkeys=LCCN:{}&format=json&jscmd=data'
+        self.isbn_url = 'https://openlibrary.org/api/books?bibkeys=ISBN:{}&format=json&jscmd=data'
 
-    def search(self, isbn, mode, book=None):
+    def search(self, isbn, mode, book=None, fill=False):
         # Call the superclass method to create the book
-        book = super(OpenLibraryOrg, self).search(isbn, mode, book=book)
+        book = super(OpenLibraryOrg, self).search(
+            isbn=isbn,
+            mode=mode,
+            book=book,
+            fill=fill)
 
         if mode == Modes.ISBN:
             full_url = self.isbn_url.format(isbn)
@@ -120,7 +155,8 @@ class OpenLibraryOrg(BaseSearcher):
             page = urllib.request.urlopen(full_url)
 
             # We expect JSON data
-            book_info = json.loads(page.read().decode())
+            book_json = json.loads(page.read().decode())
+            book_data = {}
 
             # identifiers -> {isbn_10, isbn_13, openlibrary, etc}
             # authors -> list of {name, url}
@@ -130,58 +166,60 @@ class OpenLibraryOrg(BaseSearcher):
             # subtitle -> string
 
             # If there are no keys, there is no data
-            if len(book_info.keys()) > 0:
+            if len(book_json.keys()) > 0:
 
-                for k1 in book_info.keys():
+                for k1 in book_json.keys():
 
                     # print('OpenLibraryOrg key: {}'.format(k1))
 
                     # Get the title and subtitle, join them
-                    book.title = book_info[k1].get(
+                    book_data['title'] = book_json[k1].get(
                         'title',
                         crwBook.UNKNOWN)
-                    subtitle = book_info[k1].get('subtitle', '')
+                    subtitle = book_json[k1].get('subtitle', '')
                     if subtitle != '':
-                        book.title = '{} : {}'.format(book.title, subtitle)
+                        book_data['title'] = '{} : {}'.format(book_data['title'], subtitle)
 
                     # Concatenate all the authors
-                    if 'authors' in book_info[k1]:
+                    if 'authors' in book_json[k1]:
                         authors = ';'.join(
-                            [a['name'] for a in book_info[k1]['authors']])
+                            [a['name'] for a in book_json[k1]['authors']])
                         if authors != '':
-                            book.author = authors
+                            book_data['author'] = authors
 
                     # Concatenate all the publishers
-                    if 'publishers' in book_info[k1]:
+                    if 'publishers' in book_json[k1]:
                         publishers = ';'.join(
-                            [p['name'] for p in book_info[k1]['publishers']])
+                            [p['name'] for p in book_json[k1]['publishers']])
                         if publishers != '':
-                            book.publisher = publishers
+                            book_data['publisher'] = publishers
 
                     # Get the published date
-                    book.published = book_info[k1].get(
+                    book_data['published'] = book_json[k1].get(
                         'publish_date',
                         crwBook.UNKNOWN)
 
                     # Get the identifiers
-                    if 'identifiers' in book_info[k1]:
-                        for i in book_info[k1]['identifiers']['isbn_10']:
-                            book.isbn10 = i
-                        for i in book_info[k1]['identifiers']['isbn_13']:
-                            book.isbn13 = i
-                        try: 
-                            for i in book_info[k1]['identifiers']['lccn']:
-                                book.lccn = i
-                        except KeyError:
-                            pass
+                    if 'identifiers' in book_json[k1]:
+                        for i in book_json[k1]['identifiers'].get('isbn_10', []):
+                            book_data['isbn10'] = i
+                        for i in book_json[k1]['identifiers'].get('isbn_13', []):
+                            book_data['isbn13'] = i
+                        for i in book_json[k1]['identifiers'].get('lccn', []):
+                            book_data['lccn'] = i
+
+                if fill:
+                    book.update_unknowns(**book_data)
+                else:
+                    book.update(**book_data)
 
             else:
-                print ("\tNo openlibrary.org data")
+                print ('\tNo openlibrary.org data')
 
         except urllib.error.URLError as err:
-            print("URLError {}".format(err))
+            print('URLError {}'.format(err))
         except:
-            print("Unexpected error:", sys.exc_info()[0])
+            print('Unexpected error:', sys.exc_info()[0])
             raise
 
         return book
@@ -191,14 +229,20 @@ class ISBNSearchOrg(BaseSearcher):
     name = 'www.isbnsearch.org'
 
     def __init__(self):
-        self.search_url = "http://www.isbnsearch.org/isbn/"
+        self.search_url = 'http://www.isbnsearch.org/isbn/'
 
         # Only process the core content division
-        self.bookinfo_filter = SoupStrainer("div")
+        self.bookinfo_filter = SoupStrainer('div')
 
-    def search(self, isbn, mode, book=None):
+    def search(self, isbn, mode, book=None, fill=False):
         # Call the superclass method to create the book
-        book = super(ISBNSearchOrg, self).search(isbn, mode, book=book)
+        book = super(ISBNSearchOrg, self).search(
+            isbn=isbn,
+            mode=mode,
+            book=book,
+            fill=fill)
+
+        book_data = {}
 
         if HAVE_SOUP:
             full_url = self.search_url + str(isbn)
@@ -212,70 +256,81 @@ class ISBNSearchOrg(BaseSearcher):
 
                 soup = BeautifulSoup(
                     page.read(),
-                    "html.parser",
+                    'html.parser',
                     parse_only=self.bookinfo_filter)
 
                 # get the original encoding
                 # original_encoding = soup.originalEncoding
-                # print ("encoding: ".format(original_encoding))
+                # print ('encoding: '.format(original_encoding))
 
                 # Get the title, which may fail
                 try:
                     # TODO: This is a hack for &
                     # TODO: make html/xml safe
-                    book.title = soup.h2.string.replace("&", "&amp;")
-                    # print ("title: {}".format(soup.h2.string))
+                    book_data['title'] = soup.h2.string.replace('&', '&amp;')
+                    # print ('title: {}'.format(soup.h2.string))
                 except AttributeError:
-                    # print("### Error retrieving Title.")
-                    book.title = crwBook.UNKNOWN
+                    # print('### Error retrieving Title.')
+                    book_data['title'] = crwBook.UNKNOWN
+
+                if book_data['title'][:4] == 'ISBN':
+                    # BOGUS TITLE
+                    book_data['title'] = crwBook.UNKNOWN
 
                 # Get the remaining values
                 for label in soup.find_all('strong'):
 
                     # Get the author
-                    if label.string == "Author:":
+                    if label.string == 'Author:':
                         try:
                             # TODO: This is a hack for &
                             # TODO: make html/xml safe
-                            book.author = label.nextSibling.string.replace(
-                                "&", "&amp;")
+                            book_data['author'] = label.nextSibling.string.replace(
+                                '&', '&amp;')
                         except AttributeError:
-                            # print("### Error retrieving Author.")
-                            book.author = crwBook.UNKNOWN
+                            # print('### Error retrieving Author.')
+                            book_data['author'] = crwBook.UNKNOWN
 
-                    if label.string == "Authors:":
+                    if label.string == 'Authors:':
                         try:
                             # TODO: This is a hack for &
                             # TODO: make html/xml safe
-                            book.author = label.nextSibling.replace(
-                                "&", "&amp;")
+                            book_data['author'] = label.nextSibling.replace(
+                                '&', '&amp;')
                         except AttributeError:
-                            # print("### Error retrieving Author.")
-                            book.author = crwBook.UNKNOWN
+                            # print('### Error retrieving Author.')
+                            book_data['author'] = crwBook.UNKNOWN
 
-                    if label.string == "Binding:":
+                    if label.string == 'Binding:':
                         # TODO: This is a hack for &
-                        book.binding = label.nextSibling.replace(
-                            "&", "&amp;")
+                        book_data['binding'] = label.nextSibling.replace(
+                            '&', '&amp;')
 
-                    if label.string == "Publisher:":
+                    if label.string == 'Publisher:':
                         # TODO: This is a hack for &
-                        book.publisher = label.nextSibling.replace(
-                            "&", "&amp;")
+                        book_data['publisher'] = label.nextSibling.replace(
+                            '&', '&amp;')
 
-                    if label.string == "Published:":
+                    if label.string == 'Published:':
                         # TODO: This is a hack for &
-                        book.published = label.nextSibling.replace(
-                            "&", "&amp;")
+                        book_data['published'] = label.nextSibling.replace(
+                            '&', '&amp;')
 
-                # pull the sixth record from the price list (gets the first used price)
+                # pull the sixth record from the price list
+                # (gets the first used price)
                 try:
-                    book.usedPrice = soup.find_all('table', class_='prices')[1].tbody.tr.td.find_next_sibling(class_='price').p.a.contents
+                    book_data['usedPrice'] = soup.find_all('table', class_='prices')[1].tbody.tr.td.find_next_sibling(class_='price').p.a.contents
                 # if there isn't a sixth record just error out
                 except IndexError:
-                    book.usedPrice = crwBook.UNKNOWN
+                    book_data['usedPrice'] = crwBook.UNKNOWN
 
             except urlexception as err:
-                print("ISBN not found at www.isbnsearch.org: {}".format(err.code))
+                print('ISBN not found at www.isbnsearch.org: {}'.format(
+                    err.code))
+
+        if fill:
+            book.update_unknowns(**book_data)
+        else:
+            book.update(**book_data)
 
         return book

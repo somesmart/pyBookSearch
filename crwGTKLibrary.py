@@ -5,6 +5,7 @@ import crwLibrary
 from gi.repository import Gtk, GObject
 from crwGTKScannerEntry import GTKScannerEntry
 from crwGTKBookEntry import GTKBookEntry
+from crwISBNSearch import Modes
 
 (
     COLUMN_ISBN,
@@ -31,12 +32,11 @@ HIGHLIGHT = "<span background='yellow' foreground='black'>{}</span>"
 
 
 class GTKLibrary(Gtk.Window, crwLibrary.Library):
-    def __init__(self, filename, searcher=None, parent=None, delimiter='|'):
+    def __init__(self, filename, searchers=None, mode=Modes.ISBN, parent=None, delimiter='|'):
         """Create a window with a list and a couple of buttons."""
 
-        self.web_searcher_list = []
-        if searcher is not None:
-            self.web_searcher_list.append(searcher)
+        self.searchers = searchers
+        self.search_mode = mode
 
         # create window
         Gtk.Window.__init__(self)
@@ -288,21 +288,27 @@ class GTKLibrary(Gtk.Window, crwLibrary.Library):
         self.save_to_file()
         Gtk.main_quit()
 
-    def add_web_searcher(self, web_searcher):
-        self.web_searcher_list.append(web_searcher)
+    def set_mode(self, mode):
+        self.search_mode = mode
+
+    def add_web_searcher(self, searcher, mode):
+        self.searchers[mode].append(searcher)
 
     def search_isbn(self, isbn, add=True):
-        if len(self.web_searcher_list) > 0:
-            # TODO: Process list properly
-            for web_searcher in self.web_searcher_list:
-                book_description = web_searcher.search(isbn)
-                print(book_description)
+        book = None
+
+        for searcher in self.searchers[self.search_mode]:
+            book = searcher.search(
+                isbn=isbn,
+                mode=self.search_mode,
+                book=book)
+            print(book)
             if add:
-                self.add_book(book_description)
-        else:
-            if add:
-                self.add_book(
-                    crwBook.Book(isbn=isbn))
+                self.add_book(book)
+
+        if book is None and add:
+            self.add_book(
+                crwBook.Book(isbn=isbn))
 
     def add_book(self, book):
         # Call the super class function

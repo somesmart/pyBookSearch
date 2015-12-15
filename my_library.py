@@ -150,29 +150,31 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
 
                 # TODO: This doesn't yet cope will fill mode as it
                 # will unconditionally overwrite known fields.
-                book = searcher.search(isbn=value, mode=mode, book=book)
+                book = searcher.search(
+                    isbn=value,
+                    mode=mode,
+                    book=book,
+                    fill=fill)
 
                 if book.has_unknowns:
-                    print("No data for ")
                     book.display_unknowns()
 
-                if book.author != crwBook.UNKNOWN and fill == False:
+                if book.author != crwBook.UNKNOWN and not fill:
                     break
                 elif book.has_unknowns and fill:
                     print("Attempting to fill unknown values...")
                 else:
                     print('\tNot found')
 
-            # if book.has_unknowns:
-            #     for f in book:
-            #         if getattr(self, f[0]) == UNKNOWN:
-            #             print(f[0])
-
             library.add_book(book)
             print(book)
 
         mode = Modes.ISBN
-        isbn = input("Enter {}:".format(mode.name))
+        try:
+            isbn = input("Enter {}:".format(mode.name))
+        except EOFError:
+            # When using redirected input, don't bomb out on EOF
+            isbn = 'q'
 
         while (isbn != '0') and (isbn != 'q') and (isbn != 'quit'):
             if isbn == "save" or isbn == 's':
@@ -194,7 +196,11 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
                         find_book(mode, isbn)
                 else:
                     find_book(mode, isbn)
-            isbn = input("Enter {}:".format(mode.name))
+            try:
+                isbn = input("Enter {}:".format(mode.name))
+            except EOFError:
+                # When using redirected input, don't bomb out on EOF
+                isbn = 'q'
 
         # Save before exiting
         library.save_to_file()
