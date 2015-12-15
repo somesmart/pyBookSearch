@@ -3,6 +3,7 @@
 
 import crwBook
 import csv
+import sys
 
 
 class Library(object):
@@ -69,7 +70,11 @@ class Library(object):
             with open(self.filename, "rt") as library_file:
 
                 # Detect the dialect
-                dialect = csv.Sniffer().sniff(library_file.read(2048))
+                try:
+                    dialect = csv.Sniffer().sniff(library_file.read(2048))
+                except csv.Error as e:
+                    sys.exit('{}'.format(e))
+
                 print('Detected delimiter:', dialect.delimiter)
                 # print('doublequote', dialect.doublequote)
                 # print('escapechar', dialect.escapechar)
