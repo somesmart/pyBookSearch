@@ -83,6 +83,7 @@ class Book(object):
         but only if the current book information is UNKNOWN.
         '''
         # print('update_unknowns')
+        global HAVE_FUZZ
 
         for f in bkFields:
             if getattr(self, f[0]) == UNKNOWN:

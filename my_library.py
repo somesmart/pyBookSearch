@@ -170,7 +170,11 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
             print(book)
 
         mode = Modes.ISBN
-        isbn = input("Enter {}:".format(mode.name))
+        try:
+            isbn = input("Enter {}:".format(mode.name))
+        except EOFError:
+            # When using redirected input, don't bomb out on EOF
+            isbn = 'q'
 
         while (isbn != '0') and (isbn != 'q') and (isbn != 'quit'):
             if isbn == "save" or isbn == 's':
@@ -192,7 +196,11 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
                         find_book(mode, isbn)
                 else:
                     find_book(mode, isbn)
-            isbn = input("Enter {}:".format(mode.name))
+            try:
+                isbn = input("Enter {}:".format(mode.name))
+            except EOFError:
+                # When using redirected input, don't bomb out on EOF
+                isbn = 'q'
 
         # Save before exiting
         library.save_to_file()
