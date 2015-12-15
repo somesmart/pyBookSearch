@@ -205,6 +205,8 @@ class OpenLibraryOrg(BaseSearcher):
                             book_data['isbn10'] = i
                         for i in book_json[k1]['identifiers'].get('isbn_13', []):
                             book_data['isbn13'] = i
+                            if mode == Modes.LCCN:
+                                book_data['isbn'] = i
                         for i in book_json[k1]['identifiers'].get('lccn', []):
                             book_data['lccn'] = i
 
