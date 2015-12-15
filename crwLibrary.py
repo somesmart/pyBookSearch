@@ -69,7 +69,7 @@ class Library(object):
             with open(self.filename, "rt") as library_file:
 
                 # Detect the dialect
-                dialect = csv.Sniffer().sniff(library_file.read(1024))
+                dialect = csv.Sniffer().sniff(library_file.read(2048))
                 print('Detected delimiter:', dialect.delimiter)
                 # print('doublequote', dialect.doublequote)
                 # print('escapechar', dialect.escapechar)
