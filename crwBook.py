@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 
-from html import entities
-import collections
-
 
 # The order of fields in bkFields
 (
@@ -53,8 +50,13 @@ class Book(object):
         with a preference for the property name. If neither are found,
         UNKNOWN is used as the default.
         '''
+        self.update(**kwargs)
+        # print('Book {} created'.format(id(self)))
 
+    def update(self, **kwargs):
+        # print('update')
         for f in bkFields:
+            # print('setting {}'.format(f[0]))
             setattr(
                 self,
                 f[0],
@@ -69,9 +71,11 @@ class Book(object):
         Update the book information from the given keyword arguments,
         but only if the current book information is UNKNOWN.
         '''
+        # print('update_unknowns')
 
         for f in bkFields:
             if getattr(self, f[0]) == UNKNOWN:
+                # print('updating {}'.format(f[0]))
                 setattr(
                     self,
                     f[0],
@@ -85,13 +89,16 @@ class Book(object):
         '''
         Display the unknown fields in a book
         '''
-
+        print("No data for:")
         for f in bkFields:
             if getattr(self, f[0]) == UNKNOWN:
-                print(f[0])
+                print('\t', f[0])
 
     @property
     def has_unknowns(self):
+        '''
+        Returns True if the book has any fields matching UNKNOWN.
+        '''
         for f in bkFields:
             if getattr(self, f[0]) == UNKNOWN:
                 return True
@@ -99,6 +106,9 @@ class Book(object):
 
     @property
     def isbn(self):
+        '''
+        The ISBN or LCCN used in the search.
+        '''
         return self._isbn
 
     @isbn.setter
@@ -108,6 +118,9 @@ class Book(object):
 
     @property
     def isbn10(self):
+        '''
+        The ISBN10 value returned from the search.
+        '''
         return self._isbn10
 
     @isbn10.setter
@@ -117,6 +130,9 @@ class Book(object):
 
     @property
     def isbn13(self):
+        '''
+        The ISBN13 value returned from the search.
+        '''
         return self._isbn13
 
     @isbn13.setter
