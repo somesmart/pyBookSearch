@@ -77,7 +77,7 @@ class Book(object):
                         f[1],
                         UNKNOWN)))
 
-    def update_unknowns(self, **kwargs):
+    def update_unknowns(self, resolver=None, **kwargs):
         '''
         Update the book information from the given keyword arguments,
         but only if the current book information is UNKNOWN.
@@ -115,15 +115,21 @@ class Book(object):
                 if new != '' and new != old:
                     if HAVE_FUZZ:
                         ratio = fuzz.ratio(new, old)
-                        # print('\tfuzz:{}'.format(fuzz.ratio(new, old)))
-                        # print('\tfuzz token sort:{}'.format(fuzz.token_sort_ratio(new, old)))
+                        # print('\tfuzz:{}'.format(
+                        #     fuzz.ratio(new, old)))
+                        # print('\tfuzz token sort:{}'.format(
+                        #     fuzz.token_sort_ratio(new, old)))
                     else:
                         SM.set_seqs(new, old)
                         ratio = int(SM.ratio() * 10)
                     if ratio < FUZZ_FACTOR:
-                        print('Not setting different values for: {}'.format(f[0]))
-                        print('\tnew:{}\n\told:{}\n\tratio:{}'.format(
-                            new, old, ratio))
+                        if resolver is not None:
+                            choice = resolver(f[0], new, old)
+                            setattr(self, f[0], choice)
+                        else:
+                            print('Not setting different values for: {}'.format(f[0]))
+                            print('\tnew:{}\n\told:{}\n\tratio:{}'.format(
+                                new, old, ratio))
 
     def display_unknowns(self, **kwargs):
         '''
@@ -272,9 +278,13 @@ class Book(object):
                '")'
 
     def __str__(self):
-        return "ISBN:" + self._isbn + \
-               ", Title:" + self._title + \
-               ", Author:" + self._author
+        # return "ISBN:" + self._isbn + \
+        #        ", Title:" + self._title + \
+        #        ", Author:" + self._author
+        retval = 'ISBN:' + self._isbn + '\n'
+        for f in bkFields[1:]:
+            retval += '\t{}: {}\n'.format(f[1], getattr(self, f[0]))
+        return retval
 
 if __name__ == "__main__":
     book = Book(

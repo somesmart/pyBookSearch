@@ -30,6 +30,12 @@ class Modes(IntEnum):
 class BaseSearcher(object):
     name = ''
 
+    def __init__(self):
+        self._resolver = None
+
+    def set_resolver(self, resolver):
+        self._resolver = resolver
+
     def search(self, isbn, mode, book=None, fill=False):
         if book is None:
             book = crwBook.Book(isbn=str(isbn))
@@ -42,6 +48,7 @@ class UPCDatabaseCom(BaseSearcher):
     name = 'www.upcdatabase.com'
 
     def __init__(self):
+        super(UPCDatabaseCom, self).__init__()
         self.search_url = 'http://www.upcdatabase.com/item/'
 
     def search(self, isbn, mode, book=None, fill=False):
@@ -65,6 +72,7 @@ class LibraryThingCom(BaseSearcher):
     # https://www.librarything.com/search.php?term=9780004704814
 
     def __init__(self):
+        super(LibraryThingCom, self).__init__()
         self.search_url = 'http://www.librarything.com/tag/'
 
     def search(self, isbn, mode, book=None, fill=False):
@@ -81,6 +89,7 @@ class OpenISBNCom(BaseSearcher):
     name = 'www.openisbn.com'
 
     def __init__(self):
+        super(OpenISBNCom, self).__init__()
         self.search_url = 'http://www.openisbn.com/isbn/'
         # http://openisbn.com/isbn/0006174280/
 
@@ -98,6 +107,7 @@ class ISBNDBCom(BaseSearcher):
     name = 'isbndb.com'
 
     def __init__(self):
+        super(ISBNDBCom, self).__init__()
         self.search_url = 'http://isbndb.com/api/v2/json/[your-api-key]/book/'
 
     def search(self, isbn, mode, book=None, fill=False):
@@ -114,6 +124,7 @@ class ISBNPlusOrg(BaseSearcher):
     name = 'isbnplus.org'
 
     def __init__(self):
+        super(ISBNPlusOrg, self).__init__()
         # http://isbnplus.org/api/
         self.search_url = ''
 
@@ -131,6 +142,7 @@ class OpenLibraryOrg(BaseSearcher):
     name = 'openlibrary.org'
 
     def __init__(self):
+        super(OpenLibraryOrg, self).__init__()
         # Documentation at https://openlibrary.org/dev/docs/api/books
         self.lccn_url = 'https://openlibrary.org/api/books?bibkeys=LCCN:{}&format=json&jscmd=data'
         self.isbn_url = 'https://openlibrary.org/api/books?bibkeys=ISBN:{}&format=json&jscmd=data'
@@ -209,7 +221,7 @@ class OpenLibraryOrg(BaseSearcher):
                             book_data['lccn'] = i
 
                 if fill:
-                    book.update_unknowns(**book_data)
+                    book.update_unknowns(resolver=self._resolver, **book_data)
                 else:
                     book.update(**book_data)
 
@@ -229,6 +241,7 @@ class ISBNSearchOrg(BaseSearcher):
     name = 'www.isbnsearch.org'
 
     def __init__(self):
+        super(ISBNSearchOrg, self).__init__()
         self.search_url = 'http://www.isbnsearch.org/isbn/'
 
         # Only process the core content division
@@ -329,7 +342,7 @@ class ISBNSearchOrg(BaseSearcher):
                     err.code))
 
         if fill:
-            book.update_unknowns(**book_data)
+            book.update_unknowns(resolver=self._resolver, **book_data)
         else:
             book.update(**book_data)
 

@@ -36,6 +36,18 @@ TEXT_HELP = '''
 '''
 
 
+def resolver(field, first, second):
+    print('CONFLICT in {}'.format(field))
+    print('\t1: {}'.format(first))
+    print('\t2: {}'.format(second))
+    number = input('Please specify your choice:')
+    if number == '1':
+        choice = first
+    else:
+        choice = second
+    return choice
+
+
 def main(argv=None):
     '''Command line options.'''
 
@@ -129,6 +141,8 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
             delimiter=args.delimiter)
         Gtk.main()
     else:
+        isbnSearchOrg.set_resolver(resolver)
+        openLibraryOrg.set_resolver(resolver)
         library = crwLibrary.Library(
             filename=args.libfile,
             delimiter=args.delimiter)
