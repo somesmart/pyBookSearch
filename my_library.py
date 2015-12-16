@@ -166,8 +166,6 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
                 print("Checking for the {} at {}... ".format(
                     mode.name, searcher.name))
 
-                # TODO: This doesn't yet cope will fill mode as it
-                # will unconditionally overwrite known fields.
                 book = searcher.search(
                     isbn=value,
                     mode=mode,
@@ -183,6 +181,9 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
                     print("\tAttempting to fill unknown values...")
                 else:
                     print('\tNot found')
+
+            if book.title == crwBook.UNKNOWN and not args.noquestions:
+                book.title = input('Enter Unknown title:')
 
             library.add_book(book)
             print(book)

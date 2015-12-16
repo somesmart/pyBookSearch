@@ -230,7 +230,7 @@ class OpenLibraryOrg(BaseSearcher):
             else:
                 print('\tISBN not found at www.openlibrary.org')
                 book_data['title'] = crwBook.UNKNOWN
-                book.unknown_title()
+                # book.unknown_title()
 
         except urllib.error.URLError as err:
             print('URLError {}'.format(err))
@@ -344,7 +344,7 @@ class ISBNSearchOrg(BaseSearcher):
                 print('\tISBN not found at www.isbnsearch.org: {}'.format(
                     err.code))
                 book_data['title'] = crwBook.UNKNOWN
-                book.unknown_title()
+                # book.unknown_title()
 
         if fill:
             book.update_unknowns(resolver=self._resolver, **book_data)
