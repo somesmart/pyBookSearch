@@ -23,9 +23,6 @@ __version__ = 0.2
 __date__ = '2015-12-10'
 __updated__ = '2015-12-10'
 
-DEBUG = 0
-TESTRUN = 0
-PROFILE = 0
 
 TEXT_HELP = '''
 [h | help]     - show this help
@@ -34,6 +31,17 @@ TEXT_HELP = '''
 [i | isbn]     - ISBN search mode (default)
 [c | lccn]     - LCCN search mode
 '''
+
+
+def text_resolver(field, first, second):
+    print('CONFLICT in {}'.format(field))
+    print('\t1: {}'.format(first))
+    print('\t2: {}'.format(second))
+    number = input('Please specify your choice:')
+    if number == '1':
+        return first
+    else:
+        return second
 
 
 def main(argv=None):
@@ -89,6 +97,12 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
             dest="requery",
             default=False,
             help="automatically requery the entire library file, filling in missing details (default: %(default)s)")
+        parser.add_argument(
+            "-n", "--no-questions",
+            action="store_true",
+            dest="noquestions",
+            default=False,
+            help="just do it (default: %(default)s)")
 
         # process options
         args = parser.parse_args()
@@ -105,6 +119,7 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
 
         print("Fill mode:", args.fill)
         print("Re-query:", args.requery)
+        print("No-questions:", args.noquestions)
 
     except Exception as e:
         indent = len(program_name) * " "
@@ -129,6 +144,9 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
             delimiter=args.delimiter)
         Gtk.main()
     else:
+        if not args.noquestions:
+            isbnSearchOrg.set_resolver(text_resolver)
+            openLibraryOrg.set_resolver(text_resolver)
         library = crwLibrary.Library(
             filename=args.libfile,
             delimiter=args.delimiter)
@@ -148,8 +166,6 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
                 print("Checking for the {} at {}... ".format(
                     mode.name, searcher.name))
 
-                # TODO: This doesn't yet cope will fill mode as it
-                # will unconditionally overwrite known fields.
                 book = searcher.search(
                     isbn=value,
                     mode=mode,
@@ -165,6 +181,9 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
                     print("\tAttempting to fill unknown values...")
                 else:
                     print('\tNot found')
+
+            if book.title == crwBook.UNKNOWN and not args.noquestions:
+                book.title = input('Enter Unknown title:')
 
             library.add_book(book)
             print(book)
@@ -188,14 +207,20 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
                 mode = Modes.LCCN
                 print('Searching by {}'.format(mode.name))
             else:
-                exists, book = library.isbn_exists(isbn)
-                if exists:
-                    print(book)
-                    add_again = input("### Book exists, do you want to search again?")
-                    if add_again == "y":
-                        find_book(mode, isbn)
-                else:
+                # TODO:
+                if args.noquestions:
                     find_book(mode, isbn)
+                else:
+                    exists, book = library.isbn_exists(isbn)
+                    if exists:
+                        print(book)
+                        add_again = input("### Book exists, do you want to search again?")
+                        if add_again == "y":
+                            find_book(mode, isbn)
+                    else:
+                        find_book(mode, isbn)
+
+            # Ask for the next input
             try:
                 isbn = input("Enter {}:".format(mode.name))
             except EOFError:
@@ -206,20 +231,4 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
         library.save_to_file()
 
 if __name__ == "__main__":
-    if DEBUG:
-        sys.argv.append("-h")
-    if TESTRUN:
-        import doctest
-        doctest.testmod()
-    if PROFILE:
-        import cProfile
-        import pstats
-        profile_filename = 'show_db_profile.txt'
-        cProfile.run('main()', profile_filename)
-        statsfile = open("profile_stats.txt", "wb")
-        p = pstats.Stats(profile_filename, stream=statsfile)
-        stats = p.strip_dirs().sort_stats('cumulative')
-        stats.print_stats()
-        statsfile.close()
-        sys.exit(0)
     sys.exit(main())
