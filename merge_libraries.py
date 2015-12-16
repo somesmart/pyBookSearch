@@ -1,0 +1,90 @@
+#!/usr/bin/env /usr/bin/python3
+
+import sys
+import os
+import argparse
+import csv
+
+import crwBook
+
+
+def resolver(field, first, second):
+    print('CONFLICT in {}'.format(field))
+    print('\t1: {}'.format(first))
+    print('\t2: {}'.format(second))
+    number = input('Please specify your choice:')
+    if number == '1':
+        choice = first
+    else:
+        choice = second
+    return choice
+
+
+def read_library(filename, books, books_no_id):
+    try:
+        with open(filename, "rt") as library_file:
+
+            # Detect the dialect
+            try:
+                dialect = csv.Sniffer().sniff(library_file.read(2048))
+            except csv.Error as e:
+                sys.exit('{}'.format(e))
+
+            print('Detected delimiter:', dialect.delimiter)
+
+            # Go back to start of file
+            library_file.seek(0)
+
+            # The first line of the file is to be used for key names
+            book_reader = csv.DictReader(library_file, dialect=dialect)
+
+            for book in book_reader:
+                isbn = book['ISBN']
+                new_book = crwBook.Book(**book)
+                if isbn in ['', 'NA', crwBook.UNKNOWN]:
+                    books_no_id.append(new_book)
+                else:
+                    if isbn in books:
+                        print('\nDuplicate book found')
+                        # print(books[isbn])
+                        # print(new_book)
+                        books[isbn].update_unknowns(resolver=resolver, **book)
+                        print(books[isbn])
+                    else:
+                        books[isbn] = new_book
+
+    except IOError:
+        print("### No library file {}.".format(filename))
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog='''
+Concatenates two library files add_argument removes duplicates after
+merging identical books to remove Unknown values.''',
+        description='Merge two libraries')
+
+    parser.add_argument(
+        dest="libfile1",
+        default=None,
+        help="first library file (default: %(default)s)",
+        metavar="file1")
+
+    parser.add_argument(
+        dest="libfile2",
+        default=None,
+        help="second library file (default: %(default)s)",
+        metavar="file2")
+
+    # process options
+    args = parser.parse_args()
+
+    books_no_id = []
+    books = {}
+
+    read_library(args.libfile1, books, books_no_id)
+    read_library(args.libfile2, books, books_no_id)
+
+if __name__ == '__main__':
+    main()
