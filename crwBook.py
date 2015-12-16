@@ -8,7 +8,8 @@ try:
 except ImportError:
     HAVE_FUZZ = False
 
-# The order of fields in bkFields
+# The order of fields in bkFields.
+# WARNING: If you change this, change the list below
 (
     bkISBN,
     bkISBN10,
@@ -23,6 +24,7 @@ except ImportError:
 ) = list(range(10))
 
 # A mapping from Book properties to CSV Column Titles.
+# WARNING: If you change this, change the list above.
 bkFields = [
     ('isbn', "ISBN"),
     ('isbn10', "ISBN10"),
@@ -36,10 +38,15 @@ bkFields = [
     ('usedPrice', "UsedPrice")
 ]
 
+# The string used for unknown book fields.
 UNKNOWN = 'Unknown'
 
-# SM = SequenceMatcher(lambda x: x == " ")
+# A sequence matcher from the standard library to determine if
+# two conflicting book field values are worth bothering the user
+# about.
 SM = SequenceMatcher()
+
+# A fuzz factor that determines the tolerance for the diff
 FUZZ_FACTOR = 60
 
 
@@ -50,7 +57,8 @@ def check_and_sanitise(s):
 
 class Book(object):
     '''
-    A class to hold book information.
+    A class to hold book information. The information held is based
+    upon the bkFields list of tuples.
     '''
 
     def __init__(self, **kwargs):
@@ -62,12 +70,16 @@ class Book(object):
         UNKNOWN is used as the default.
         '''
         self.update(**kwargs)
-        # print('Book {} created'.format(id(self)))
 
     def update(self, **kwargs):
-        # print('update')
+        '''
+        Update the book from the given keyword arguments
+        by iterating through bkFields and looking through kwargs
+        for either the property name (f[0]) or the column name (f[1]),
+        with a preference for the property name. If neither are found,
+        UNKNOWN is used as the default.
+        '''
         for f in bkFields:
-            # print('setting {}'.format(f[0]))
             setattr(
                 self,
                 f[0],
@@ -82,12 +94,11 @@ class Book(object):
         Update the book information from the given keyword arguments,
         but only if the current book information is UNKNOWN.
         '''
-        # print('update_unknowns')
         global HAVE_FUZZ
 
         for f in bkFields:
             if getattr(self, f[0]) == UNKNOWN:
-                # print('updating {}'.format(f[0]))
+                # We have an UNKNOWN value, just update it
                 setattr(
                     self,
                     f[0],
@@ -97,10 +108,8 @@ class Book(object):
                             f[1],
                             UNKNOWN)))
             else:
-                # Purely for experimental porpoises only at this stage.
-                # We could flag fields that differ wildly from one another
-                # based upon some heuristic. Here's one. Another would be
-                # the Levenshtein distance given by the fuzzywuzzy library.
+                # Get the new an old values, do a fuzzy comparison,
+                # and resolve (or not) based on user input.
 
                 new = kwargs.get(f[0], '')
                 if isinstance(new, list):
@@ -115,10 +124,6 @@ class Book(object):
                 if new != '' and new != old:
                     if HAVE_FUZZ:
                         ratio = fuzz.ratio(new, old)
-                        # print('\tfuzz:{}'.format(
-                        #     fuzz.ratio(new, old)))
-                        # print('\tfuzz token sort:{}'.format(
-                        #     fuzz.token_sort_ratio(new, old)))
                     else:
                         SM.set_seqs(new, old)
                         ratio = int(SM.ratio() * 10)
@@ -194,6 +199,9 @@ class Book(object):
 
     @property
     def lccn(self):
+        '''
+        The LCCN value returned from the search.
+        '''
         return self._lccn
 
     @lccn.setter
@@ -205,6 +213,9 @@ class Book(object):
 
     @property
     def title(self):
+        '''
+        The Title of the book.
+        '''
         return self._title
 
     @title.setter
@@ -278,9 +289,9 @@ class Book(object):
                '")'
 
     def __str__(self):
-        # return "ISBN:" + self._isbn + \
-        #        ", Title:" + self._title + \
-        #        ", Author:" + self._author
+        '''
+        Return a string showing all fields.
+        '''
         retval = 'ISBN:' + self._isbn + '\n'
         for f in bkFields[1:]:
             retval += '\t{}: {}\n'.format(f[1], getattr(self, f[0]))
