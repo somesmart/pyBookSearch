@@ -26,14 +26,16 @@ command line options. At this time the two main options are:
     Use text mode (not the GTK interface)
 *	-d DELIMITER or --delimit=DELIMITER
 	Specify the delimiter to use in the CSV file (default: |)
+*   -f or --fill
+    Fill all book fields from as many sources as is needed
+*   -r or --requery
+    Not yet implemented. Re-query all books in the library
+*   -n or --no-questions
+    Don't ask any questions, useful for redirected input
 
 ## Dependencies
 
 *   bs4 (BeautifulSoup, SoupStrainer)
-*   collections
-*   csv
 *   (optional) gi.repository (Gtk, GObject)
-*   html (entities)
-*   json
-*   argparse (ArgumentParser)
-*   urllib (request, error, parse)
+*   (optional) fuzzywuzzy
+*   various stuff from the standard library
