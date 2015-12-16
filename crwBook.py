@@ -145,6 +145,10 @@ class Book(object):
             if getattr(self, f[0]) == UNKNOWN:
                 print('\t', f[0])
 
+    def unknown_title(self):
+        if self.title == UNKNOWN:
+            self.title = input('Enter Unknown title:')
+
     @property
     def has_unknowns(self):
         '''

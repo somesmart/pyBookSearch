@@ -180,7 +180,7 @@ http://www.apache.org/licenses/LICENSE-2.0""".format(
                 if book.author != crwBook.UNKNOWN and not fill:
                     break
                 elif book.has_unknowns and fill:
-                    print("Attempting to fill unknown values...")
+                    print("\tAttempting to fill unknown values...")
                 else:
                     print('\tNot found')
 
