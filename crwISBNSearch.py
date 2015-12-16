@@ -205,6 +205,8 @@ class OpenLibraryOrg(BaseSearcher):
                             book_data['isbn10'] = i
                         for i in book_json[k1]['identifiers'].get('isbn_13', []):
                             book_data['isbn13'] = i
+                            if mode == Modes.LCCN:
+                                book_data['isbn'] = i
                         for i in book_json[k1]['identifiers'].get('lccn', []):
                             book_data['lccn'] = i
 
@@ -214,7 +216,9 @@ class OpenLibraryOrg(BaseSearcher):
                     book.update(**book_data)
 
             else:
-                print ('\tNo openlibrary.org data')
+                print('\tISBN not found at www.openlibrary.org')
+                book_data['title'] = crwBook.UNKNOWN
+                book.unknown_title()
 
         except urllib.error.URLError as err:
             print('URLError {}'.format(err))
@@ -316,17 +320,18 @@ class ISBNSearchOrg(BaseSearcher):
                         book_data['published'] = label.nextSibling.replace(
                             '&', '&amp;')
 
-                # pull the sixth record from the price list
-                # (gets the first used price)
+                # gets the first used price
                 try:
                     book_data['usedPrice'] = soup.find_all('table', class_='prices')[1].tbody.tr.td.find_next_sibling(class_='price').p.a.contents
-                # if there isn't a sixth record just error out
+                # if there isn't a price record
                 except IndexError:
                     book_data['usedPrice'] = crwBook.UNKNOWN
 
             except urlexception as err:
-                print('ISBN not found at www.isbnsearch.org: {}'.format(
+                print('\tISBN not found at www.isbnsearch.org: {}'.format(
                     err.code))
+                book_data['title'] = crwBook.UNKNOWN
+                book.unknown_title()
 
         if fill:
             book.update_unknowns(**book_data)
